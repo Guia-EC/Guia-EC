@@ -1,5 +1,5 @@
 .slider1 {
-  width: 24.563rem;
+  width: 100%;
   flex-direction: column;
   align-items: flex-start;
   padding: 0 0 0 var(--padding-22);

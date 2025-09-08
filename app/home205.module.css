@@ -21,17 +21,18 @@
 }
 .navbar {
   width: 22.688rem;
+  max-width: 500px;
   height: 6.125rem;
-  margin: 0 !important;
-  position: absolute;
-  top: 45.438rem;
-  left: 0.938rem;
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(10px);
   border-radius: var(--br-30);
   background-color: var(--color-gray-500);
   justify-content: center;
-  z-index: 5;
+  z-index: 1000;
 }
 .navbarOptions {
   justify-content: flex-start;
