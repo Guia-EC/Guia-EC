@@ -1,0 +1,27 @@
+.entrarcadastrar {
+  width: 250px;
+  border-radius: var(--br-10);
+  background-color: var(--color-gainsboro);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-24);
+  text-align: center;
+  font-size: var(--font-size-14);
+  color: var(--color-black);
+  font-family: var(--font-poppins);
+}
+.entrar {
+  height: 54px;
+  width: 130px;
+}
+.cadastrar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.cadastrar2 {
+  position: relative;
+}

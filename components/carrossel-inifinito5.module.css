@@ -1,0 +1,34 @@
+.carrosselInifinito1 {
+  align-self: stretch;
+  position: relative;
+  background-color: var(--color-gray-100);
+  height: 12.938rem;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.imageRectParent {
+  position: absolute;
+  top: 0;
+  left: 1.375rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-32);
+}
+.imageRectIcon {
+  cursor: pointer;
+}
+.imageRectFive,
+.imageRectFour,
+.imageRectIcon,
+.imageRectSix,
+.imageRectThree,
+.imageRectTwo {
+  height: 12.938rem;
+  width: 21.813rem;
+  position: relative;
+  border-radius: var(--br-10);
+  object-fit: cover;
+}

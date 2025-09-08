@@ -1,0 +1,341 @@
+.chatbot,
+.interactionWrapper {
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+.chatbot {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-gray-100);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 4.375rem var(--padding-22) 3rem;
+  gap: 2.625rem;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  font-size: 3rem;
+  color: var(--color-black);
+  font-family: var(--font-poppins);
+}
+.interactionWrapper {
+  width: 15.563rem;
+  flex-direction: row;
+  padding: 0 var(--padding-3);
+}
+.interaction,
+.interactionWrapper,
+.response {
+  display: flex;
+  align-items: flex-start;
+}
+.interaction {
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: var(--gap-20);
+}
+.response {
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding-15) 0 0;
+}
+.metadata {
+  width: 2.5rem;
+  height: 2.5rem;
+  position: relative;
+  border-radius: var(--br-100);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  z-index: 1;
+}
+.profileIcon {
+  position: absolute;
+  top: 0.625rem;
+  left: 0.875rem;
+  width: 0.75rem;
+  height: 1.188rem;
+  object-fit: contain;
+}
+.metadataChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-100);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.maia {
+  margin: 0;
+  width: 8.938rem;
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.input,
+.query,
+.questionArea,
+.request {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.request {
+  flex-direction: row;
+  padding: 0 0.062rem 19.125rem;
+  text-align: center;
+  font-size: var(--font-size-24);
+  color: var(--color-gray-300);
+  font-family: var(--font-poppins);
+}
+.input,
+.query,
+.questionArea {
+  align-self: stretch;
+  flex: 1;
+}
+.input {
+  flex-direction: column;
+  gap: 1.062rem;
+}
+.query,
+.questionArea {
+  flex-direction: row;
+}
+.query {
+  padding: 0 0 0 var(--padding-2);
+}
+.questionArea {
+  position: relative;
+}
+.wrapperIndicator {
+  height: 3.075rem;
+  width: 3.263rem;
+  position: absolute;
+  margin: 0 !important;
+  bottom: -1.075rem;
+  left: -1.375rem;
+  border-radius: var(--br-2);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
+.indicatorIcon {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: scale(1);
+}
+.options,
+.optionsChild {
+  align-self: stretch;
+  border-radius: var(--br-16);
+  background-color: var(--color-whitesmoke-200);
+  border: 1px solid var(--color-orange);
+}
+.options {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 2.75rem 0 0;
+  gap: var(--gap-32);
+  z-index: 1;
+}
+.optionsChild {
+  height: 9.125rem;
+  position: relative;
+  box-sizing: border-box;
+  display: none;
+}
+.confirmation,
+.greeting {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.confirmation {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 1.187rem 0 0.875rem;
+}
+.greeting {
+  flex: 1;
+  flex-direction: column;
+}
+.ol {
+  margin: 0;
+}
+.oQueVoc,
+.ol,
+.rectangleParent {
+  position: relative;
+  z-index: 2;
+}
+.oQueVoc {
+  font-size: var(--font-size-16);
+  margin-top: -0.438rem;
+}
+.rectangleParent {
+  width: 0.875rem;
+  height: 0.875rem;
+  background-color: var(--color-whitesmoke-200);
+}
+.frameChild,
+.selectionArea {
+  position: absolute;
+  background-color: var(--color-whitesmoke-200);
+}
+.frameChild {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 2;
+}
+.selectionArea {
+  top: 0.75rem;
+  left: 0.625rem;
+  width: 0.188rem;
+  height: 0.125rem;
+  z-index: 3;
+}
+.feedback {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  font-size: var(--font-size-14);
+}
+.wrapperResponseMarker {
+  height: 3.075rem;
+  width: 3.263rem;
+  position: absolute;
+  margin: 0 !important;
+  bottom: -1.075rem;
+  left: -1.437rem;
+  border-radius: var(--br-2);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
+.submission,
+.submissionChild {
+  align-self: stretch;
+  border-radius: var(--br-16);
+  background-color: var(--color-whitesmoke-200);
+  border: 1px solid var(--color-orange);
+}
+.submission {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-16) 0 0;
+  z-index: 1;
+}
+.submissionChild {
+  height: 3.438rem;
+  position: relative;
+  box-sizing: border-box;
+  display: none;
+}
+.inputDisplay {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 1.062rem 0 var(--padding-16);
+}
+.pergunteOQue {
+  position: relative;
+  flex-shrink: 0;
+  z-index: 2;
+}
+.prompt,
+.promptChild,
+.submissionItem {
+  position: relative;
+  background-color: var(--color-whitesmoke-200);
+}
+.submissionItem {
+  width: 1rem;
+  height: 0.938rem;
+  z-index: 3;
+}
+.prompt,
+.promptChild {
+  border: 1px solid var(--color-orange);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.prompt {
+  align-self: stretch;
+  border-radius: var(--br-16);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-16) var(--padding-16) 0.812rem;
+  gap: 3.375rem;
+  min-height: 3.375rem;
+  font-size: var(--font-size-14);
+  color: var(--color-gray-300);
+}
+.promptChild {
+  height: 3.375rem;
+  width: 21.813rem;
+  border-radius: var(--Corner-Large);
+  display: none;
+  z-index: 0;
+}
+.comoPossoIr {
+  position: relative;
+  z-index: 1;
+}
+.enviar1Icon {
+  width: 1.25rem;
+  position: absolute;
+  margin: 0 !important;
+  right: 0.938rem;
+  bottom: 1rem;
+  max-height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+.attachmentIcons {
+  height: 1.25rem;
+  width: 3.375rem;
+  position: relative;
+}
+.clipeDePapel1Icon,
+.microfone1Icon {
+  position: absolute;
+  top: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  z-index: 1;
+}
+.microfone1Icon {
+  left: 2.125rem;
+  object-fit: contain;
+}
+.clipeDePapel1Icon {
+  left: 0;
+  object-fit: cover;
+}

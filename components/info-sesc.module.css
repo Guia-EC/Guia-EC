@@ -1,0 +1,166 @@
+.infoSesc {
+  height: 110.375rem;
+  width: 24.563rem;
+  background-color: var(--color-gray-100);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 7.125rem;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 0;
+  text-align: left;
+  font-size: var(--font-size-40);
+  color: var(--color-black);
+  font-family: var(--font-poppins);
+}
+.imagemHero,
+.scrollvel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24.563rem;
+}
+.scrollvel {
+  height: 102.625rem;
+  margin: 0 !important;
+  z-index: 0;
+}
+.imagemHero {
+  height: 28.813rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 4.375rem var(--padding-20) var(--padding-40);
+  box-sizing: border-box;
+  background-image: url(/Imagem-Hero2@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.voltarIcon {
+  width: 100%;
+  max-height: 100%;
+  height: auto;
+  cursor: pointer;
+}
+.body,
+.infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.body {
+  position: absolute;
+  top: 28.813rem;
+  left: 0;
+  background-color: var(--color-gray-100);
+  width: 24.563rem;
+  align-items: center;
+  padding: 2.812rem 0 0;
+  box-sizing: border-box;
+  gap: var(--gap-20);
+  text-align: left;
+  font-size: var(--font-size-18);
+  color: var(--color-black);
+  font-family: var(--font-poppins);
+}
+.infos {
+  align-items: flex-start;
+  padding: 0 var(--padding-30);
+  gap: var(--gap-15);
+}
+.informaes,
+.reformaEAmpliaoContainer {
+  position: relative;
+  display: inline-block;
+}
+.informaes {
+  margin: 0;
+  width: 7.688rem;
+  height: 1.688rem;
+}
+.reformaEAmpliaoContainer {
+  width: 20.813rem;
+  text-align: justify;
+  font-size: var(--font-size-26);
+}
+.eformaEAmpliao {
+  white-space: pre-wrap;
+}
+.botoArtigoCompleto {
+  width: 20.813rem;
+  height: 2.875rem;
+  border-radius: var(--br-60);
+  background-color: var(--color-darkgray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-11) 4.75rem;
+  box-sizing: border-box;
+  font-size: var(--font-size-15);
+  color: var(--color-gray-100);
+}
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-6);
+}
+.lerArtigoCompleto,
+.vectorIcon {
+  position: relative;
+}
+.vectorIcon {
+  height: 0.438rem;
+  width: 0.75rem;
+  object-fit: contain;
+}
+.ttulo {
+  position: absolute;
+  top: 20.938rem;
+  left: 1.813rem;
+}
+.infoSescTtulo,
+.ttulo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.sesc24,
+.sesc24De {
+  margin: 0;
+  position: relative;
+  display: inline-block;
+}
+.sesc24 {
+  width: 10.125rem;
+  height: 3.75rem;
+}
+.sesc24De {
+  width: 18.5rem;
+}
+.descrio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: var(--font-size-12);
+}
+.pauloMendesDa,
+.rua24De {
+  position: relative;
+  display: inline-block;
+}
+.pauloMendesDa {
+  width: 17.563rem;
+  white-space: pre-wrap;
+}
+.rua24De {
+  width: 13.375rem;
+}

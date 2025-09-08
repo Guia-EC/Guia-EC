@@ -1,0 +1,479 @@
+.header,
+.histricoDeRoteiros {
+  width: 24.563rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.histricoDeRoteiros {
+  height: 112.5rem;
+  background-color: var(--color-gray-100);
+  flex-direction: column;
+  z-index: 0;
+  text-align: left;
+  font-size: var(--font-size-32);
+  color: var(--color-black);
+  font-family: var(--font-poppins);
+}
+.header {
+  border-radius: 0 0 var(--br-20) var(--br-20);
+  background-color: var(--color-whitesmoke-100);
+  flex-direction: row;
+  padding: var(--padding-60) var(--padding-20) var(--padding-40);
+  box-sizing: border-box;
+  gap: var(--gap-10);
+}
+.botoDeVoltar {
+  height: 2.563rem;
+  width: 2.625rem;
+  border-radius: var(--br-100);
+  cursor: pointer;
+}
+.ttulo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.histricoDeRoteiros2 {
+  margin: 0;
+  width: 12.688rem;
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.body {
+  width: 24.563rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.187rem var(--padding-20) var(--padding-40);
+  box-sizing: border-box;
+  gap: 2.187rem;
+}
+.filtros {
+  align-self: stretch;
+  gap: var(--gap-15);
+}
+.dias,
+.filtros,
+.hoje {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.dias {
+  gap: var(--gap-40);
+  text-align: justify;
+  font-size: var(--font-size-24);
+  color: var(--color-black);
+  font-family: var(--font-poppins);
+}
+.hoje {
+  gap: 1.562rem;
+}
+.histricoDeRoteirosTtulo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-10);
+}
+.hojeQuartaFeira {
+  margin: 0;
+  width: 20.625rem;
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.cardCultural3,
+.imagem {
+  display: flex;
+  flex-direction: column;
+}
+.cardCultural3 {
+  height: 21.813rem;
+  border-radius: var(--br-10);
+  background-color: var(--color-white);
+  overflow: hidden;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: var(--font-size-20);
+  color: var(--color-gray-300);
+}
+.imagem {
+  width: 22.438rem;
+  height: 9rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  background-image: url(/Imagem1@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.detalhe {
+  width: 11.25rem;
+  position: absolute;
+  margin: 0 !important;
+  bottom: 0;
+  left: 0;
+  border-radius: 0 var(--br-5) 0 0;
+  background-color: var(--color-forestgreen);
+  height: 1.125rem;
+  z-index: 0;
+}
+.histricoDeRoteirosBody {
+  width: 22.438rem;
+  height: 12.813rem;
+  background-color: var(--color-whitesmoke-100);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-20);
+  box-sizing: border-box;
+  gap: var(--gap-12);
+}
+.ttulo2,
+.ttuloETexto {
+  align-self: stretch;
+  display: flex;
+}
+.ttuloETexto {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: justify;
+}
+.ttulo2 {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.maspNatural {
+  margin: 0;
+  flex: 1;
+  position: relative;
+}
+.texto {
+  width: 16.875rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: var(--font-size-14);
+}
+.arteConscinciaE {
+  width: 16.875rem;
+  position: relative;
+  letter-spacing: 0.04em;
+  font-weight: 300;
+  display: inline-block;
+}
+.localizao {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-5);
+  font-size: var(--font-size-10);
+}
+.locationIcon {
+  width: 1.013rem;
+  position: relative;
+  border-radius: 0 9px 0 0;
+  max-height: 100%;
+  object-fit: contain;
+}
+.paulista {
+  position: relative;
+  letter-spacing: 0.03em;
+  opacity: 0.5;
+}
+.boto,
+.botoEFavorito {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.botoEFavorito {
+  align-self: stretch;
+  justify-content: space-between;
+  gap: 0;
+  font-size: var(--font-size-12);
+}
+.boto {
+  border-radius: var(--br-5);
+  border: 1px solid var(--color-gray-300);
+  justify-content: center;
+  padding: var(--padding-11) 1.812rem;
+}
+.fazerRoteiro {
+  position: relative;
+  letter-spacing: 0.03em;
+}
+.outroDia {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1.562rem;
+  font-size: var(--font-size-20);
+  color: var(--color-gray-300);
+}
+.ttulo3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-10);
+  font-size: var(--font-size-24);
+  color: var(--color-black);
+}
+.teraFeiraDia26 {
+  margin: 0;
+  width: 20.625rem;
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.cardCultural4 {
+  height: 21.813rem;
+  border-radius: var(--br-10);
+  background-color: var(--color-white);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+.histricoDeRoteirosImagem {
+  width: 22.438rem;
+  height: 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  background-image: url(/Imagem111@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.histricoDeRoteirosDetalhe {
+  width: 11.25rem;
+  position: absolute;
+  margin: 0 !important;
+  bottom: 0;
+  left: 0;
+  border-radius: 0 var(--br-5) 0 0;
+  background-color: var(--color-mediumpurple);
+  height: 1.125rem;
+  z-index: 0;
+}
+.body2,
+.histricoDeRoteirosTtuloETexto,
+.ttulo4 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.body2 {
+  width: 22.438rem;
+  height: 12.813rem;
+  background-color: var(--color-whitesmoke-100);
+  overflow: hidden;
+  flex-shrink: 0;
+  padding: var(--padding-20);
+  box-sizing: border-box;
+  gap: var(--gap-12);
+}
+.histricoDeRoteirosTtuloETexto,
+.ttulo4 {
+  align-self: stretch;
+}
+.ttulo4 {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.casaDasRosas {
+  margin: 0;
+  flex: 1;
+  position: relative;
+}
+.histricoDeRoteirosTexto {
+  width: 16.875rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: justify;
+  font-size: var(--font-size-14);
+}
+.versosVozesE {
+  width: 16.875rem;
+  position: relative;
+  letter-spacing: 0.04em;
+  font-weight: 300;
+  display: inline-block;
+}
+.histricoDeRoteirosLocalizao {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-5);
+  text-align: center;
+  font-size: var(--font-size-10);
+}
+.locationIcons {
+  width: 1.013rem;
+  position: relative;
+  border-radius: 0 9px 0 0;
+  max-height: 100%;
+  object-fit: contain;
+}
+.histricoDeRoteirosPaulista {
+  position: relative;
+  letter-spacing: 0.03em;
+  opacity: 0.5;
+}
+.histricoDeRoteirosBotoEFavorito {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+}
+.histricoDeRoteirosBoto {
+  padding: var(--padding-11) 1.812rem;
+}
+.cardCultural5,
+.imagem2 {
+  display: flex;
+  flex-direction: column;
+}
+.cardCultural5 {
+  height: 21.813rem;
+  border-radius: var(--br-10);
+  background-color: var(--color-white);
+  overflow: hidden;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+.imagem2 {
+  width: 22.438rem;
+  height: 9rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  background-image: url(/Imagem21@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.detalhe2 {
+  width: 11.25rem;
+  position: absolute;
+  margin: 0 !important;
+  bottom: 0;
+  left: 0;
+  border-radius: 0 var(--br-5) 0 0;
+  background-color: var(--color-orange);
+  height: 1.125rem;
+  z-index: 0;
+}
+.body3,
+.ttulo5,
+.ttuloETexto2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.body3 {
+  width: 22.438rem;
+  height: 12.813rem;
+  background-color: var(--color-whitesmoke-100);
+  overflow: hidden;
+  flex-shrink: 0;
+  padding: var(--padding-20);
+  box-sizing: border-box;
+  gap: var(--gap-12);
+}
+.ttulo5,
+.ttuloETexto2 {
+  align-self: stretch;
+}
+.ttulo5 {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.museuDoIpiranga {
+  margin: 0;
+  flex: 1;
+  position: relative;
+}
+.texto2 {
+  width: 16.875rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: var(--font-size-14);
+}
+.histriaVivaNos {
+  width: 16.875rem;
+  position: relative;
+  letter-spacing: 0.04em;
+  font-weight: 300;
+  display: inline-block;
+}
+.localizao2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-5);
+  text-align: center;
+  font-size: var(--font-size-10);
+}
+.icon,
+.ipiranga {
+  position: relative;
+}
+.icon {
+  width: 1.013rem;
+  border-radius: 0 9px 0 0;
+  max-height: 100%;
+  object-fit: contain;
+}
+.ipiranga {
+  letter-spacing: 0.03em;
+  opacity: 0.5;
+}
+.botoEFavorito2 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+}
+.boto2 {
+  padding: var(--padding-11) 1.812rem;
+}

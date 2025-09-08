@@ -1,0 +1,64 @@
+.sliderCultura {
+  overflow: hidden;
+  align-items: center;
+  gap: var(--gap-30);
+  text-align: left;
+  font-size: var(--font-size-11);
+  color: var(--color-gray-100);
+  font-family: var(--font-poppins);
+}
+.masp,
+.sliderCultura,
+.tag {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.masp {
+  height: 14.375rem;
+  width: 15.625rem;
+  align-items: flex-end;
+  background-image: url(/MASP@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  cursor: pointer;
+}
+.tag {
+  height: 1.25rem;
+  width: 6.25rem;
+  border-radius: 0 var(--br-5) 0 var(--br-5);
+  background-color: var(--color-black);
+  align-items: center;
+  padding: 0 var(--padding-8);
+  box-sizing: border-box;
+}
+.sliderCulturaMasp {
+  position: relative;
+  font-weight: 600;
+}
+.prqIbirapuera {
+  background-image: url(/Prq-Ibirapuera@3x.png);
+  cursor: pointer;
+}
+.copan,
+.edMartinelli,
+.prqIbirapuera {
+  height: 14.375rem;
+  width: 15.625rem;
+  border-radius: var(--br-5);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.edMartinelli {
+  background-image: url(/Ed-Martinelli@3x.png);
+  cursor: pointer;
+}
+.copan {
+  background-image: url(/COPAN@3x.png);
+}
