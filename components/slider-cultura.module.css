@@ -1,6 +1,6 @@
 .sliderCultura {
   overflow: hidden;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--gap-30);
   text-align: left;
   font-size: var(--font-size-11);
