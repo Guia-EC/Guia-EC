@@ -1,8 +1,0 @@
-/* components/DesktopSymplaGrid.module.css */
-.gridContainer {
-  display: flex;
-  flex-wrap: wrap; /* Permite que os itens quebrem a linha se não couberem */
-  justify-content: center; /* Centraliza os itens na horizontal */
-  gap: 20px; /* Cria um espaçamento entre os cards */
-  width: 100%;
-}

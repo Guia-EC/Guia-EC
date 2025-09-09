@@ -15,6 +15,10 @@ import styles from "./home205.module.css";
 // Nossos novos componentes e o hook
 import { BannerCarousel } from '../components/BannerCarousel';
 import DesktopBannerGrid from '../components/DesktopBannerGrid';
+import { BannerCarouselSympla } from '../components/BannerCarouselSympla';
+import DesktopSymplaBannerGrid from '../components/DesktopSymplaBannerGrid';
+import { BannerCarouselAirbnb } from '../components/BannerCarouselAirbnb';
+import DesktopAirbnbBannerGrid from '../components/DesktopAirbnbBannerGrid';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 
 const Home205 = () => {
@@ -40,17 +44,28 @@ const Home205 = () => {
   return (
     <Box className={styles.home20}>
       
-      {/* SEÇÃO DOS BANNERS COM LÓGICA RESPONSIVA */}
+      {/* SEÇÃO DOS BANNERS EC COM LÓGICA RESPONSIVA */}
       <section>
         <h2 className={styles.tituloPrincipalMobile}>Conheça a melhor faculdade de Arquitetura e Urbanismo 🖤</h2>
         {isMobile ? <BannerCarousel /> : <DesktopBannerGrid />}
       </section>
       
-      {/* RESTANTE DOS SEUS COMPONENTES */}
+      
       <Slider142 />
-      <Carroussel243 />
+
+      {/* SEÇÃO DOS BANNERS SYMPLA COM LÓGICA RESPONSIVA */}
+      <section>
+        <h2 className={styles.tituloPrincipalMobile}>Confira os destaques de São Paulo com a Sympla</h2>
+        {isMobile ? <BannerCarouselSympla /> : <DesktopSymplaBannerGrid />}
+      </section>
+
       <Slider343 />
-      <Carroussel343 />
+
+      {/* SEÇÃO DOS BANNERS SYMPLA COM LÓGICA RESPONSIVA */}
+      <section>
+        <h2 className={styles.tituloPrincipalMobile}>Hospede-se e vivencie de perto pontos históricos e culturais com a Airbnb</h2>
+        {isMobile ? <BannerCarouselAirbnb /> : <DesktopAirbnbBannerGrid />}
+      </section>
       
       {/* NAVBAR */}
       <section className={styles.navbar}>

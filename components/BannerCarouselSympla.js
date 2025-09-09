@@ -4,19 +4,17 @@ import React from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import Image from 'next/image';
-import styles from './BannerCarousel.module.css';
+import styles from './BannerCarouselSympla.module.css';
 
 // Array com os dados dos seus banners
 const BANNERS = [
-  { id: 1, imageUrl: '/image-Rect.png', alt: 'Banner da Escola da Cidade com nota máxima no ENADE' },
-  { id: 2, imageUrl: '/image-RectTwo.png', alt: 'Banner sobre cursos livres 2025' },
-  { id: 3, imageUrl: '/image-RectThree.png', alt: 'Banner do programa Encruzilhada de inclusão e equidade' },
-  { id: 4, imageUrl: '/image-RectFour.png', alt: 'Banner da Escola da Cidade com nota 5 do MEC' },
-  { id: 5, imageUrl: '/image-RectFive.png', alt: 'Banner da Fábrica - Escola de Humanidades' },
+  { id: 1, imageUrl: '/Sympla1.png', alt: 'Farol Santander Evento' },
+  { id: 2, imageUrl: '/Sympla2.png', alt: 'Ney Matogrosso Evento' },
+  { id: 3, imageUrl: '/Sympla3.png', alt: 'Museu da Língua Portuguesa Evento' },
 ];
 
-export const BannerCarousel = () => {
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 5000, stopOnInteraction: false })]);
+export const BannerCarouselSympla = () => {
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 6000, stopOnInteraction: false })]);
 
   return (
     <div className={styles.embla} ref={emblaRef}>
