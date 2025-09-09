@@ -1,0 +1,98 @@
+.sliderConheaNossosRoteiros {
+  align-self: stretch;
+  overflow-x: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1.437rem;
+  text-align: left;
+  font-size: var(--font-size-11);
+  color: var(--color-gray-100);
+  font-family: var(--font-poppins);
+}
+.roteirosRaiz {
+  height: 10rem;
+  width: 11.25rem;
+  border-radius: var(--br-5);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  background-image: url(/Roteiros-Raiz@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  cursor: pointer;
+}
+.tag {
+  width: 6.25rem;
+  height: 1.125rem;
+  border-radius: 0 var(--br-5) 0 var(--br-5);
+  background-color: var(--color-orange);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0 var(--padding-8);
+  box-sizing: border-box;
+}
+.raiz {
+  position: relative;
+  font-weight: 600;
+}
+.roteirosNaturais {
+  height: 10rem;
+  width: 11.25rem;
+  border-radius: var(--br-5);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  background-image: url(/Roteiros-Naturais@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  cursor: pointer;
+}
+.sliderConheaNossosRoteirosTag {
+  width: 6.25rem;
+  height: 1.125rem;
+  border-radius: 0 var(--br-5) 0 var(--br-5);
+  background-color: var(--color-forestgreen);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0 var(--padding-8);
+  box-sizing: border-box;
+}
+.sliderConheaNossosRoteirosRoteirosRaiz {
+  height: 10rem;
+  width: 11.25rem;
+  border-radius: var(--br-5);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  background-image: url(/Roteiros-Raiz1@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  cursor: pointer;
+}
+.tag2 {
+  width: 6.25rem;
+  height: 1.125rem;
+  border-radius: 0 var(--br-5) 0 var(--br-5);
+  background-color: var(--color-mediumpurple);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0 var(--padding-8);
+  box-sizing: border-box;
+}

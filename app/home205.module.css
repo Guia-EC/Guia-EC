@@ -1,0 +1,92 @@
+.home20 {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-gray-100);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: var(--padding-80) 0 8.75rem;
+  box-sizing: border-box;
+  gap: var(--gap-32);
+  line-height: normal;
+  letter-spacing: normal;
+}
+.navbar,
+.navbarOptions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.navbar {
+  width: 22.688rem;
+  max-width: 500px;
+  height: 6.125rem;
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  border-radius: var(--br-30);
+  background-color: var(--color-gray-500);
+  justify-content: center;
+  z-index: 1000;
+}
+.navbarOptions {
+  justify-content: flex-start;
+  gap: 1.562rem;
+}
+.casa2Icon {
+  width: 1.981rem;
+  position: relative;
+  max-height: 100%;
+  object-fit: cover;
+}
+.favoritesButtomIcon,
+.routesButtom {
+  height: 1.744rem;
+  width: 1.806rem;
+  position: relative;
+  cursor: pointer;
+}
+.routesButtom {
+  height: 4.188rem;
+  width: 4.106rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-11) var(--padding-10) var(--padding-11)
+    var(--padding-11);
+  box-sizing: border-box;
+  gap: var(--gap-10);
+}
+.boto {
+  width: 100%;
+  position: absolute;
+  margin: 0 !important;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+  background-color: var(--color-orange);
+  z-index: 0;
+}
+.iaButtomIcon,
+.imgDistnciaIcon {
+  position: relative;
+  max-height: 100%;
+  object-fit: cover;
+}
+.imgDistnciaIcon {
+  width: 2.788rem;
+  z-index: 1;
+}
+.iaButtomIcon {
+  width: 1.981rem;
+  cursor: pointer;
+}

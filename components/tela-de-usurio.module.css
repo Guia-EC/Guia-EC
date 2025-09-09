@@ -1,0 +1,138 @@
+.cardDeUsurio,
+.telaDeUsurio {
+  display: flex;
+  flex-direction: column;
+}
+.telaDeUsurio {
+  height: 57.688rem;
+  width: 24.563rem;
+  background-color: var(--color-gray-100);
+  align-items: center;
+  justify-content: center;
+  padding: 2.187rem 0 var(--padding-100);
+  box-sizing: border-box;
+  gap: 4.687rem;
+  z-index: 0;
+  text-align: left;
+  font-size: var(--font-size-14);
+  color: var(--color-black);
+  font-family: var(--font-poppins);
+}
+.cardDeUsurio {
+  height: 10.875rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+.header {
+  width: 21.563rem;
+  border-radius: var(--br-10) var(--br-10) 0 0;
+  background-color: var(--color-gray-400);
+  z-index: 0;
+}
+.body,
+.nomeEEMail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.body {
+  align-self: stretch;
+  flex: 1;
+  border-radius: 0 0 var(--br-10) var(--br-10);
+  background-color: var(--color-whitesmoke-100);
+  justify-content: flex-end;
+  padding: var(--padding-10) var(--padding-20);
+  z-index: 1;
+}
+.nomeEEMail {
+  justify-content: flex-start;
+}
+.douglasRocha {
+  position: relative;
+}
+.douglasrochagmailcom,
+.perfil {
+  position: relative;
+  color: var(--color-gray-300);
+  text-align: center;
+}
+.perfil {
+  margin: 0 !important;
+  position: absolute;
+  top: 2.188rem;
+  left: 1.25rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-10);
+  z-index: 2;
+  font-size: var(--font-size-32);
+  color: var(--color-white);
+}
+.telaDeUsurioPerfil {
+  width: 5.25rem;
+  position: relative;
+  border-radius: 50%;
+  background-color: var(--color-gray-200);
+  height: 5.25rem;
+  z-index: 0;
+}
+.dr {
+  margin: 0 !important;
+  width: 2.688rem;
+  position: absolute;
+  top: 1.125rem;
+  left: 1.313rem;
+  display: inline-block;
+  z-index: 1;
+}
+.meusDados,
+.telaDeUsurioBody {
+  width: 21.563rem;
+  font-size: var(--font-size-16);
+}
+.telaDeUsurioBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-40);
+  text-align: center;
+  color: var(--color-red);
+}
+.meusDados {
+  border: 0;
+  background-color: transparent;
+  height: 3.375rem;
+  font-family: var(--font-poppins);
+  color: var(--color-black);
+}
+.histricoDeRoteiros {
+  cursor: pointer;
+}
+.faleConosco,
+.gerenciamentoDeSenha,
+.histricoDeRoteiros {
+  width: 21.563rem;
+  height: 3.375rem;
+  padding: var(--padding-10);
+  box-sizing: border-box;
+}
+.botoDeSair {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-4);
+}
+.logout11 {
+  width: 1rem;
+  max-height: 100%;
+  object-fit: cover;
+}
+.logout11,
+.sair {
+  position: relative;
+}

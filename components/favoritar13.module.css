@@ -1,0 +1,14 @@
+.favoritar2 {
+  width: 2.625rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-10);
+  box-sizing: border-box;
+}
+.favoriteIcon {
+  width: 100%;
+  height: 1.331rem;
+  position: relative;
+}

@@ -1,0 +1,231 @@
+.seleoDeTipoDeRoteiro20,
+.voltar {
+  display: flex;
+  flex-direction: column;
+}
+.seleoDeTipoDeRoteiro20 {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-gray-100);
+  align-items: center;
+  justify-content: center;
+  padding: 4.375rem 0 4.187rem;
+  box-sizing: border-box;
+  gap: var(--gap-10);
+  line-height: normal;
+  letter-spacing: normal;
+}
+.voltar {
+  align-self: stretch;
+  overflow: hidden;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0.562rem var(--padding-6) 0.562rem 1.562rem;
+}
+.vectorIcon {
+  width: 100%;
+  height: 1.25rem;
+  position: relative;
+  object-fit: contain;
+  cursor: pointer;
+}
+.body,
+.ttulo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.body {
+  justify-content: flex-start;
+  padding: 0 1.062rem;
+  gap: 3.125rem;
+  text-align: left;
+  font-size: var(--font-size-16);
+  color: var(--color-black);
+  font-family: var(--font-poppins);
+}
+.ttulo {
+  justify-content: center;
+  gap: var(--gap-10);
+}
+.qualTipoDe {
+  width: 12.75rem;
+  position: relative;
+  display: inline-block;
+}
+.detalhe,
+.detalheChild {
+  height: 0.063rem;
+  background-color: var(--color-gray-300);
+}
+.detalhe {
+  width: 16.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.detalheChild {
+  align-self: stretch;
+  position: relative;
+  display: none;
+}
+.roteiros {
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-30);
+  font-size: var(--font-size-20);
+  color: var(--color-gray-300);
+}
+.imagem,
+.raiz,
+.roteiros {
+  display: flex;
+  flex-direction: column;
+}
+.raiz {
+  border-radius: var(--br-10);
+  background-color: var(--color-white);
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+.imagem {
+  width: 22.438rem;
+  height: 9rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  background-image: url(/Imagem7@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.seleoDeTipoDeRoteiro20Detalhe {
+  width: 11.25rem;
+  position: absolute;
+  margin: 0 !important;
+  bottom: 0;
+  left: 0;
+  border-radius: 0 var(--br-5) 0 0;
+  background-color: var(--color-orange);
+  height: 1.125rem;
+  z-index: 0;
+}
+.seleoDeTipoDeRoteiro20Body {
+  width: 22.438rem;
+  height: 9.75rem;
+  background-color: var(--color-whitesmoke-100);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--padding-20);
+  box-sizing: border-box;
+}
+.ttuloETexto {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-5);
+}
+.seleoDeTipoDeRoteiro20Ttulo {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.ibirapueraRaiz {
+  margin: 0;
+  flex: 1;
+  position: relative;
+}
+.texto {
+  width: 16.875rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: var(--font-size-14);
+}
+.doMonumentoS {
+  width: 18.938rem;
+  position: relative;
+  letter-spacing: 0.04em;
+  font-weight: 300;
+  display: inline-block;
+}
+.seleoDeTipoDeRoteiro20Imagem {
+  width: 22.438rem;
+  height: 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  background-image: url(/Imagem8@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.detalhe2 {
+  width: 11.25rem;
+  position: absolute;
+  margin: 0 !important;
+  bottom: 0;
+  left: 0;
+  border-radius: 0 var(--br-5) 0 0;
+  background-color: var(--color-forestgreen);
+  height: 1.125rem;
+  z-index: 0;
+}
+.seleoDeTipoDeRoteiro20Texto {
+  width: 18.313rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: var(--font-size-14);
+}
+.partindoDoMonumento {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: 0.04em;
+  font-weight: 300;
+}
+.imagem2 {
+  width: 22.438rem;
+  height: 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  background-image: url(/Imagem9@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.detalhe3 {
+  width: 11.25rem;
+  position: absolute;
+  margin: 0 !important;
+  bottom: 0;
+  left: 0;
+  border-radius: 0 var(--br-5) 0 0;
+  background-color: var(--color-mediumpurple);
+  height: 1.125rem;
+  z-index: 0;
+}
+.comeceNoMonumento {
+  width: 18.5rem;
+  position: relative;
+  letter-spacing: 0.04em;
+  font-weight: 300;
+  display: inline-block;
+}
