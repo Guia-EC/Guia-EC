@@ -1,7 +1,9 @@
+// app/home205.js
 "use client";
 import { useCallback } from "react";
 import { Box } from "@mui/material";
 import Image from "next/image";
+// Seus componentes antigos
 import Carroussel143 from "../components/carroussel143";
 import Slider142 from "../components/slider142";
 import Carroussel243 from "../components/carroussel243";
@@ -10,8 +12,14 @@ import Carroussel343 from "../components/carroussel343";
 import { useRouter } from "next/navigation";
 import styles from "./home205.module.css";
 
+// Nossos novos componentes e o hook
+import { BannerCarousel } from '../components/BannerCarousel';
+import DesktopBannerGrid from '../components/DesktopBannerGrid';
+import { useMediaQuery } from '../hooks/useMediaQuery';
+
 const Home205 = () => {
   const router = useRouter();
+  const isMobile = useMediaQuery('(max-width: 768px)'); // Ponto de quebra para mobile
 
   const onFavoritesButtomIconClick = useCallback(() => {
     router.push("/roteiros-favoritados204");
@@ -31,11 +39,20 @@ const Home205 = () => {
 
   return (
     <Box className={styles.home20}>
-      <Carroussel143 />
+      
+      {/* SEÇÃO DOS BANNERS COM LÓGICA RESPONSIVA */}
+      <section>
+        <h2 className={styles.tituloPrincipalMobile}>Conheça a melhor faculdade de Arquitetura e Urbanismo 🖤</h2>
+        {isMobile ? <BannerCarousel /> : <DesktopBannerGrid />}
+      </section>
+      
+      {/* RESTANTE DOS SEUS COMPONENTES */}
       <Slider142 />
       <Carroussel243 />
       <Slider343 />
       <Carroussel343 />
+      
+      {/* NAVBAR */}
       <section className={styles.navbar}>
         <Box className={styles.navbarOptions}>
           <Image
@@ -43,8 +60,7 @@ const Home205 = () => {
             loading="lazy"
             width={31.7}
             height={31.7}
-            sizes="100vw"
-            alt=""
+            alt="Ícone da página inicial"
             src="/casa-2@2x.png"
           />
           <Image
@@ -52,8 +68,7 @@ const Home205 = () => {
             loading="lazy"
             width={28.9}
             height={27.9}
-            sizes="100vw"
-            alt=""
+            alt="Ícone de favoritos"
             src="/Favorites-Buttom.svg"
             onClick={onFavoritesButtomIconClick}
           />
@@ -67,8 +82,7 @@ const Home205 = () => {
               loading="lazy"
               width={44.6}
               height={44.6}
-              sizes="100vw"
-              alt=""
+              alt="Ícone de rotas"
               src="/Img-Dist-ncia@2x.png"
             />
           </Box>
@@ -77,8 +91,7 @@ const Home205 = () => {
             loading="lazy"
             width={31.7}
             height={31.7}
-            sizes="100vw"
-            alt=""
+            alt="Ícone do chatbot de IA"
             src="/Ia-Buttom@2x.png"
             onClick={onIaButtomIconClick}
           />
@@ -87,8 +100,7 @@ const Home205 = () => {
             loading="lazy"
             width={31.7}
             height={31.7}
-            sizes="100vw"
-            alt=""
+            alt="Ícone de perfil do usuário"
             src="/User-Buttom@2x.png"
             onClick={onUserButtomIconClick}
           />
