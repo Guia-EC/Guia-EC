@@ -1,0 +1,19 @@
+/* components/SymplaCarousel.module.css */
+
+/* O contêiner principal do carrossel */
+.embla {
+  overflow: hidden; /* ESSENCIAL: Esconde os slides que estão fora da área visível */
+}
+
+/* O contêiner que segura todos os slides */
+.embla__container {
+  display: flex; /* ESSENCIAL: Coloca os slides um ao lado do outro, na horizontal */
+  align-items: flex-start; /* Alinha os slides pelo topo */
+}
+
+/* Cada slide individual */
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  padding: 0 20px; /* Espaçamento entre os slides */
+}
