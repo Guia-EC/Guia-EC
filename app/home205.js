@@ -46,7 +46,7 @@ const Home205 = () => {
       
       {/* SEÇÃO DOS BANNERS EC COM LÓGICA RESPONSIVA */}
       <section>
-        <h2 className={styles.tituloPrincipalMobile}>Conheça a melhor faculdade de Arquitetura e Urbanismo 🖤</h2>
+        <h2 className={styles.tituloPrincipalMobile1}>Conheça a melhor faculdade de <br /> Arquitetura e Urbanismo 🖤</h2>
         {isMobile ? <BannerCarousel /> : <DesktopBannerGrid />}
       </section>
       
@@ -55,7 +55,7 @@ const Home205 = () => {
 
       {/* SEÇÃO DOS BANNERS SYMPLA COM LÓGICA RESPONSIVA */}
       <section>
-        <h2 className={styles.tituloPrincipalMobile}>Confira os destaques de São Paulo com a Sympla</h2>
+        <h2 className={styles.tituloPrincipalMobile2}>Confira os destaques de São Paulo <br /> com a Sympla</h2>
         {isMobile ? <BannerCarouselSympla /> : <DesktopSymplaBannerGrid />}
       </section>
 
@@ -63,7 +63,7 @@ const Home205 = () => {
 
       {/* SEÇÃO DOS BANNERS SYMPLA COM LÓGICA RESPONSIVA */}
       <section>
-        <h2 className={styles.tituloPrincipalMobile}>Hospede-se e vivencie de perto pontos históricos e culturais com a Airbnb</h2>
+        <h2 className={styles.tituloPrincipalMobile3}>Hospede-se e vivencie de perto pontos <br /> históricos e culturais com a Airbnb</h2>
         {isMobile ? <BannerCarouselAirbnb /> : <DesktopAirbnbBannerGrid />}
       </section>
       
