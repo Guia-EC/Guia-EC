@@ -8,11 +8,11 @@ import styles from './BannerCarousel.module.css';
 
 // Array com os dados dos seus banners
 const BANNERS = [
-  { id: 1, imageUrl: '/image-Rect.png', alt: 'Banner da Escola da Cidade com nota máxima no ENADE' },
-  { id: 2, imageUrl: '/image-RectTwo.png', alt: 'Banner sobre cursos livres 2025' },
-  { id: 3, imageUrl: '/image-RectThree.png', alt: 'Banner do programa Encruzilhada de inclusão e equidade' },
-  { id: 4, imageUrl: '/image-RectFour.png', alt: 'Banner da Escola da Cidade com nota 5 do MEC' },
-  { id: 5, imageUrl: '/image-RectFive.png', alt: 'Banner da Fábrica - Escola de Humanidades' },
+  { id: 1, imageUrl: '/image-Rect.png', alt: 'Banner da Escola da Cidade com nota máxima no ENADE', linkUrl: 'https://escoladacidade.edu.br/'},
+  { id: 2, imageUrl: '/image-RectTwo.png', alt: 'Banner sobre cursos livres 2025', linkUrl: 'https://escoladacidade.edu.br/pos/cursos-livres/' },
+  { id: 3, imageUrl: '/image-RectThree.png', alt: 'Banner do programa Encruzilhada de inclusão e equidade', linkUrl: 'https://escoladacidade.edu.br/politica-de-equidade-e-inclusao/'},
+  { id: 4, imageUrl: '/image-RectFour.png', alt: 'Banner da Escola da Cidade com nota 5 do MEC', linkUrl: 'https://escoladacidade.edu.br/escola-da-cidade-recebe-nota-maxima-do-mec/' },
+  { id: 5, imageUrl: '/image-RectFive.png', alt: 'Banner da Fábrica - Escola de Humanidades', linkUrl: 'https://escoladacidade.edu.br/ensino-medio/' },
 ];
 
 export const BannerCarousel = () => {
@@ -23,17 +23,20 @@ export const BannerCarousel = () => {
       <div className={styles.embla__container}>
         {BANNERS.map((banner) => (
           <div className={styles.embla__slide} key={banner.id}>
-            <Image
-              src={banner.imageUrl}
-              alt={banner.alt}
-              width={500} // Largura base da imagem original
-              height={300} // Altura base da imagem original
-              style={{
-                width: '100%',
-                height: 'auto',
-                borderRadius: '16px',
-              }}
-            />
+            <a href={banner.linkUrl} target="_blank" rel="noopener noreferrer" className={styles.slideLink}>
+              <Image
+                src={banner.imageUrl}
+                alt={banner.alt}
+                width={500}
+                height={300}
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  borderRadius: '16px',
+                  display: 'block', // Garante que a imagem se comporte bem dentro do link
+                }}
+              />
+            </a>
           </div>
         ))}
       </div>
