@@ -9,7 +9,11 @@ import muiTheme from "../theme";
 
 export default function RootLayout({ children }) {
   return (
+<<<<<<< HEAD
     <html lang="en">
+=======
+    <html lang="pt-br">
+>>>>>>> ia
       <body>
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ThemeProvider theme={muiTheme}>

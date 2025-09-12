@@ -1,134 +1,121 @@
-import { Box, Typography } from "@mui/material";
-import Image from "next/image";
-import styles from "./chatbot.module.css";
+"use client";
 
-const Chatbot = () => {
+import { useState } from "react";
+import {
+  ArrowLeft,
+  Send,
+  Mic,
+  Map,
+  Clock,
+  CircleQuestionMark,
+  Navigation,
+} from "lucide-react";
+import "./chatbot.css";
+
+export default function Chatbot() {
+  const [message, setMessage] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
+
+  const suggestions = [
+    {
+     icon: <CircleQuestionMark size={16} />,
+      text: "Descrição dos tipos de roteiros",
+      category: "Sobre o App",
+    },
+    {
+      icon: <Clock size={16} />,
+      text: "Qual o horário de funcionamento do MASP?",
+      category: "Horários e Funcionamento",
+    },
+    {
+      icon: <Map size={16} />,
+      text: "É minha primeira vez em SP. Qual roteiro devo fazer?",
+      category: "Roteiros",
+    },
+    {
+      icon: <Navigation size={16} />,
+      text: "Como chegar no Copan?",
+      category: "Navegação",
+    },
+  ];
+
   return (
-    <Box className={styles.chatbot}>
-      <Box className={styles.interactionWrapper}>
-        <Box className={styles.interaction}>
-          <Box className={styles.response}>
-            <Box className={styles.metadata}>
-              <Image
-                className={styles.profileIcon}
-                loading="lazy"
-                width={12}
-                height={19}
-                sizes="100vw"
-                alt=""
-                src="/Profile.svg"
-              />
-              <Box className={styles.metadataChild} />
-            </Box>
-          </Box>
-          <Typography
-            className={styles.maia}
-            variant="inherit"
-            variantMapping={{ inherit: "h1" }}
-            sx={{ fontWeight: "600" }}
-          >
-            maIA
-          </Typography>
-        </Box>
-      </Box>
-      <section className={styles.request}>
-        <Box className={styles.input}>
-          <Box className={styles.query}>
-            <Box className={styles.questionArea}>
-              <Box className={styles.wrapperIndicator}>
-                <Image
-                  className={styles.indicatorIcon}
-                  loading="lazy"
-                  width={52.2}
-                  height={49.2}
-                  sizes="100vw"
-                  alt=""
-                  src="/Indicator2.svg"
-                />
-              </Box>
-              <Box className={styles.options}>
-                <Box className={styles.optionsChild} />
-                <Box className={styles.confirmation}>
-                  <Box className={styles.greeting}>
-                    <Typography
-                      className={styles.ol}
-                      variant="inherit"
-                      variantMapping={{ inherit: "h3" }}
-                      sx={{ fontWeight: "700" }}
-                    >
-                      Olá!
-                    </Typography>
-                    <div className={styles.oQueVoc}>
-                      O que você gostaria de saber?
-                    </div>
-                  </Box>
-                </Box>
-                <Box className={styles.rectangleParent}>
-                  <Box className={styles.frameChild} />
-                  <Box className={styles.selectionArea} />
-                </Box>
-              </Box>
-            </Box>
-          </Box>
-          <Box className={styles.feedback}>
-            <Box className={styles.wrapperResponseMarker}>
-              <Image
-                className={styles.indicatorIcon}
-                loading="lazy"
-                width={52.2}
-                height={49.2}
-                sizes="100vw"
-                alt=""
-                src="/Indicator2.svg"
-              />
-            </Box>
-            <Box className={styles.submission}>
-              <Box className={styles.submissionChild} />
-              <Box className={styles.inputDisplay}>
-                <div className={styles.pergunteOQue}>
-                  Pergunte o que quiser!
-                </div>
-              </Box>
-              <Box className={styles.submissionItem} />
-            </Box>
-          </Box>
-        </Box>
-      </section>
-      <Box className={styles.prompt}>
-        <Box className={styles.promptChild} />
-        <div className={styles.comoPossoIr}>Como posso ir ao masp?</div>
-        <Image
-          className={styles.enviar1Icon}
-          loading="lazy"
-          width={20}
-          height={20}
-          sizes="100vw"
-          alt=""
-          src="/enviar-1@2x.png"
-        />
-        <Box className={styles.attachmentIcons}>
-          <Image
-            className={styles.microfone1Icon}
-            loading="lazy"
-            width={20}
-            height={20}
-            sizes="100vw"
-            alt=""
-            src="/microfone-1@2x.png"
-          />
-          <Image
-            className={styles.clipeDePapel1Icon}
-            loading="lazy"
-            width={20}
-            height={20}
-            sizes="100vw"
-            alt=""
-            src="/clipe-de-papel-1@2x.png"
-          />
-        </Box>
-      </Box>
-    </Box>
-  );
-};
+    <div className="chat-container">
+      {/* Header */}
+      <div className="chat-header">
+        <button className="icon-button">
+          <ArrowLeft size={20} />
+        </button>
+        <div className="header-info">
+          <div className="avatar">M</div>
+          <div>
+            <h1 className="chat-title">Maia</h1>
+            <div className="status">
+              <div className="status-dot"></div>
+              <span>Online</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-export default Chatbot;
+      {/* Chat Area */}
+      <div className="chat-body">
+        {/* Welcome Message */}
+        <div className="message">
+          <div className="avatar">M</div>
+          <div className="message-bubble">
+            <p className="welcome">Olá! 👋</p>
+            <p>Sou a Maia, como posso te ajudar hoje?</p>
+          </div>
+        </div>
+
+        {/* Suggestions */}
+        <div className="suggestions">
+          <p className="suggestions-title">Sugestões para começar:</p>
+          <div className="suggestions-grid">
+            {suggestions.map((s, i) => (
+              <button key={i} className="suggestion">
+                <div className="suggestion-icon">{s.icon}</div>
+                <div>
+                  <p className="suggestion-text">{s.text}</p>
+                  <p className="suggestion-category">{s.category}</p>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Typing Indicator */}
+        {isTyping && (
+          <div className="message">
+            <div className="avatar">M</div>
+            <div className="typing-indicator">
+              <div className="dot"></div>
+              <div className="dot delay1"></div>
+              <div className="dot delay2"></div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Input Area */}
+      <div className="chat-input">
+        <input
+          type="text"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          placeholder="Pergunte alguma coisa"
+        />
+        <button className="icon-button">
+          <Mic size={16} />
+        </button>
+        <button className="send-button" disabled={!message.trim()}>
+          <Send size={16} />
+        </button>
+      </div>
+      <p className="disclaimer">
+        Maia pode cometer erros. Verifique informações importantes.
+      </p>
+    </div>
+  );
+}
