@@ -1,134 +1,105 @@
+"use client"; // ESSENCIAL: Garanta que esta linha esteja no topo.
+
+// Hooks do React que vamos usar para gerenciar o estado do chat
+import { useState, useEffect, useRef } from 'react';
+
+// Seus imports existentes
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import styles from "./chatbot.module.css";
 
-const Chatbot = () => {
+// Usando o seu componente Chatbot!
+export default function Chatbot() {
+  // --- INÍCIO DA LÓGICA DO CHAT (copiada do exemplo anterior) ---
+
+  const [sessionId, setSessionId] = useState('');
+  const [messages, setMessages] = useState([]); // Guarda o histórico da conversa
+  const [input, setInput] = useState('');       // O que o usuário está digitando
+  const [isLoading, setIsLoading] = useState(false);
+  const chatEndRef = useRef(null); // Usado para rolar o chat para a última mensagem
+
+  // Efeito que roda uma vez para criar o Session ID e a mensagem de boas-vindas
+  useEffect(() => {
+    let storedSessionId = localStorage.getItem('maiaSessionId');
+    if (!storedSessionId) {
+      storedSessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substring(2, 9);
+      localStorage.setItem('maiaSessionId', storedSessionId);
+    }
+    setSessionId(storedSessionId);
+    
+    setMessages([{ sender: 'MaIA', text: 'Olá! Como posso te ajudar a descobrir seu roteiro ideal?' }]);
+  }, []);
+
+  // Efeito que rola a tela para baixo a cada nova mensagem
+  useEffect(() => {
+    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
+
+  // Função chamada quando o usuário envia uma mensagem
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!input.trim() || isLoading) return;
+
+    const userMessage = { sender: 'Você', text: input };
+    setMessages(prev => [...prev, userMessage]);
+    setInput('');
+    setIsLoading(true);
+
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: input, sessionId: sessionId }),
+      });
+
+      const data = await response.json();
+
+      // ADICIONE ESTA LINHA PARA VER A RESPOSTA DA NOSSA API
+      console.log("RESPOSTA DA NOSSA API /api/chat:", JSON.stringify(data, null, 2));
+      
+      const aiMessage = { sender: 'MaIA', text: data.reply };
+      setMessages(prev => [...prev, aiMessage]);
+
+    } catch (error) {
+      const errorMessage = { sender: 'MaIA', text: 'Desculpe, estou com problemas de conexão.' };
+      setMessages(prev => [...prev, errorMessage]);
+      console.error("Erro no chat:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // --- FIM DA LÓGICA DO CHAT ---
+
   return (
     <Box className={styles.chatbot}>
+      {/* Área onde as mensagens da conversa serão exibidas */}
       <Box className={styles.interactionWrapper}>
-        <Box className={styles.interaction}>
-          <Box className={styles.response}>
-            <Box className={styles.metadata}>
-              <Image
-                className={styles.profileIcon}
-                loading="lazy"
-                width={12}
-                height={19}
-                sizes="100vw"
-                alt=""
-                src="/Profile.svg"
-              />
-              <Box className={styles.metadataChild} />
-            </Box>
+        {messages.map((msg, index) => (
+          <Box key={index} className={msg.sender === 'Você' ? styles.userMessage : styles.aiMessage}>
+            <Typography variant="body1"><strong>{msg.sender}:</strong> {msg.text}</Typography>
           </Box>
-          <Typography
-            className={styles.maia}
-            variant="inherit"
-            variantMapping={{ inherit: "h1" }}
-            sx={{ fontWeight: "600" }}
-          >
-            maIA
-          </Typography>
-        </Box>
+        ))}
+        {/* Mostra "digitando..." enquanto a IA pensa */}
+        {isLoading && <Typography variant="body2">MaIA está digitando...</Typography>}
+        {/* Elemento invisível para ajudar a rolar a tela */}
+        <div ref={chatEndRef} />
       </Box>
-      <section className={styles.request}>
-        <Box className={styles.input}>
-          <Box className={styles.query}>
-            <Box className={styles.questionArea}>
-              <Box className={styles.wrapperIndicator}>
-                <Image
-                  className={styles.indicatorIcon}
-                  loading="lazy"
-                  width={52.2}
-                  height={49.2}
-                  sizes="100vw"
-                  alt=""
-                  src="/Indicator2.svg"
-                />
-              </Box>
-              <Box className={styles.options}>
-                <Box className={styles.optionsChild} />
-                <Box className={styles.confirmation}>
-                  <Box className={styles.greeting}>
-                    <Typography
-                      className={styles.ol}
-                      variant="inherit"
-                      variantMapping={{ inherit: "h3" }}
-                      sx={{ fontWeight: "700" }}
-                    >
-                      Olá!
-                    </Typography>
-                    <div className={styles.oQueVoc}>
-                      O que você gostaria de saber?
-                    </div>
-                  </Box>
-                </Box>
-                <Box className={styles.rectangleParent}>
-                  <Box className={styles.frameChild} />
-                  <Box className={styles.selectionArea} />
-                </Box>
-              </Box>
-            </Box>
-          </Box>
-          <Box className={styles.feedback}>
-            <Box className={styles.wrapperResponseMarker}>
-              <Image
-                className={styles.indicatorIcon}
-                loading="lazy"
-                width={52.2}
-                height={49.2}
-                sizes="100vw"
-                alt=""
-                src="/Indicator2.svg"
-              />
-            </Box>
-            <Box className={styles.submission}>
-              <Box className={styles.submissionChild} />
-              <Box className={styles.inputDisplay}>
-                <div className={styles.pergunteOQue}>
-                  Pergunte o que quiser!
-                </div>
-              </Box>
-              <Box className={styles.submissionItem} />
-            </Box>
-          </Box>
-        </Box>
-      </section>
-      <Box className={styles.prompt}>
-        <Box className={styles.promptChild} />
-        <div className={styles.comoPossoIr}>Como posso ir ao masp?</div>
-        <Image
-          className={styles.enviar1Icon}
-          loading="lazy"
-          width={20}
-          height={20}
-          sizes="100vw"
-          alt=""
-          src="/enviar-1@2x.png"
+
+      {/* Formulário para o usuário digitar a mensagem */}
+      <form onSubmit={handleSubmit} className={styles.inputForm}>
+        <input
+          className={styles.textInput}
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Converse com a MaIA..."
+          disabled={isLoading}
         />
-        <Box className={styles.attachmentIcons}>
-          <Image
-            className={styles.microfone1Icon}
-            loading="lazy"
-            width={20}
-            height={20}
-            sizes="100vw"
-            alt=""
-            src="/microfone-1@2x.png"
-          />
-          <Image
-            className={styles.clipeDePapel1Icon}
-            loading="lazy"
-            width={20}
-            height={20}
-            sizes="100vw"
-            alt=""
-            src="/clipe-de-papel-1@2x.png"
-          />
-        </Box>
-      </Box>
+        <button type="submit" className={styles.sendButton} disabled={isLoading}>
+          Enviar
+        </button>
+      </form>
     </Box>
   );
-};
-
-export default Chatbot;
+}
