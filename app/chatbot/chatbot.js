@@ -18,7 +18,7 @@ export default function Chatbot() {
 
   const suggestions = [
     {
-      icon: <Map size={16} />,
+     icon: <CircleQuestionMark size={16} />,
       text: "Descrição dos tipos de roteiros",
       category: "Sobre o App",
     },
@@ -28,7 +28,7 @@ export default function Chatbot() {
       category: "Horários e Funcionamento",
     },
     {
-      icon: <CircleQuestionMark size={16} />,
+      icon: <Map size={16} />,
       text: "É minha primeira vez em SP. Qual roteiro devo fazer?",
       category: "Roteiros",
     },
