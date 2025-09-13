@@ -8,6 +8,11 @@ import styles from "./seleo-de-tipo-de-roteiro2033.module.css";
 const SeleoDeTipoDeRoteiro2033 = () => {
   const router = useRouter();
 
+  // Função para o botão Voltar
+  const onVoltarClick = useCallback(() => {
+    router.back(); // Esta função navega para a página anterior no histórico
+  }, [router]);
+
   const onRaizContainerClick = useCallback(() => {
     router.push("/roteiros-raiz204");
   }, [router]);
@@ -22,15 +27,20 @@ const SeleoDeTipoDeRoteiro2033 = () => {
 
   return (
     <Box className={styles.seleoDeTipoDeRoteiro20}>
-      <Box className={styles.voltar}>
+      {/* 1. Adicionado o onClick e um estilo para o cursor */}
+      <Box
+        className={styles.voltar}
+        onClick={onVoltarClick}
+        sx={{ cursor: "pointer" }}
+      >
         <Image
           className={styles.vectorIcon}
           loading="lazy"
-          width={12}
-          height={20}
+          width={35}
+          height={35}
           sizes="100vw"
-          alt=""
-          src="/Vector22.svg"
+          alt="Botão de voltar"
+          src="/Bot-o-de-Voltar.svg"
         />
       </Box>
       <section className={styles.body}>
