@@ -31,7 +31,7 @@ const SeleoDeTipoDeRoteiro2033 = () => {
       <Box
         className={styles.voltar}
         onClick={onVoltarClick}
-        sx={{ cursor: "pointer" }}
+        sx={{ cursor: "pointer", width: 'fit-content' }}
       >
         <Image
           className={styles.vectorIcon}
