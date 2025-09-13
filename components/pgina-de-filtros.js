@@ -3,15 +3,16 @@ import Image from "next/image";
 import Favoritar from "./favoritar";
 import PropTypes from "prop-types";
 import styles from "./pgina-de-filtros.module.css";
+import FiltroTiposDeRoteiros from "./filtro-tipos-de-roteiros"
 
 const PginaDeFiltros = ({
-  className = "",
-  filtroAtivo = "Cultural",
+  className,
+  filtroAtivo,
   mASPCultural,
   doMuseuCenaArtsticaVibrante,
   obeliscoCultural,
   museuDoIpirangaCultural,
-}) => {
+  }) => {
   return (
     <section
       className={[styles.root, className].join(" ")}
@@ -33,60 +34,7 @@ const PginaDeFiltros = ({
             <Box className={styles.detalheChild} />
           </Box>
         </Box>
-        <Box className={styles.filtro}>
-          <Button
-            className={styles.culturalFiltroPadro}
-            disableElevation
-            variant="contained"
-            sx={{
-              textTransform: "none",
-              color: "#fff",
-              fontSize: "12",
-              background: "#8662b4",
-              border: "#8662b4 solid 1px",
-              borderRadius: "5px",
-              "&:hover": { background: "#8662b4" },
-              width: 88,
-              height: 22,
-            }}
-          >
-            Cultural
-          </Button>
-          <Button
-            className={styles.naturalFiltroPadro}
-            disableElevation
-            variant="outlined"
-            sx={{
-              textTransform: "none",
-              color: "#0f0f0f",
-              fontSize: "12",
-              borderColor: "#0f0f0f",
-              borderRadius: "5px",
-              "&:hover": { borderColor: "#0f0f0f" },
-              width: 88,
-              height: 22,
-            }}
-          >
-            Natural
-          </Button>
-          <Button
-            className={styles.raizFiltroPadro}
-            disableElevation
-            variant="outlined"
-            sx={{
-              textTransform: "none",
-              color: "#0f0f0f",
-              fontSize: "12",
-              borderColor: "#0f0f0f",
-              borderRadius: "5px",
-              "&:hover": { borderColor: "#0f0f0f" },
-              width: 88,
-              height: 22,
-            }}
-          >
-            Raiz
-          </Button>
-        </Box>
+        <FiltroTiposDeRoteiros filtroAtivo={filtroAtivo} />
         <Box className={styles.cardCultural3}>
           <Box className={styles.imagem}>
             <Box className={styles.detalhe} />
