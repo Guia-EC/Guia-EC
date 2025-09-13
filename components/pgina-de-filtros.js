@@ -13,6 +13,7 @@ const PginaDeFiltros = ({
   obeliscoCultural,
   museuDoIpirangaCultural,
   }) => {
+    
   return (
     <section
       className={[styles.root, className].join(" ")}
