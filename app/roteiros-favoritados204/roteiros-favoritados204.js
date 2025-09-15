@@ -5,6 +5,7 @@ import Image from "next/image";
 import Favoritar13 from "../../components/favoritar13";
 import { useRouter } from "next/navigation";
 import styles from "./roteiros-favoritados204.module.css";
+import Navbar from "../../components/navbar";
 
 const RoteirosFavoritados204 = () => {
   const router = useRouter();
@@ -202,63 +203,7 @@ const RoteirosFavoritados204 = () => {
           </Box>
         </Box>
       </section>
-      <section className={styles.navbar}>
-        <Box className={styles.navbarOptions}>
-          <Image
-            className={styles.homeButtomIcon}
-            loading="lazy"
-            width={32}
-            height={29}
-            sizes="100vw"
-            alt=""
-            src="/Home-Buttom.svg"
-            onClick={onHomeButtomIconClick}
-          />
-          <Image
-            className={styles.favoritesButtomIcon}
-            loading="lazy"
-            width={28.9}
-            height={27.9}
-            sizes="100vw"
-            alt=""
-            src="/Favorites-Buttom2.svg"
-          />
-          <Box
-            className={styles.routesButtom}
-            onClick={onRoutesButtomContainerClick}
-          >
-            <Box className={styles.boto3} />
-            <Image
-              className={styles.imgDistnciaIcon}
-              loading="lazy"
-              width={44.6}
-              height={44.6}
-              sizes="100vw"
-              alt=""
-              src="/Img-Dist-ncia1@2x.png"
-            />
-          </Box>
-          <Image
-            className={styles.iaButtomIcon}
-            loading="lazy"
-            width={31.7}
-            height={31.7}
-            sizes="100vw"
-            alt=""
-            src="/Ia-Buttom1@2x.png"
-            onClick={onIaButtomIconClick}
-          />
-          <Image
-            className={styles.iaButtomIcon}
-            width={31.7}
-            height={31.7}
-            sizes="100vw"
-            alt=""
-            src="/User-Buttom1@2x.png"
-            onClick={onUserButtomIconClick}
-          />
-        </Box>
-      </section>
+      <Navbar activePage="favorites" />
     </Box>
   );
 };
