@@ -1,0 +1,154 @@
+.body {
+  width: 24.563rem;
+  height: 43.688rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-40) 0 0.812rem var(--padding-30);
+  box-sizing: border-box;
+  gap: var(--gap-40);
+  z-index: 1;
+  text-align: left;
+  font-size: var(--font-size-18);
+  color: var(--color-black);
+  font-family: var(--font-poppins);
+}
+.ttulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.roteiroSugerido {
+  margin: 0;
+  position: relative;
+}
+.detalhesECards {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-14);
+  font-size: var(--font-size-16);
+  color: var(--color-gray-200);
+}
+.rota {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.routeDetails {
+  width: 1.438rem;
+  height: 1.438rem;
+  position: relative;
+  border-radius: 50%;
+  background-color: var(--color-orange-100);
+}
+.bodyRouteDetails,
+.routeDetails3 {
+  width: 0.063rem;
+  height: 3.375rem;
+  position: relative;
+  border-right: 1px solid var(--color-orange-100);
+  box-sizing: border-box;
+}
+.routeDetails3 {
+  height: 16.063rem;
+}
+.paradas,
+.ponto1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.paradas {
+  gap: 3.437rem;
+}
+.ponto1 {
+  width: 2.938rem;
+}
+.masp {
+  width: 2.938rem;
+  position: relative;
+  display: inline-block;
+}
+.ponto2 {
+  width: 17.875rem;
+  border-radius: 0 0 var(--br-5) var(--br-5);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--gap-10);
+  color: var(--color-black);
+}
+.ttuloEBoto {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+.charmeDaPaulista {
+  width: 10.5rem;
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.textoEImagem {
+  align-self: stretch;
+  border-radius: var(--br-5);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: justify;
+  font-size: var(--font-size-12);
+}
+.charme1Icon {
+  align-self: stretch;
+  height: 6.5rem;
+  position: relative;
+  border-radius: var(--br-5) var(--br-5) 0 0;
+  max-width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.texto {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-5) 0;
+}
+.lanchoneteBar24H {
+  flex: 1;
+  position: relative;
+}
+.ponto3 {
+  width: 18.188rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-10);
+}
+.mirante9De {
+  position: relative;
+}
+.imagemETexto {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-5);
+  text-align: justify;
+  font-size: var(--font-size-12);
+}
+.miranre11 {
+  height: 6.313rem;
+  border-radius: var(--br-5) var(--br-5) 0 0;
+  max-width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.espaoRevitalizadoDesde,
+.miranre11 {
+  align-self: stretch;
+  position: relative;
+}
