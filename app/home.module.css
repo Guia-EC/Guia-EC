@@ -5,7 +5,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: flex-start;
   padding: var(--padding-80) 0 8.75rem;
   box-sizing: border-box;
@@ -89,4 +89,88 @@
 .iaButtomIcon {
   width: 1.981rem;
   cursor: pointer;
+}
+
+
+/* Por padrão, o título é visível (bom para mobile-first) */
+.tituloPrincipalMobile1 {
+  position: relative;
+  padding-bottom: 12px;
+  margin-bottom: 24px; 
+  font-size: 15px;
+  font-family: "Poppins", "Sans-serif";
+  font-weight: 600;
+  margin-bottom: 22px;
+  padding:0 20px;
+}
+
+.tituloPrincipalMobile1::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 20px;
+  width:65%;
+  height: 1px;
+  background-color: #000000;
+}
+
+.tituloPrincipalMobile2 {
+  position: relative;
+  padding-bottom: 12px;
+  margin-bottom: 24px; 
+  font-size: 15px;
+  font-family: "Poppins", "Sans-serif";
+  font-weight: 600;
+  margin-bottom: 22px;
+  padding:0 20px;
+}
+
+.tituloPrincipalMobile2::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 20px;
+  width:70%;
+  height: 1px;
+  background-color: #000000;
+}
+
+.tituloPrincipalMobile3 {
+  position: relative;
+  padding-bottom: 12px;
+  margin-bottom: 24px; 
+  font-size: 15px;
+  font-family: "Poppins", "Sans-serif";
+  font-weight: 600;
+  margin-bottom: 22px;
+  padding:0 20px;
+}
+
+.tituloPrincipalMobile3::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 20px;
+  width:80%;
+  height: 1px;
+  background-color: #000000;
+}
+
+@media (min-width: 769px) {
+  .tituloPrincipalMobile1 {
+    display: none; /* A mágica acontece aqui: esconde o elemento */
+  }
+
+  .tituloPrincipalMobile2 {
+    display: none; /* A mágica acontece aqui: esconde o elemento */
+  }
+
+  .tituloPrincipalMobile {
+    display: none; /* A mágica acontece aqui: esconde o elemento */
+  }
+}
+
+.home20 > *:not(.navbar) {
+  width: 100%;
+  max-width: 100%;
 }

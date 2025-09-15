@@ -23,7 +23,7 @@ const CarrosselInifinito5 = ({ className = "", property1 = "Default" }) => {
           height={207}
           sizes="100vw"
           alt=""
-          src="/Image-Rect2@2x.png"
+          src="/image-Rect.png"
           onClick={onImageRectClick}
         >
           
@@ -35,7 +35,7 @@ const CarrosselInifinito5 = ({ className = "", property1 = "Default" }) => {
           height={207}
           sizes="100vw"
           alt=""
-          src="/Image-Rect-Two@2x.png"
+          src="/image-RectTwo.png"
         />
         <Image
           className={styles.imageRectThree}
@@ -44,7 +44,7 @@ const CarrosselInifinito5 = ({ className = "", property1 = "Default" }) => {
           height={207}
           sizes="100vw"
           alt=""
-          src="/Image-Rect-Three@2x.png"
+          src="/image-RectThree.png"
         />
         <Image
           className={styles.imageRectFour}
@@ -53,7 +53,7 @@ const CarrosselInifinito5 = ({ className = "", property1 = "Default" }) => {
           height={207}
           sizes="100vw"
           alt=""
-          src="/Image-Rect-Four@2x.png"
+          src="/image-RectFour.png"
         />
         <Image
           className={styles.imageRectFive}
@@ -62,7 +62,7 @@ const CarrosselInifinito5 = ({ className = "", property1 = "Default" }) => {
           height={207}
           sizes="100vw"
           alt=""
-          src="/Image-Rect-Five@2x.png"
+          src="/image-RectFive.png"
         />
         <Image
           className={styles.imageRectSix}

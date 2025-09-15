@@ -6,7 +6,8 @@
   justify-content: flex-start;
 }
 .carroussel1 {
-  align-self: stretch;
+  width: 100%;
+  align-items: flex-start;
   gap: var(--gap-16);
   z-index: 0;
   text-align: justify;
@@ -36,6 +37,7 @@
   display: inline-block;
 }
 .carrossel {
+  margin: 0; /* remove centralização automática */
   align-self: stretch;
   display: flex;
   flex-direction: column;

@@ -24,7 +24,7 @@ const CarrosselLoopInifinito4 = ({ className = "", property1 = "Default" }) => {
           height={207}
           sizes="100vw"
           alt=""
-          src="/Rectangle-96@2x.png"
+          src="/Sympla1.png"
           onClick={onRectangleImageClick}
         />
         <Image
@@ -34,7 +34,7 @@ const CarrosselLoopInifinito4 = ({ className = "", property1 = "Default" }) => {
           height={207}
           sizes="100vw"
           alt=""
-          src="/Rectangle-97@2x.png"
+          src="/Sympla2.png"
         />
         <Image
           className={styles.frameInner}
@@ -43,16 +43,7 @@ const CarrosselLoopInifinito4 = ({ className = "", property1 = "Default" }) => {
           height={207}
           sizes="100vw"
           alt=""
-          src="/Rectangle-98@2x.png"
-        />
-        <Image
-          className={styles.rectangleIcon}
-          loading="lazy"
-          width={349}
-          height={207}
-          sizes="100vw"
-          alt=""
-          src="/Rectangle-96@2x.png"
+          src="/Sympla3.png"
         />
       </Box>
     </Box>

@@ -1,0 +1,8 @@
+/* components/DesktopBannerGrid.module.css */
+.gridContainer {
+  width: 100% !important;       /* ocupa toda a largura */
+  max-width: none !important;   /* remove limite fixo */
+  margin-left: 0 !important;    /* encosta à esquerda */
+  margin-right: auto !important;/* evita centralização */
+  justify-content: flex-start !important;
+}
