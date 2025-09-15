@@ -18,11 +18,9 @@ export default function Chatbot() {
   const [input, setInput] = useState(""); // O que o usuário está digitando
   const [isLoading, setIsLoading] = useState(false); // Controla o indicador "digitando..."
   const chatEndRef = useRef(null); // Para rolar o chat para a última mensagem
-
-  // ===== NOVA ALTERAÇÃO 1: Estado para guardar a localização do usuário =====
   const [userLocation, setUserLocation] = useState(null); // Ex: { latitude: -23.55, longitude: -46.63 }
 
-  // Efeito que roda uma vez para criar o Session ID
+  // Efeito que roda uma vez para criar o Session ID e pegar a localização
   useEffect(() => {
     let storedSessionId = localStorage.getItem("maiaSessionId");
     if (!storedSessionId) {
@@ -34,6 +32,26 @@ export default function Chatbot() {
       localStorage.setItem("maiaSessionId", storedSessionId);
     }
     setSessionId(storedSessionId);
+
+    // Tenta obter a geolocalização assim que o chat carrega
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const newLocation = {
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+          };
+          // ===== INÍCIO DA LINHA DE DEPURAÇÃO =====
+          console.log("GEOLOCALIZAÇÃO OBTIDA NO FRONTEND:", newLocation);
+          // ===== FIM DA LINHA DE DEPURAÇÃO =====
+          setUserLocation(newLocation);
+        },
+        (error) => {
+          console.error("ERRO DE GEOLOCALIZAÇÃO:", error.message);
+          setUserLocation(null); // Garante que a localização seja nula em caso de erro
+        }
+      );
+    }
   }, []);
 
   // Efeito que rola a tela para baixo a cada nova mensagem
@@ -45,34 +63,30 @@ export default function Chatbot() {
   const sendMessage = async (messageText) => {
     if (!messageText.trim() || isLoading) return;
 
-    // Adiciona a mensagem do usuário imediatamente à interface
     const userMessage = { sender: "Você", text: messageText };
     setMessages((prev) => [...prev, userMessage]);
     setInput(""); // Limpa o input após o envio
     setIsLoading(true);
 
     try {
-      // Chama a nossa API interna do Next.js
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           message: messageText,
           sessionId: sessionId,
-          location: userLocation // Envia o objeto de localização (ou null se não tiver)
+          location: userLocation, // Envia o objeto de localização (ou null se não tiver)
         }),
       });
 
-      const data = await response.json(); // data agora é { reply: "...", mapUrl: "..." }
+      const data = await response.json();
 
-      // Cria o objeto da mensagem da IA com o texto E a URL do mapa
       const aiMessage = {
         sender: "Maia",
         text: data.reply,
-        mapUrl: data.mapUrl || null, // Adiciona a mapUrl, ou null se não existir
+        mapUrl: data.mapUrl || null,
       };
       setMessages((prev) => [...prev, aiMessage]);
-
     } catch (error) {
       const errorMessage = {
         sender: "Maia",
@@ -90,12 +104,11 @@ export default function Chatbot() {
     e.preventDefault();
     sendMessage(input);
   };
-  
+
   // Função para lidar com o clique em uma sugestão
   const handleSuggestionClick = (suggestionText) => {
     sendMessage(suggestionText);
   };
-
 
   const suggestions = [
     {
@@ -122,7 +135,7 @@ export default function Chatbot() {
 
   return (
     <>
-        <style>{`
+      <style>{`
             .chat-container {
               display: flex;
               flex-direction: column;
@@ -478,7 +491,7 @@ export default function Chatbot() {
                     <div key={index} className={`message ${msg.sender === 'Você' ? 'user-message' : 'ai-message'}`}>
                         {msg.sender === 'Maia' && <div className="avatar">M</div>}
                         <div className="message-bubble">
-                            {/* Suporte para quebras de linha na resposta da IA */}
+                            {/* Suporte para quebras de linha e verificação de segurança */}
                             {msg.text && msg.text.split('\n').map((line, i) => (
                                 <p key={i}>{line}</p>
                             ))}
