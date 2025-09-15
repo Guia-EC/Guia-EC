@@ -3,6 +3,7 @@
 import { useCallback } from "react";
 import { Box } from "@mui/material";
 import Image from "next/image";
+import Navbar from "../components/navbar"
 // Seus componentes antigos
 import Carroussel143 from "../components/carroussel143";
 import Slider142 from "../components/slider142";
@@ -10,7 +11,7 @@ import Carroussel243 from "../components/carroussel243";
 import Slider343 from "../components/slider343";
 import Carroussel343 from "../components/carroussel343";
 import { useRouter } from "next/navigation";
-import styles from "./home205.module.css";
+import styles from "./home.module.css";
 
 // Nossos novos componentes e o hook
 import { BannerCarousel } from '../components/BannerCarousel';
@@ -61,66 +62,14 @@ const Home205 = () => {
 
       <Slider343 />
 
-      {/* SEÇÃO DOS BANNERS SYMPLA COM LÓGICA RESPONSIVA */}
+      {/* SEÇÃO DOS BANNERS Airbnb COM LÓGICA RESPONSIVA */}
       <section>
         <h2 className={styles.tituloPrincipalMobile3}>Hospede-se e vivencie de perto pontos <br /> históricos e culturais com a Airbnb</h2>
         {isMobile ? <BannerCarouselAirbnb /> : <DesktopAirbnbBannerGrid />}
       </section>
       
       {/* NAVBAR */}
-      <section className={styles.navbar}>
-        <Box className={styles.navbarOptions}>
-          <Image
-            className={styles.casa2Icon}
-            loading="lazy"
-            width={31.7}
-            height={31.7}
-            alt="Ícone da página inicial"
-            src="/casa-2@2x.png"
-          />
-          <Image
-            className={styles.favoritesButtomIcon}
-            loading="lazy"
-            width={28.9}
-            height={27.9}
-            alt="Ícone de favoritos"
-            src="/Favorites-Buttom.svg"
-            onClick={onFavoritesButtomIconClick}
-          />
-          <Box
-            className={styles.routesButtom}
-            onClick={onRoutesButtomContainerClick}
-          >
-            <Box className={styles.boto} />
-            <Image
-              className={styles.imgDistnciaIcon}
-              loading="lazy"
-              width={44.6}
-              height={44.6}
-              alt="Ícone de rotas"
-              src="/Img-Dist-ncia@2x.png"
-            />
-          </Box>
-          <Image
-            className={styles.iaButtomIcon}
-            loading="lazy"
-            width={31.7}
-            height={31.7}
-            alt="Ícone do chatbot de IA"
-            src="/Ia-Buttom@2x.png"
-            onClick={onIaButtomIconClick}
-          />
-          <Image
-            className={styles.iaButtomIcon}
-            loading="lazy"
-            width={31.7}
-            height={31.7}
-            alt="Ícone de perfil do usuário"
-            src="/User-Buttom@2x.png"
-            onClick={onUserButtomIconClick}
-          />
-        </Box>
-      </section>
+      <Navbar activePage="home"/>
     </Box>
   );
 };
