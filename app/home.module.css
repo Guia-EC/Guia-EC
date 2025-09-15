@@ -158,19 +158,20 @@
 
 @media (min-width: 769px) {
   .tituloPrincipalMobile1 {
-    display: none; /* A mágica acontece aqui: esconde o elemento */
+    display: none; 
   }
 
   .tituloPrincipalMobile2 {
-    display: none; /* A mágica acontece aqui: esconde o elemento */
+    display: none; 
   }
 
   .tituloPrincipalMobile {
-    display: none; /* A mágica acontece aqui: esconde o elemento */
+    display: none;
   }
 }
 
 .home20 > *:not(.navbar) {
   width: 100%;
+  margin-bottom: 1rem;
   max-width: 100%;
 }
