@@ -11,7 +11,7 @@ import Carroussel243 from "../components/carroussel243";
 import Slider343 from "../components/slider343";
 import Carroussel343 from "../components/carroussel343";
 import { useRouter } from "next/navigation";
-import styles from "./home205.module.css";
+import styles from "./home.module.css";
 
 // Nossos novos componentes e o hook
 import { BannerCarousel } from '../components/BannerCarousel';
