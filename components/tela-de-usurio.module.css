@@ -5,7 +5,7 @@
 }
 .telaDeUsurio {
   height: 57.688rem;
-  width: 24.563rem;
+  width: 100%;
   background-color: var(--color-gray-100);
   align-items: center;
   justify-content: center;
@@ -19,10 +19,7 @@
   font-family: var(--font-poppins);
 }
 .cardDeUsurio {
-  height: 10.875rem;
-  align-items: flex-start;
-  justify-content: flex-start;
-  position: relative;
+  height: 10rem;
 }
 .header {
   width: 21.563rem;
@@ -34,22 +31,13 @@
 .nomeEEMail {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
 }
-.body {
-  align-self: stretch;
-  flex: 1;
-  border-radius: 0 0 var(--br-10) var(--br-10);
-  background-color: var(--color-whitesmoke-100);
-  justify-content: flex-end;
-  padding: var(--padding-10) var(--padding-20);
-  z-index: 1;
-}
-.nomeEEMail {
-  justify-content: flex-start;
-}
+
 .douglasRocha {
   position: relative;
+  font-size: var(--font-size-16);
 }
 .douglasrochagmailcom,
 .perfil {
@@ -58,41 +46,34 @@
   text-align: center;
 }
 .perfil {
-  margin: 0 !important;
-  position: absolute;
-  top: 2.188rem;
-  left: 1.25rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   gap: var(--gap-10);
   z-index: 2;
-  font-size: var(--font-size-32);
+  font-size: var(--font-size-40);
   color: var(--color-white);
 }
 .telaDeUsurioPerfil {
-  width: 5.25rem;
+  width: 8rem;
   position: relative;
   border-radius: 50%;
   background-color: var(--color-gray-200);
-  height: 5.25rem;
+  height: 8rem;
   z-index: 0;
+  margin-bottom: 1rem;
 }
 .dr {
   margin: 0 !important;
-  width: 2.688rem;
+  width: 4rem;
   position: absolute;
-  top: 1.125rem;
-  left: 1.313rem;
+  top: 25%;
+  left: 24.5%;
   display: inline-block;
   z-index: 1;
 }
-.meusDados,
-.telaDeUsurioBody {
-  width: 21.563rem;
-  font-size: var(--font-size-16);
-}
+
 .telaDeUsurioBody {
   display: flex;
   flex-direction: column;
@@ -102,16 +83,11 @@
   text-align: center;
   color: var(--color-red);
 }
-.meusDados {
-  border: 0;
-  background-color: transparent;
-  height: 3.375rem;
-  font-family: var(--font-poppins);
-  color: var(--color-black);
-}
+
 .histricoDeRoteiros {
   cursor: pointer;
 }
+.meusDados,
 .faleConosco,
 .gerenciamentoDeSenha,
 .histricoDeRoteiros {
@@ -119,6 +95,7 @@
   height: 3.375rem;
   padding: var(--padding-10);
   box-sizing: border-box;
+  font-size: var(--font-size-16);
 }
 .botoDeSair {
   display: flex;
@@ -127,12 +104,12 @@
   justify-content: flex-start;
   gap: var(--gap-4);
 }
-.logout11 {
-  width: 1rem;
-  max-height: 100%;
-  object-fit: cover;
-}
+
 .logout11,
 .sair {
   position: relative;
+  width: 1rem;
+  max-height: 100%;
+  object-fit: cover;
+  font-size: var(--font-size-16);
 }

@@ -3,10 +3,6 @@ import { useCallback } from "react";
 import {
   Box,
   Typography,
-  TextField,
-  InputAdornment,
-  Icon,
-  IconButton,
   Button,
 } from "@mui/material";
 import Image from "next/image";
@@ -16,6 +12,10 @@ import styles from "./tela-de-usurio.module.css";
 
 const TelaDeUsurio = ({ className = "", tela = "Home" }) => {
   const router = useRouter();
+
+  const onMeusDadosClick = useCallback(() => {
+    router.push("/meus-dados"); // <-- Altere para a rota correta
+  }, [router]);
 
   const onHistricoDeRoteirosClick = useCallback(() => {
     router.push("/histrico-de-roteiros");
@@ -29,6 +29,17 @@ const TelaDeUsurio = ({ className = "", tela = "Home" }) => {
       <Box className={styles.cardDeUsurio}>
         <Box className={styles.header} />
         <Box className={styles.body}>
+           <Box className={styles.perfil}>
+          <Box className={styles.telaDeUsurioPerfil} />
+          <Typography
+            className={styles.dr}
+            variant="inherit"
+            variantMapping={{ inherit: "h1" }}
+            sx={{ fontWeight: "400" }}
+          >
+            DR
+          </Typography>
+        </Box>
           <Box className={styles.nomeEEMail}>
             <Typography
               className={styles.douglasRocha}
@@ -43,48 +54,33 @@ const TelaDeUsurio = ({ className = "", tela = "Home" }) => {
             </div>
           </Box>
         </Box>
-        <Box className={styles.perfil}>
-          <Box className={styles.telaDeUsurioPerfil} />
-          <Typography
-            className={styles.dr}
-            variant="inherit"
-            variantMapping={{ inherit: "h1" }}
-            sx={{ fontWeight: "400" }}
-          >
-            DR
-          </Typography>
-        </Box>
       </Box>
       <Box className={styles.telaDeUsurioBody}>
-        <TextField
+        <Button
           className={styles.meusDados}
-          placeholder="Meus Dados"
+          startIcon={<img width="16px" height="16px" src="/adicionar-usuario-1.png" />}
+          disableElevation
           variant="outlined"
-          slotProps={{
-            input: {
-              startAdornment: (
-                <img
-                  width="16px"
-                  height="16px"
-                  src="/adicionar-usuario-1.png"
-                />
-              ),
-            },
-          }}
           sx={{
-            "& fieldset": { borderColor: "#000" },
-            "& .MuiInputBase-root": {
-              height: "54px",
-              paddingLeft: "10px",
-              borderRadius: "10px",
-            },
-            "& .MuiInputBase-input": { paddingLeft: "10px", color: "#000" },
-            width: "345px",
+            // A linha "justifyContent" foi REMOVIDA daqui
+            textTransform: "none",
+            color: "#000",
+            fontSize: "16",
+            borderColor: "#000",
+            borderRadius: "10px",
+            "&:hover": { borderColor: "#000" },
+            width: 345,
+            height: 54,
           }}
-        />
+          onClick={onMeusDadosClick}
+        >
+          Meus Dados
+        </Button>
+
         <Button
           className={styles.histricoDeRoteiros}
           startIcon={<img width="16px" height="16px" src="/map-1.png" />}
+          // ... resto dos botões que já estavam corretos
           disableElevation
           variant="outlined"
           sx={{
@@ -156,8 +152,6 @@ const TelaDeUsurio = ({ className = "", tela = "Home" }) => {
 
 TelaDeUsurio.propTypes = {
   className: PropTypes.string,
-
-  /** Variant props */
   tela: PropTypes.string,
 };
 
