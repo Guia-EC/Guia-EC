@@ -1,0 +1,100 @@
+.imagemHero,
+.iniciarRoteiro20 {
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+.iniciarRoteiro20 {
+  width: 100%;
+  height: 82.938rem;
+  position: relative;
+  background-color: var(--color-gray-100);
+  flex-direction: column;
+  padding: 0 0 7.125rem;
+  line-height: normal;
+  letter-spacing: normal;
+}
+.imagemHero {
+  align-self: stretch;
+  height: 28.813rem;
+  padding: 4.375rem var(--padding-20) 3.125rem;
+  background-image: url(/Imagem-Hero2@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  z-index: 0;
+}
+.voltarIcon {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  width: 100%;
+  max-height: 100%;
+  height: auto;
+}
+.botoIniciarRoteiro {
+  width: 23.188rem;
+  height: 6.25rem;
+  margin: 0 !important;
+  position: absolute;
+  top: 73.813rem;
+  left: 0.688rem;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  background-color: var(--color-orange-200);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+}
+.iniciarRotaCom {
+  position: relative;
+}
+.iniciarRoteiro20Ttulo,
+.ttulo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.ttulo {
+  margin: 0 !important;
+  position: absolute;
+  top: 20.938rem;
+  left: 1.813rem;
+  z-index: 3;
+  text-align: left;
+  font-size: 4rem;
+  color: var(--color-orange-100);
+  font-family: var(--font-poppins);
+}
+.iniciarRoteiro20Ttulo {
+  justify-content: center;
+}
+.masp,
+.museuDeArte {
+  margin: 0;
+  position: relative;
+  display: inline-block;
+}
+.masp {
+  width: 11.625rem;
+  height: 4.375rem;
+}
+.museuDeArte {
+  width: 18.5rem;
+}
+.descrio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: var(--font-size-12);
+  color: var(--color-black);
+}
+.avenidaPaulista1578 {
+  width: 8.625rem;
+  position: relative;
+  display: inline-block;
+}
