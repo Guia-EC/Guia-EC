@@ -14,7 +14,7 @@ const TelaDeUsurio = ({ className = "", tela = "Home" }) => {
   const router = useRouter();
 
   const onMeusDadosClick = useCallback(() => {
-    router.push("/meus-dados"); // <-- Altere para a rota correta
+    router.push("/meus-dados"); 
   }, [router]);
 
   const onHistricoDeRoteirosClick = useCallback(() => {
@@ -26,26 +26,22 @@ const TelaDeUsurio = ({ className = "", tela = "Home" }) => {
       className={[styles.telaDeUsurio, className].join(" ")}
       data-tela={tela}
     >
-      <Box className={styles.cardDeUsurio}>
-        <Box className={styles.header} />
+       <Box className={styles.header} />
         <Box className={styles.body}>
-           <Box className={styles.perfil}>
-          <Box className={styles.telaDeUsurioPerfil} />
-          <Typography
-            className={styles.dr}
-            variant="inherit"
-            variantMapping={{ inherit: "h1" }}
-            sx={{ fontWeight: "400" }}
-          >
-            DR
-          </Typography>
-        </Box>
+          <Box className={styles.perfil}>
+            <Box className={styles.telaDeUsurioPerfil} />
+            <Typography
+              className={styles.dr}
+              variant="h1" 
+              sx={{ fontWeight: "400", fontSize: '4rem' }}
+            >
+              DR
+            </Typography>
+          </Box>
           <Box className={styles.nomeEEMail}>
             <Typography
               className={styles.douglasRocha}
-              variant="inherit"
-              variantMapping={{ inherit: "b" }}
-              sx={{ fontWeight: "700" }}
+              sx={{ fontWeight: "700", fontSize: '20px' }}
             >
               Douglas Rocha
             </Typography>
@@ -54,7 +50,6 @@ const TelaDeUsurio = ({ className = "", tela = "Home" }) => {
             </div>
           </Box>
         </Box>
-      </Box>
       <Box className={styles.telaDeUsurioBody}>
         <Button
           className={styles.meusDados}
@@ -62,7 +57,6 @@ const TelaDeUsurio = ({ className = "", tela = "Home" }) => {
           disableElevation
           variant="outlined"
           sx={{
-            // A linha "justifyContent" foi REMOVIDA daqui
             textTransform: "none",
             color: "#000",
             fontSize: "16",
@@ -80,7 +74,6 @@ const TelaDeUsurio = ({ className = "", tela = "Home" }) => {
         <Button
           className={styles.histricoDeRoteiros}
           startIcon={<img width="16px" height="16px" src="/map-1.png" />}
-          // ... resto dos botões que já estavam corretos
           disableElevation
           variant="outlined"
           sx={{
