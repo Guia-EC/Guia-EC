@@ -4,12 +4,26 @@ import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import styles from "./seleo-de-tipo-de-roteiro2014.module.css";
+import { Link } from "lucide-react";
+
 
 const SeleoDeTipoDeRoteiro2014 = () => {
   const router = useRouter();
 
   const onVectorIconClick = useCallback(() => {
     router.push("/info-ibira202");
+  }, [router]);
+
+    const onContainerClick = useCallback(() => {
+    router.push("/IniciarIbira");
+  }, [router]);
+
+  const onContainerClick1 = useCallback(() => {
+    router.push("/roteiros-naturais204");
+  }, [router]);
+
+  const onContainerClick2 = useCallback(() => {
+    router.push("/roteiros-culturais204");
   }, [router]);
 
   return (
@@ -93,7 +107,7 @@ const SeleoDeTipoDeRoteiro2014 = () => {
               </Box>
             </Box>
           </Box>
-          <Box className={styles.raiz}>
+          <Box className={styles.raiz} onClick={onContainerClick}>
             <Box className={styles.imagem2}>
               <Box className={styles.detalhe3} />
             </Box>
