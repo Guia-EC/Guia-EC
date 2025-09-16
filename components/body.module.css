@@ -44,24 +44,26 @@
 .bodyRouteDetails,
 .routeDetails3 {
   width: 0.063rem;
-  height: 3.375rem;
+  height: 3.9rem;
   position: relative;
   border-right: 1px solid var(--color-orange-100);
   box-sizing: border-box;
 }
 .routeDetails3 {
-  height: 16.063rem;
+  height: 15.6rem;
 }
 .paradas,
 .ponto1 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-left: 0.8rem;
 }
 .paradas {
-  gap: 3.437rem;
+  gap: 3.8rem;
 }
 .ponto1 {
+  margin: 0 !important;
   width: 2.938rem;
 }
 .masp {

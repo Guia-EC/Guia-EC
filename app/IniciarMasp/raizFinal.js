@@ -21,8 +21,8 @@ const IniciarRoteiro20 = () => {
       <section className={styles.imagemHero}>
         <Image
           className={styles.voltarIcon}
-          width={24}
-          height={38}
+          width={0}
+          height={0}
           sizes="100vw"
           alt=""
           src="/Voltar.svg"
@@ -37,6 +37,8 @@ const IniciarRoteiro20 = () => {
         <Typography
           className={styles.iniciarRotaCom}
           variantMapping={{ inherit: "Button" }}
+          sx={{ fontWeight: "600", fontSize: "var(--font-size-20)", color: "white"}}
+          
         >
           Iniciar rota com Google
         </Typography>
