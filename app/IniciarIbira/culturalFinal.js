@@ -4,7 +4,7 @@ import { Typography, Box, Button } from "@mui/material";
 import Image from "next/image";
 import Rota from "../../components/rota";
 import Paradas from "../../components/paradas";
-import styles from "./naturalfinal.module.css";
+import styles from "./culturalFinal.module.css";
 
 const IniciarRoteiro201 = () => {
   const onVoltarIconClick = useCallback(() => {

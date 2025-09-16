@@ -16,6 +16,10 @@ const SeleoDeTipoDeRoteiro207 = () => {
     router.push("/info-masp204");
   }, [router]);
 
+    const onContainerClick = useCallback(() => {
+    router.push("/IniciarMasp");
+  }, [router]);
+
   return (
     <Box className={styles.seleoDeTipoDeRoteiro20}>
       <Box className={styles.voltar} onClick={onVoltarContainerClick}>
@@ -49,7 +53,7 @@ const SeleoDeTipoDeRoteiro207 = () => {
             <Box className={styles.imagem}>
               <Box className={styles.seleoDeTipoDeRoteiro20Detalhe} />
             </Box>
-            <Box className={styles.seleoDeTipoDeRoteiro20Body}>
+            <Box className={styles.seleoDeTipoDeRoteiro20Body} onClick={onContainerClick}>
               <Box className={styles.ttuloETexto}>
                 <Box className={styles.seleoDeTipoDeRoteiro20Ttulo}>
                   <Typography

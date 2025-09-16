@@ -1,6 +1,5 @@
-import NaturalFinal from "./naturalfinal"
-
+import CulturalFinal from "./culturalFinal"
 
 export default function Page() {
-  return <NaturalFinal />;
+  return <CulturalFinal />;
 }

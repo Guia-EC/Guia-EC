@@ -17,15 +17,7 @@ const SeleoDeTipoDeRoteiro2014 = () => {
     const onContainerClick = useCallback(() => {
     router.push("/IniciarIbira");
   }, [router]);
-
-  const onContainerClick1 = useCallback(() => {
-    router.push("/roteiros-naturais204");
-  }, [router]);
-
-  const onContainerClick2 = useCallback(() => {
-    router.push("/roteiros-culturais204");
-  }, [router]);
-
+  
   return (
     <Box className={styles.seleoDeTipoDeRoteiro20}>
       <Box className={styles.voltar}>
