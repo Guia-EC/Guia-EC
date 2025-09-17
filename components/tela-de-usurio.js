@@ -51,7 +51,7 @@ const TelaDeUsurio = ({ className = "", tela = "Home" }) => {
           </Box>
         </Box>
       <Box className={styles.telaDeUsurioBody}>
-        <Button
+        {/* <Button
           className={styles.meusDados}
           startIcon={<img width="16px" height="16px" src="/adicionar-usuario-1.png" />}
           disableElevation
@@ -69,7 +69,7 @@ const TelaDeUsurio = ({ className = "", tela = "Home" }) => {
           onClick={onMeusDadosClick}
         >
           Meus Dados
-        </Button>
+        </Button> */}
 
         <Button
           className={styles.histricoDeRoteiros}
