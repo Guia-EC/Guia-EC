@@ -90,6 +90,7 @@
   overflow: hidden;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 .imagem {
   width: 22.438rem;
