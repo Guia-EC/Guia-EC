@@ -4,12 +4,16 @@ import { Typography, Box, Button } from "@mui/material";
 import Image from "next/image";
 import Rota1 from "../../components/rota1";
 import Paradas1 from "../../components/paradas1";
+import { useRouter } from "next/navigation";
 import styles from "./naturalFinal.module.css";
 
 const IniciarRoteiro202 = () => {
+
+  const router = useRouter();
+
   const onVoltarIconClick = useCallback(() => {
-    // Please sync "Seleção de Tipo de Roteiro 2.0" to the project
-  }, []);
+    router.push("/seleo-de-tipo-de-roteiro2023");
+  }, [router]);
 
   const onBotoIniciarRoteiroClick = useCallback(() => {
     window.open("https://maps.app.goo.gl/uChwBTxnkNbBg1nR9");

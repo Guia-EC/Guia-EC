@@ -5,11 +5,15 @@ import Image from "next/image";
 import Rota from "../../components/rota";
 import Paradas from "../../components/paradas";
 import styles from "./culturalFinal.module.css";
+import { useRouter } from "next/navigation";
 
 const IniciarRoteiro201 = () => {
+
+  const router = useRouter();
+
   const onVoltarIconClick = useCallback(() => {
-    // Please sync "Seleção de Tipo de Roteiro 2.0" to the project
-  }, []);
+    router.push("/seleo-de-tipo-de-roteiro2014");
+  }, [router]);
 
   const onBotoIniciarRoteiroClick = useCallback(() => {
     window.open("https://maps.app.goo.gl/p7bYMRDYXkdxYqAq6");

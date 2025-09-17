@@ -9,7 +9,7 @@ const SeleoDeTipoDeRoteiro207 = () => {
   const router = useRouter();
 
   const onVoltarContainerClick = useCallback(() => {
-    router.push("/seleo-de-tipo-de-roteiro207");
+    router.push("/info-masp204");
   }, [router]);
 
   const onCreditSummaryIconClick = useCallback(() => {
@@ -50,7 +50,7 @@ const SeleoDeTipoDeRoteiro207 = () => {
         </Box>
         <Box className={styles.roteiros}>
           <Box className={styles.raiz}>
-            <Box className={styles.imagem}>
+            <Box className={styles.imagem} onClick={onContainerClick}>
               <Box className={styles.seleoDeTipoDeRoteiro20Detalhe} />
             </Box>
             <Box className={styles.seleoDeTipoDeRoteiro20Body} onClick={onContainerClick}>

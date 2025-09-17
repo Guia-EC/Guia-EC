@@ -4,11 +4,15 @@ import { Button, Typography, Box } from "@mui/material";
 import Image from "next/image";
 import Body from "../../components/body";
 import styles from "./raizFinal.module.css";
+import { useRouter } from "next/navigation";
 
 const IniciarRoteiro20 = () => {
+
+  const router = useRouter();
+
   const onVoltarIconClick = useCallback(() => {
-    // Please sync "Seleção de Tipo de Roteiro 2.0" to the project
-  }, []);
+    router.push("/seleo-de-tipo-de-roteiro207");
+  }, [router]);
 
   const onBotoIniciarRoteiroClick = useCallback(() => {
     window.open(
