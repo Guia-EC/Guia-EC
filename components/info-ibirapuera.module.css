@@ -22,17 +22,18 @@
   align-self: stretch;
   height: 28.813rem;
   flex-direction: row;
-  padding: 4.375rem var(--padding-20) var(--padding-40);
+  padding-left: 1.7rem;
   background-image: url(/Imagem-Hero1@3x.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
 }
 .voltarIcon {
-  width: 100%;
-  max-height: 100%;
-  height: auto;
   cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  width: 8%;
+  height: 40%; /*Tá mexendo na altura em onde está a seta!*/
 }
 .body,
 .infos {
