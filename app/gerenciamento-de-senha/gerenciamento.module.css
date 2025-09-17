@@ -1,0 +1,70 @@
+.header,
+.telaDeUsurio {
+  display: flex;
+  align-items: center;
+}
+.telaDeUsurio {
+  background-color: var(--color-gray-100);
+  max-width: 100%;
+  flex-direction: column;
+  line-height: normal;
+  letter-spacing: normal;
+}
+.header {
+  width: 393px;
+  height: 209px;
+  background-color: var(--color-whitesmoke);
+  padding: var(--padding-60) 25px 0;
+  box-sizing: border-box;
+  gap: var(--gap-15);
+  text-align: left;
+  font-size: var(--font-size-24);
+  color: var(--color-gray-300);
+  font-family: var(--font-poppins);
+}
+.botoDeVoltar {
+  height: 41px;
+  width: 42px;
+  padding: var(--padding-11) var(--padding-14);
+  box-sizing: border-box;
+}
+.ttulo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.gerenciamentoDeSenha {
+  margin: 0;
+  width: 238px;
+  position: relative;
+  display: inline-block;
+}
+.redefinaSuaSenha {
+  position: relative;
+  font-size: var(--font-size-15);
+  color: var(--color-black);
+  text-align: center;
+}
+.body,
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+.body {
+  width: 393px;
+  align-items: center;
+  justify-content: center;
+  padding: 75px var(--padding-10) 160px;
+  box-sizing: border-box;
+}
+.inputs {
+  align-items: flex-start;
+}
+.botoDeEnviar {
+  width: 345px;
+  height: 55px;
+  padding: var(--padding-10);
+  box-sizing: border-box;
+}

@@ -13,12 +13,16 @@ import styles from "./tela-de-usurio.module.css";
 const TelaDeUsurio = ({ className = "", tela = "Home" }) => {
   const router = useRouter();
 
-  const onMeusDadosClick = useCallback(() => {
-    router.push("/meus-dados"); 
-  }, [router]);
-
   const onHistricoDeRoteirosClick = useCallback(() => {
     router.push("/histrico-de-roteiros");
+  }, [router]);
+
+  const onGerenciamentoClick = useCallback(() => {
+    router.push("/gerenciamento-de-senha");
+  }, [router]);
+
+  const onFaleConoscoClick = useCallback(() => {
+    router.push("/fale-conosco");
   }, [router]);
 
   return (
@@ -105,6 +109,7 @@ const TelaDeUsurio = ({ className = "", tela = "Home" }) => {
             width: 345,
             height: 54,
           }}
+          onClick={onGerenciamentoClick}
         >
           Gerenciamento de Senha
         </Button>
@@ -123,6 +128,7 @@ const TelaDeUsurio = ({ className = "", tela = "Home" }) => {
             width: 345,
             height: 54,
           }}
+          onClick={onFaleConoscoClick}
         >
           Fale Conosco
         </Button>
