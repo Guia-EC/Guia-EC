@@ -49,6 +49,7 @@ const IniciarRoteiro201 = () => {
         variant="contained"
         sx={{
           textTransform: "none",
+          fontWeight: "600",
           color: "#fff",
           fontSize: "20",
           background: "#8662b4",

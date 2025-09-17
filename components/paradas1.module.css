@@ -5,8 +5,10 @@
   align-items: flex-start;
 }
 .paradas {
+  align-items: flex-end;
   gap: 3.125rem;
   text-align: left;
+  margin-left: 0.8rem;
   font-size: var(--font-size-16);
   color: var(--color-gray-200);
   font-family: var(--font-poppins);
@@ -50,7 +52,7 @@
   position: relative;
 }
 .ponto3 {
-  width: 10.813rem;
+  width: 18rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;

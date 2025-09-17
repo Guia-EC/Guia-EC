@@ -49,8 +49,9 @@ const IniciarRoteiro202 = () => {
         variant="contained"
         sx={{
           textTransform: "none",
+          fontWeight: "600",
           color: "#fff",
-          fontSize: "20",
+          fontSize: "20px",
           background: "#519328",
           borderRadius: "30px",
           "&:hover": { background: "#519328" },
