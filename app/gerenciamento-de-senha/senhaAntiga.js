@@ -30,9 +30,9 @@ const SenhaAntiga = ({ className = "", nome, placeholder, inputColor }) => {
           input: {
             endAdornment: (
               <img
-                width="16px"
-                height="16px"
-                src="/adicionar-usuario-1-1.png"
+                width="22px"
+                height="22px"
+                src="/Eye.svg"
               />
             ),
           },

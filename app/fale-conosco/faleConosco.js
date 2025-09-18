@@ -4,8 +4,18 @@ import { Button, Typography, Box } from "@mui/material";
 import Nome from "./nome";
 import PropTypes from "prop-types";
 import styles from "./faleConosco.module.css";
+import { useRouter } from "next/navigation";
+import { useCallback } from "react";
 
 const FaleConosco = ({ className = "" }) => {
+
+  const router = useRouter();
+
+  const onVoltarClick = useCallback(() => {
+    router.back(); // Esta função navega para a página anterior no histórico
+  },[router]);
+  
+  
   const [nomeItems] = useState([
     {
       nome: "Nome",
@@ -20,6 +30,7 @@ const FaleConosco = ({ className = "" }) => {
       placeholder: "Assunto...",
     },
   ]);
+
   return (
     <Box className={[styles.telaDeUsurio, className].join(" ")}>
       <Box className={styles.header}>
@@ -29,12 +40,18 @@ const FaleConosco = ({ className = "" }) => {
           variant="outlined"
           sx={{
             borderColor: "#000",
-            borderRadius: "100px",
-            "&:hover": { borderColor: "#000" },
+            borderRadius: "50%", // Círculo perfeito
             width: 42,
-            height: 41,
+            height: 42, // Mesma altura da largura
+            minWidth: 0,
+            padding: 0,
+            "&:hover": { borderColor: "#000" },
           }}
-        />
+           onClick={onVoltarClick}
+        >
+          {/* Ícone adicionado aqui */}
+          <img alt="Voltar" src="/Profile.svg" />
+        </Button>
         <Box className={styles.ttulo}>
           <Typography
             className={styles.faleConosco}

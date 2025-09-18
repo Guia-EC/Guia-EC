@@ -1,14 +1,14 @@
-.header,
+/* Este agora é o container principal de tela cheia */
 .telaDeUsurio {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fff; /* Fundo branco */
   display: flex;
-  align-items: center;
-}
-.telaDeUsurio {
-  background-color: var(--color-gray-100);
-  max-width: 100%;
   flex-direction: column;
-  justify-content: center;
-  gap: 1px;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  box-sizing: border-box;
   line-height: normal;
   letter-spacing: normal;
   text-align: left;
@@ -16,20 +16,25 @@
   color: var(--color-gray-300);
   font-family: var(--font-poppins);
 }
+
+/* Header ajustado para a nova estrutura */
 .header {
-  width: 393px;
-  height: 156px;
-  background-color: var(--color-whitesmoke);
-  padding: var(--padding-60) 25px 0;
+  width: 100%;
+  background-color: #f2f2f7; /* Fundo cinza claro */
+  padding: 60px 25px 25px;
   box-sizing: border-box;
-  gap: var(--gap-15);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
+
 .botoDeVoltar {
-  height: 41px;
-  width: 42px;
-  padding: var(--padding-11) var(--padding-14);
+  /* O estilo agora é controlado pelo 'sx' no componente JS */
   box-sizing: border-box;
 }
+
 .ttulo {
   width: 165px;
   display: flex;
@@ -37,38 +42,43 @@
   align-items: flex-start;
   justify-content: center;
 }
+
 .faleConosco {
   margin: 0;
   width: 238px;
   position: relative;
   display: inline-block;
 }
-.body,
-.inputs {
+
+/* Body ajustado para a nova estrutura */
+.body {
+  width: 100%;
   display: flex;
   flex-direction: column;
-}
-.body {
-  width: 393px;
   align-items: center;
   justify-content: center;
-  padding: 75px var(--padding-10) 150px;
+  padding: 40px 24px; /* Espaçamento interno */
   box-sizing: border-box;
   text-align: left;
   font-size: var(--font-size-14);
   color: var(--color-black);
   font-family: var(--font-roboto);
 }
+
 .inputs {
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
   padding: 0 0 70px;
   gap: 45px;
 }
+
 .mesangem,
 .telaDeUsurioTtulo {
   display: flex;
   justify-content: center;
 }
+
 .mesangem {
   width: 345px;
   border-radius: var(--br-10);
@@ -76,25 +86,33 @@
   align-items: flex-start;
   gap: var(--gap-10);
 }
+
 .telaDeUsurioTtulo {
   align-items: center;
 }
+
 .mensagem {
   position: relative;
 }
+
 .botoDeSalvar,
 .input {
   width: 345px;
   box-sizing: border-box;
 }
+
 .input {
   border: 1px solid var(--color-black);
   background-color: transparent;
   height: 230px;
   outline: 0;
   border-radius: var(--br-10);
+  /* Adicionado para melhor experiência de digitação */
+  padding: 10px;
+  font-size: 14px;
+  font-family: var(--font-roboto);
 }
+
 .botoDeSalvar {
   height: 55px;
-  padding: var(--padding-10);
 }

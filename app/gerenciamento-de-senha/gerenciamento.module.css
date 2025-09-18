@@ -1,89 +1,73 @@
-.header,
-.telaDeUsurio {
-  display: flex;
-  align-items: center;
-}
-/* Este será o fundo escuro da tela inteira */
+/* Este agora é o container principal de tela cheia */
 .telaDeUsurio {
   width: 100%;
-  min-height: 100vh; /* Garante que o fundo ocupe a tela toda */
-  background-color: #2c2c2e; /* Cor escura de fundo da imagem */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-/* Este é o novo contêiner, o "card" branco */
-.mainContent {
-  width: 393px; /* Largura do conteúdo principal */
-  background-color: #fff; /* Fundo branco para o card */
-  border-radius: 20px; /* Bordas arredondadas */
-  overflow: hidden; /* Garante que os filhos respeitem as bordas arredondadas */
+  min-height: 100vh;
+  background-color: #fff; /* Fundo branco */
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: normal;
+  letter-spacing: normal;
 }
 
-/* O cabeçalho agora tem fundo cinza claro e sem altura fixa */
+/* Header ajustado para a nova estrutura */
 .header {
-  width: 100%; /* Ocupa toda a largura do .mainContent */
-  background-color: #f2f2f7; /* Cor cinza claro da imagem */
-  padding: 60px 25px 25px; /* Ajuste no padding inferior */
+  width: 100%;
+  background-color: #f2f2f7;
+  padding: 60px 25px 25px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   gap: 15px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
   text-align: left;
   font-size: 24px;
-  color: #000;
+  color: #333;
   font-family: var(--font-poppins);
 }
-
 
 .botoDeVoltar {
   height: 41px;
   width: 42px;
-  padding: var(--padding-11) var(--padding-14);
   box-sizing: border-box;
 }
+
 .ttulo {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
 }
+
 .gerenciamentoDeSenha {
   margin: 0;
   width: 238px;
   position: relative;
   display: inline-block;
 }
+
 .redefinaSuaSenha {
   position: relative;
-  font-size: var(--font-size-15);
-  color: var(--color-black);
+  font-size: 15px;
+  color: #000;
   text-align: center;
 }
-.body,
-.inputs {
-  display: flex;
-  flex-direction: column;
-  gap: 35px;
-}
 
-/* O corpo agora só precisa de espaçamento interno */
+/* Body ajustado para a nova estrutura */
 .body {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px 24px; /* Espaçamento interno */
+  padding: 40px 24px;
   box-sizing: border-box;
   gap: 35px;
 }
-
 
 .inputs {
   display: flex;
@@ -95,6 +79,5 @@
 .botoDeEnviar {
   width: 345px;
   height: 55px;
-  padding: var(--padding-10);
   box-sizing: border-box;
 }
