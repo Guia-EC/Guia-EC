@@ -20,9 +20,8 @@
   align-items: center;
 }
 .navbar {
-  width: 22.688rem;
-  max-width: 500px;
-  height: 6.125rem;
+  width: 90%;
+  height: 11%;
   position: fixed;
   bottom: 2rem;
   left: 50%;
