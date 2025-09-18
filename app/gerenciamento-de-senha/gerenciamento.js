@@ -1,3 +1,5 @@
+// Gerenciamento.js
+
 "use client";
 import { useState } from "react";
 import { Button, Typography, Box } from "@mui/material";
@@ -7,6 +9,7 @@ import styles from "./gerenciamento.module.css";
 
 const Gerenciamento = ({ className = "" }) => {
   const [senhaAntigaItems] = useState([
+    /* ... (seu array de items continua o mesmo) ... */
     {
       nome: "Senha Antiga",
       placeholder: "Digite sua senha antiga...",
@@ -23,62 +26,67 @@ const Gerenciamento = ({ className = "" }) => {
       inputColor: "#000",
     },
   ]);
+
   return (
+    // A classe .telaDeUsurio será o fundo escuro geral
     <Box className={[styles.telaDeUsurio, className].join(" ")}>
-      <section className={styles.header}>
-        <Button
-          className={styles.botoDeVoltar}
-          disableElevation
-          variant="outlined"
-          sx={{
-            borderColor: "#000",
-            borderRadius: "100px",
-            "&:hover": { borderColor: "#000" },
-            width: 42,
-            height: 41,
-          }}
-        />
-        <Box className={styles.ttulo}>
-          <Typography
-            className={styles.gerenciamentoDeSenha}
-            variant="inherit"
-            variantMapping={{ inherit: "h2" }}
-            sx={{ fontWeight: "700" }}
+      {/* ↓↓ ESTE É O NOVO CONTÊINER QUE ADICIONAMOS ↓↓ */}
+      <div className={styles.mainContent}>
+        <section className={styles.header}>
+          <Button
+            className={styles.botoDeVoltar}
+            disableElevation
+            variant="outlined"
+            sx={{
+              borderColor: "#000",
+              borderRadius: "100px",
+              "&:hover": { borderColor: "#000" },
+              width: 42,
+              height: 41,
+            }}
+          />
+          <Box className={styles.ttulo}>
+            <Typography
+              className={styles.gerenciamentoDeSenha}
+              variant="inherit"
+              variantMapping={{ inherit: "h2" }}
+              sx={{ fontWeight: "700" }}
+            >
+              Gerenciamento de Senha
+            </Typography>
+            <div className={styles.redefinaSuaSenha}>Redefina sua senha</div>
+          </Box>
+        </section>
+        <section className={styles.body}>
+          <Box className={styles.inputs}>
+            {senhaAntigaItems.map((item, index) => (
+              <SenhaAntiga
+                key={index}
+                nome={item.nome}
+                placeholder={item.placeholder}
+                inputColor={item.inputColor}
+              />
+            ))}
+          </Box>
+          <Button
+            className={styles.botoDeEnviar}
+            disableElevation
+            variant="contained"
+            sx={{
+              textTransform: "none",
+              color: "#fff",
+              fontSize: "16",
+              background: "#000",
+              borderRadius: "10px",
+              "&:hover": { background: "#000" },
+              width: 345,
+              height: 55,
+            }}
           >
-            Gerenciamento de Senha
-          </Typography>
-          <div className={styles.redefinaSuaSenha}>Redefina sua senha</div>
-        </Box>
-      </section>
-      <section className={styles.body}>
-        <Box className={styles.inputs}>
-          {senhaAntigaItems.map((item, index) => (
-            <SenhaAntiga
-              key={index}
-              nome={item.nome}
-              placeholder={item.placeholder}
-              inputColor={item.inputColor}
-            />
-          ))}
-        </Box>
-        <Button
-          className={styles.botoDeEnviar}
-          disableElevation
-          variant="contained"
-          sx={{
-            textTransform: "none",
-            color: "#fff",
-            fontSize: "16",
-            background: "#000",
-            borderRadius: "10px",
-            "&:hover": { background: "#000" },
-            width: 345,
-            height: 55,
-          }}
-        >
-          Salvar
-        </Button>
-      </section>
+            Salvar
+          </Button>
+        </section>
+      </div>
     </Box>
   );
 };

@@ -1,6 +1,7 @@
 .infoMasp {
   height: 112.938rem;
-  width: 24.563rem;
+  /* width: 24.563rem; */
+  width: 100%;           /* <- ADICIONE ESTA LINHA */
   background-color: var(--color-gray-100);
   display: flex;
   flex-direction: column;
@@ -20,7 +21,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 24.563rem;
+  /* width: 24.563rem; */
+  width: 100%;
 }
 .scrollvel {
   height: 105.313rem;
@@ -58,7 +60,8 @@
   top: 28.813rem;
   left: 0;
   background-color: var(--color-gray-100);
-  width: 24.563rem;
+  /* width: 24.563rem; */
+  width: 100%;
   align-items: center;
   padding: var(--padding-40) 0 0;
   box-sizing: border-box;
