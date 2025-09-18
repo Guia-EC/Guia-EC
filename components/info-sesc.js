@@ -1,5 +1,6 @@
 "use client";
-import { useCallback } from "react";
+// Adicionado 'useState' para a lógica da sanfona
+import { useCallback, useState } from "react";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -9,10 +10,17 @@ import styles from "./info-sesc.module.css";
 
 const InfoSesc = ({ className = "", estado = "Padrão" }) => {
   const router = useRouter();
+  
+  // --- NOVO: Lógica para controlar a sanfona ---
+  const [isAccordionOpen, setIsAccordionOpen] = useState(false);
 
   const onVoltarIconClick = useCallback(() => {
     router.push("/");
   }, [router]);
+  
+  const toggleAccordion = () => {
+    setIsAccordionOpen(!isAccordionOpen);
+  };
 
   return (
     <main
@@ -42,50 +50,63 @@ const InfoSesc = ({ className = "", estado = "Padrão" }) => {
             >
               Informações
             </Typography>
-            <div className={styles.reformaEAmpliaoContainer}>
-              <Typography
-                variant="inherit"
-                variantMapping={{ inherit: "span" }}
-              >
-                R
-              </Typography>
-              <Typography
-                className={styles.eformaEAmpliao}
-                variant="inherit"
-                variantMapping={{ inherit: "span" }}
-                sx={{ fontSize: "var(--font-size-15)" }}
-              >
-                eforma e ampliação de um edifício ocupado a princípio por uma
-                loja de departamentos, na esquina de ruas importantes no Centro
-                Novo, o Sesc 24 de Maio é uma das mais interessantes
-                experiências arquitetônicas que se podem fruir em São Paulo: uma
-                unidade completa, com programas ligados a esportes, lazer,
-                cultura e saúde que se sobrepõem naturalmente, como praças
-                superpostas.
-              </Typography>
-            </div>
+            
+            {/* Parágrafo inicial simplificado para uma única tag */}
+            <Typography
+              className={styles.reformaEAmpliaoContainer}
+              variantMapping={{ inherit: "p" }}
+              sx={{ fontSize: "var(--font-size-15)" }}
+            >
+              <span className={styles.letraCapitular}>R</span>eforma e ampliação de um edifício ocupado a princípio por uma
+              loja de departamentos, na esquina de ruas importantes no Centro
+              Novo, o Sesc 24 de Maio é uma das mais interessantes
+              experiências arquitetônicas que se podem fruir em São Paulo: uma
+              unidade completa, com programas ligados a esportes, lazer,
+              cultura e saúde que se sobrepõem naturalmente, como praças
+              superpostas.
+            </Typography>
           </Box>
-          <Box className={styles.botoArtigoCompleto}>
-            <Box className={styles.buttonContainer}>
-              <Typography
-                className={styles.lerArtigoCompleto}
-                variant="inherit"
-                variantMapping={{ inherit: "b" }}
-                sx={{ fontWeight: "700" }}
-              >
-                Ler artigo completo
-              </Typography>
-              <Image
-                className={styles.vectorIcon}
-                loading="lazy"
-                width={12}
-                height={7}
-                sizes="100vw"
-                alt=""
-                src="/Vector.svg"
+          
+          {/* --- ESTRUTURA ANTIGA DO BOTÃO SUBSTITUÍDA PELA SANFONA --- */}
+          <div className={styles.accordionContainer}>
+            <button className={styles.accordionButton} onClick={toggleAccordion}>
+              <span>Ler artigo completo</span>
+              <img
+                width="12px"
+                height="7px"
+                src="/Vector.svg" // Ícone do seu botão original
+                alt="Abrir artigo"
+                className={`${styles.arrowIcon} ${
+                  isAccordionOpen ? styles.arrowIconOpen : ""
+                }`}
               />
-            </Box>
-          </Box>
+            </button>
+            <div
+              className={`${styles.accordionContent} ${
+                isAccordionOpen ? styles.accordionOpen : ""
+              }`}
+            >
+              <div className={styles.accordionText}>
+                <p>
+                  <span className={styles.letraCapitular}>O</span> prédio funciona sem portas:  os pavimentos/praças são  interligados por uma rampa  aberta. O projeto aposta numa  clara ideia de percurso, como  se o espaço público do centro  da cidade se multiplicasse  verticalmente, para baixo e para  cima do nível da rua. O térreo  foi chamado de Praça do Sesc  e remete às galerias comerciais  típicas do centro, que interligam  em seu interior duas ou mais  ruas. Da praça se pode descer ao  teatro e seu café, ou subir rumo  aos 13 pavimentos superiores. Cada andar abriga um programa  principal, e a sequência de  subida pode ser resumida em:  praça de acesso, administração,  restaurante (comedoria), área  aberta de convivência, biblioteca,  exposições, oficinas, serviços de  odontologia, espaço esportivo,  salas de ginástica e dança, jardim  da piscina, vestiários e a piscina.
+                </p>
+                <p>
+                  <span className={styles.letraCapitular}>A</span> estratégia de projeto  para viabilizar essa complexa  sobreposição de programas tão  distintos, que é a natureza das  unidades do Sesc, foi a execução  de uma nova estrutura no  miolo vazio do prédio original,  reconhecível internamente pelos  quatro imensos pilares cilíndricos  e ladeado pelo novo sistema  de rampas. Essas intervenções  novas, em concreto aparente,  se distinguem do prédio  original, agora resumido à sua  estrutura, pintada de branco. As  instalações são concentradas  em duas prumadas principais,  uma delas interna ao volume do  prédio original e a outra sobre um lote vizinho incorporado ao  complexo, uma torre de volume  autônomo com os elevadores,  sanitários, shafts de instalações  e escada de segurança.
+                </p>
+                <p>
+                  <span className={styles.letraCapitular}>A</span> nova estrutura de concreto  no miolo do edifício viabilizou o  teatro no subsolo, os grandes  salões para áreas de convivência,  dança, esportes e, sobretudo,  o complexo da piscina na  cobertura. Essa área abriga  também o jardim da piscina e a  lanchonete, um andar livre que de  certa forma solta o bloco elevado  com os vestiários e a piscina. O  perímetro desse bloco elevado  é feito com uma estrutura  auxiliar de aço, e o fechamento  das fachadas, com painéis  metálicos pintados. Reforçando  essa independência, a geometria  desse bloco está relacionada  à nova estrutura interna,  cuja ortogonalidade difere  sensivelmente da geometria  irregular do edifício original.           A fachada do prédio foi vestida  com uma cortina de vidro reflexivo  que espelha o entorno durante  o dia e expõe seus usos à noite.
+                </p>
+                <p>
+                  <span className={styles.letraCapitular}>A</span> piscina está portanto  elevada a 30 m do solo. Sua  presença inusitada em meio  aos edifícios comerciais  do entorno impressiona e  caracteriza o prédio mais que  os outros elementos. A equipe  de arquitetos já havia, de certa  forma, ensaiado anteriormente  essas estratégias de intervenção  num projeto para a reforma do  Sesc Tatuapé em 1996, concurso  que não venceram mas cujo  projeto se tornou referência  para a arquitetura paulista.
+                </p>
+                <p>
+                  <span className={styles.bold}>FABIO VALENTIM</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          {/* --- FIM DA ESTRUTURA DA SANFONA --- */}
+          
           <CarrosselSesc property1="Default" />
         </section>
         <Box className={styles.ttulo}>
@@ -120,8 +141,6 @@ const InfoSesc = ({ className = "", estado = "Padrão" }) => {
 
 InfoSesc.propTypes = {
   className: PropTypes.string,
-
-  /** Variant props */
   estado: PropTypes.string,
 };
 

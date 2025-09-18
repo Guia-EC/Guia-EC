@@ -12,26 +12,26 @@
   line-height: normal;
   letter-spacing: normal;
 }
+
 .botoFazerRoteiro {
-  height: 6.25rem;
-  width: 23.125rem;
-  margin: 0 !important;
-  position: absolute;
-  top: 45.563rem;
-  left: 0.75rem;
+  position: fixed;
+  width: 90%;
+  height: 11%;
+  left: 50%;
+  bottom: 2rem;
+  transform: translateX(-50%);
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(10px);
   border-radius: var(--br-30);
   background-color: var(--color-gray-600);
   justify-content: center;
-  white-space: nowrap;
   cursor: pointer;
   z-index: 1;
-  text-align: left;
   font-size: var(--font-size-20);
   color: var(--color-white);
-  font-family: var(--font-poppins);
 }
+
+
 .fazerUmRoteiro {
   margin: 0;
   height: 1.875rem;

@@ -1,6 +1,5 @@
 .infoSesc {
   height: 110.375rem;
-  /* width: 24.563rem; */
   width: 100%;
   background-color: var(--color-gray-100);
   display: flex;
@@ -21,7 +20,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  /* width: 24.563rem; */
   width: 100%;
 }
 .scrollvel {
@@ -88,41 +86,17 @@
 .reformaEAmpliaoContainer {
   width: 20.813rem;
   text-align: justify;
-  font-size: var(--font-size-26);
+  font-size: var(--font-size-15);
 }
 .eformaEAmpliao {
   white-space: pre-wrap;
 }
-.botoArtigoCompleto {
-  width: 20.813rem;
-  height: 2.875rem;
-  border-radius: var(--br-60);
-  background-color: var(--color-darkgray);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: var(--padding-11) 4.75rem;
-  box-sizing: border-box;
-  font-size: var(--font-size-15);
-  color: var(--color-gray-100);
-}
-.buttonContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: var(--gap-6);
-}
-.lerArtigoCompleto,
-.vectorIcon {
-  position: relative;
-}
-.vectorIcon {
-  height: 0.438rem;
-  width: 0.75rem;
-  object-fit: contain;
-}
+
+/* As classes abaixo não são mais necessárias com a sanfona */
+/* .botoArtigoCompleto { ... } */
+/* .buttonContainer { ... } */
+/* .lerArtigoCompleto, .vectorIcon { ... } */
+
 .ttulo {
   position: absolute;
   top: 20.938rem;
@@ -166,4 +140,77 @@
 }
 .rua24De {
   width: 13.375rem;
+}
+
+
+/* --- BLOCO DA SANFONA ADICIONADO ABAIXO --- */
+
+.accordionContainer {
+  width: 100%;
+  max-width: 20.813rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.accordionButton {
+  background-color: transparent;
+  color: black;
+  font-weight: 600;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid #000;
+  justify-content: space-between;
+  height: auto;
+  padding: 0.8rem 0.2rem;
+  font-family: var(--font-poppins);
+  font-size: 15px;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.accordionButton:hover {
+  background-color: transparent;
+}
+
+.arrowIcon {
+  transition: transform 0.3s ease-in-out;
+  filter: invert(1);
+}
+
+.arrowIconOpen {
+  transform: rotate(180deg);
+}
+
+.accordionContent {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s ease-out;
+}
+
+.accordionOpen {
+  grid-template-rows: 1fr;
+}
+
+.accordionText {
+  overflow: hidden;
+  text-align: justify;
+  font-size: 15px;
+  color: #000;
+}
+
+.letraCapitular {
+  font-weight: 600;
+  font-size: 1.4em;
+  padding-right: 2px;
+  line-height: 1;
+  float: left;
+}
+
+.bold {
+  font-weight: 600;
 }
