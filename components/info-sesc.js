@@ -24,11 +24,11 @@ const InfoSesc = ({ className = "", estado = "Padrão" }) => {
           <Image
             className={styles.voltarIcon}
             loading="lazy"
-            width={24}
-            height={38}
+            width={35}
+            height={35}
             sizes="100vw"
             alt=""
-            src="/Voltar.svg"
+            src="/botao-voltar-branco.svg"
             onClick={onVoltarIconClick}
           />
         </Box>

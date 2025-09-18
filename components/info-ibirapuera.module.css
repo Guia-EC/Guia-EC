@@ -22,7 +22,6 @@
   align-self: stretch;
   height: 28.813rem;
   flex-direction: row;
-  padding-left: 1.7rem;
   background-image: url(/Imagem-Hero1@3x.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -32,8 +31,9 @@
   cursor: pointer;
   border: 0;
   background-color: transparent;
-  width: 8%;
-  height: 40%; /*Tá mexendo na altura em onde está a seta!*/
+  margin-left: 1.7rem;
+  width: fit-content;
+  margin-top: 4rem;
 }
 .body,
 .infos {
