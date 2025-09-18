@@ -4,6 +4,7 @@
 body {
   margin: 0;
   line-height: normal;
+  -webkit-tap-highlight-color: transparent;
 }
 :root {
   /* Color */
