@@ -209,3 +209,17 @@
   font-size: 15px;
   color: #000;
 }
+
+/* Adicione esta classe no seu arquivo info-masp.module.css */
+
+.letraCapitular {
+  font-weight: 600;
+  font-size: 1.4em;
+  padding-right: 2px;
+  line-height: 1;
+  float: left;
+}
+
+.bold {
+  font-weight: 600;
+}
