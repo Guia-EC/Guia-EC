@@ -1,144 +1,208 @@
 .infoMasp {
-  height: 112.938rem;
-  width: 100%;           
-  background-color: var(--color-gray-100);
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fafafa;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
-  padding: 0 0 7.125rem;
-  box-sizing: border-box;
   position: relative;
-  z-index: 0;
-  text-align: center;
-  font-size: var(--font-size-64);
-  color: var(--color-black);
   font-family: var(--font-poppins);
 }
-.imagemHero,
+
 .scrollvel {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
+  position: relative;
 }
-.scrollvel {
-  height: 105.313rem;
-  margin: 0 !important;
-  z-index: 0;
-}
+
 .imagemHero {
+  width: 100%;
   height: 28.813rem;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  box-sizing: border-box;
-  background-image: url(/Masp.png);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: center;
+  background-image: url(/Masp.png);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 2.5rem 1.7rem;
+  box-sizing: border-box;
+  position: relative;
+  /* -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%); */
 }
+
 .voltarIcon {
   cursor: pointer;
   border: 0;
   background-color: transparent;
-  margin-left: 1.7rem;
-  width: fit-content;
-  margin-top: 4rem;
+  width: 35px;
+  height: 35px;
+  align-self: flex-start;
 }
-.body,
-.infos {
+
+.body {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-}
-.body {
-  position: absolute;
-  top: 28.813rem;
-  left: 0;
-  background-color: var(--color-gray-100);
-  width: 100%;
   align-items: center;
   box-sizing: border-box;
-  gap: var(--gap-20);
+  gap: 25px;
+  padding: 0 1.7rem 4rem;
   text-align: left;
-  font-size: var(--font-size-18);
+  font-size: 18px;
   color: var(--color-black);
   font-family: var(--font-poppins);
 }
-/* .infos {
+
+/* --- ESTILOS DO TÍTULO (TOTALMENTE ATUALIZADOS) --- */
+
+.ttulo {
+  position: absolute;
+  top: 22rem;
+  left: 3rem;
+  width: 100%;
+  max-width: 20.813rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.infoMaspTtulo {
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  padding: 0 var(--padding-30);
-  gap: var(--gap-15);
-} */
+  justify-content: flex-start;
+  
+}
+
+.masp,
+.museuDeArte,
+.descrio {
+  font-family: var(--font-poppins);
+  color: black;
+  text-shadow: none;
+  margin: 0;
+  text-align: left;
+  
+}
+
+.masp {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.museuDeArte {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.descrio {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.linaBoBardi,
+.avenidaPaulista1578 {
+  line-height: 1.3;
+}
+
+/* --- FIM DOS ESTILOS DE TÍTULO ATUALIZADOS --- */
+
+.infos {
+  width: 100%;
+  max-width: 20.813rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  box-sizing: border-box;
+  margin-top: 60px;
+}
 
 .informaes {
   margin: 0;
-  width: 7.688rem;
-  height: 1.688rem;
-  position: relative;
-  display: inline-block;
-  margin-top: 50px;
-  margin-bottom: 20px
+  height: auto;
+  font-size: 18px;
+  font-weight: 600;
 }
+
 .coneDaArquiteturaContainer {
-  width: 20.813rem;
-  position: relative;
+  width: 100%;
   text-align: justify;
-  display: inline-block;
-  font-size: var(--font-size-26);
+  font-size: 15px;
+  line-height: 1.6;
 }
-.coneDaArquitetura {
-  white-space: pre-wrap;
+
+
+/* --- ESTILOS DA SANFONA (ATUALIZADOS) --- */
+.accordionContainer {
+  width: 100%;
+  max-width: 20.813rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
 }
-.botoArtigoCompleto {
-  width: 20.813rem;
-  height: 2.875rem;
+
+.accordionButton {
+  /* MUDANÇAS PARA O NOVO DESIGN */
+  background-color: transparent;    /* Fundo removido */
+  color: black;                     /* Cor do texto alterada para preto */
+  font-weight: 600;                 /* Fonte um pouco menos bold */
+  border-radius: 0;                 /* Bordas arredondadas removidas */
+  border: none;                     /* Garante que não haja bordas */
+  border-bottom: 1px solid #000;    /* Linha de divisão preta */
+  justify-content: space-between;   /* Alinha itens nas extremidades (texto na esquerda, seta na direita) */
+  height: auto;                     /* Altura automática baseada no padding */
+  padding: 0.8rem 0.2rem;             /* Espaçamento interno vertical e um pouco horizontal */
+
+  /* Estilos mantidos */
   font-family: var(--font-poppins);
-  font-weight: 700;
-  font-size: var(--font-size-15);
-  color: var(--color-gray-100);
-}
-.ttulo {
-  position: absolute;
-  top: 20.938rem;
-  left: 3rem;
-}
-.infoMaspTtulo,
-.ttulo {
+  font-size: 15px;
+  width: 100%;
+  cursor: pointer;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
 }
-.masp,
-.museuDeArte {
-  margin: 0;
-  position: relative;
-  display: inline-block;
+
+.accordionButton:hover {
+  /* Efeito hover removido para um look mais limpo */
+  background-color: transparent;
 }
-.masp {
-  width: 11.625rem;
-  height: 4.375rem;
+
+.arrowIcon {
+  transition: transform 0.3s ease-in-out;
+  filter: invert(1); /* Inverte as cores: branco vira preto, preto vira branco */
 }
-.museuDeArte {
-  width: 18.5rem;
-  text-align: left;
+
+.arrowIconOpen {
+  transform: rotate(180deg);
 }
-.descrio {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  text-align: left;
-  font-size: var(--font-size-12);
+
+.accordionContent {
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+  /* background-color: #f0f0f0; */
+  /* border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px; */
 }
-.linaBoBardi {
-  position: relative;
+
+.accordionOpen {
+  max-height: fit-content;
+  transition: max-height 0.5s ease-in;
 }
-.avenidaPaulista1578 {
-  width: 8.625rem;
-  position: relative;
-  display: inline-block;
+
+.accordionText {
+  text-align: justify;
+  font-size: 15px;
+  color: #000;
 }
