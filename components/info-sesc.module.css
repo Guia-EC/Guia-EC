@@ -149,7 +149,8 @@
 
 .accordionContainer {
   width: 100%;
-  max-width: 20.813rem;
+  padding: 0 30px;
+  /* max-width: 20.813rem; */
   display: flex;
   flex-direction: column;
   align-items: center;
