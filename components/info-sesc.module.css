@@ -58,7 +58,8 @@
   top: 28.813rem;
   left: 0;
   background-color: var(--color-gray-100);
-  width: 24.563rem;
+  /* width: 24.563rem; */
+  width: 100%;
   align-items: center;
   padding: 2.812rem 0 0;
   box-sizing: border-box;
@@ -72,6 +73,7 @@
   align-items: flex-start;
   padding: 0 var(--padding-30);
   gap: var(--gap-15);
+  width: 100%;
 }
 .informaes,
 .reformaEAmpliaoContainer {
@@ -84,7 +86,7 @@
   height: 1.688rem;
 }
 .reformaEAmpliaoContainer {
-  width: 20.813rem;
+  width: 100%;
   text-align: justify;
   font-size: var(--font-size-15);
 }
