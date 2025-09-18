@@ -8,7 +8,8 @@
 }
 .infoIbirapuera {
   height: 106.938rem;
-  width: 24.563rem;
+  /* width: 24.563rem; */
+  width: 100%;
   background-color: var(--color-gray-100);
   flex-direction: column;
   padding: 0 0 7.125rem;
@@ -42,7 +43,8 @@
   justify-content: center;
 }
 .body {
-  width: 24.563rem;
+  /* width: 24.563rem; */
+  width: 100%;
   background-color: var(--color-gray-100);
   align-items: center;
   padding: 2.812rem 0 0;
@@ -70,7 +72,8 @@
   height: 1.688rem;
 }
 .oIbirapueraFoiContainer {
-  width: 20.813rem;
+  /* width: 20.813rem; */
+  width: 100%;
   text-align: justify;
   font-size: var(--font-size-26);
 }
