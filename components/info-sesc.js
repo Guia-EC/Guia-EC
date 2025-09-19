@@ -4,7 +4,7 @@ import { useCallback, useState } from "react";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import CarrosselSesc from "./carrossel-sesc";
+// import CarrosselSesc from "./carrossel-sesc";
 import PropTypes from "prop-types";
 import styles from "./info-sesc.module.css";
 
@@ -13,6 +13,35 @@ const InfoSesc = ({ className = "", estado = "Padrão" }) => {
   
   // --- NOVO: Lógica para controlar a sanfona ---
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
+
+   // --- LÓGICA DA GALERIA ADICIONADA AQUI ---
+  
+  // 1. Array com as URLs das suas imagens
+  const galleryImages = [
+    "/Sesc1.png", // Substitua pelos caminhos reais das suas imagens na pasta /public
+    "/SESC2.png",
+    "/SESC3.png",
+    "/SESC4.png",
+    "/SESC5.png",
+  ];
+
+  // 2. Estado para controlar o índice da imagem atual
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // 3. Funções para navegar
+  const goToPrevious = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? galleryImages.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const goToNext = () => {
+    const isLastSlide = currentIndex === galleryImages.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+
+  // --- FIM DA LÓGICA DA GALERIA ---
 
   const onVoltarIconClick = useCallback(() => {
     router.push("/");
@@ -107,7 +136,42 @@ const InfoSesc = ({ className = "", estado = "Padrão" }) => {
           </div>
           {/* --- FIM DA ESTRUTURA DA SANFONA --- */}
           
-          <CarrosselSesc property1="Default" />
+          {/* <CarrosselSesc property1="Default" /> */}
+
+          {/* --- O CARROSSEL ESTÁTICO FOI SUBSTITUÍDO PELA GALERIA FUNCIONAL --- */}
+          <div className={styles.galleryContainer}>
+            <div className={styles.imageContainer}>
+              {/* Botão de voltar */}
+              <button onClick={goToPrevious} className={`${styles.chevron} ${styles.chevronLeft}`}>
+                &#10094;
+              </button>
+              
+              {/* Imagem principal */}
+              <img
+                src={galleryImages[currentIndex]}
+                alt={`Foto da galeria ${currentIndex + 1}`}
+                className={styles.galleryImage}
+              />
+              
+              {/* Botão de avançar */}
+              <button onClick={goToNext} className={`${styles.chevron} ${styles.chevronRight}`}>
+                &#10095;
+              </button>
+            </div>
+            
+            {/* Indicadores de pontos */}
+            <div className={styles.dotsContainer}>
+              {galleryImages.map((_, slideIndex) => (
+                <div
+                  key={slideIndex}
+                  className={`${styles.dot} ${currentIndex === slideIndex ? styles.activeDot : ''}`}
+                  onClick={() => setCurrentIndex(slideIndex)}
+                />
+              ))}
+            </div>
+          </div>
+          {/* --- FIM DA SEÇÃO DA GALERIA --- */}
+          
         </section>
         <Box className={styles.ttulo}>
           <Box className={styles.infoSescTtulo}>
