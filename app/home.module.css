@@ -20,7 +20,7 @@
   align-items: center;
 }
 .navbar {
-  width: 90%;
+  width: fit-content;
   height: 11%;
   position: fixed;
   bottom: 2rem;
