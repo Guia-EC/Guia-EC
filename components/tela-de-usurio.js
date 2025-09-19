@@ -17,7 +17,7 @@ const TelaDeUsurio = ({ className = "", tela = "Home" }) => {
     try {
       await signOut();
       // Redireciona para a página inicial após o logout
-      router.push('/home'); 
+      router.push('/'); 
     } catch (error) {
       console.error("Erro ao fazer logout:", error.message);
     }
@@ -26,7 +26,7 @@ const TelaDeUsurio = ({ className = "", tela = "Home" }) => {
   // --- PROTEÇÃO DA ROTA: Redireciona se não estiver logado ---
   useEffect(() => {
     if (!loading && !user) {
-      router.push('/home');
+      router.push('/login');
     }
   }, [user, loading, router]);
   // --- FIM DA LÓGICA ---
