@@ -19,11 +19,11 @@ const InfoIbirapuera = ({ className = "", estado = "Padrão" }) => {
     
     // 1. Array com as URLs das suas imagens
     const galleryImages = [
-      "/MASP1.png", // Substitua pelos caminhos reais das suas imagens na pasta /public
-      "/MASP2.png",
-      "/MASP3.png",
-      "/MASP4.png",
-      "/MASP5.png",
+      "/IBIRA1.png", // Substitua pelos caminhos reais das suas imagens na pasta /public
+      "/IBIRA2.png",
+      "/IBIRA3.png",
+      "/IBRIA4.png",
+      "/IBIRA5.png",
     ];
   
     // 2. Estado para controlar o índice da imagem atual
