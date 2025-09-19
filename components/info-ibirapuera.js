@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import CarrosselIbira from "./carrossel-ibira";
 import PropTypes from "prop-types";
 import styles from "./info-ibirapuera.module.css";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 const InfoIbirapuera = ({ className = "", estado = "Padrão" }) => {
   const router = useRouter();
@@ -42,6 +43,20 @@ const InfoIbirapuera = ({ className = "", estado = "Padrão" }) => {
     };
   
     // --- FIM DA LÓGICA DA GALERIA ---
+
+    // --- NOVO: Lógica para desabilitar o 'pan' (arrastar) no zoom inicial ---
+  const [panDisabled, setPanDisabled] = useState(true);
+
+  const handleZoomChange = (ref) => {
+    // Se a escala for 1 (zoom padrão), desabilita o pan.
+    // Se for maior que 1, habilita o pan.
+    if (ref.state.scale === 1) {
+      setPanDisabled(true);
+    } else if (panDisabled) {
+      setPanDisabled(false);
+    }
+  };
+  // --- FIM DA NOVA LÓGICA ---
 
   const onVoltarIconClick = useCallback(() => {
     router.push("/");
@@ -138,29 +153,36 @@ Auditório do Ibirapuera — 1954-2005
           </div>
           {/* --- FIM DA ESTRUTURA DA SANFONA --- */}
 
-          {/* <CarrosselIbira property1="Default" /> */}
-            {/* --- O CARROSSEL ESTÁTICO FOI SUBSTITUÍDO PELA GALERIA FUNCIONAL --- */}
           <div className={styles.galleryContainer}>
             <div className={styles.imageContainer}>
-              {/* Botão de voltar */}
-              <button onClick={goToPrevious} className={`${styles.chevron} ${styles.chevronLeft}`}>
-                &#10094;
-              </button>
-              
-              {/* Imagem principal */}
-              <img
-                src={galleryImages[currentIndex]}
-                alt={`Foto da galeria ${currentIndex + 1}`}
-                className={styles.galleryImage}
-              />
-              
-              {/* Botão de avançar */}
-              <button onClick={goToNext} className={`${styles.chevron} ${styles.chevronRight}`}>
-                &#10095;
-              </button>
+              <TransformWrapper enablePan={false} maxScale={3} initialScale={1} minScale={1} onZoomChange={handleZoomChange} pan={{ disabled: panDisabled }}>
+                <TransformComponent   wrapperStyle={{
+                    width: "100%",
+                    height: "100%",
+                  }}
+                   contentStyle={{
+                    // width: "100%",
+                    // height: "100%",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    objectFit: "contain",
+                  }}>
+                  <img
+                    src={galleryImages[currentIndex]}
+                    alt={`Foto da galeria ${currentIndex + 1}`}
+                    className={styles.galleryImage}
+                  />
+                </TransformComponent>
+              </TransformWrapper>
             </div>
             
-            {/* Indicadores de pontos */}
+            <button onClick={goToPrevious} className={`${styles.chevron} ${styles.chevronLeft}`}>
+              &#10094;
+            </button>
+            <button onClick={goToNext} className={`${styles.chevron} ${styles.chevronRight}`}>
+              &#10095;
+            </button>
             <div className={styles.dotsContainer}>
               {galleryImages.map((_, slideIndex) => (
                 <div
