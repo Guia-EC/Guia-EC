@@ -96,3 +96,16 @@
   padding: 0 var(--padding-8);
   box-sizing: border-box;
 }
+
+@media (min-width: 1640px){
+.roteirosRaiz, .sliderConheaNossosRoteirosRoteirosRaiz, .roteirosNaturais {
+  height: 450px;
+  width: 490px;
+  }
+
+.tag, .tag2, .sliderConheaNossosRoteirosTag {
+  height: 2.5rem;
+  width: 10rem;
+  font-size: 25px;
+  }
+}
