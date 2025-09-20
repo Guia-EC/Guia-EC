@@ -103,8 +103,27 @@
 
   .iniciarRoteiro20 {
     height: 100vh;
+    padding: 0;
   }
 
+  .botoIniciarRoteiro {
+    width: 40%;
+    height: 6%;
+    margin: 0 !important;
+    position: absolute;
+    top: 135rem;
+    left: 30%;
+  }
 
+  .imagemHero {
+    align-self: stretch;
+    height: 35rem;
+    padding-left: 1.7rem;
+    background-image: url(/Masp.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    z-index: 0;
+  }
 
 }

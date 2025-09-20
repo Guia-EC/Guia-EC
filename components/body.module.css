@@ -159,18 +159,98 @@
 @media (min-width: 1024px) {
   .body {
     width: 100vw;
-    height: 100vw;
+    height: 100vh;
     padding: 3rem;
     box-sizing: border-box;
-    gap: var(--gap-40);
+    gap: 70px;
     z-index: 1;
     text-align: left;
-    font-size: var(--font-size-18);
+    font-size: 70px;
     color: var(--color-black);
     font-family: var(--font-poppins);
   }
 
+  .paradas {
+    gap: 10rem;
+    width: 100vw;
+  } 
 
+  .ponto1 b {
+    font-size: 80px;
+    width: 100vw;
+  }
 
+  .ponto2 {
+    width: 17.875rem;
+    border-radius: 0 0 var(--br-5) var(--br-5);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: var(--gap-10);
+    color: var(--color-black);
+  }
+
+  .ponto2 b{
+    font-size: 80px;
+    width: 100vw;
+  }
+
+  .ponto3 {
+    width: 18.188rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gap-10);
+  }
+
+  .ponto3 b {
+    font-size: 80px;
+    width: 100vw;
+  }
+
+  .ttuloEBoto {
+    width: 100vw;
+  }
+
+  /*Imagem e textos Charme Da Paulista!*/
+  .charme1Icon {
+    align-self: stretch;
+    height: 35rem;
+    max-width: 100vw;
+    position: relative;
+    border-radius: var(--br-5) var(--br-5) 0 0;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+
+  .textoEImagem {
+    width: 85vw;
+    font-size: 45px;
+  }
+
+  .textoEImagem img {
+    width: 85vw;
+  }
+
+  /*Imagem e textos Mirante 9 de Julho!*/
+  .miranre11 {
+    height: 35rem;
+    border-radius: var(--br-5) var(--br-5) 0 0;
+    max-width: 100vw;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+
+  .imagemETexto {
+    width: 85vw;
+    font-size: 45px;
+  }
+
+  .imagemETexto img {
+    width: 85vw;
+  }
 
 }
