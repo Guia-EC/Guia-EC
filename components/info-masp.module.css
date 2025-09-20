@@ -287,9 +287,8 @@
 
 @media (min-width: 1024px) {
   .imagemHero {
-    height: 50rem; /* Aumenta a altura da imagem principal */
-    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    height: 40rem; /* Aumenta a altura da imagem principal */
+    background-image: url(/MASPRESPONSIVO.png);
   }
 
   .ttulo {
@@ -353,7 +352,7 @@
 
   .galleryContainer {
     max-width: 100%;
-    height: 58vh; /* Altura da galeria relativa à tela */
+    height: 52vh; /* Altura da galeria relativa à tela */
   }
 
   .imageContainer {

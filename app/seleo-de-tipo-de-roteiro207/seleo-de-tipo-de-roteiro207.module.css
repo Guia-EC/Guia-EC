@@ -1,3 +1,5 @@
+/* --- ESTILOS BASE (MOBILE-FIRST) --- */
+
 .seleoDeTipoDeRoteiro20,
 .voltar {
   display: flex;
@@ -8,24 +10,28 @@
   position: relative;
   background-color: var(--color-gray-100);
   align-items: center;
-  justify-content: center;
-  padding: 4.375rem 0 4.187rem;
+  justify-content: flex-start; /* Alinhado ao topo para mobile */
+  padding: 4.375rem 0;
   box-sizing: border-box;
   gap: var(--gap-10);
   line-height: normal;
   letter-spacing: normal;
+  min-height: 100vh;
 }
 .voltar {
-  align-self: stretch;
   overflow: hidden;
   align-items: flex-start;
   justify-content: flex-start;
   padding: 0.562rem var(--padding-6) 0.562rem 1.562rem;
   cursor: pointer;
+  position: absolute;
+  top: 4.375rem;
+  left: 0;
+  width: auto;
 }
 .creditSummaryIcon {
-  width: 100%;
-  height: 1.25rem;
+  width: 12px;
+  height: 20px;
   position: relative;
   object-fit: contain;
   cursor: pointer;
@@ -53,145 +59,212 @@
   width: 12.75rem;
   position: relative;
   display: inline-block;
-}
-.detalhe,
-.detalheChild {
-  height: 0.063rem;
-  background-color: var(--color-gray-300);
+  font-weight: 700;
 }
 .detalhe {
   width: 16.25rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.detalheChild {
-  align-self: stretch;
-  position: relative;
-  display: none;
+  height: 0.063rem;
+  background-color: var(--color-gray-300);
 }
 .roteiros {
-  align-items: flex-start;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: flex-start;
   gap: var(--gap-30);
   font-size: var(--font-size-20);
   color: var(--color-gray-300);
 }
-.imagem,
-.raiz,
-.roteiros {
-  display: flex;
-  flex-direction: column;
-}
+
+/* --- CORREÇÃO: CARDS COM IMAGEM E TEXTO NO MOBILE --- */
 .raiz {
   border-radius: var(--br-10);
   background-color: var(--color-white);
   overflow: hidden;
+  display: flex;
+  flex-direction: column; /* IMAGEM EM CIMA, TEXTO EM BAIXO NO MOBILE */
   align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-.imagem {
-  width: 22.438rem;
-  height: 9rem;
-  align-items: flex-start;
   justify-content: flex-start;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.19);
+  transition: transform 0.2s ease-in-out;
+  width: 100%;
+  max-width: 22.438rem; /* Largura padrão para mobile */
+}
+.raiz:hover {
+  transform: translateY(-5px);
+}
+
+.imagem {
+  display: block; /* Garante que a imagem apareça no mobile */
+  width: 22.438rem; /* Largura padrão mobile */
+  height: 9rem;    /* Altura padrão mobile */
   position: relative;
-  background-image: url(/Imagem6@3x.png);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: center;
 }
-.seleoDeTipoDeRoteiro20Detalhe {
+/* Imagens específicas para cada card no mobile */
+.imagemRaiz { background-image: url(/Imagem1@3x.png); }
+.imagemNatural { background-image: url(/Imagem1@3x.png); }
+.imagemCultural { background-image: url(/Imagem1@3x.png); }
+
+
+.seleoDeTipoDeRoteiro20Body {
+  width: 100%; /* Ocupa a largura total do card */
+  height: 9.75rem; /* Altura padrão mobile */
+  background-color: var(--color-whitesmoke-100);
+  padding: 1rem var(--padding-20);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Barras coloridas na horizontal para o modo retrato no mobile */
+.seleoDeTipoDeRoteiro20Detalhe,
+.detalhe2,
+.detalhe3 {
   width: 11.25rem;
   position: absolute;
-  margin: 0 !important;
   bottom: 0;
   left: 0;
   border-radius: 0 var(--br-5) 0 0;
-  background-color: var(--color-orange-100);
   height: 1.125rem;
-  z-index: 0;
+  z-index: 1;
 }
-.seleoDeTipoDeRoteiro20Body {
-  width: 22.438rem;
-  height: 9.75rem;
-  background-color: var(--color-whitesmoke-100);
-  overflow: hidden;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0 var(--padding-20);
-  box-sizing: border-box;
-}
+.seleoDeTipoDeRoteiro20Detalhe { background-color: var(--color-orange-100); }
+.detalhe2 { background-color: var(--color-forestgreen); }
+.detalhe3 { background-color: var(--color-mediumpurple); }
+
 .ttuloETexto {
   align-self: stretch;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
   gap: var(--gap-5);
+  flex-grow: 1;
 }
 .seleoDeTipoDeRoteiro20Ttulo {
   align-self: stretch;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .maspRaiz {
   margin: 0;
-  flex: 1;
   position: relative;
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 .texto {
-  width: 16.875rem;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  text-align: justify;
+  text-align: left;
   font-size: var(--font-size-14);
 }
 .partindoDoMasp {
-  width: 16.875rem;
-  position: relative;
-  letter-spacing: 0.04em;
   font-weight: 300;
-  display: inline-block;
 }
-.detalhe2 {
-  width: 11.25rem;
-  position: absolute;
-  margin: 0 !important;
-  bottom: 0;
-  left: 0;
-  border-radius: 0 var(--br-5) 0 0;
-  background-color: var(--color-forestgreen);
-  height: 1.125rem;
-  z-index: 0;
+
+
+/* --- ESTILOS RESPONSIVOS COM CARDS GRANDES E IMAGENS --- */
+
+@media (min-width: 1024px) {
+  .seleoDeTipoDeRoteiro20 {
+    padding: 2rem 0;
+    justify-content: center;
+  }
+
+  .creditSummaryIcon {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  object-fit: contain;
+  cursor: pointer;
+  margin: 3.5rem;
 }
-.seleoDeTipoDeRoteiro20Texto {
-  width: 16.875rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  text-align: justify;
-  font-size: var(--font-size-14);
-}
-.detalhe3 {
-  width: 11.25rem;
-  position: absolute;
-  margin: 0 !important;
-  bottom: 0;
-  left: 0;
-  border-radius: 0 var(--br-5) 0 0;
-  background-color: var(--color-mediumpurple);
-  height: 1.125rem;
-  z-index: 0;
+
+  .body {
+    padding: 0 5%;
+    gap: 5rem;
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+  }
+
+  .ttulo {
+    width: 100%; 
+  }
+
+   .ttulo p {
+    width: 100%;
+    font-size: 40px; 
+  }
+
+  .qualTipoDe {
+    font-size: 36px;
+  }
+  
+  .detalhe {
+      width: 58rem;
+  }
+
+  .roteiros {
+    flex-direction: column; /* Cards empilhados verticalmente */
+    justify-content: center;
+    align-items: center; /* Centraliza a pilha de cards */
+    flex-wrap: wrap;
+    gap: 3.5rem; /* Espaço entre os cards */
+  }
+
+  .raiz {
+    flex-direction: row; /* IMAGEM E TEXTO LADO A LADO NO DESKTOP */
+    width: 100%;
+    max-width: 100vw; /* Largura máxima do card */
+    height: 25rem;    /* Altura do card */
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.19);
+  }
+
+  .imagem {
+    display: block; /* Garante que a imagem apareça aqui também */
+    width: 70rem; /* Largura da imagem no desktop */
+    height: 100%;
+    /* As background-images já estão definidas acima, então não precisamos repetir aqui */
+  }
+  
+  .seleoDeTipoDeRoteiro20Body {
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    padding: 4rem; /* Padding interno */
+    align-items: flex-start; /* Alinha o texto à esquerda no desktop */
+  }
+
+  /* Barras coloridas na vertical no desktop, dentro da imagem */
+  .seleoDeTipoDeRoteiro20Detalhe,
+  .detalhe2,
+  .detalhe3 {
+    width: 1rem; /* Espessura da barra */
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: auto; /* Remove bottom para garantir alinhamento no topo */
+    border-radius: 0;
+  }
+
+  .maspRaiz {
+    font-size: 40px;
+  }
+
+  .partindoDoMasp {
+    font-size: 32px;
+    line-height: 1.6;
+  }
 }

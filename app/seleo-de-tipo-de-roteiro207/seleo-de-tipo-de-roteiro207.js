@@ -16,7 +16,7 @@ const SeleoDeTipoDeRoteiro207 = () => {
     router.push("/info-masp204");
   }, [router]);
 
-    const onContainerClick = useCallback(() => {
+  const onContainerClick = useCallback(() => {
     router.push("/IniciarMasp");
   }, [router]);
 
@@ -30,7 +30,7 @@ const SeleoDeTipoDeRoteiro207 = () => {
           height={20}
           sizes="100vw"
           alt=""
-          src="/Vector22.svg"
+          src="/Bot-o-de-Voltar.svg"
           onClick={onCreditSummaryIconClick}
         />
       </Box>
@@ -38,33 +38,25 @@ const SeleoDeTipoDeRoteiro207 = () => {
         <Box className={styles.ttulo}>
           <Typography
             className={styles.qualTipoDe}
-            variant="inherit"
             variantMapping={{ inherit: "b" }}
-            sx={{ fontWeight: "700" }}
           >
             Qual tipo de roteiro você deseja explorar?
           </Typography>
-          <Box className={styles.detalhe}>
-            <Box className={styles.detalheChild} />
-          </Box>
+          <Box className={styles.detalhe} />
         </Box>
         <Box className={styles.roteiros}>
-          <Box className={styles.raiz}>
-            <Box className={styles.imagem} onClick={onContainerClick}>
+          {/* Card Raiz */}
+          <Box className={styles.raiz} onClick={onContainerClick}>
+            <Box
+              className={`${styles.imagem} ${styles.imagemRaiz}`} // CLASSE ADICIONADA
+            >
               <Box className={styles.seleoDeTipoDeRoteiro20Detalhe} />
             </Box>
-            <Box className={styles.seleoDeTipoDeRoteiro20Body} onClick={onContainerClick}>
+            <Box className={styles.seleoDeTipoDeRoteiro20Body}>
               <Box className={styles.ttuloETexto}>
-                <Box className={styles.seleoDeTipoDeRoteiro20Ttulo}>
-                  <Typography
-                    className={styles.maspRaiz}
-                    variant="inherit"
-                    variantMapping={{ inherit: "h3" }}
-                    sx={{ fontWeight: "700", letterSpacing: "0.04em" }}
-                  >
-                    Masp Raiz
-                  </Typography>
-                </Box>
+                <Typography className={styles.maspRaiz} variantMapping={{ inherit: "h3" }}>
+                  Masp Raiz
+                </Typography>
                 <Box className={styles.texto}>
                   <div className={styles.partindoDoMasp}>
                     Partindo do MASP, um roteiro pelo coração autêntico de São
@@ -74,22 +66,18 @@ const SeleoDeTipoDeRoteiro207 = () => {
               </Box>
             </Box>
           </Box>
-          <Box className={styles.raiz}>
-            <Box className={styles.imagem}>
+          {/* Card Natural */}
+          <Box className={styles.raiz} onClick={onContainerClick}>
+            <Box
+              className={`${styles.imagem} ${styles.imagemNatural}`} // CLASSE ADICIONADA
+            >
               <Box className={styles.detalhe2} />
             </Box>
             <Box className={styles.seleoDeTipoDeRoteiro20Body}>
               <Box className={styles.ttuloETexto}>
-                <Box className={styles.seleoDeTipoDeRoteiro20Ttulo}>
-                  <Typography
-                    className={styles.maspRaiz}
-                    variant="inherit"
-                    variantMapping={{ inherit: "h3" }}
-                    sx={{ fontWeight: "700", letterSpacing: "0.04em" }}
-                  >
-                    Masp Natural
-                  </Typography>
-                </Box>
+                <Typography className={styles.maspRaiz} variantMapping={{ inherit: "h3" }}>
+                  Masp Natural
+                </Typography>
                 <Box className={styles.seleoDeTipoDeRoteiro20Texto}>
                   <div className={styles.partindoDoMasp}>
                     Conecte a arte do MASP a um roteiro de consciência,
@@ -99,22 +87,18 @@ const SeleoDeTipoDeRoteiro207 = () => {
               </Box>
             </Box>
           </Box>
-          <Box className={styles.raiz}>
-            <Box className={styles.imagem}>
+          {/* Card Cultural */}
+          <Box className={styles.raiz} onClick={onContainerClick}>
+            <Box
+              className={`${styles.imagem} ${styles.imagemCultural}`} // CLASSE ADICIONADA
+            >
               <Box className={styles.detalhe3} />
             </Box>
             <Box className={styles.seleoDeTipoDeRoteiro20Body}>
               <Box className={styles.ttuloETexto}>
-                <Box className={styles.seleoDeTipoDeRoteiro20Ttulo}>
-                  <Typography
-                    className={styles.maspRaiz}
-                    variant="inherit"
-                    variantMapping={{ inherit: "h3" }}
-                    sx={{ fontWeight: "700", letterSpacing: "0.04em" }}
-                  >
-                    Masp Cultural
-                  </Typography>
-                </Box>
+                <Typography className={styles.maspRaiz} variantMapping={{ inherit: "h3" }}>
+                  Masp Cultural
+                </Typography>
                 <Box className={styles.seleoDeTipoDeRoteiro20Texto}>
                   <div className={styles.partindoDoMasp}>
                     Do MASP, explore a vibrante cena cultural em um roteiro que
