@@ -73,7 +73,7 @@
   left: 0;
   border-radius: 50%;
   background-color: var(--color-orange-100);
-  z-index:-999;
+  z-index: -999;
 }
 .iaButtomIcon,
 .imgDistnciaIcon {
@@ -90,25 +90,24 @@
   cursor: pointer;
 }
 
-
 /* Por padrão, o título é visível (bom para mobile-first) */
 .tituloPrincipalMobile1 {
   position: relative;
   padding-bottom: 12px;
-  margin-bottom: 24px; 
+  margin-bottom: 24px;
   font-size: 15px;
   font-family: "Poppins", "Sans-serif";
   font-weight: 600;
   margin-bottom: 22px;
-  padding:0 20px;
+  padding: 0 20px;
 }
 
 .tituloPrincipalMobile1::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -5px;
   left: 20px;
-  width:65%;
+  width: 65%;
   height: 1px;
   background-color: #000000;
 }
@@ -116,20 +115,20 @@
 .tituloPrincipalMobile2 {
   position: relative;
   padding-bottom: 12px;
-  margin-bottom: 24px; 
+  margin-bottom: 24px;
   font-size: 15px;
   font-family: "Poppins", "Sans-serif";
   font-weight: 600;
   margin-bottom: 22px;
-  padding:0 20px;
+  padding: 0 20px;
 }
 
 .tituloPrincipalMobile2::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -5px;
   left: 20px;
-  width:70%;
+  width: 70%;
   height: 1px;
   background-color: #000000;
 }
@@ -137,40 +136,33 @@
 .tituloPrincipalMobile3 {
   position: relative;
   padding-bottom: 12px;
-  margin-bottom: 24px; 
+  margin-bottom: 24px;
   font-size: 15px;
   font-family: "Poppins", "Sans-serif";
   font-weight: 600;
   margin-bottom: 22px;
-  padding:0 20px;
+  padding: 0 20px;
 }
 
 .tituloPrincipalMobile3::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -5px;
   left: 20px;
-  width:80%;
+  width: 80%;
   height: 1px;
   background-color: #000000;
 }
 
-@media (min-width: 769px) {
-  .tituloPrincipalMobile1 {
-    display: none; 
-  }
-
-  .tituloPrincipalMobile2 {
-    display: none; 
-  }
-
-  .tituloPrincipalMobile {
+@media (min-width: 769px) and (max-width: 3000px) {
+  .tituloPrincipalMobile1, .tituloPrincipalMobile2, .tituloPrincipalMobile, .tituloPrincipalMobile3{
     display: none;
   }
+
+  .home20 > *:not(.navbar) {
+    width: 100%;
+    margin-bottom: 1rem;
+    max-width: 100%;
+  } 
 }
 
-.home20 > *:not(.navbar) {
-  width: 100%;
-  margin-bottom: 1rem;
-  max-width: 100%;
-}
