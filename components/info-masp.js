@@ -125,8 +125,8 @@ const InfoMasp = ({ className = "", estado = "Padrão" }) => {
                 >
                   <span>Ler artigo completo</span>
                   <img
-                    width="12px"
-                    height="7px"
+                    width="60px"
+                    height="15px"
                     src="/article-icon.svg"
                     alt="Abrir artigo"
                     className={`${styles.arrowIcon} ${

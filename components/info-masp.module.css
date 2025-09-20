@@ -149,7 +149,7 @@
   height: auto;
   padding: 0.8rem 0.2rem;
   font-family: var(--font-poppins);
-  font-size: 15px;
+  font-size: 25px;
   width: 100%;
   cursor: pointer;
   display: flex;
@@ -394,7 +394,7 @@
 
 }
 
-.accordionButton {
-    font-size: 34px;
+.accordionButton img {
+    font-size: 80px;
   }
 }
