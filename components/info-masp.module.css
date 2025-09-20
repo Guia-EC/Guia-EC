@@ -219,6 +219,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 .galleryImage {
@@ -298,15 +299,15 @@
   }
 
   .masp {
-    font-size: 96px; /* Aumenta a fonte do título */
+    font-size: 100px; /* Aumenta a fonte do título */
   }
 
   .museuDeArte {
-    font-size: 32px;
+    font-size: 40px;
   }
 
   .descrio {
-    font-size: 18px;
+    font-size: 22px;
   }
 
   .body {
@@ -335,19 +336,20 @@
   .rightColumn {
     flex: 1; /* Faz a coluna ter 50% da largura */
     position: sticky; /* Efeito "grudento" ao rolar a página */
-    /* top: 2rem; */
+    top: 6rem;
   }
 
   .infos {
     margin-top: 0; /* Remove a margem extra do mobile */
+    gap: 25px;
   }
   
   .informaes {
-    font-size: 24px; /* Aumenta o subtítulo */
+    font-size: 34px; /* Aumenta o subtítulo */
   }
 
   .coneDaArquiteturaContainer, .accordionText {
-    font-size: 18px; /* Aumenta a fonte dos parágrafos */
+    font-size: 28px; /* Aumenta a fonte dos parágrafos */
   }
 
   .galleryContainer {
@@ -385,4 +387,8 @@
   height: 40px;
 
 }
+
+.accordionButton {
+    font-size: 34px;
+  }
 }
