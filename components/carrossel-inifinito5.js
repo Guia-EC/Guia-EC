@@ -23,7 +23,7 @@ const CarrosselInifinito5 = ({ className = "", property1 = "Default" }) => {
           height={207}
           sizes="100vw"
           alt=""
-          src="/image-Rect.png"
+          src="/ec-banner-1.png"
           onClick={onImageRectClick}
         >
           
@@ -35,7 +35,7 @@ const CarrosselInifinito5 = ({ className = "", property1 = "Default" }) => {
           height={207}
           sizes="100vw"
           alt=""
-          src="/image-RectTwo.png"
+          src="/ec-banner-2.png"
         />
         <Image
           className={styles.imageRectThree}
@@ -44,7 +44,7 @@ const CarrosselInifinito5 = ({ className = "", property1 = "Default" }) => {
           height={207}
           sizes="100vw"
           alt=""
-          src="/image-RectThree.png"
+          src="/ec-banner-3.png"
         />
         <Image
           className={styles.imageRectFour}
@@ -53,7 +53,7 @@ const CarrosselInifinito5 = ({ className = "", property1 = "Default" }) => {
           height={207}
           sizes="100vw"
           alt=""
-          src="/image-RectFour.png"
+          src="/ec-banner-4.png"
         />
         <Image
           className={styles.imageRectFive}
@@ -62,7 +62,7 @@ const CarrosselInifinito5 = ({ className = "", property1 = "Default" }) => {
           height={207}
           sizes="100vw"
           alt=""
-          src="/image-RectFive.png"
+          src="/ec-banner-5.png"
         />
         <Image
           className={styles.imageRectSix}
@@ -71,7 +71,7 @@ const CarrosselInifinito5 = ({ className = "", property1 = "Default" }) => {
           height={207}
           sizes="100vw"
           alt=""
-          src="/Image-Rect2@2x.png"
+          src="/ec-banner-6.png"
         />
       </Box>
     </Box>

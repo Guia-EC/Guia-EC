@@ -38,3 +38,21 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
+
+@media (min-width: 1640px){
+
+  .conheaOsNossos {
+    width: 100%;
+    font-size: 40px;
+    height: 3.6rem;
+  }
+
+  .ttuloELinhaDeEstilo {
+    width: 40%;
+}
+
+.ttulo{
+  width: 100%;
+}
+  
+}

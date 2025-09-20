@@ -41,3 +41,19 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
+
+@media (min-width: 1640px) {
+  
+  .ttulo{
+    width: 100%;
+  }
+
+  .confiraOsDestaques{
+    width: 100%;
+    font-size: 40px;
+  }
+
+  .ttuloELinhaDeEstilo {
+    width: 69%;
+  }
+}

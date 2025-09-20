@@ -44,3 +44,20 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
+
+@media (min-width: 1640px){
+
+  .histriaCulturaE {
+    width: 92%;
+    font-size: 40px;
+  }
+
+  .ttuloELinhaDeEstilo {
+    width: 65%;
+}
+
+.ttulo{
+  width: 90%;
+}
+  
+}
