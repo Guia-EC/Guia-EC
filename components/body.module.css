@@ -154,3 +154,23 @@
   align-self: stretch;
   position: relative;
 }
+
+
+@media (min-width: 1024px) {
+  .body {
+    width: 100vw;
+    height: 100vw;
+    padding: 3rem;
+    box-sizing: border-box;
+    gap: var(--gap-40);
+    z-index: 1;
+    text-align: left;
+    font-size: var(--font-size-18);
+    color: var(--color-black);
+    font-family: var(--font-poppins);
+  }
+
+
+
+
+}

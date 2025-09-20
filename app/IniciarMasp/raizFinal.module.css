@@ -98,3 +98,13 @@
   position: relative;
   display: inline-block;
 }
+
+@media (min-width: 1024px) {
+
+  .iniciarRoteiro20 {
+    height: 100vh;
+  }
+
+
+
+}
