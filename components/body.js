@@ -9,7 +9,6 @@ const Body = ({ className = "" }) => {
       <Box className={styles.ttulo}>
         <Typography
           className={styles.roteiroSugerido}
-          variant="inherit"
           variantMapping={{ inherit: "h3" }}
           sx={{ fontWeight: "600" }}
         >
@@ -28,22 +27,16 @@ const Body = ({ className = "" }) => {
           <Box className={styles.ponto1}>
             <Typography
               className={styles.masp}
-              variant="inherit"
               variantMapping={{ inherit: "b" }}
               sx={{ fontWeight: "700" }}
             >
               MASP
             </Typography>
           </Box>
+          
+          {/* --- Card Charme da Paulista --- */}
           <Box className={styles.ponto2}>
-            <Box className={styles.ttuloEBoto}>
-              <Typography
-                className={styles.charmeDaPaulista}
-                variant="inherit"
-                variantMapping={{ inherit: "b" }}
-                sx={{ fontWeight: "700" }}
-              >{`Charme da Paulista `}</Typography>
-            </Box>
+            {/* O TÍTULO FOI REMOVIDO DAQUI */}
             <Box className={styles.textoEImagem}>
               <Image
                 className={styles.charme1Icon}
@@ -55,6 +48,14 @@ const Body = ({ className = "" }) => {
                 src="/charme-1@2x.png"
               />
               <Box className={styles.texto}>
+                {/* E MOVIDO PARA CÁ */}
+                <Typography
+                  className={styles.charmeDaPaulista}
+                  variantMapping={{ inherit: "b" }}
+                  sx={{ fontWeight: "700" }}
+                >
+                  {`Charme da Paulista `}
+                </Typography>
                 <div className={styles.lanchoneteBar24H}>
                   Lanchonete-bar 24 h no coração da Avenida Paulista, com
                   cardápio variado e clima descontraído ideal para um lanche
@@ -63,17 +64,10 @@ const Body = ({ className = "" }) => {
               </Box>
             </Box>
           </Box>
+          
+          {/* --- Card Mirante 9 de Julho --- */}
           <Box className={styles.ponto3}>
-            <Box className={styles.ttuloEBoto}>
-              <Typography
-                className={styles.mirante9De}
-                variant="inherit"
-                variantMapping={{ inherit: "b" }}
-                sx={{ fontWeight: "700" }}
-              >
-                Mirante 9 de Julho
-              </Typography>
-            </Box>
+            {/* O TÍTULO FOI REMOVIDO DAQUI */}
             <Box className={styles.imagemETexto}>
               <Image
                 className={styles.miranre11}
@@ -84,13 +78,25 @@ const Body = ({ className = "" }) => {
                 alt=""
                 src="/MIranre-1-1@2x.png"
               />
-              <div className={styles.espaoRevitalizadoDesde}>
-                Espaço revitalizado desde 2015, com cafeteria, restaurante e
-                programação cultural em um mirante urbano atrás do MASP, com
-                vista para a movimentada Avenida 9 de Julho.
-              </div>
+              {/* Adicionamos um container .texto para consistência */}
+              <Box className={styles.texto}>
+                {/* E MOVIDO PARA CÁ */}
+                <Typography
+                  className={styles.mirante9De}
+                  variantMapping={{ inherit: "b" }}
+                  sx={{ fontWeight: "700" }}
+                >
+                  Mirante 9 de Julho
+                </Typography>
+                <div className={styles.espaoRevitalizadoDesde}>
+                  Espaço revitalizado desde 2015, com cafeteria, restaurante e
+                  programação cultural em um mirante urbano atrás do MASP, com
+                  vista para a movimentada Avenida 9 de Julho.
+                </div>
+              </Box>
             </Box>
           </Box>
+
         </Box>
       </Box>
     </section>
