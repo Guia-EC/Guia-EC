@@ -31,7 +31,7 @@
   cursor: pointer;
   border: 0;
   background-color: transparent;
-  width: 6%;
+  width: 4%;
   height: auto;
 }
 
@@ -120,8 +120,8 @@
   .imagemHero {
     height: 50rem; /* AUMENTADO: Altura da imagem de fundo */
     align-self: stretch;
-    padding-left: 6rem;
-    padding-top: 12rem;
+    padding-left: 76px;
+    padding-top: 130px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center; /* Centraliza melhor a imagem */
@@ -159,5 +159,9 @@
 
   .avenidaPaulista1578 {
     width: auto;
+  }
+
+  .voltarIcon {
+    width: 100px;
   }
 }
