@@ -290,12 +290,18 @@
   .imagemHero {
     height: 40rem; /* Aumenta a altura da imagem principal */
     background-image: url(/MASPRESPONSIVO.png);
+    padding: 135px 0px 0px 75px;
   }
 
   .ttulo {
     top: 30rem; /* Reposiciona o título */
     left: 5%;
     max-width: 800px;
+  }
+
+  .voltarIcon {
+    width: 100px;
+    height: 100px;
   }
 
   .masp {
