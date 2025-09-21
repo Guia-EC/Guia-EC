@@ -1,24 +1,60 @@
 "use client";
 import { useCallback } from "react";
-import { Button, Typography, Box } from "@mui/material";
+import { Typography, Box } from "@mui/material";
 import Image from "next/image";
-import Body from "../../components/body";
-import styles from "./raizFinal.module.css";
+import Body from "../../components/body"; // Certifique-se que este caminho está correto
+import styles from "./raizFinal.module.css"; // Certifique-se que este caminho está correto
 import { useRouter } from "next/navigation";
 
-const IniciarRoteiro20 = () => {
+// Imports da funcionalidade de impressão
+import { useBluetoothPrinter } from "../../hooks/useBluetoothPrinter"; // Certifique-se que este caminho está correto
+import Encoder from 'esc-pos-encoder';
 
+const IniciarRoteiro20 = () => {
   const router = useRouter();
+
+  // Instancia o hook para ter acesso às funções e ao estado da impressora
+  const { connect, print, isConnected, isConnecting, device, error } = useBluetoothPrinter();
 
   const onVoltarIconClick = useCallback(() => {
     router.push("/seleo-de-tipo-de-roteiro207");
   }, [router]);
 
-  const onBotoIniciarRoteiroClick = useCallback(() => {
-    window.open(
-      "https://www.google.com/maps/dir/?api=1&origin=My+Location&destination=Mirante+9+de+Julho&waypoints=Museu+de+Arte+de+São+Paulo|Charme+da+Paulista+Restaurante"
-    );
-  }, []);
+  // Função que formata e prepara os dados para impressão
+  const onPrintRoteiroClick = useCallback(() => {
+    if (!isConnected) return; // Checagem de segurança
+
+    let encoder = new Encoder({ characterSet: 'pc850' });
+    const commands = encoder
+      .initialize()
+      .align('center')
+      .bold(true)
+      .line('Seu Roteiro')
+      .bold(false)
+      .drawLine()
+      .align('left')
+      .newline()
+      .bold(true)
+      .line('MASP')
+      .bold(false)
+      .line('Museu de Arte de São Paulo')
+      .line('1957-1968 Lina Bo Bardi')
+      .line('Avenida Paulista, 1578 Cerqueira César')
+      .feed(3)
+      .cut()
+      .encode();
+
+    print(commands);
+  }, [isConnected, print]);
+
+  // Manipulador de clique principal que decide entre conectar e imprimir
+  const handleMainButtonClick = useCallback(() => {
+    if (isConnected) {
+      onPrintRoteiroClick();
+    } else {
+      connect();
+    }
+  }, [isConnected, connect, onPrintRoteiroClick]);
 
   return (
     <Box className={styles.iniciarRoteiro20}>
@@ -34,19 +70,26 @@ const IniciarRoteiro20 = () => {
         />
       </section>
       <Body />
+
       <section
         className={styles.botoIniciarRoteiro}
-        onClick={onBotoIniciarRoteiroClick}
+        onClick={handleMainButtonClick}
+        style={{ 
+          cursor: isConnecting ? 'wait' : 'pointer',
+          opacity: isConnecting ? 0.7 : 1 
+        }} 
       >
         <Typography
           className={styles.iniciarRotaCom}
           variantMapping={{ inherit: "Button" }}
-          sx={{ fontWeight: "600", fontSize: "30px", color: "white"}}
-          
+          sx={{ fontWeight: "600", fontSize: "30px", color: "white", textAlign: 'center' }}
         >
-          Iniciar rota com Google
+          {isConnecting ? 'Conectando...' : isConnected ? 'Imprimir Roteiro' : 'Conectar à Impressora'}
         </Typography>
       </section>
+      
+      {error && <Typography sx={{ color: 'red', textAlign: 'center', padding: '10px' }}>{error}</Typography>}
+
       <section className={styles.ttulo}>
         <Box className={styles.iniciarRoteiro20Ttulo}>
           <Typography
