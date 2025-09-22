@@ -57,4 +57,18 @@
     width: 370px;
     height: 100px;
   }
-}  
+}
+
+
+@media (min-width: 768px) {
+
+  .botoFazerRoteiro h3 {
+    font-size: 22px;
+  }
+
+  .botoFazerRoteiro {
+    position: fixed;
+    width: 410px;
+    height: 100px;
+  }
+} 

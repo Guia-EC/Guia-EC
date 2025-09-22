@@ -39,7 +39,6 @@
 }
 .body {
   justify-content: flex-start;
-  padding: 0 1.062rem;
   gap: 3.125rem;
   text-align: left;
   font-size: var(--font-size-16);
@@ -199,10 +198,12 @@
 
 /* --- ESTILOS RESPONSIVOS COM CARDS GRANDES E IMAGENS --- */
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .seleoDeTipoDeRoteiro20 {
-    padding: 2rem 0;
+    padding: 60px 50px;
     justify-content: center;
+    gap: 120px
+    ;
   }
 
   .creditSummaryIcon {
@@ -215,23 +216,37 @@
 }
 
   .body {
-    padding: 0 5%;
     gap: 5rem;
     width: 100%;
     max-width: none;
     margin: 0 auto;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex-grow: 1;
   }
 
+
+   .voltar {
+    padding: 0;
+    margin: 0;
+    align-self: flex-start;
+  }
+
+  .voltar img {
+    margin: 0;
+    height: 70px;
+    width: 70px;
+  }
+
   .ttulo {
-    width: 100%; 
+    width: 75%;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid black;
   }
 
    .ttulo p {
     width: 100%;
-    font-size: 40px; 
+    font-size: 25px; 
   }
 
   .qualTipoDe {
@@ -239,7 +254,7 @@
   }
   
   .detalhe {
-      width: 58rem;
+      width: 10rem;
   }
 
   .roteiros {
@@ -253,8 +268,8 @@
   .raiz {
     flex-direction: row; /* IMAGEM E TEXTO LADO A LADO NO DESKTOP */
     width: 100%;
-    max-width: 100vw; /* Largura máxima do card */
-    height: 25rem;    /* Altura do card */
+    max-width: 800px; /* Largura máxima do card */
+    height: 320px;    /* Altura do card */
     border-radius: 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.19);
   }
@@ -270,7 +285,7 @@
     width: 100%;
     height: 100%;
     flex-grow: 1;
-    padding: 4rem; /* Padding interno */
+    padding: 2rem; /* Padding interno */
     align-items: flex-start; /* Alinha o texto à esquerda no desktop */
   }
 
@@ -291,8 +306,14 @@
   }
 
   .partindoDoMasp {
-    font-size: 32px;
-    line-height: 1.6;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: justify;
   }
+
+  .ttuloETexto p {
+    font-size: 24px;
+  }
+
 }
 

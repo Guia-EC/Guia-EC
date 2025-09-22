@@ -318,24 +318,29 @@
 }
 
 
-/* --- NOVO: ESTILOS RESPONSIVOS PARA TABLET/DESKTOP --- */
+/* --- ESTILOS RESPONSIVOS PARA TABLET/DESKTOP --- */
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .imagemHero {
     height: 40rem; /* Aumenta a altura da imagem principal */
     background-image: url(/MASPRESPONSIVO.png);
-    padding: 135px 0px 0px 75px;
+    padding: 60px 50px;
   }
 
   .ttulo {
     top: 30rem; /* Reposiciona o título */
-    left: 5%;
+    left: 58px;
     max-width: 800px;
   }
 
   .voltarIcon {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
+  }
+
+  .arrowIcon {
+    width: 12px;
+    height: 12px;
   }
 
   .masp {
@@ -351,10 +356,12 @@
   }
 
   .body {
-    padding: 4rem 5% 12rem 5%; /* Aumenta o espaçamento lateral */
-    margin-top: 2rem;
+    padding: 0px 60px; /* Aumenta o espaçamento lateral */
+    margin-top: 100px;
     align-items: flex-start;
-    min-height: 78rem;
+    min-height: fit-content;
+    margin-bottom: 10rem;
+
   }
 
   /* Estrutura principal de duas colunas */
@@ -377,6 +384,7 @@
     flex: 1; /* Faz a coluna ter 50% da largura */
     position: sticky; /* Efeito "grudento" ao rolar a página */
     top: 6rem;
+    height: fit-content;
   }
 
   .infos {
@@ -385,50 +393,45 @@
   }
   
   .informaes {
-    font-size: 34px; /* Aumenta o subtítulo */
+    font-size: 26px; /* Aumenta o subtítulo */
   }
 
   .coneDaArquiteturaContainer, .accordionText {
-    font-size: 28px; /* Aumenta a fonte dos parágrafos */
+    font-size: 20px; /* Aumenta a fonte dos parágrafos */
   }
 
   .galleryContainer {
     max-width: 100%;
-    height: 52vh; /* Altura da galeria relativa à tela */
+    height: 50vh; /* Altura da galeria relativa à tela */
+    margin-top: 1rem;
   }
 
   .imageContainer {
-  position: absolute;
-  top: 0; /* ALTERAÇÃO AQUI: Alinha a imagem no topo */
-  left: 50%;
-  transform: translateX(-50%); /* ALTERAÇÃO AQUI: Remove o translateY */
-  width: 70%;
-  height: 90%;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.chevron {
-  position: absolute;
-  top: 45%;
-  transform: translateY(-50%);
-  background-color: transparent;
-  color: black;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 40px;
-  transition: background-color 0.2s;
-  z-index: 2;
-  width: 40px;
-  height: 40px;
+    position: absolute;
+    top: 0; /* ALTERAÇÃO AQUI: Alinha a imagem no topo */
+    left: 50%;
+    transform: translateX(-50%); /* ALTERAÇÃO AQUI: Remove o translateY */
+    width: 70%;
+    height: 90%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .chevron {
+    top: 45%;
+    font-size: 20px;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
 
-}
+  }
 
-.accordionButton img {
+  .accordionButton img {
     font-size: 80px;
+  }
+
+  .accordionButton span {
+    font-size: 20px;
   }
 }

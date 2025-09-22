@@ -141,17 +141,16 @@
 
 
 /* --- MUDANÇAS APLICADAS APENAS NO RESPONSIVO --- */
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .iniciarRoteiro20 {
     height: auto;
     padding: 0;
   }
 
   .imagemHero {
-    height: 50rem; /* AUMENTADO: Altura da imagem de fundo */
+    height: 640px; /* AUMENTADO: Altura da imagem de fundo */
     align-self: stretch;
-    padding-left: 76px;
-    padding-top: 130px;
+    padding: 60px 50px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center; /* Centraliza melhor a imagem */
@@ -159,18 +158,34 @@
   }
 
   .ttulo {
-    top: 40rem; /* AJUSTADO: Posição do título para acompanhar a nova altura */
-    left: 11rem;
+    top: 30rem; /* Reposiciona o título */
+    left: 58px;
+    max-width: 800px;
   }
 
+  .iniciarRoteiro20Ttulo h1 {
+    font-size: 100px;
+  }
+
+  .iniciarRoteiro20Ttulo h3 {
+    font-size: 40px;
+  }
+
+  .iniciarRotaCom {
+    font-size: 22px;
+  }
+
+  .avenidaPaulista1578 {
+    font-size: 22px;
+  }
+
+
   .botoIniciarRoteiro {
-    width: 40%;
-    height: 6%;
-    position: fixed; /* Fixa o botão no final da tela */
-    bottom: 8rem;
-    top: auto; /* Remove o 'top' antigo */
-    left: 50%;
-    transform: translateX(-50%); /* Centraliza o botão horizontalmente */
+    position: fixed;
+    width: 50%;
+    height: 100px;
+    top: 65rem;
+    left: 13rem;
   }
 
   /* --- MUDANÇAS: Fontes do Título Aumentadas --- */
@@ -192,6 +207,6 @@
   }
 
   .voltarIcon {
-    width: 100px;
+    width: 70px;
   }
 }

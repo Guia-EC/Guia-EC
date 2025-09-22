@@ -118,7 +118,7 @@ const InfoMasp = ({ className = "", estado = "Padrão" }) => {
                 </Typography>
               </Box>
 
-              <div className={styles.accordionContainer}>
+              <Box className={styles.accordionContainer}>
                 <button
                   className={styles.accordionButton}
                   onClick={toggleAccordion}
@@ -217,7 +217,7 @@ const InfoMasp = ({ className = "", estado = "Padrão" }) => {
                     </p>
                   </div>
                 </div>
-              </div>
+              </Box>
             </div>
 
             {/* --- Coluna da Direita (Galeria) --- */}

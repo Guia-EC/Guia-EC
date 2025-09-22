@@ -1,6 +1,6 @@
 /* --- ESTILOS BASE (MOBILE-FIRST) --- */
 .body {
-  width: 24.563rem;
+  width: 100vw;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -16,8 +16,7 @@
 }
 .ttulo {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: start;
 }
 .roteiroSugerido {
   margin: 0;
@@ -125,15 +124,12 @@
 }
 
 /* --- ESTILOS RESPONSIVOS REFINADOS --- */
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .body {
-    width: 100%;
-    height: auto;
-    align-items: center;
-    padding: 9rem 5% 8rem;
-    box-sizing: border-box;
-    gap: 4rem;
-    z-index: 1;
+    padding: 0px 60px; /* Aumenta o espaçamento lateral */
+    margin-top: 100px;
+    min-height: fit-content;
+    margin-bottom: 10rem;
   }
   
   .ttulo,
@@ -143,18 +139,10 @@
   }
 
   /* --- MUDANÇA 1: Alinhando o título principal --- */
-  .ttulo {
-    display: flex;
-    justify-content: flex-start; /* Alinha à esquerda */
-    /* Este padding alinha o texto com os cards abaixo */
-    /* (largura da bolinha da rota + gap) => 2.2rem + 1.5rem = 3.7rem */
-    padding-left: 3.7rem;
+  .ttulo p{
+    font-size: 30px;
   }
 
-  /* --- MUDANÇA 2: Aumentando a fonte do título principal --- */
-  .roteiroSugerido {
-    font-size: 50px;
-  }
 
   .paradas {
     gap: 4rem;
@@ -163,9 +151,8 @@
     margin-left: 2rem; 
   } 
 
-  .ponto1, .ponto2, .ponto3 {
-    width: 100%;
-    gap: 0;
+  .ponto1 p, .ponto2 p, .ponto3 p {
+    font-size: 25px;
   }
   
   .textoEImagem,
@@ -184,22 +171,19 @@
     object-fit: cover;
   }
   .texto {
+    width: 300px;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     padding: 0;
     gap: 1rem;
+    
   }
 
   /* --- MUDANÇA 3: Aumentando a fonte dos subtítulos --- */
-  .masp,
-  .charmeDaPaulista, 
-  .mirante9De {
-    font-size: 45px;
-  }
+
   .lanchoneteBar24H,
   .espaoRevitalizadoDesde {
-    font-size: 30px;
+    font-size: 18px;
     line-height: 1.6;
     text-align: justify;
   }

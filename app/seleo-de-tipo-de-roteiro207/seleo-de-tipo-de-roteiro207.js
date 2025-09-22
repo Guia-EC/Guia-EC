@@ -42,7 +42,6 @@ const SeleoDeTipoDeRoteiro207 = () => {
           >
             Qual tipo de roteiro você deseja explorar?
           </Typography>
-          <Box className={styles.detalhe} />
         </Box>
         <Box className={styles.roteiros}>
           {/* Card Raiz */}
