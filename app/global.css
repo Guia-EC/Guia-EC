@@ -5,6 +5,7 @@ body {
   margin: 0;
   line-height: normal;
   -webkit-tap-highlight-color: transparent;
+  background-color: var(--color-gray-100);
 }
 :root {
   /* Color */

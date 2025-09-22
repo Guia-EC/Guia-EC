@@ -1,7 +1,10 @@
+.home20{
+  margin-bottom: 30px;
+}
+
 .home20 {
   width: 100%;
   position: relative;
-  background-color: var(--color-gray-100);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -170,7 +173,6 @@
 @media (min-width: 768px){
   .home20 {
     gap: 4rem;
-    margin-bottom: 195px;
   }
 
   .navbar {
@@ -194,6 +196,10 @@
   .roteiro{
     width: 65px;
     height: 65px;
+  }
+
+  .home20{
+    margin-bottom: 195px;
   }
 
 }
