@@ -11,6 +11,12 @@ import { useBluetoothPrinter } from "../../hooks/useBluetoothPrinter"; // Certif
 import Encoder from 'esc-pos-encoder';
 
 const IniciarRoteiro20 = () => {
+
+  // 1. Criamos a função de impressão simples
+  const handlePrint = useCallback(() => {
+    window.print();
+  }, []);
+  
   const router = useRouter();
 
   // Instancia o hook para ter acesso às funções e ao estado da impressora
@@ -70,17 +76,15 @@ const IniciarRoteiro20 = () => {
         />
       </section>
       <Body />
-
-      <Box // Botão De conectar impressora!
+      <Box 
         className={styles.botoIniciarRoteiro}
-        onClick={handleMainButtonClick}
+        // 2. Trocamos o onClick para a nossa nova função de impressão
+        onClick={handlePrint}
         sx={{ 
-          cursor: isConnecting ? 'wait' : 'pointer',
-          opacity: isConnecting ? 0.7 : 1,
-          display: 'none !important', // Escondido por padrão (mobile)
-          '@media (min-width: 768px)': {
-            display: 'block' 
-          }
+          cursor: 'pointer',
+          // 3. Removemos a lógica de opacidade e cursor de "wait"
+          // Mantivemos sua lógica de display para responsividade
+          display: { xs: 'none', md: 'block' }, // Forma mais limpa de fazer responsividade no MUI
         }}
       >
         <Typography
@@ -88,11 +92,12 @@ const IniciarRoteiro20 = () => {
           variantMapping={{ inherit: "Button" }}
           sx={{ fontWeight: "600", fontSize: "30px", color: "white", textAlign: 'center'}}
         >
-          {isConnecting ? 'Conectando...' : isConnected ? 'Imprimir Roteiro' : 'Conectar à Impressora'}
+          {/* 4. O texto agora é fixo */}
+          Imprimir Roteiro
         </Typography>
       </Box>
 
-      <Box //Botão de Iniciar Roteiro!
+      {/* <Box 
         className={styles.botoIniciarRoteiro}
       >
         <Typography
@@ -102,7 +107,7 @@ const IniciarRoteiro20 = () => {
         >
           Iniciar Rota com Google
         </Typography>
-      </Box>
+      </Box> */}
 
       <section className={styles.ttulo}>
         <Box className={styles.iniciarRoteiro20Ttulo}>
