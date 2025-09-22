@@ -25,7 +25,7 @@
 }
 .navbar {
   width: 90%;
-  height: 12%;
+  height: 100px;
   position: fixed;
   bottom: 2rem;
   left: 50%;
