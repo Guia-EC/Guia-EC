@@ -21,7 +21,7 @@
 }
 .navbar {
   width: 90%;
-  height: 11%;
+  height: 12%;
   position: fixed;
   bottom: 2rem;
   left: 50%;
@@ -56,7 +56,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   padding: var(--padding-11) var(--padding-10) var(--padding-11)
     var(--padding-11);
   box-sizing: border-box;
@@ -183,4 +183,17 @@
   width: 45px;
   height: 45px;
   }
+
+  .routesButtom{
+   width: 6rem;
+   height: 6rem;
+  }
+
+  .roteiro{
+    width: 65px;
+    height: 65px;
+  }
+
 }
+
+
