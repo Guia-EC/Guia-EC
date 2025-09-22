@@ -45,3 +45,16 @@
   position: relative;
   display: inline-block;
 }
+
+@media (max-width: 767px) {
+
+  .botoFazerRoteiro h3 {
+    font-size: 20px;
+  }
+
+  .botoFazerRoteiro {
+    position: fixed;
+    width: 370px;
+    height: 100px;
+  }
+}  

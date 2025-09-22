@@ -284,6 +284,40 @@
   background-color: #333;
 }
 
+/*Responsivo para mobile!*/
+
+@media (max-width: 767px) {
+  .accordionButton {
+    font-size: 16px;
+  }
+
+  .accordionButton img {
+    width: 30px;
+    height: 10px;
+  }
+  .dotsContainer {
+    bottom: 10px;
+  }
+
+  .body {
+    height: 78rem; /* Mexe no tamanho da tela! Verticalmente falando*/
+  }
+
+  .chevronLeft {
+    z-index: 0;
+  }
+
+  .chevronRight {
+    z-index: 0;  
+  }
+
+  .imagemHero {
+    padding: 40px 30px;
+  }
+
+}
+
+
 /* --- NOVO: ESTILOS RESPONSIVOS PARA TABLET/DESKTOP --- */
 
 @media (min-width: 1024px) {

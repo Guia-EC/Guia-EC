@@ -71,24 +71,38 @@ const IniciarRoteiro20 = () => {
       </section>
       <Body />
 
-      <section
+      <Box // Botão De conectar impressora!
         className={styles.botoIniciarRoteiro}
         onClick={handleMainButtonClick}
-        style={{ 
+        sx={{ 
           cursor: isConnecting ? 'wait' : 'pointer',
-          opacity: isConnecting ? 0.7 : 1 
-        }} 
+          opacity: isConnecting ? 0.7 : 1,
+          display: 'none !important', // Escondido por padrão (mobile)
+          '@media (min-width: 768px)': {
+            display: 'block' 
+          }
+        }}
       >
         <Typography
           className={styles.iniciarRotaCom}
           variantMapping={{ inherit: "Button" }}
-          sx={{ fontWeight: "600", fontSize: "30px", color: "white", textAlign: 'center' }}
+          sx={{ fontWeight: "600", fontSize: "30px", color: "white", textAlign: 'center'}}
         >
           {isConnecting ? 'Conectando...' : isConnected ? 'Imprimir Roteiro' : 'Conectar à Impressora'}
         </Typography>
-      </section>
-      
-      {error && <Typography sx={{ color: 'red', textAlign: 'center', padding: '10px' }}>{error}</Typography>}
+      </Box>
+
+      <Box //Botão de Iniciar Roteiro!
+        className={styles.botoIniciarRoteiro}
+      >
+        <Typography
+          className={styles.iniciarRotaCom}
+          variantMapping={{ inherit: "Button" }}
+          sx={{ fontWeight: "600", fontSize: "20px", color: "white", textAlign: 'center'}}
+        >
+          Iniciar Rota com Google
+        </Typography>
+      </Box>
 
       <section className={styles.ttulo}>
         <Box className={styles.iniciarRoteiro20Ttulo}>

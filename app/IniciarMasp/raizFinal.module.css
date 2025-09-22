@@ -18,6 +18,7 @@
 
 .imagemHero {
   align-self: stretch;
+  position: relative;
   height: 28.813rem;
   padding-left: 1.7rem;
   background-image: url(/MASPRESPONSIVO.png);
@@ -39,8 +40,8 @@
   width: 23.188rem;
   height: 6.25rem;
   margin: 0 !important;
-  position: absolute;
-  top: 73.813rem;
+  position: fixed;
+  top: 50rem;
   left: 2rem;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
   border-radius: 30px;
@@ -109,6 +110,35 @@
   position: relative;
   display: inline-block;
 }
+
+/*Responsivo para Mobile*/
+
+@media (max-width: 767px) {
+  .botoIniciarRoteiro {
+    width: 370px;
+    height: 100px;
+  }
+
+  .voltarIcon {
+    position: absolute;
+    top:2.5rem;
+    width: 35px;
+    height: 35px;
+    
+  }
+
+  .imagemHero {
+    padding: 40px 30px;
+  }
+
+  .iniciarRoteiro20 {
+    height: 80rem;
+  }
+
+}
+
+
+
 
 /* --- MUDANÇAS APLICADAS APENAS NO RESPONSIVO --- */
 @media (min-width: 1024px) {

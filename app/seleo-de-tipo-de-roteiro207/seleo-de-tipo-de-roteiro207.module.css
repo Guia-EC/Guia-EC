@@ -1,4 +1,3 @@
-/* --- ESTILOS BASE (MOBILE-FIRST) --- */
 
 .seleoDeTipoDeRoteiro20,
 .voltar {
@@ -24,10 +23,6 @@
   justify-content: flex-start;
   padding: 0.562rem var(--padding-6) 0.562rem 1.562rem;
   cursor: pointer;
-  position: absolute;
-  top: 4.375rem;
-  left: 0;
-  width: auto;
 }
 .creditSummaryIcon {
   width: 12px;
@@ -169,6 +164,38 @@
   font-weight: 300;
 }
 
+/* --- Responsivo Mobile! --- */
+
+
+@media (max-width: 767px) {
+
+  .partindoDoMasp {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .voltar {
+    padding: 0;
+    align-self: flex-start;
+  }
+
+  .creditSummaryIcon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .body {
+    padding: 0;
+    margin-top: 3rem;
+    height: 70rem;
+  }
+
+  .seleoDeTipoDeRoteiro20 {
+    padding: 40px 30px;
+  }
+
+
+}
 
 /* --- ESTILOS RESPONSIVOS COM CARDS GRANDES E IMAGENS --- */
 
@@ -268,3 +295,4 @@
     line-height: 1.6;
   }
 }
+
