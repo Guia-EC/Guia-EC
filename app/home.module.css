@@ -12,6 +12,7 @@
   gap: var(--gap-32);
   line-height: normal;
   letter-spacing: normal;
+  margin-bottom: 30px;
 }
 .navbar,
 .navbarOptions {
@@ -21,7 +22,7 @@
 }
 .navbar {
   width: 90%;
-  height: 13%;
+  height: 12%;
   position: fixed;
   bottom: 2rem;
   left: 50%;
@@ -169,6 +170,7 @@
 @media (min-width: 768px){
   .home20 {
     gap: 4rem;
+    margin-bottom: 195px;
   }
 
   .navbar {
