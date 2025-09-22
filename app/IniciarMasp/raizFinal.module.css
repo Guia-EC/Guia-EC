@@ -40,9 +40,9 @@
   width: 23.188rem;
   height: 6.25rem;
   margin: 0 !important;
-  position: fixed;
+  /* position: fixed;
   top: 50rem;
-  left: 2rem;
+  left: 2rem; */
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
   border-radius: 30px;
   background-color: var(--color-orange-100);
@@ -111,6 +111,20 @@
   display: inline-block;
 }
 
+.botaoEQrcode {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 85%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+}
+
+.qrCode {
+  display: block;
+  z-index: 99;
+}
 /*CSS impressão!*/
 
 /* Esta classe ainda esconde a área de impressão na TELA */
@@ -155,6 +169,11 @@
   .botoIniciarRoteiro {
     width: 370px;
     height: 100px;
+    position: fixed;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+
     
   }
 
@@ -240,18 +259,6 @@
 
   .avenidaPaulista1578 {
     font-size: 22px;
-  }
-
-
-  .botoIniciarRoteiro {
-    position: fixed;
-    width: 50%;
-    height: 100px;
-    /* top: 63rem;
-    left: 13rem; */
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
 
   .botoIniciarRoteiro p{

@@ -37,29 +37,45 @@ const IniciarRoteiro20 = () => {
         <Body />
 
         {/*A PARTIR DAQUI: BOTÕES DE INICIAR E IMPRIMIR ROTEIRO*/}
-        
-        <Box // BOTÃO DE IMPRIMIR ROTEIRO!
-          className={styles.botoIniciarRoteiro}
-          onClick={handlePrint} // O onClick agora chama a função de impressão direta
-          sx={{
-            cursor: 'pointer',
-            '@media (max-width: 767px)': {
-              display: 'none !important',
-            },
-            '@media (min-width: 768px)': {
-              display: 'block !important',
-            },
-            
-          }}
-        >
-          <Typography
-            variantMapping={{ inherit: "Button" }}
-            sx={{ fontWeight: "600", fontSize: "30px", color: "white", textAlign: 'center' }}
-          >
-            Imprimir Roteiro
-          </Typography>
+        <Box className={styles.botaoEQrcode}>
+          <Box // BOTÃO DE IMPRIMIR ROTEIRO!
+            className={styles.botoIniciarRoteiro}
+            onClick={handlePrint} // O onClick agora chama a função de impressão direta
+            sx={{
+              cursor: 'pointer',
+              '@media (max-width: 767px)': {
+                display: 'none !important',
+              },
+              '@media (min-width: 768px)': {
+                display: 'block !important',
+              },
+              
+            }}>
+    
+            <Typography
+              variantMapping={{ inherit: "Button" }}
+              sx={{ fontWeight: "600", fontSize: "30px", color: "white", textAlign: 'center' }}
+            >
+              Imprimir Roteiro
+            </Typography>
+          </Box>
+          <Box className={styles.qrCode} sx={{
+              cursor: 'pointer',
+              '@media (max-width: 767px)': {
+                display: 'none !important',
+              },
+              '@media (min-width: 768px)': {
+                display: 'block !important',
+              }, 
+            }}>
+              
+            <Image
+              width={100}
+              height={100}
+              src="/QRCODE.svg"
+            />
+          </Box>
         </Box>
-
         <Box // BOTÃO DE INICIAR ROTA!
           className={styles.botoIniciarRoteiro}
           // onClick={} 

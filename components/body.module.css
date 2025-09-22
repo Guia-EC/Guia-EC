@@ -131,7 +131,7 @@
     padding: 0px 60px; /* Aumenta o espaçamento lateral */
     margin-top: 100px;
     min-height: fit-content;
-    margin-bottom: 16rem;
+    margin-bottom: 14rem;
   }
   
   .ttulo,
@@ -147,7 +147,7 @@
 
 
   .paradas {
-    gap: 8rem;
+    gap: 5rem;
     width: 100%;
     max-width: none;
     margin-left: 2rem; 
@@ -190,7 +190,7 @@
 
   .bodyRouteDetails {
     width: 0.063rem;
-    height: 8rem
+    height: 5.2rem
   }
 
   .routeDetails {
@@ -199,7 +199,7 @@
   }
 
   .routeDetails3 {
-    height: 22.8rem;
+    height: 19.6rem;
   }
 
 }
