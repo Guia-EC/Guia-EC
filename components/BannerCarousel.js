@@ -10,7 +10,7 @@ import styles from './BannerCarousel.module.css';
 const BANNERS = [
   { id: 1, imageUrl: '/image-Rect.png', alt: 'Banner da Escola da Cidade com nota máxima no ENADE', linkUrl: 'https://escoladacidade.edu.br/'},
   { id: 2, imageUrl: '/image-RectTwo.png', alt: 'Banner sobre cursos livres 2025', linkUrl: 'https://escoladacidade.edu.br/pos/cursos-livres/' },
-  { id: 3, imageUrl: '/image-RectThree.png', alt: 'Banner do programa Encruzilhada de inclusão e equidade', linkUrl: 'https://escoladacidade.edu.br/politica-de-equidade-e-inclusao/'},
+  { id: 3, imageUrl: '/ec-mobile-3.png', alt: 'Banner do programa Encruzilhada de inclusão e equidade', linkUrl: 'https://escoladacidade.edu.br/politica-de-equidade-e-inclusao/'},
   { id: 4, imageUrl: '/image-RectFour.png', alt: 'Banner da Escola da Cidade com nota 5 do MEC', linkUrl: 'https://escoladacidade.edu.br/escola-da-cidade-recebe-nota-maxima-do-mec/' },
   { id: 5, imageUrl: '/image-RectFive.png', alt: 'Banner da Fábrica - Escola de Humanidades', linkUrl: 'https://escoladacidade.edu.br/ensino-medio/' },
   { id: 6, imageUrl: '/ec-mobile.png', alt: 'Banner da Fábrica - Escola de Humanidades'},
