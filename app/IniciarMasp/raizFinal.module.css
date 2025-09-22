@@ -232,6 +232,11 @@
     left: 13rem;
   }
 
+  .botoIniciarRoteiro p{
+    font-size: 22px;
+    margin: 33px; /*Por algum motivo, tá mexendo no alinahmento vertical!*/
+  }
+
   /* --- MUDANÇAS: Fontes do Título Aumentadas --- */
   .masp {
     font-size:120px; /* AUMENTADO */
@@ -243,7 +248,7 @@
   }
 
   .descrio {
-    font-size: 32px; /* AUMENTADO (equivale a 18px) */
+    font-size: 22px; /* AUMENTADO (equivale a 18px) */
   }
 
   .avenidaPaulista1578 {
@@ -251,6 +256,6 @@
   }
 
   .voltarIcon {
-    width: 70px;
+    width: 60px; /*Botão de voltar página!*/
   }
 }
