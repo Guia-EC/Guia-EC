@@ -42,7 +42,7 @@
   justify-content: flex-start;
 }
 
-@media (min-width: 1640px) {
+@media (min-width: 834px) {
   
   .ttulo{
     width: 100%;
@@ -50,10 +50,11 @@
 
   .confiraOsDestaques{
     width: 100%;
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .ttuloELinhaDeEstilo {
-    width: 69%;
+    width: 90%;
+    text-align: left;
   }
 }

@@ -166,3 +166,8 @@
   } 
 }
 
+@media (min-width: 834px){
+  .home20 {
+    gap: 4rem;
+  }
+}

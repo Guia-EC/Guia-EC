@@ -45,17 +45,18 @@
   justify-content: flex-start;
 }
 
-@media (min-width: 1640px) {
+@media (min-width: 834px) {
   
   .ttulo{
-    font-size: 40px;
+    font-size: 30px;
+    text-align: left; 
   }
 
   .ttuloELinhaDeEstilo{
-    width: 81%;
+    width: 90%;
   }
 
   .conheaAMelhor{
-    height: 3.5rem;
+    height: 5.5rem;
   }
 }

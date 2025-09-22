@@ -32,18 +32,17 @@
   object-fit: cover;
 }
 
-@media (min-width: 1640px) {
+@media (min-width: 834px) {
   .carrosselInfinito3HotelRectsIcon,
   .hotelRectsIcon,
   .hotelRectsIcon2,
   .hotelRectsIcon3,
   .hotelRectsIcon4 {
-    height: 450px;
-    width: 1595px;
+    height: 350px;
+    width: 790px;
   }
 
   .carrosselInfinito3 {
-    height: 28rem;
     overflow: visible;
   }
 }
