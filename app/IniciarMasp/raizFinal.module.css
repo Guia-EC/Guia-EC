@@ -158,6 +158,11 @@
     
   }
 
+  .ttulo {
+    top: 22rem;
+    left: 1.8rem;
+  }
+
   .botoIniciarRoteiro p{
     font-size: 20px;
     margin: 33px; /*Por algum motivo, tá mexendo no alinahmento vertical!*/
@@ -173,14 +178,25 @@
 
   .imagemHero {
     padding: 40px 30px;
-    height: 600px;
-    
+
   }
 
   .iniciarRoteiro20 {
-    height: 80rem;
+    height: 91rem;
   }
 
+  .iniciarRoteiro20Ttulo h3 {
+    font-size: 22px;
+    width: 100%;
+  }
+
+  .iniciarRoteiro20Ttulo h1 {
+    line-height: 0.9;
+  }
+
+  .descrio {
+    font-size: 14px;
+  }
 }
 
 
@@ -189,6 +205,7 @@
 /* --- MUDANÇAS APLICADAS APENAS NO RESPONSIVO --- */
 @media (min-width: 768px) {
   .iniciarRoteiro20 {
+    position: relative;
     height: auto;
     padding: 0;
   }
@@ -230,8 +247,11 @@
     position: fixed;
     width: 50%;
     height: 100px;
-    top: 65rem;
-    left: 13rem;
+    /* top: 63rem;
+    left: 13rem; */
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .botoIniciarRoteiro p{

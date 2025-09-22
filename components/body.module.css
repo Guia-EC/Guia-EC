@@ -1,6 +1,7 @@
 /* --- ESTILOS BASE (MOBILE-FIRST) --- */
 .body {
   width: 100vw;
+  position: relative;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -125,11 +126,12 @@
 
 /* --- ESTILOS RESPONSIVOS REFINADOS --- */
 @media (min-width: 768px) {
+
   .body {
     padding: 0px 60px; /* Aumenta o espaçamento lateral */
     margin-top: 100px;
     min-height: fit-content;
-    margin-bottom: 10rem;
+    margin-bottom: 16rem;
   }
   
   .ttulo,
@@ -145,7 +147,7 @@
 
 
   .paradas {
-    gap: 4rem;
+    gap: 8rem;
     width: 100%;
     max-width: none;
     margin-left: 2rem; 
@@ -157,7 +159,7 @@
 
   .ponto2, .ponto3 {
     flex-direction: row;
-    width: 90%;
+    width: 630px;
     gap: 25px;
 
   }
@@ -186,10 +188,9 @@
     text-align: justify;
   }
 
-  .bodyRouteDetails,
-  .routeDetails3 {
+  .bodyRouteDetails {
     width: 0.063rem;
-    height: 4.8rem
+    height: 8rem
   }
 
   .routeDetails {
@@ -198,10 +199,24 @@
   }
 
   .routeDetails3 {
-    height: 22rem;
+    height: 22.8rem;
   }
 
+}
 
+@media (max-width: 768px) {
+  .body {
+    padding: 0 30px;
+    margin-top: 4rem;  
+  }
+
+  .routeDetails3 {
+    height: 19rem;
+  }
+
+  .bodyRouteDetails {
+    height: 3.7rem;
+  }
 
 
 }
