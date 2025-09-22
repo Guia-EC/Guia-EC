@@ -35,13 +35,21 @@ const IniciarRoteiro20 = () => {
           />
         </section>
         <Body />
+
+        {/*A PARTIR DAQUI: BOTÕES DE INICIAR E IMPRIMIR ROTEIRO*/}
         
-        <Box
+        <Box // BOTÃO DE IMPRIMIR ROTEIRO!
           className={styles.botoIniciarRoteiro}
           onClick={handlePrint} // O onClick agora chama a função de impressão direta
           sx={{
             cursor: 'pointer',
-            display: { xs: 'none', md: 'block' }, // Sua lógica de responsividade mantida
+            '@media (max-width: 767px)': {
+              display: 'none !important',
+            },
+            '@media (min-width: 768px)': {
+              display: 'block !important',
+            },
+            
           }}
         >
           <Typography
@@ -51,6 +59,29 @@ const IniciarRoteiro20 = () => {
             Imprimir Roteiro
           </Typography>
         </Box>
+
+        <Box // BOTÃO DE INICIAR ROTA!
+          className={styles.botoIniciarRoteiro}
+          // onClick={} 
+          sx={{
+            cursor: 'pointer',
+            '@media (max-width: 767px)': {
+              display: 'block !important',
+            },
+            '@media (min-width: 768px)': {
+              display: 'none !important',
+            },
+          }}
+        >
+          <Typography
+            variantMapping={{ inherit: "Button" }}
+            sx={{ fontWeight: "600", fontSize: "30px", color: "white", textAlign: 'center' }}
+          >
+            Iniciar Rota com Google
+          </Typography>
+        </Box>
+
+        {/*------------------------------------FIM DOS BOTÕES-------------------------------------------*/}
 
         <section className={styles.ttulo}>
           <Box className={styles.iniciarRoteiro20Ttulo}>
