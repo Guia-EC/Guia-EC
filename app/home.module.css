@@ -28,7 +28,7 @@
   transform: translateX(-50%);
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(10px);
-  border-radius: var(--br-30);
+  border-radius: 50px;
   background-color: var(--color-gray-500);
   justify-content: center;
   z-index: 1000;
@@ -169,5 +169,18 @@
 @media (min-width: 768px){
   .home20 {
     gap: 4rem;
+  }
+
+  .navbar {
+    width: 65%;
+  }
+
+.navbarOptions{
+  gap: 3rem;
+  }
+
+.navIcon{
+  width: 45px;
+  height: 45px;
   }
 }
