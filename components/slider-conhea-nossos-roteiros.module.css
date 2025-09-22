@@ -97,7 +97,7 @@
   box-sizing: border-box;
 }
 
-@media (min-width: 834px){
+@media (min-width: 768px){
 .roteirosRaiz, .sliderConheaNossosRoteirosRoteirosRaiz, .roteirosNaturais {
   height: 350px;
   width: 380px;

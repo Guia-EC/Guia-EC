@@ -45,7 +45,7 @@
   justify-content: flex-start;
 }
 
-@media (min-width: 834px){
+@media (min-width: 768px){
 
   .histriaCulturaE {
     width: 100%;
@@ -54,6 +54,7 @@
 
   .ttuloELinhaDeEstilo {
     width: 95%;
+    text-align: left;
 }
 
 .ttulo{
