@@ -2,140 +2,92 @@
 import { useCallback } from "react";
 import { Typography, Box } from "@mui/material";
 import Image from "next/image";
-import Body from "../../components/body"; // Certifique-se que este caminho está correto
+import Body from "../../components/body";
 import styles from "./raizFinal.module.css"; // Certifique-se que este caminho está correto
 import { useRouter } from "next/navigation";
 
-// Imports da funcionalidade de impressão
-import { useBluetoothPrinter } from "../../hooks/useBluetoothPrinter"; // Certifique-se que este caminho está correto
-import Encoder from 'esc-pos-encoder';
-
 const IniciarRoteiro20 = () => {
-
-  // 1. Criamos a função de impressão simples
-  const handlePrint = useCallback(() => {
-    window.print();
-  }, []);
-  
   const router = useRouter();
-
-  // Instancia o hook para ter acesso às funções e ao estado da impressora
-  const { connect, print, isConnected, isConnecting, device, error } = useBluetoothPrinter();
 
   const onVoltarIconClick = useCallback(() => {
     router.push("/seleo-de-tipo-de-roteiro207");
   }, [router]);
 
-  // Função que formata e prepara os dados para impressão
-  const onPrintRoteiroClick = useCallback(() => {
-    if (!isConnected) return; // Checagem de segurança
-
-    let encoder = new Encoder({ characterSet: 'pc850' });
-    const commands = encoder
-      .initialize()
-      .align('center')
-      .bold(true)
-      .line('Seu Roteiro')
-      .bold(false)
-      .drawLine()
-      .align('left')
-      .newline()
-      .bold(true)
-      .line('MASP')
-      .bold(false)
-      .line('Museu de Arte de São Paulo')
-      .line('1957-1968 Lina Bo Bardi')
-      .line('Avenida Paulista, 1578 Cerqueira César')
-      .feed(3)
-      .cut()
-      .encode();
-
-    print(commands);
-  }, [isConnected, print]);
-
-  // Manipulador de clique principal que decide entre conectar e imprimir
-  const handleMainButtonClick = useCallback(() => {
-    if (isConnected) {
-      onPrintRoteiroClick();
-    } else {
-      connect();
-    }
-  }, [isConnected, connect, onPrintRoteiroClick]);
+  // Função simplificada que apenas chama a impressão do navegador
+  const handlePrint = useCallback(() => {
+    window.print();
+  }, []);
 
   return (
-    <Box className={styles.iniciarRoteiro20}>
-      <section className={styles.imagemHero}>
-        <Image
-          className={styles.voltarIcon}
-          width={0}
-          height={0}
-          sizes="100vw"
-          alt=""
-          src="/botao-voltar-branco.svg"
-          onClick={onVoltarIconClick}
-        />
-      </section>
-      <Body />
-      <Box 
-        className={styles.botoIniciarRoteiro}
-        // 2. Trocamos o onClick para a nossa nova função de impressão
-        onClick={handlePrint}
-        sx={{ 
-          cursor: 'pointer',
-          // 3. Removemos a lógica de opacidade e cursor de "wait"
-          // Mantivemos sua lógica de display para responsividade
-          display: { xs: 'none', md: 'block' }, // Forma mais limpa de fazer responsividade no MUI
-        }}
-      >
-        <Typography
-          className={styles.iniciarRotaCom}
-          variantMapping={{ inherit: "Button" }}
-          sx={{ fontWeight: "600", fontSize: "30px", color: "white", textAlign: 'center'}}
+    // Usamos um fragmento <> para ter dois elementos no nível principal
+    <>
+      {/* 1. Todo o conteúdo visível da sua página vai dentro desta div com a classe "noPrint" */}
+      <Box className={`${styles.iniciarRoteiro20} ${styles.noPrint}`}>
+        <section className={styles.imagemHero}>
+          <Image
+            className={styles.voltarIcon}
+            width={0}
+            height={0}
+            sizes="100vw"
+            alt=""
+            src="/botao-voltar-branco.svg"
+            onClick={onVoltarIconClick}
+          />
+        </section>
+        <Body />
+        
+        <Box
+          className={styles.botoIniciarRoteiro}
+          onClick={handlePrint} // O onClick agora chama a função de impressão direta
+          sx={{
+            cursor: 'pointer',
+            display: { xs: 'none', md: 'block' }, // Sua lógica de responsividade mantida
+          }}
         >
-          {/* 4. O texto agora é fixo */}
-          Imprimir Roteiro
-        </Typography>
+          <Typography
+            variantMapping={{ inherit: "Button" }}
+            sx={{ fontWeight: "600", fontSize: "30px", color: "white", textAlign: 'center' }}
+          >
+            Imprimir Roteiro
+          </Typography>
+        </Box>
+
+        <section className={styles.ttulo}>
+          <Box className={styles.iniciarRoteiro20Ttulo}>
+            <Typography
+              className={styles.masp}
+              variant="inherit"
+              variantMapping={{ inherit: "h1" }}
+              sx={{ fontWeight: "700", lineHeight: "4.375rem" }}
+            >
+              MASP
+            </Typography>
+            <Typography
+              className={styles.museuDeArte}
+              variant="inherit"
+              variantMapping={{ inherit: "h3" }}
+              sx={{ fontWeight: "600", fontSize: "var(--font-size-20)" }}
+            >
+              Museu de Arte de São Paulo
+            </Typography>
+          </Box>
+          <Box className={styles.descrio}>
+            <div>1957-1968 Lina Bo Bardi</div>
+            <div>Avenida Paulista, 1578 Cerqueira César</div>
+          </Box>
+        </section>
       </Box>
 
-      {/* <Box 
-        className={styles.botoIniciarRoteiro}
-      >
-        <Typography
-          className={styles.iniciarRotaCom}
-          variantMapping={{ inherit: "Button" }}
-          sx={{ fontWeight: "600", fontSize: "20px", color: "white", textAlign: 'center'}}
-        >
-          Iniciar Rota com Google
-        </Typography>
-      </Box> */}
-
-      <section className={styles.ttulo}>
-        <Box className={styles.iniciarRoteiro20Ttulo}>
-          <Typography
-            className={styles.masp}
-            variant="inherit"
-            variantMapping={{ inherit: "h1" }}
-            sx={{ fontWeight: "700", lineHeight: "4.375rem" }}
-          >
-            MASP
-          </Typography>
-          <Typography
-            className={styles.museuDeArte}
-            variant="inherit"
-            variantMapping={{ inherit: "h3" }}
-            sx={{ fontWeight: "600", fontSize: "var(--font-size-20)" }}
-          >
-            Museu de Arte de São Paulo
-          </Typography>
-        </Box>
-        <Box className={styles.descrio}>
-          <div className={styles.iniciarRotaCom}>1957-1968 Lina Bo Bardi</div>
-          <div className={styles.avenidaPaulista1578}>
-            Avenida Paulista, 1578 Cerqueira César
-          </div>
-        </Box>
+      {/* 2. Aqui está a área de impressão. Ela fica fora da div "noPrint". */}
+      {/* Ela é invisível na tela, mas será a única coisa visível na impressão. */}
+      <section className={`${styles.printableArea} print-visible`}>
+        <img
+          src="/roteiro-imprimir.png" // O caminho para a sua imagem
+          alt="Conteúdo do roteiro a ser impresso"
+          className={styles.printImage}
+        />
       </section>
-    </Box>
+    </>
   );
 };
 
