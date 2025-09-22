@@ -39,16 +39,18 @@
   justify-content: flex-start;
 }
 
-@media (min-width: 1640px){
+@media (min-width: 768px){
 
   .conheaOsNossos {
     width: 100%;
-    font-size: 40px;
-    height: 3.6rem;
-  }
+    font-size: 30px;
+    height: 3rem;
+    margin-top: 30px;
+    text-align: left;
+   }
 
   .ttuloELinhaDeEstilo {
-    width: 40%;
+    width: 58%;
 }
 
 .ttulo{

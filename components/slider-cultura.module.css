@@ -63,23 +63,23 @@
   background-image: url(/COPAN@3x.png);
 }
 
-@media (min-width: 1640px){
+@media (min-width: 768px){
 .masp,
 .copan,
 .edMartinelli,
 .prqIbirapuera {
-  height: 450px;
-  width: 490px;
+  height: 350px;
+  width: 380px;
 }
 
 .tag {
-  height: 2.5rem;
-  width: 17rem;
+  height: 2rem;
+  width: 13rem;
   border-radius: 0 var(--br-5) 0 var(--br-5);
   background-color: var(--color-black);
   align-items: center;
   padding: 0 var(--padding-8);
   box-sizing: border-box;
-  font-size: 25px;
+  font-size: 20px;
 }
 }

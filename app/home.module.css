@@ -1,7 +1,10 @@
+.home20{
+  margin-bottom: 30px;
+}
+
 .home20 {
   width: 100%;
   position: relative;
-  background-color: var(--color-gray-100);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -12,6 +15,7 @@
   gap: var(--gap-32);
   line-height: normal;
   letter-spacing: normal;
+  margin-bottom: 30px;
 }
 .navbar,
 .navbarOptions {
@@ -21,14 +25,14 @@
 }
 .navbar {
   width: 90%;
-  height: 11%;
+  height: 100px;
   position: fixed;
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(10px);
-  border-radius: var(--br-30);
+  border-radius: 50px;
   background-color: var(--color-gray-500);
   justify-content: center;
   z-index: 1000;
@@ -56,7 +60,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   padding: var(--padding-11) var(--padding-10) var(--padding-11)
     var(--padding-11);
   box-sizing: border-box;
@@ -165,4 +169,39 @@
     max-width: 100%;
   } 
 }
+
+@media (min-width: 768px){
+  .home20 {
+    gap: 4rem;
+  }
+
+  .navbar {
+    width: 65%;
+  }
+
+.navbarOptions{
+  gap: 3rem;
+  }
+
+.navIcon{
+  width: 45px;
+  height: 45px;
+  }
+
+  .routesButtom{
+   width: 6rem;
+   height: 6rem;
+  }
+
+  .roteiro{
+    width: 65px;
+    height: 65px;
+  }
+
+  .home20{
+    margin-bottom: 195px;
+  }
+
+}
+
 
