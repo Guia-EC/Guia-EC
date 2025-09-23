@@ -3,7 +3,7 @@ import { useCallback } from "react";
 import { Typography, Box } from "@mui/material";
 import Image from "next/image";
 import Body from "../../components/body";
-import styles from "./raizFinal.module.css";
+import styles from "./raizFinal.module.css"; // Certifique-se que este caminho está correto
 import { useRouter } from "next/navigation";
 
 const IniciarRoteiro20 = () => {
@@ -13,63 +13,15 @@ const IniciarRoteiro20 = () => {
     router.push("/seleo-de-tipo-de-roteiro207");
   }, [router]);
 
-  // Função base que converte a imagem e retorna os dados para outras funções usarem
-  const generatePrintData = (callback) => {
-    const imagePath = "/roteiro-imprimir.png";
-    const img = new window.Image();
-    img.crossOrigin = "Anonymous"; // Importante para evitar problemas de segurança do canvas
-    img.src = imagePath;
-
-    img.onload = () => {
-      const canvas = document.createElement('canvas');
-      canvas.width = img.naturalWidth;
-      canvas.height = img.naturalHeight;
-      const ctx = canvas.getContext('2d');
-      ctx.drawImage(img, 0, 0);
-      const dataUrl = canvas.toDataURL('image/png');
-      callback(dataUrl); // Chama a função de callback com o resultado (a imagem em formato de texto)
-    };
-
-    img.onerror = () => {
-      alert("Erro ao carregar a imagem. Verifique o caminho ou se há erros no console.");
-      callback(null);
-    };
-  };
-
-  // --- FUNÇÃO DE TESTE ---
-  // Apenas exibe a imagem gerada na tela para validação visual
-  const handleTestPrint = useCallback(() => {
-    generatePrintData((dataUrl) => {
-      if (dataUrl) {
-        const previewImage = document.getElementById('previewImage');
-        const previewContainer = document.getElementById('previewContainer');
-        previewImage.src = dataUrl;
-        previewContainer.style.display = 'block'; // Torna a área de preview visível
-      }
-    });
-  }, []);
-
-  // --- FUNÇÃO DE IMPRESSÃO REAL ---
-  // Envia os dados para a impressora via RawBT
+  // Função simplificada que apenas chama a impressão do navegador
   const handlePrint = useCallback(() => {
-    // Esconde o preview antes de imprimir para não confundir
-    const previewContainer = document.getElementById('previewContainer');
-    if (previewContainer) {
-      previewContainer.style.display = 'none';
-    }
-
-    generatePrintData((dataUrl) => {
-      if (dataUrl) {
-        const base64String = dataUrl.split(',')[1];
-        // URL corrigida para especificar que os dados são uma imagem PNG
-        const rawBtUrl = `rawbt:image/png;base64,${base64String}`;
-        window.location.href = rawBtUrl;
-      }
-    });
+    window.print();
   }, []);
 
   return (
+    // Usamos um fragmento <> para ter dois elementos no nível principal
     <>
+      {/* 1. Todo o conteúdo visível da sua página vai dentro desta div com a classe "noPrint" */}
       <Box className={`${styles.iniciarRoteiro20} ${styles.noPrint}`}>
         <section className={styles.imagemHero}>
           <Image
@@ -86,49 +38,41 @@ const IniciarRoteiro20 = () => {
 
         {/*A PARTIR DAQUI: BOTÕES DE INICIAR E IMPRIMIR ROTEIRO*/}
         <Box className={styles.botaoEQrcode}>
-          {/* --- NOVO BOTÃO DE TESTE --- */}
-          <Box
+          <Box // BOTÃO DE IMPRIMIR ROTEIRO!
             className={styles.botoIniciarRoteiro}
-            onClick={handleTestPrint}
+            onClick={handlePrint} // O onClick agora chama a função de impressão direta
             sx={{
               cursor: 'pointer',
-              backgroundColor: '#4CAF50', // Cor verde para diferenciar
-              '@media (max-width: 767px)': { display: 'none !important' },
-              '@media (min-width: 768px)': { display: 'block !important' },
+              '@media (max-width: 767px)': {
+                display: 'none !important',
+              },
+              '@media (min-width: 768px)': {
+                display: 'block !important',
+              },
+              
             }}>
-            <Typography variantMapping={{ inherit: "Button" }} sx={{ fontWeight: "600", fontSize: "30px", color: "white", textAlign: 'center', padding: '0 10px' }}>
-              Testar
-            </Typography>
-          </Box>
-
-          <Box // BOTÃO DE IMPRIMIR ROTEIRO REAL!
-            className={styles.botoIniciarRoteiro}
-            onClick={handlePrint}
-            sx={{
-              cursor: 'pointer',
-              '@media (max-width: 767px)': { display: 'none !important' },
-              '@media (min-width: 768px)': { display: 'block !important' },
-            }}>
-            <Typography variantMapping={{ inherit: "Button" }} sx={{ fontWeight: "600", fontSize: "30px", color: "white", textAlign: 'center', padding: '0 10px' }}>
+    
+            <Typography
+              variantMapping={{ inherit: "Button" }}
+              sx={{ fontWeight: "600", fontSize: "30px", color: "white", textAlign: 'center' }}
+            >
               Imprimir Roteiro
             </Typography>
           </Box>
-          
-          {/* --- SEU QR CODE, DE VOLTA AO LUGAR CERTO --- */}
           <Box className={styles.qrCode} sx={{
-            cursor: 'pointer',
-            '@media (max-width: 767px)': {
-              display: 'none !important',
-            },
-            '@media (min-width: 768px)': {
-              display: 'block !important',
-            },
-          }}>
+              cursor: 'pointer',
+              '@media (max-width: 767px)': {
+                display: 'none !important',
+              },
+              '@media (min-width: 768px)': {
+                display: 'block !important',
+              }, 
+            }}>
+              
             <Image
               width={100}
               height={100}
               src="/QRCODE.svg"
-              alt="QR Code" // Adicionado alt text
             />
           </Box>
         </Box>
@@ -152,7 +96,7 @@ const IniciarRoteiro20 = () => {
               Iniciar Rota com Google
             </Typography>
           </Box>
-        </a>
+        </a>      
         {/*------------------------------------FIM DOS BOTÕES-------------------------------------------*/}
 
         <section className={styles.ttulo}>
@@ -181,30 +125,14 @@ const IniciarRoteiro20 = () => {
         </section>
       </Box>
 
-      {/* --- NOVA ÁREA DE PREVIEW PARA O TESTE --- */}
-      <Box
-        id="previewContainer"
-        sx={{
-          display: 'none', // Começa escondido
-          position: 'fixed',
-          bottom: '20px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          padding: '10px',
-          backgroundColor: 'white',
-          border: '2px solid black',
-          borderRadius: '8px',
-          zIndex: 1000,
-          textAlign: 'center'
-        }}
-      >
-        <Typography variant="h6">Preview da Impressão:</Typography>
-        <img id="previewImage" alt="Preview da imagem a ser impressa" style={{ maxWidth: '300px', border: '1px solid grey' }} />
-      </Box>
-
-      {/* Esta seção não é mais usada pela lógica de impressão direta, mas pode ser mantida. */}
+      {/* 2. Aqui está a área de impressão. Ela fica fora da div "noPrint". */}
+      {/* Ela é invisível na tela, mas será a única coisa visível na impressão. */}
       <section className={`${styles.printableArea} print-visible`}>
-        <img src="/roteiro-imprimir.png" alt="Conteúdo do roteiro a ser impresso" className={styles.printImage} />
+        <img
+          src="/roteiro-masp.jpg" // O caminho para a sua imagem
+          alt="Conteúdo do roteiro a ser impresso"
+          className={styles.printImage}
+        />
       </section>
     </>
   );
