@@ -41,7 +41,7 @@ const IniciarRoteiro20 = () => {
 
       // 7. Monta a URL especial do RawBT e "clica" nela.
       //    O Android irá interceptar essa URL e abrir o RawBT para processar a impressão.
-      const rawBtUrl = `rawbt:base64,${base64String}`;
+      const rawBtUrl = `rawbt:image/png;base64,${base64String}`;
       window.location.href = rawBtUrl;
     };
 
