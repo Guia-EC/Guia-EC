@@ -76,27 +76,27 @@ const IniciarRoteiro20 = () => {
             />
           </Box>
         </Box>
-        <Box // BOTÃO DE INICIAR ROTA!
-          className={styles.botoIniciarRoteiro}
-          // onClick={} 
-          sx={{
-            cursor: 'pointer',
-            '@media (max-width: 767px)': {
-              display: 'block !important',
-            },
-            '@media (min-width: 768px)': {
-              display: 'none !important',
-            },
-          }}
-        >
-          <Typography
-            variantMapping={{ inherit: "Button" }}
-            sx={{ fontWeight: "600", fontSize: "30px", color: "white", textAlign: 'center' }}
+        <a href={"https://www.google.com/maps/dir/?api=1&origin=My+Location&destination=Mirante+9+de+Julho&waypoints=Museu+de+Arte+de+São+Paulo|Charme+da+Paulista+Restaurante"} target="_blank" rel="noopener noreferrer" className={styles.slideLink}>
+          <Box // BOTÃO DE INICIAR ROTA!
+            className={styles.botoIniciarRoteiro}
+            sx={{
+              cursor: 'pointer',
+              '@media (max-width: 767px)': {
+                display: 'block !important',
+              },
+              '@media (min-width: 768px)': {
+                display: 'none !important',
+              },
+            }}
           >
-            Iniciar Rota com Google
-          </Typography>
-        </Box>
-
+            <Typography
+              variantMapping={{ inherit: "Button" }}
+              sx={{ fontWeight: "600", fontSize: "30px", color: "white", textAlign: 'center' }}
+            >
+              Iniciar Rota com Google
+            </Typography>
+          </Box>
+        </a>      
         {/*------------------------------------FIM DOS BOTÕES-------------------------------------------*/}
 
         <section className={styles.ttulo}>

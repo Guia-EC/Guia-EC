@@ -28,7 +28,7 @@ const IniciarRoteiro201 = () => {
           height={38}
           sizes="100vw"
           alt=""
-          src="/Voltar.svg"
+          src="/botao-voltar-branco.svg"
           onClick={onVoltarIconClick}
         />
       </section>

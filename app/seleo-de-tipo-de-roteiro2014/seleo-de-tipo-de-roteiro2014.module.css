@@ -231,3 +231,21 @@
   font-weight: 300;
   display: inline-block;
 }
+
+@media (max-width: 767px) {
+  .voltar {
+    padding: 0;
+    width: 35px;
+    height: 35px;
+    margin-left: 1.8rem;
+  }
+
+  .voltar img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .seleoDeTipoDeRoteiro20 {
+    gap: 50px;
+  }
+}

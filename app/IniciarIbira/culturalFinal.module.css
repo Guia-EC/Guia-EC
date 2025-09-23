@@ -120,3 +120,18 @@
   position: relative;
   display: inline-block;
 }
+
+@media (max-width: 767px) {
+  .botoIniciarRoteiro {
+    position:fixed;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 370px;
+    font-size: 20px
+  }
+
+  /* .voltarIcon {
+    width: ;
+  } */
+}

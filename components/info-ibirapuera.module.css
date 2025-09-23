@@ -289,3 +289,21 @@
 .activeDot {
   background-color: #333;
 }
+
+@media (max-width: 767px) {
+  .infoIbirapuera {
+    height: 100rem;
+  }
+
+  .infos p{
+    font-size: 15px;
+  }
+
+  .accordionText p {
+    font-size: 15px;
+  }
+
+  .accordionButton span {
+    font-size: 16px;
+  }
+}
