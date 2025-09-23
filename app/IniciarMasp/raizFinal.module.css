@@ -119,6 +119,7 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 999;
+  gap: 30px;
 }
 
 .qrCode {
@@ -173,8 +174,6 @@
     top: 85%;
     left: 50%;
     transform: translateX(-50%);
-
-    
   }
 
   .ttulo {
