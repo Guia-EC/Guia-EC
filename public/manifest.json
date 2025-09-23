@@ -1,0 +1,12 @@
+{
+  "short_name": "Roteirize",
+  "start_url": "/",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/adicionar-usuario-1.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
