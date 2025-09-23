@@ -3,7 +3,7 @@ import { useCallback } from "react";
 import { Typography, Box } from "@mui/material";
 import Image from "next/image";
 import Body from "../../components/body";
-import styles from "./raizFinal.module.css"; // Certifique-se que este caminho está correto
+import styles from "./raizFinal.module.css";
 import { useRouter } from "next/navigation";
 
 const IniciarRoteiro20 = () => {
@@ -13,15 +13,49 @@ const IniciarRoteiro20 = () => {
     router.push("/seleo-de-tipo-de-roteiro207");
   }, [router]);
 
-  // Função simplificada que apenas chama a impressão do navegador
+  // --- NOVA LÓGICA DE IMPRESSÃO DIRETA ---
   const handlePrint = useCallback(() => {
-    window.print();
+    // 1. Define o caminho da imagem que você quer imprimir.
+    //    Este caminho deve ser acessível publicamente no seu projeto Next.js (dentro da pasta /public).
+    const imagePath = "/roteiro-imprimir.png";
+
+    // 2. Cria um objeto de imagem em memória para carregá-la.
+    const img = new window.Image();
+    img.src = imagePath;
+
+    // 3. A conversão SÓ PODE ACONTECER DEPOIS que a imagem estiver 100% carregada.
+    //    Por isso, toda a lógica principal fica dentro do `img.onload`.
+    img.onload = () => {
+      // 4. Cria um elemento <canvas> invisível para desenhar a imagem.
+      const canvas = document.createElement('canvas');
+      canvas.width = img.naturalWidth;
+      canvas.height = img.naturalHeight;
+      const ctx = canvas.getContext('2d');
+
+      // 5. Desenha a imagem carregada no canvas.
+      ctx.drawImage(img, 0, 0);
+
+      // 6. Converte o conteúdo do canvas para uma string de texto no formato Base64.
+      const dataUrl = canvas.toDataURL('image/png');
+      const base64String = dataUrl.split(',')[1];
+
+      // 7. Monta a URL especial do RawBT e "clica" nela.
+      //    O Android irá interceptar essa URL e abrir o RawBT para processar a impressão.
+      const rawBtUrl = `rawbt:base64,${base64String}`;
+      window.location.href = rawBtUrl;
+    };
+
+    // Opcional: Adiciona um tratamento de erro caso a imagem não possa ser carregada.
+    img.onerror = () => {
+      console.error("Erro ao carregar a imagem para impressão.");
+      alert("Não foi possível carregar a imagem para impressão. Verifique o caminho do arquivo.");
+    };
   }, []);
+  // --- FIM DA NOVA LÓGICA ---
 
   return (
-    // Usamos um fragmento <> para ter dois elementos no nível principal
+    // O seu JSX permanece exatamente o mesmo. Nenhuma mudança é necessária aqui.
     <>
-      {/* 1. Todo o conteúdo visível da sua página vai dentro desta div com a classe "noPrint" */}
       <Box className={`${styles.iniciarRoteiro20} ${styles.noPrint}`}>
         <section className={styles.imagemHero}>
           <Image
@@ -36,11 +70,10 @@ const IniciarRoteiro20 = () => {
         </section>
         <Body />
 
-        {/*A PARTIR DAQUI: BOTÕES DE INICIAR E IMPRIMIR ROTEIRO*/}
         <Box className={styles.botaoEQrcode}>
           <Box // BOTÃO DE IMPRIMIR ROTEIRO!
             className={styles.botoIniciarRoteiro}
-            onClick={handlePrint} // O onClick agora chama a função de impressão direta
+            onClick={handlePrint} // AGORA CHAMA A NOVA FUNÇÃO
             sx={{
               cursor: 'pointer',
               '@media (max-width: 767px)': {
@@ -49,9 +82,7 @@ const IniciarRoteiro20 = () => {
               '@media (min-width: 768px)': {
                 display: 'block !important',
               },
-              
             }}>
-    
             <Typography
               variantMapping={{ inherit: "Button" }}
               sx={{ fontWeight: "600", fontSize: "30px", color: "white", textAlign: 'center' }}
@@ -60,19 +91,19 @@ const IniciarRoteiro20 = () => {
             </Typography>
           </Box>
           <Box className={styles.qrCode} sx={{
-              cursor: 'pointer',
-              '@media (max-width: 767px)': {
-                display: 'none !important',
-              },
-              '@media (min-width: 768px)': {
-                display: 'block !important',
-              }, 
-            }}>
-              
+            cursor: 'pointer',
+            '@media (max-width: 767px)': {
+              display: 'none !important',
+            },
+            '@media (min-width: 768px)': {
+              display: 'block !important',
+            },
+          }}>
             <Image
               width={100}
               height={100}
               src="/QRCODE.svg"
+              alt="QR Code" // Adicionado alt text para acessibilidade
             />
           </Box>
         </Box>
@@ -96,9 +127,7 @@ const IniciarRoteiro20 = () => {
               Iniciar Rota com Google
             </Typography>
           </Box>
-        </a>      
-        {/*------------------------------------FIM DOS BOTÕES-------------------------------------------*/}
-
+        </a>
         <section className={styles.ttulo}>
           <Box className={styles.iniciarRoteiro20Ttulo}>
             <Typography
@@ -125,11 +154,10 @@ const IniciarRoteiro20 = () => {
         </section>
       </Box>
 
-      {/* 2. Aqui está a área de impressão. Ela fica fora da div "noPrint". */}
-      {/* Ela é invisível na tela, mas será a única coisa visível na impressão. */}
+      {/* Esta seção não é mais usada pela nova lógica, mas não há problema em mantê-la. */}
       <section className={`${styles.printableArea} print-visible`}>
         <img
-          src="/roteiro-imprimir.png" // O caminho para a sua imagem
+          src="/roteiro-imprimir.png"
           alt="Conteúdo do roteiro a ser impresso"
           className={styles.printImage}
         />
