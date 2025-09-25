@@ -3,7 +3,6 @@
   flex-direction: column;
   height: 100vh;
   background: #fff;
-  font-family: sans-serif;
 }
 
 /* Header */
@@ -63,7 +62,7 @@
 .status-dot {
   width: 8px;
   height: 8px;
-  background: #ff9f1c;
+  background: #FF9F1C;
   border-radius: 50%;
   animation: pulse 1.5s infinite;
 }
@@ -94,7 +93,7 @@
 .message-bubble {
   background: #f9f9f9;
   padding: 12px;
-  border-radius: 12px;
+  border-radius: 20px;
   border-top-left-radius: 4px;
   max-width: 80%;
 }
@@ -136,7 +135,7 @@
 }
 
 .suggestion:hover {
-  border-color: #ff9f1c;
+  border-color: #FF9F1C;
   background: rgba(255, 159, 28, 0.05);
 }
 
@@ -148,17 +147,19 @@
 }
 
 .suggestion:hover .suggestion-icon svg {
-  color: #ff9f1c;
+  color: #FF9F1C;
 }
 
 .suggestion-text {
   font-size: 14px;
   font-weight: 500;
+  font-family: Poppins, sans-serif;
 }
 
 .suggestion-category {
   font-size: 12px;
   color: gray;
+  font-family: Poppins, sans-serif;
 }
 
 /* Typing Indicator */
@@ -168,6 +169,8 @@
   padding: 8px 12px;
   background: #f9f9f9;
   border-radius: 12px;
+  border-top-left-radius: 4px;
+  align-items: center;
 }
 
 .dot {
@@ -212,10 +215,11 @@
   padding: 8px;
   font-size: 16px;
   outline: none;
+  font-family: Poppins, sans-serif;
 }
 
 .send-button {
-  background: #ff9f1c;
+  background: #FF9F1C;
   border: none;
   border-radius: 50%;
   padding: 10px; /* Aumenta área */
@@ -228,7 +232,7 @@
 }
 
 .send-button:hover {
-  background: #e68a00;
+  background: #FF9F1C;
 }
 
 .send-button:disabled {
@@ -249,4 +253,20 @@
   color: gray;
   text-align: center;
   margin: 6px 0;
+}
+
+.user-message {
+  justify-content: flex-end;
+}
+
+.user-message .message-bubble {
+  background: #FF9F1C;
+  color: white; 
+  border-top-left-radius: 20px; 
+  border-top-right-radius: 4px;  
+}
+
+.user-message .message-bubble p {
+    color: white;
+    margin: 0;
 }
