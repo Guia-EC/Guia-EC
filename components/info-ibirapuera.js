@@ -22,7 +22,7 @@ const InfoIbirapuera = ({ className = "", estado = "Padrão" }) => {
       "/IBIRA1.png", // Substitua pelos caminhos reais das suas imagens na pasta /public
       "/IBIRA2.png",
       "/IBIRA3.png",
-      "/IBRIA4.png",
+      "/IBIRA4.png",
       "/IBIRA5.png",
     ];
   
