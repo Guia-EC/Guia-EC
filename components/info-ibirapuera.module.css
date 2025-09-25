@@ -292,7 +292,8 @@
 
 @media (max-width: 767px) {
   .infoIbirapuera {
-    height: 100rem;
+    padding: 0;
+    height: 78rem;
   }
 
   .infos p{
@@ -305,5 +306,44 @@
 
   .accordionButton span {
     font-size: 16px;
+  }
+
+  .imagemHero {
+    padding: 40px 30px;
+  }
+
+  .voltarIcon {
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  .prqIbirapuera { /*Titulo Principal*/
+    font-size: 45px;
+    width: 100%;
+  }
+
+  .parqueIbirapuera { /*Sub-título*/
+    font-size: 22px;
+  }
+
+  .infos { /*Primeira seção de info (o que envolve informações!)*/
+    margin-top: 60px;
+    
+  }
+
+  
+  .infos p { /*Parágrafo da Seção de Info*/
+    font-size: 15px;
+    margin-bottom: 1.25rem;
+    
+  }
+
+  .body { /*Body Geral! que envolve tudo inclusive a galeria!*/
+    padding: 0;
+    gap: 0;
+  }
+
+  .galleryContainer { /*Conteiner Da Galeria!*/
+    margin: 60px 0 140px 0;
   }
 }

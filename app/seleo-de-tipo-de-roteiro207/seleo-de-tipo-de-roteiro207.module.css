@@ -169,7 +169,7 @@
 @media (max-width: 767px) {
 
   .partindoDoMasp {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.6;
   }
 
@@ -186,11 +186,14 @@
   .body {
     padding: 0;
     margin-top: 3rem;
-    height: 70rem;
   }
 
   .seleoDeTipoDeRoteiro20 {
     padding: 40px 30px;
+  }
+
+  .ttuloETexto p {
+    font-size: 20px;
   }
 
 

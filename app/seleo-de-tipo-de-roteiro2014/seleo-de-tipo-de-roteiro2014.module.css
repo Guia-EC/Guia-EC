@@ -237,7 +237,6 @@
     padding: 0;
     width: 35px;
     height: 35px;
-    margin-left: 1.8rem;
   }
 
   .voltar img {
@@ -245,7 +244,13 @@
     height: 35px;
   }
 
-  .seleoDeTipoDeRoteiro20 {
-    gap: 50px;
+  .seleoDeTipoDeRoteiro20 { /*Conteiner geral da seção!*/
+    padding: 40px 30px;
+    gap: 0.625rem;
+    
+  }
+
+  .body {
+    margin-top: 3rem;
   }
 }

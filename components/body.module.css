@@ -210,12 +210,20 @@
     margin-top: 4rem;  
   }
 
+  .ttulo p {
+    font-size: 20px;
+  }
+
   .routeDetails3 {
-    height: 19rem;
+    height: 18rem;
   }
 
   .bodyRouteDetails {
     height: 3.7rem;
+  }
+
+  .ponto1p, .ponto2, .ponto3 {
+    font-size: 14px;
   }
 
 
