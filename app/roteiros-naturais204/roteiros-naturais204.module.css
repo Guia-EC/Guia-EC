@@ -88,3 +88,10 @@
   width: 1.981rem;
   cursor: pointer;
 }
+
+
+@media (max-width: 767px) {
+  .roteirosNaturais20 {
+    padding: 40px 30px;
+  }
+}

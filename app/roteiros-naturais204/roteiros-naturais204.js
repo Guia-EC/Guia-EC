@@ -1,45 +1,38 @@
 "use client";
-import { useCallback } from "react";
 import { Box } from "@mui/material";
-import Image from "next/image";
 import PginaDeFiltros from "../../components/pgina-de-filtros";
-import { useRouter } from "next/navigation";
-import styles from "./roteiros-naturais204.module.css";
 import Navbar from "../../components/navbar";
+import styles from "./roteiros-naturais204.module.css";
+
+// 1. Defina seus dados em um array de objetos
+const roteirosCulturaisData = [
+  {
+    id: 'masp-cultural',
+    titulo: 'MASP Cultural',
+    descricao: 'Do museu à cena artística vibrante da cidade.',
+    localizacao: 'Paulista',
+    imagem: '/imagem-masp.png',
+    link: '/iniciar-roteiro/masp-cultural'
+  },
+  {
+    id: 'ibirapuera-cultural',
+    titulo: 'Prq. Ibirapuera',
+    descricao: 'Memória, luta e orgulho paulista em cada pedra do monumento.',
+    localizacao: 'Ibirapuera',
+    imagem: '/imagem-ibirapuera.png',
+    link: '/iniciar-roteiro/ibirapuera-cultural'
+  },
+  // ... adicione quantos roteiros culturais quiser aqui
+];
 
 const RoteirosNaturais204 = () => {
-  const router = useRouter();
-
-  const onHomeButtomIconClick = useCallback(() => {
-    router.push("/");
-  }, [router]);
-
-  const onFavoritesButtomIconClick = useCallback(() => {
-    router.push("/roteiros-favoritados204");
-  }, [router]);
-
-  const onRoutesButtomContainerClick = useCallback(() => {
-    router.push("/seleo-de-tipo-de-roteiro2033");
-  }, [router]);
-
-  const onIaButtomIconClick = useCallback(() => {
-    router.push("/chatbot");
-  }, [router]);
-
-  const onUserButtomIconClick = useCallback(() => {
-    router.push("/tela-de-usuario202");
-  }, [router]);
-
   return (
     <Box className={styles.roteirosNaturais20}>
       <PginaDeFiltros
-        filtroAtivo="Natural"
-        mASPCultural="MASP Natural"
-        doMuseuCenaArtsticaVibrante="Arte, consciência e sabores plant-based. "
-        obeliscoCultural="Obelisco Natural"
-        museuDoIpirangaCultural="Museu do Ipiranga Natural"
+        filtroAtivo="Cultural"
+        roteiros={roteirosCulturaisData} // <--- 2. PASSE O ARRAY INTEIRO
       />
-      <Navbar/>
+      <Navbar />
     </Box>
   );
 };
