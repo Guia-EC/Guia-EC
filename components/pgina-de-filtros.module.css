@@ -19,19 +19,19 @@
   background-color: var(--color-forestgreen);
 }
 .root[data-filtroAtivo="Raiz"] .detalhe {
-  background-color: var(--color-orange);
+  background-color: var(--color-orange-100);
 }
 .root[data-filtroAtivo="Natural"] .detalhe2 {
   background-color: var(--color-forestgreen);
 }
 .root[data-filtroAtivo="Raiz"] .detalhe2 {
-  background-color: var(--color-orange);
+  background-color: var(--color-orange-100);
 }
 .root[data-filtroAtivo="Natural"] .detalhe3 {
   background-color: var(--color-forestgreen);
 }
 .root[data-filtroAtivo="Raiz"] .detalhe3 {
-  background-color: var(--color-orange);
+  background-color: var(--color-orange-100);
 }
 .roteirosCulturais {
   flex-direction: column;
@@ -223,11 +223,24 @@
   align-items: flex-start;
   justify-content: flex-start;
   position: relative;
-  background-image: url(/Imagem2@3x.png);
+  background-image: url(/Imagem7@3x.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
 }
+
+.imagem4 {
+  width: 22.438rem;
+  height: 9rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  background-image: url(/CopanRoteiro.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
 .detalhe2 {
   width: 11.25rem;
   position: absolute;
@@ -339,7 +352,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   position: relative;
-  background-image: url(/Imagem21@3x.png);
+  background-image: url(/Imagem10@3x.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -434,4 +447,30 @@
 }
 .boto3 {
   padding: var(--padding-11) 1.812rem;
+}
+
+
+@media (max-width: 767px) {
+
+  .roteirosRaiz20 {
+    height: 500rem;
+
+  }
+
+  .roteirosCulturais {
+    margin-top: 3rem;
+  }
+
+  .ttulo2 b {
+    font-size: 18px;
+  }
+
+  .cardCultural3 {
+    margin-top: 1.5rem;
+  }
+
+  .root {
+    height: 110rem;
+  }
+  
 }

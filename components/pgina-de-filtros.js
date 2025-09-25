@@ -68,7 +68,7 @@ const PginaDeFiltros = ({
                 alt=""
                 src="/535239-22@2x.png"
               />
-              <div className={styles.ibirapuera}>Ibirapuera</div>
+              <div className={styles.ibirapuera}>Paulista</div>
             </Box>
             <Box className={styles.botoEFavorito}>
               <Button
@@ -103,7 +103,7 @@ const PginaDeFiltros = ({
                   variantMapping={{ inherit: "h3" }}
                   sx={{ fontWeight: "700", letterSpacing: "0.04em" }}
                 >
-                  {obeliscoCultural}
+                  Prq. Ibirapuera
                 </Typography>
               </Box>
               <Box className={styles.texto2}>
@@ -157,7 +157,7 @@ const PginaDeFiltros = ({
                   variantMapping={{ inherit: "h3" }}
                   sx={{ fontWeight: "700", letterSpacing: "0.04em" }}
                 >
-                  {museuDoIpirangaCultural}
+                  Sesc 24
                 </Typography>
               </Box>
               <Box className={styles.texto3}>
@@ -176,11 +176,65 @@ const PginaDeFiltros = ({
                 alt=""
                 src="/535239-22@2x.png"
               />
-              <div className={styles.ipiranga}>Ipiranga</div>
+              <div className={styles.ipiranga}>Centro</div>
             </Box>
             <Box className={styles.botoEFavorito3}>
               <Button
                 className={styles.boto3}
+                disableElevation
+                variant="outlined"
+                sx={{
+                  textTransform: "none",
+                  color: "#0f0f0f",
+                  fontSize: "12",
+                  borderColor: "#0f0f0f",
+                  borderRadius: "5px",
+                  "&:hover": { borderColor: "#0f0f0f" },
+                }}
+              >
+                Fazer Roteiro
+              </Button>
+              <Favoritar estado="Padrão" />
+            </Box>
+          </Box>
+        </Box>
+        <Box className={styles.cardCultural1}>
+          <Box className={styles.imagem4}>
+            <Box className={styles.detalhe2} />
+          </Box>
+          <Box className={styles.body2}>
+            <Box className={styles.ttuloETexto2}>
+              <Box className={styles.ttulo4}>
+                <Typography
+                  className={styles.obeliscoCultural}
+                  variant="inherit"
+                  variantMapping={{ inherit: "h3" }}
+                  sx={{ fontWeight: "700", letterSpacing: "0.04em" }}
+                >
+                  Copan
+                </Typography>
+              </Box>
+              <Box className={styles.texto2}>
+                <div className={styles.memriaLutaE}>
+                  Memória, luta e orgulho paulista em cada pedra do monumento.
+                </div>
+              </Box>
+            </Box>
+            <Box className={styles.localizao2}>
+              <Image
+                className={styles.icon}
+                loading="lazy"
+                width={16.2}
+                height={16.2}
+                sizes="100vw"
+                alt=""
+                src="/535239-22@2x.png"
+              />
+              <div className={styles.ibirapuera2}>Centro</div>
+            </Box>
+            <Box className={styles.botoEFavorito2}>
+              <Button
+                className={styles.boto2}
                 disableElevation
                 variant="outlined"
                 sx={{
