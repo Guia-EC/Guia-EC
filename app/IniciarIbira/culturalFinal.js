@@ -86,9 +86,10 @@ const IniciarRoteiro201 = () => {
           </Typography>
         </Box>
         <Box className={styles.descrio}>
-          <div className={styles.linaBoBardi}>1957-1968 Lina Bo Bardi</div>
+          <div className={styles.linaBoBardi}>1951-2005: Oscar Nyemeier, Zenon Lotufo, Hélio Uchôa e Eduardo
+              Kneese de Melo.</div>
           <div className={styles.avenidaPaulista1578}>
-            Avenida Paulista, 1578 Cerqueira César
+            Avenida Pedro Álvares Cabral com avenida República do Líbano
           </div>
         </Box>
       </section>

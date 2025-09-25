@@ -131,7 +131,49 @@
     font-size: 20px
   }
 
-  /* .voltarIcon {
-    width: ;
-  } */
+  .imagemHero { /*Imagem do Hero!*/
+    padding: 40px 30px;
+  }
+
+  .imagemHero img { /*Imagem do Hero!*/
+    width: 35px;
+    height: 35px;
+  }
+
+  .voltarIcon {
+    height: 1%;
+  }
+
+  .body {
+    padding: 0 30px;
+    margin-top: 64px;
+    width: 100%;
+    height: 0;
+  }
+
+  .iniciarRoteiro20 {
+    height: 1960px;
+  }
+
+  .ttulo2 h3 {
+    font-size: 22px;
+  }
+
+  .linaBoBardi {
+    width: 281px;
+  }
+
+  .avenidaPaulista1578 {
+    width: 214px;
+  }
+
+  .prqIbirapuera {
+    font-size: 45px;
+    width: 100%;
+  }
+
+  .ttulo h3 {
+    font-size: 20px;
+  }
+
 }
