@@ -222,9 +222,15 @@
     height: 3.7rem;
   }
 
-  .ponto1p, .ponto2, .ponto3 {
+  .ponto1, .ponto2, .ponto3 {
     font-size: 14px;
   }
 
+ .masp {
+  color: #000;
+ }
 
+ .texto {
+  color: #222;
+ }
 }

@@ -179,3 +179,24 @@
 .detalhe3 {
   background-color: var(--color-mediumpurple);
 }
+
+
+@media (max-width: 767px) {
+  .vectorIcon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .seleoDeTipoDeRoteiro20 {
+    padding: 40px 30px;
+  }
+
+  .voltar {
+    padding: 0;
+    width: auto;
+  }
+
+  .body {
+    margin-top: 3rem;
+  }
+}

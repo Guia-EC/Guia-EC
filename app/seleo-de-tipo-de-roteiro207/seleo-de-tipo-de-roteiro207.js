@@ -69,7 +69,7 @@ const SeleoDeTipoDeRoteiro207 = () => {
             </Box>
           </Box>
           {/* Card Natural */}
-          <Box className={styles.raiz} onClick={onContainerClick}>
+          <Box className={styles.raiz}>
             <Box
               className={`${styles.imagem} ${styles.imagemNatural}`} // CLASSE ADICIONADA
             >
@@ -90,7 +90,7 @@ const SeleoDeTipoDeRoteiro207 = () => {
             </Box>
           </Box>
           {/* Card Cultural */}
-          <Box className={styles.raiz} onClick={onContainerClick}>
+          <Box className={styles.raiz}>
             <Box
               className={`${styles.imagem} ${styles.imagemCultural}`} // CLASSE ADICIONADA
             >
