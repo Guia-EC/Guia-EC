@@ -4,7 +4,9 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "../context/AuthContext";
-import { Box, Typography, TextField, Button, CircularProgress, List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
+import { Box, Typography, TextField, Button, CircularProgress, List, ListItem, ListItemIcon, ListItemText, InputAdornment, IconButton, FormControl, InputLabel, OutlinedInput  } from "@mui/material";
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
 import Image from "next/image";
@@ -50,6 +52,8 @@ const PaginaDeCadastro = () => {
   const [email, setEmail] = useState("");
   const [confirmEmail, setConfirmEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const [showPassword, setShowPassword] = useState(false); // NOVO ESTADO AQUI
   
   const [passwordReqs, setPasswordReqs] = useState(validatePassword(""));
   const [error, setError] = useState(null);
@@ -58,6 +62,13 @@ const PaginaDeCadastro = () => {
 
   const { signUp } = useAuth();
   const router = useRouter();
+
+
+  //Para lógica de mostrar ou esconder a senha!
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault(); // Evita que o campo perca o foco
+  };
 
   const handlePasswordChange = (e) => {
     const newPassword = e.target.value;
@@ -131,7 +142,28 @@ const PaginaDeCadastro = () => {
             <TextField label="Nome Completo" variant="outlined" fullWidth margin="normal" value={fullName} onChange={(e) => setFullName(e.target.value)} required />
             <TextField label="E-mail" type="email" variant="outlined" fullWidth margin="normal" value={email} onChange={(e) => setEmail(e.target.value)} required />
             <TextField label="Confirmação de E-mail" type="email" variant="outlined" fullWidth margin="normal" value={confirmEmail} onChange={(e) => setConfirmEmail(e.target.value)} required error={email !== confirmEmail && confirmEmail !== ""} helperText={email !== confirmEmail && confirmEmail !== "" ? "Os e-mails não correspondem" : ""} />
-            <TextField label="Senha" type="password" variant="outlined" fullWidth margin="normal" value={password} onChange={handlePasswordChange} required />
+            <FormControl sx={{ mt: 1, mb: 1 }} variant="outlined" fullWidth required>
+              <InputLabel htmlFor="outlined-adornment-password">Senha</InputLabel>
+              <OutlinedInput
+                id="outlined-adornment-password"
+                type={showPassword ? 'text' : 'password'}
+                value={password}
+                onChange={handlePasswordChange}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                      edge="end"
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+                label="Senha"
+              />
+            </FormControl>
             
             <PasswordRequirements requirements={passwordReqs} />
             

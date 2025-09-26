@@ -22,7 +22,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: var(--gap-40);
   text-align: center;
   color: var(--color-red);
@@ -124,6 +123,7 @@
 
   .telaDeUsurioBody {
     gap: 3rem;
+    height: 100vh;
   }
 
   .body {

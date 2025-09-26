@@ -4,7 +4,9 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "../context/AuthContext";
-import { Box, Typography, TextField, Button } from "@mui/material";
+import { Box, Typography, TextField, Button, InputAdornment, IconButton, FormControl, InputLabel, OutlinedInput } from "@mui/material";
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Image from "next/image";
 import HeaderButton from "./HeaderButton"; // Seu componente de botão de navegação
 import styles from "./pgina-de-login.module.css";
@@ -12,10 +14,22 @@ import styles from "./pgina-de-login.module.css";
 const PginaDeLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false); // NOVO ESTADO
   const [error, setError] = useState(null);
   
   const { signIn } = useAuth();
   const router = useRouter();
+
+
+  //Para lógica de mostrar ou esconder a senha!
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+  const handleMouseDownPassword = (event) => event.preventDefault();
+
+  const handlePasswordChange = (e) => {
+    const newPassword = e.target.value;
+    setPassword(newPassword);
+    setPassword(validatePassword(newPassword));
+  };
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -71,15 +85,28 @@ const PginaDeLogin = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
-              <TextField
-                label="Senha"
-                type="password"
-                fullWidth
-                margin="normal"
+              <FormControl sx={{ mt: 1, mb: 1 }} variant="outlined" fullWidth required>
+              <InputLabel htmlFor="outlined-adornment-password">Senha</InputLabel>
+              <OutlinedInput
+                id="outlined-adornment-password"
+                type={showPassword ? 'text' : 'password'}
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
+                onChange={handlePasswordChange}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                      edge="end"
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+                label="Senha"
               />
+            </FormControl>
             </Box>
             {error && <Typography color="error" sx={{ mt: 2 }}>{error}</Typography>}
             
