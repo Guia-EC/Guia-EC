@@ -4,7 +4,7 @@
 
 // Imports adicionados: Suspense e useSearchParams
 import { useState, Suspense } from "react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import { Box } from "@mui/material";
 import PginaDeFiltros from "../../components/pgina-de-filtros";
 import Navbar from "../../components/navbar";
@@ -124,6 +124,7 @@ const todosOsRoteiros = [
 const RoteirosContent = () => {
   // Lendo o filtro da URL
   const searchParams = useSearchParams();
+  const router = useRouter();
   const filtroInicial = searchParams.get('filtro') || 'Cultural';
 
   // O estado inicial agora usa o valor pego da URL
@@ -131,6 +132,7 @@ const RoteirosContent = () => {
 
   const handleMudarFiltro = (novaCategoria) => {
     setFiltroAtivo(novaCategoria);
+    router.push(`/roteiros?filtro=${novaCategoria}`, { scroll: false });
   };
 
   const roteirosFiltrados = todosOsRoteiros.filter(

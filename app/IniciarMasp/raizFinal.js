@@ -10,7 +10,7 @@ const IniciarRoteiro20 = () => {
   const router = useRouter();
 
   const onVoltarIconClick = useCallback(() => {
-    router.push("/seleo-de-tipo-de-roteiro207");
+     router.back();
   }, [router]);
 
   // Função simplificada que apenas chama a impressão do navegador

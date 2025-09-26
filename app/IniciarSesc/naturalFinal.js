@@ -12,7 +12,7 @@ const IniciarRoteiro202 = () => {
   const router = useRouter();
 
   const onVoltarIconClick = useCallback(() => {
-    router.push("/seleo-de-tipo-de-roteiro2023");
+    router.back();
   }, [router]);
 
   const onBotoIniciarRoteiroClick = useCallback(() => {
