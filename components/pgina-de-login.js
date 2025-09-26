@@ -24,7 +24,7 @@ const PginaDeLogin = () => {
     try {
       const { error } = await signIn({email, password});
       if (error) throw error;
-      router.push('/tela-de-usuario');
+      router.push('/');
     } catch (err) {
       setError("E-mail ou senha inválidos.");
       console.error("Erro no login:", err.message);
