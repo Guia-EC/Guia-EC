@@ -173,7 +173,17 @@
 
   .pginaDeLogin {
     width: 100%;
+    padding: 48px 30px;
+    height: auto;
+  }
+
+  .header {
     padding: 40px 30px;
+  }
+
+  .descrio {
+    display: flex;
+    gap: 15px;
   }
 
   .descrio h1 {
@@ -197,6 +207,7 @@
   .footer {
     font-size: 16px;
     font-weight: 600;
+    margin-top: 32px;
   }
 
   .logoGoogle {
@@ -223,6 +234,17 @@
     align-items: center;
     justify-content: center;
     gap: 30px;
+  }
+
+  .botoGoogleApple {
+    width: 156px;
+    height: 54px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    font-size: 14px;
+    text-transform: capitalize;
+    gap: 5px;
+    color: black;
   }
 
 }
