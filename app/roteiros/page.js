@@ -22,7 +22,7 @@ const todosOsRoteiros = [
   {
     id: 'masp-raiz',
     titulo: 'MASP Raiz',
-    descricao: 'Do museu à cena artística vibrante da cidade.',
+    descricao: 'Da arte à tradição popular da Avenida Paulista.',
     localizacao: 'Paulista',
     imagemSrc: '/Imagem1@3x.png',
     link: '/IniciarMasp',
@@ -31,7 +31,7 @@ const todosOsRoteiros = [
   {
     id: 'masp-natural',
     titulo: 'MASP Natural',
-    descricao: 'Do museu à cena artística vibrante da cidade.',
+    descricao: 'Do Parque Trianon à gastronomia saudável da região.',
     localizacao: 'Paulista',
     imagemSrc: '/Imagem1@3x.png',
     link: '/',
@@ -40,7 +40,7 @@ const todosOsRoteiros = [
   {
     id: 'ibirapuera-cultural',
     titulo: 'Ibirapuera Cultural',
-    descricao: 'Memória, luta e orgulho paulista...',
+    descricao: 'Dos museus do parque à efervescência cultural ao redor.',
     localizacao: 'Ibirapuera',
     imagemSrc: '/Imagem8@3x.png',
     link: '/IniciarIbira',
@@ -49,7 +49,7 @@ const todosOsRoteiros = [
   {
     id: 'ibirapuera-natural',
     titulo: 'Ibirapuera Natural',
-    descricao: 'Memória, luta e orgulho paulista...',
+    descricao: 'Uma imersão completa no gastronomia verde, fauna e flora do parque.',
     localizacao: 'Ibirapuera',
     imagemSrc: '/Imagem8@3x.png',
     link: '/',
@@ -58,7 +58,7 @@ const todosOsRoteiros = [
   {
     id: 'ibirapuera-raiz',
     titulo: 'Ibirapuera Raiz',
-    descricao: 'Memória, luta e orgulho paulista...',
+    descricao: 'Da história do parque aos sabores autênticos de rua.',
     localizacao: 'Ibirapuera',
     imagemSrc: '/Imagem8@3x.png',
     link: '/',
@@ -67,7 +67,7 @@ const todosOsRoteiros = [
   {
     id: 'sesc-natural',
     titulo: 'Sesc 24 Natural',
-    descricao: 'Arte, consciência e sabores plant-based.',
+    descricao: 'Dos refúgios verdes do centro e sabores plant-based à linda avisa do mirante.',
     localizacao: 'Centro',
     imagemSrc: '/Imagem10@3x.png',
     link: '/IniciarSesc',
@@ -76,7 +76,7 @@ const todosOsRoteiros = [
   {
     id: 'sesc-raiz',
     titulo: 'Sesc 24 Raiz',
-    descricao: 'Arte, consciência e sabores plant-based.',
+    descricao: 'Explore a alma e a tradição do coração de São Paulo.',
     localizacao: 'Centro',
     imagemSrc: '/Imagem10@3x.png',
     link: '/',
@@ -85,7 +85,7 @@ const todosOsRoteiros = [
   {
     id: 'sesc-cultural',
     titulo: 'Sesc 24 Cultural',
-    descricao: 'Arte, consciência e sabores plant-based.',
+    descricao: 'Da arquitetura do Sesc à cena artística do centro.',
     localizacao: 'Centro',
     imagemSrc: '/Imagem10@3x.png',
     link: '/IniciarSesc',
@@ -94,7 +94,7 @@ const todosOsRoteiros = [
   {
     id: 'copan-cultural',
     titulo: 'Copan Cultural',
-    descricao: 'Arte, consciência e sabores plant-based.',
+    descricao: 'Do ícone modernista aos cinemas e teatros da República.',
     localizacao: 'Centro',
     imagemSrc: '/CopanRoteiro.png',
     link: '/',
@@ -103,7 +103,7 @@ const todosOsRoteiros = [
   {
     id: 'copan-natural',
     titulo: 'Copan Natural',
-    descricao: 'Arte, consciência e sabores plant-based.',
+    descricao: 'O contraste do concreto com os achados veganos da região.',
     localizacao: 'Centro',
     imagemSrc: '/CopanRoteiro.png',
     link: '/',
@@ -112,7 +112,7 @@ const todosOsRoteiros = [
   {
     id: 'copan-raiz',
     titulo: 'Copan Raiz',
-    descricao: 'Arte, consciência e sabores plant-based.',
+    descricao: ' A história e os sabores clássicos que vivem no edifício.',
     localizacao: 'Centro',
     imagemSrc: '/CopanRoteiro.png',
     link: '/',
