@@ -1,117 +1,124 @@
 
 
-    /* Classes .cardCultural1, .cardCultural2, etc. viraram esta aqui */
-    .card {
-    border-radius: var(--br-10);
-    background-color: var(--color-white);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 350px; /* Define um tamanho máximo para o card */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Adiciona uma sombra sutil */
-    }
+/* Classes .cardCultural1, .cardCultural2, etc. viraram esta aqui */
+.card {
+border-radius: var(--br-10);
+background-color: var(--color-white);
+overflow: hidden;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+width: 100%;
+box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Adiciona uma sombra sutil */
+}
 
-    /* As classes .imagem, .imagem2, etc. viraram esta */
-    .imagem {
-    width: 100%; /* Ocupa toda a largura do card */
-    height: 9rem;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    /* A `background-image` foi removida pois o componente <Image> cuida disso */
-    }
+/* As classes .imagem, .imagem2, etc. viraram esta */
+.imagem {
+width: 100%; /* Ocupa toda a largura do card */
+height: 9rem;
+position: relative;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: flex-start;
+/* A `background-image` foi removida pois o componente <Image> cuida disso */
+}
 
-    /* As classes .detalhe, .detalhe2, etc. viraram esta */
-    .detalhe {
-    width: 11.25rem;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    border-radius: 0 var(--br-5) 0 0;
-    background-color: var(--cor-detalhe-ativo); /* Cor padrão 'Cultural' */
-    height: 1.125rem;
-    z-index: 1; /* Garante que fique sobre a imagem */
-    }
+/* As classes .detalhe, .detalhe2, etc. viraram esta */
+.detalhe {
+width: 11.25rem;
+position: absolute;
+bottom: 0;
+left: 0;
+border-radius: 0 var(--br-5) 0 0;
+background-color: var(--cor-detalhe-ativo); /* Cor padrão 'Cultural' */
+height: 1.125rem;
+z-index: 1; /* Garante que fique sobre a imagem */
+}
 
-    /* As classes .body, .body2, etc. viraram esta */
-    .body {
-    width: 100%;
-    background-color: var(--color-whitesmoke-100);
-    overflow: hidden;
-    padding: var(--padding-20);
-    box-sizing: border-box;
-    gap: var(--gap-12);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    }
+/* As classes .body, .body2, etc. viraram esta */
+.body {
+width: 100%;
+background-color: var(--color-whitesmoke-100);
+overflow: hidden;
+padding: var(--padding-20);
+box-sizing: border-box;
+gap: var(--gap-12);
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: flex-start;
+}
 
-    .ttuloETexto {
-    align-self: stretch;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    }
+.ttuloETexto {
+align-self: stretch;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: flex-start;
+}
 
-    /* .ttulo3, .ttulo4, etc. viraram .tituloWrapper */
-    .tituloWrapper {
-    align-self: stretch;
-    display: flex; /* Mantido para centralizar o texto se necessário */
-    font-size: var(--font-size-18);
-    }
+/* .ttulo3, .ttulo4, etc. viraram .tituloWrapper */
+.tituloWrapper {
+align-self: stretch;
+display: flex; /* Mantido para centralizar o texto se necessário */
+font-size: var(--font-size-18);
+}
 
-    .texto {
-    align-self: stretch; /* Ocupa a largura do .body */
-    text-align: justify;
-    font-size: var(--font-size-14);
-    letter-spacing: 0.04em;
-    font-weight: 300;
-    margin-top: 0.5rem; /* Adiciona espaço entre título e texto */
-    }
+.texto {
+align-self: stretch; /* Ocupa a largura do .body */
+text-align: justify;
+font-size: var(--font-size-14);
+letter-spacing: 0.04em;
+font-weight: 300;
+margin-top: 0.5rem; /* Adiciona espaço entre título e texto */
+}
 
-    .localizao {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: var(--gap-5);
-    text-align: center;
-    font-size: var(--font-size-10);
-    }
+.localizao {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: flex-start;
+gap: var(--gap-5);
+text-align: center;
+font-size: var(--font-size-10);
+}
 
-    .locationSpaceIcon {
-    width: 1.013rem;
-    height: auto;
-    object-fit: contain;
-    }
+.locationSpaceIcon {
+width: 1.013rem;
+height: auto;
+object-fit: contain;
+}
 
-    .localizacaoTexto {
-    letter-spacing: 0.03em;
-    opacity: 0.5;
-    }
+.localizacaoTexto {
+letter-spacing: 0.03em;
+opacity: 0.5;
+}
 
-    .botoEFavorito {
-    align-self: stretch;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    }
+.botoEFavorito {
+align-self: stretch;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+}
 
-    .boto {
-    padding: var(--padding-11) 1.812rem;
-    }
+.boto {
+padding: var(--padding-11) 1.812rem;
+}
 
-    /* Media Queries para o CARD */
-    @media (max-width: 767px) {
+/* Media Queries para o CARD */
+@media (max-width: 767px) {
     .card {
         margin-top: 1.5rem;
     }
+
+    .tituloWrapper h3 {
+        font-size: 16px
     }
+
+    .mui-0 h2 {
+        font-size: 18px;
+    }
+}

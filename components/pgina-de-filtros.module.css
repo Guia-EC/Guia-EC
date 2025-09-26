@@ -3,7 +3,7 @@
 .root {
   display: flex;
   flex-direction: column; /* Alterado para coluna para melhor empilhamento */
-  align-items: center;   /* Centraliza o conteúdo da página */
+  align-items: start;   /* Centraliza o conteúdo da página */
   justify-content: flex-start;
   padding: 2rem 1rem;    /* Adiciona um respiro na página */
   text-align: left;
@@ -75,5 +75,15 @@
 @media (max-width: 767px) {
   .ttulo2 b {
     font-size: 18px;
+  }
+
+  .titulo {
+    font-size: 18px;
+  }
+
+  .root {
+    padding: 70px 30px;
+    gap: 20px;
+    height: 112rem;
   }
 }

@@ -24,7 +24,7 @@ const PginaDeFiltros = ({ filtroAtivo, roteiros, onMudarFiltro }) => { // Recebe
     // 3. Aplica o estilo na section principal
     <section className={styles.root} style={estilosDaSecao}>
       <Box className={styles.titulo}>
-        <Typography variant="h2" sx={{ fontWeight: "700" }}>
+        <Typography sx={{ fontWeight: "700" }}>
           Conheça outros roteiros
         </Typography>
         <Box className={styles.detalheChild} />
