@@ -33,7 +33,7 @@
     bottom: 0;
     left: 0;
     border-radius: 0 var(--br-5) 0 0;
-    background-color: var(--color-mediumpurple); /* Cor padrão 'Cultural' */
+    background-color: var(--cor-detalhe-ativo); /* Cor padrão 'Cultural' */
     height: 1.125rem;
     z-index: 1; /* Garante que fique sobre a imagem */
     }
