@@ -22,7 +22,7 @@ const PginaDeLogin = () => {
     setError(null);
 
     try {
-      const { error } = await signIn(email, password);
+      const { error } = await signIn({email, password});
       if (error) throw error;
       router.push('/tela-de-usuario');
     } catch (err) {

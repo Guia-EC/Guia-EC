@@ -7,6 +7,19 @@ import PropTypes from "prop-types";
 import styles from "./tela-de-usurio.module.css";
 import { useAuth } from "../context/AuthContext"; // Importa o hook de autenticação
 
+const getInitials = (name = "") => {
+  const nameParts = name.trim().split(" ");
+  if (nameParts.length === 1) return nameParts[0] ? nameParts[0][0].toUpperCase() : "";
+
+  const firstName = nameParts[0];
+  const lastName = nameParts[nameParts.length - 1];
+
+  const firstInitial = firstName ? firstName[0].toUpperCase() : "";
+  const lastInitial = lastName ? lastName[0].toUpperCase() : "";
+
+  return `${firstInitial}${lastInitial}`;
+};
+
 const TelaDeUsurio = ({ className = "", tela = "Home" }) => {
   const router = useRouter();
   
@@ -48,6 +61,13 @@ const TelaDeUsurio = ({ className = "", tela = "Home" }) => {
     return <div>Carregando perfil...</div>;
   }
 
+    // ========================= DADOS DINÂMICOS =========================
+  // Pegamos o nome completo do objeto 'user' (com um fallback para o email)
+  const fullName = user.fullName || user.email;
+  // Calculamos as iniciais
+  const initials = getInitials(fullName);
+  // ===================================================================
+
   return (
     <section
       className={[styles.telaDeUsurio, className].join(" ")}
@@ -62,7 +82,7 @@ const TelaDeUsurio = ({ className = "", tela = "Home" }) => {
             variant="h1" 
             sx={{ fontWeight: "400", fontSize: '4rem' }}
           >
-            DR
+            {initials}
           </Typography>
         </Box>
         <Box className={styles.nomeEEMail}>
@@ -70,7 +90,7 @@ const TelaDeUsurio = ({ className = "", tela = "Home" }) => {
             className={styles.douglasRocha}
             sx={{ fontWeight: "700", fontSize: '20px' }}
           >
-            Douglas Rocha
+            {fullName}
           </Typography>
           {/* Exibe o e-mail do usuário logado dinamicamente */}
           <div className={styles.douglasrochagmailcom}>

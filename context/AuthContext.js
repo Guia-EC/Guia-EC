@@ -2,7 +2,7 @@
 "use client";
 
 import { createContext, useState, useEffect, useContext } from 'react';
-import { supabase } from '../lib/supabaseClient'; // Importe o cliente
+import { supabase } from '../lib/supabaseClient';
 
 const AuthContext = createContext();
 
@@ -11,19 +11,34 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Verifica a sessão do usuário quando o app carrega
     const getSession = async () => {
       const { data: { session } } = await supabase.auth.getSession();
-      setUser(session?.user ?? null);
+      
+      // =================== LÓGICA DE PERFIL ENRIQUECIDO ===================
+      // Adicionamos o nome completo ao objeto do usuário
+      const currentUser = session?.user;
+      const profile = currentUser ? {
+        ...currentUser,
+        fullName: currentUser.user_metadata?.full_name
+      } : null;
+      setUser(profile);
+      // ====================================================================
+
       setLoading(false);
     };
 
     getSession();
 
-    // Escuta por mudanças no estado de autenticação (login, logout)
     const { data: authListener } = supabase.auth.onAuthStateChange(
       (event, session) => {
-        setUser(session?.user ?? null);
+        // =================== LÓGICA DE PERFIL ENRIQUECIDO ===================
+        const currentUser = session?.user;
+        const profile = currentUser ? {
+          ...currentUser,
+          fullName: currentUser.user_metadata?.full_name
+        } : null;
+        setUser(profile);
+        // ====================================================================
       }
     );
 
@@ -32,9 +47,22 @@ export const AuthProvider = ({ children }) => {
     };
   }, []);
 
-  // Funções que serão usadas nos componentes
   const value = {
-    signUp: (data) => supabase.auth.signUp(data),
+    // ========================= FUNÇÃO SIGNUP CORRIGIDA =========================
+    // Agora ela desestrutura o objeto e salva o fullName nos metadados
+    signUp: ({ email, password, fullName }) => {
+      return supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          data: {
+            full_name: fullName,
+          },
+        },
+      });
+    },
+    // ============================================================================
+
     signIn: (data) => supabase.auth.signInWithPassword(data),
     signOut: () => supabase.auth.signOut(),
     user,
@@ -43,5 +71,4 @@ export const AuthProvider = ({ children }) => {
   return <AuthContext.Provider value={value}>{!loading && children}</AuthContext.Provider>;
 };
 
-// Hook para usar o contexto facilmente
 export const useAuth = () => useContext(AuthContext);
