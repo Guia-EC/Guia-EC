@@ -65,9 +65,7 @@ const SeleoDeTipoDeRoteiro2014 = () => {
                 </Box>
                 <Box className={styles.texto}>
                   <div className={styles.doMonumentoS}>
-                    Do Monumento às Bandeiras, um roteiro pela história
-                    paulistana, explorando as tradições e a arquitetura
-                    modernista do Ibirapuera.
+                    Mergulhe fundo na memória paulistana, vivenciando a cultura de rua e os sabores de feira do Ibirapuera.
                   </div>
                 </Box>
               </Box>
@@ -91,9 +89,7 @@ const SeleoDeTipoDeRoteiro2014 = () => {
                 </Box>
                 <Box className={styles.seleoDeTipoDeRoteiro20Texto}>
                   <div className={styles.partindoDoMonumento}>
-                    Partindo do Monumento às Bandeiras, entre no oásis verde do
-                    Ibirapuera para se conectar com a tranquilidade, a fauna e a
-                    flora do parque.
+                    Uma conexão com a natureza exuberante do parque, explorando seus lagos, jardins, fauna e sabores.
                   </div>
                 </Box>
               </Box>

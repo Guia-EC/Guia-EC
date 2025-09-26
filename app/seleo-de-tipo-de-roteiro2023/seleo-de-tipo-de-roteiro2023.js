@@ -63,8 +63,7 @@ const SeleoDeTipoDeRoteiro2023 = () => {
                 </Box>
                 <Box className={styles.texto}>
                   <div className={styles.partindoDoMasp}>
-                    Partindo do MASP, um roteiro pelo coração autêntico de São
-                    Paulo, revelando arquitetura, história e sabores clássicos.
+                   Explore a alma do centro histórico, conhecendo seu comércio tradicional, arquitetura e sabores populares.
                   </div>
                 </Box>
               </Box>
@@ -88,8 +87,7 @@ const SeleoDeTipoDeRoteiro2023 = () => {
                 </Box>
                 <Box className={styles.texto}>
                   <div className={styles.partindoDoMasp}>
-                    Conecte a arte do MASP a um roteiro de consciência,
-                    explorando a inovadora gastronomia plant-based da cidade.
+                     Descubra os refúgios verdes, a culinária consciente e as mais incríveis vistas panorâmicas do centro.
                   </div>
                 </Box>
               </Box>
@@ -113,8 +111,7 @@ const SeleoDeTipoDeRoteiro2023 = () => {
                 </Box>
                 <Box className={styles.texto}>
                   <div className={styles.partindoDoMasp}>
-                    Do MASP, explore a vibrante cena cultural em um roteiro que
-                    vai além do óbvio, por cinemas, teatros e galerias.
+                    Conecte-se com a pulsante cena artística do centro, percorrendo dos teatros históricos à vibrante arte de rua.
                   </div>
                 </Box>
               </Box>
