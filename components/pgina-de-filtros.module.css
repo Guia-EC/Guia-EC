@@ -36,9 +36,10 @@
 
 .detalheChild {
   width: 14.438rem;
-  background-color: var(--color-gray-300);
-  height: 0.063rem;
+  background-color: #000;
+  height: 0.06rem;
   margin-top: 0.25rem;
+
 }
 
 .filtro {
@@ -74,10 +75,6 @@
 /* Media Queries para a PÁGINA */
 @media (max-width: 767px) {
   .ttulo2 b {
-    font-size: 18px;
-  }
-
-  .titulo {
     font-size: 18px;
   }
 

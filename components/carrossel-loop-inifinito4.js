@@ -9,8 +9,8 @@ const BANNERS = [
   { id: 1, imageUrl: '/sympla-banner-1.png', alt: 'Caminhada cultural', linkUrl:'https://www.sympla.com.br/evento/caminhada-cultural-pelo-centro-de-sao-paulo-detalhes-quase-secretos-da-arquitetura-urbana/3100892' },
   { id: 2, imageUrl: '/sympla-banner-2.png', alt: 'Ney Matogrosso Evento', linkUrl: 'https://bileto.sympla.com.br/event/109556/d/333491?_gl=1*z6p64l*_gcl_au*OTE3MDYwNDUyLjE3NTc4MDYyODkuMTM0NjY5MzYyOC4xNzU4MzMzODM2LjE3NTgzMzM4Njc.*_ga*MTU3MzA1Mjk2MS4xNzU3ODA2Mjg5*_ga_KXH10SQTZF*czE3NTgzMzEwMjkkbzMkZzEkdDE3NTgzMzM4ODMkajIkbDAkaDk3NTMyMTIxNw..'  },
   { id: 3, imageUrl: '/sympla-banner-3.png', alt: 'Farol Santander', linkUrl: 'https://bileto.sympla.com.br/event/100549/d/327057' },
-  { id: 3, imageUrl: '/sympla-banner-4.png', alt: 'Clube dos 30', linkUrl: 'https://www.sympla.com.br/evento/clube-dos-30-aniversario-10-anos-15-11-sabado-14h-as-23h-varanda-estaiada/3107296' },
-  { id: 3, imageUrl: '/sympla-banner-5.png', alt: 'Corrida outubro rosa', linkUrl: 'https://www.sympla.com.br/evento/corrida-outubro-rosa/2985318' },
+  { id: 4, imageUrl: '/sympla-banner-4.png', alt: 'Clube dos 30', linkUrl: 'https://www.sympla.com.br/evento/clube-dos-30-aniversario-10-anos-15-11-sabado-14h-as-23h-varanda-estaiada/3107296' },
+  { id: 5, imageUrl: '/sympla-banner-5.png', alt: 'Corrida outubro rosa', linkUrl: 'https://www.sympla.com.br/evento/corrida-outubro-rosa/2985318' },
 ];
 
 const CarrosselLoopInifinito4 = ({ className = "", property1 = "Default" }) => {
