@@ -39,3 +39,9 @@
   position: relative;
   display: inline-block;
 }
+
+@media (max-width: 767px) {
+  .botoFazerRoteiro h3 {
+    width: fit-content;
+  }
+}

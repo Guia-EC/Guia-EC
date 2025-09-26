@@ -1,45 +1,48 @@
+/* Estilos mobile ficam como estão */
 .imagemHero,
 .iniciarRoteiro20 {
   display: flex;
   align-items: flex-start;
   box-sizing: border-box;
 }
+
 .iniciarRoteiro20 {
   width: 100%;
-  height: 82.938rem;
   position: relative;
   background-color: var(--color-gray-100);
   flex-direction: column;
-  padding: 0 0 7.125rem;
   line-height: normal;
   letter-spacing: normal;
+  min-height: 100vh;
 }
+
 .imagemHero {
   align-self: stretch;
+  position: relative;
   height: 28.813rem;
   padding-left: 1.7rem;
-  background-image: url(/Masp.png);
+  background-image: url(/MASPRESPONSIVO.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
   z-index: 0;
 }
+
 .voltarIcon {
   cursor: pointer;
   border: 0;
   background-color: transparent;
-  width: 8%;
-  height: 40%; /*Tá mexendo na altura em onde está a seta!*/
+  width: 4%;
+  height: auto;
 }
-
 
 .botoIniciarRoteiro {
   width: 23.188rem;
   height: 6.25rem;
   margin: 0 !important;
-  position: absolute;
-  top: 73.813rem;
-  left: 2rem;
+  /* position: fixed;
+  top: 50rem;
+  left: 2rem; */
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
   border-radius: 30px;
   background-color: var(--color-orange-100);
@@ -50,15 +53,18 @@
   cursor: pointer;
   z-index: 2;
 }
+
 .iniciarRotaCom {
   position: relative;
 }
+
 .iniciarRoteiro20Ttulo,
 .ttulo {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
+
 .ttulo {
   margin: 0 !important;
   position: absolute;
@@ -70,22 +76,27 @@
   color: var(--color-orange-100);
   font-family: var(--font-poppins);
 }
+
 .iniciarRoteiro20Ttulo {
   justify-content: center;
 }
+
 .masp,
 .museuDeArte {
   margin: 0;
   position: relative;
   display: inline-block;
 }
+
 .masp {
-  width: 11.625rem;
-  height: 4.375rem;
+  width: auto; /* Largura automática para o texto */
+  height: auto;
 }
+
 .museuDeArte {
   width: 18.5rem;
 }
+
 .descrio {
   display: flex;
   flex-direction: column;
@@ -93,8 +104,186 @@
   font-size: var(--font-size-12);
   color: var(--color-black);
 }
+
 .avenidaPaulista1578 {
   width: 8.625rem;
   position: relative;
   display: inline-block;
+}
+
+.botaoEQrcode {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 85%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  gap: 30px;
+}
+
+.qrCode {
+  display: block;
+  z-index: 99;
+}
+/*CSS impressão!*/
+
+/* Esta classe ainda esconde a área de impressão na TELA */
+.printableArea {
+  display: none;
+}
+
+@media print {
+  /* REMOVEMOS AS REGRAS DE "body *" E "visibility" DAQUI */
+
+  /* Estas regras SÃO LOCAIS e formatam a área de impressão */
+  .printableArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .printImage {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  @page {
+    margin: 0mm;
+  }
+}
+
+
+/*Responsivo para Mobile*/
+
+@media (max-width: 767px) {
+  .botoIniciarRoteiro {
+    width: 370px;
+    height: 100px;
+    position: fixed;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .ttulo {
+    top: 22rem;
+    left: 1.8rem;
+  }
+
+  .botoIniciarRoteiro p{
+    font-size: 20px;
+    margin: 33px; /*Por algum motivo, tá mexendo no alinahmento vertical!*/
+  }
+
+  .voltarIcon {
+    position: absolute;
+    top:2.5rem;
+    width: 35px;
+    height: 35px;
+    
+  }
+
+  .imagemHero {
+    padding: 40px 30px;
+
+  }
+
+  .iniciarRoteiro20 {
+    height: 88rem;
+  }
+
+  .iniciarRoteiro20Ttulo h3 {
+    font-size: 22px;
+    width: 100%;
+  }
+
+  .iniciarRoteiro20Ttulo h1 {
+    line-height: 0.9;
+  }
+
+  .descrio {
+    font-size: 14px;
+  }
+}
+
+
+
+
+/* --- MUDANÇAS APLICADAS APENAS NO RESPONSIVO --- */
+@media (min-width: 768px) {
+  .iniciarRoteiro20 {
+    position: relative;
+    height: auto;
+    padding: 0;
+  }
+
+  .imagemHero {
+    height: 640px; /* AUMENTADO: Altura da imagem de fundo */
+    align-self: stretch;
+    padding: 60px 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; /* Centraliza melhor a imagem */
+    z-index: 0;
+  }
+
+  .ttulo {
+    top: 30rem; /* Reposiciona o título */
+    left: 58px;
+    max-width: 800px;
+  }
+
+  .iniciarRoteiro20Ttulo h1 {
+    font-size: 100px;
+  }
+
+  .iniciarRoteiro20Ttulo h3 {
+    font-size: 40px;
+  }
+
+  .iniciarRotaCom {
+    font-size: 22px;
+  }
+
+  .avenidaPaulista1578 {
+    font-size: 22px;
+  }
+
+  .botoIniciarRoteiro p{
+    font-size: 22px;
+    margin: 33px; /*Por algum motivo, tá mexendo no alinahmento vertical!*/
+  }
+
+  /* --- MUDANÇAS: Fontes do Título Aumentadas --- */
+  .masp {
+    font-size:120px; /* AUMENTADO */
+  }
+
+  .museuDeArte {
+    font-size: 49px; /* AUMENTADO */
+    width: auto; /* Largura automática para caber o texto */
+  }
+
+  .descrio {
+    font-size: 22px; /* AUMENTADO (equivale a 18px) */
+  }
+
+  .avenidaPaulista1578 {
+    width: auto;
+  }
+
+  .voltarIcon {
+    width: 60px; /*Botão de voltar página!*/
+  }
 }

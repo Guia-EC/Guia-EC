@@ -62,3 +62,24 @@
 .copan {
   background-image: url(/COPAN@3x.png);
 }
+
+@media (min-width: 768px){
+.masp,
+.copan,
+.edMartinelli,
+.prqIbirapuera {
+  height: 350px;
+  width: 380px;
+}
+
+.tag {
+  height: 2rem;
+  width: 13rem;
+  border-radius: 0 var(--br-5) 0 var(--br-5);
+  background-color: var(--color-black);
+  align-items: center;
+  padding: 0 var(--padding-8);
+  box-sizing: border-box;
+  font-size: 20px;
+}
+}

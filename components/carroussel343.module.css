@@ -43,3 +43,21 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
+
+@media (min-width: 768px) {
+  
+  .ttulo{
+    width: 100%;
+  }
+
+  .hospedeSeEVivencie {
+    width: 100%;
+    font-size: 30px;
+    height: 5.5rem;
+  }
+
+  .ttuloELinhaDeEstilo {
+    width: 90%;
+    text-align:left ;
+  }
+}

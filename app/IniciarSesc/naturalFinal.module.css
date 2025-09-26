@@ -125,3 +125,49 @@
 .rua24De {
   width: 10.938rem;
 }
+
+@media (max-width: 767px) {
+
+  .botoIniciarRoteiro {
+    position:fixed;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 370px;
+    height: 100px;
+    font-size: 20px
+  }
+
+  .voltarIcon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .imagemHero {
+    padding: 40px 30px;
+  }
+
+  .sesc24 {
+    font-size: 45px;
+  }
+
+  .ttulo2 h3 {
+    font-size: 22px;
+  }
+
+  .body {
+    padding: 0 30px;
+    margin-top: 64px;
+    width: 100%;
+    height: 0;
+  }
+
+  .body h3 {
+    font-size: 20px;
+  }
+
+  .iniciarRoteiro20 {
+    padding: 0;
+    height: 103.5rem;
+  }
+}

@@ -68,7 +68,7 @@ const Navbar = ({ activePage }) => {
           style={{ cursor: "pointer" }}
         >
           <Box className={styles.boto} />
-          <Image
+          <Image className={styles.roteiro}
             width={44.6}
             height={44.6}
             alt="Criar Roteiro"

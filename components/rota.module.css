@@ -38,3 +38,23 @@
 .routePath6 {
   height: 15.188rem;
 }
+
+@media (max-width: 767px) {
+
+  .rotaRoutePath {
+    height: 15.8rem;
+  }
+
+  .routePath2 {
+    height: 3.2rem;
+  }
+
+  .routePath4 {
+    height: 18.7rem;
+  }
+
+  .routePath6 {
+    height: 17rem;
+  }
+
+}

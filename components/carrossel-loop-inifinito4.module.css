@@ -30,3 +30,16 @@
   border-radius: var(--br-10);
   object-fit: cover;
 }
+
+@media (min-width: 768px) {
+  .frameChild,
+  .frameInner,
+  .frameItem {
+      height: 240px;
+      width: 94.5vw;
+  }
+  
+  .carrosselInifinito2{
+    overflow:visible;
+  }
+}

@@ -10,7 +10,9 @@ import styles from './BannerCarouselSympla.module.css';
 const BANNERS = [
   { id: 1, imageUrl: '/Sympla1.png', alt: 'Pateo do Collegio Evento', linkUrl:'https://www.sympla.com.br/evento/caminhada-cultural-pelo-centro-de-sao-paulo-detalhes-quase-secretos-da-arquitetura-urbana/3100892#compartilhar-evento' },
   { id: 2, imageUrl: '/Sympla2.png', alt: 'Ney Matogrosso Evento', linkUrl: 'https://bileto.sympla.com.br/event/109556/d/333492'  },
-  { id: 3, imageUrl: '/Sympla3.png', alt: 'Museu da Língua Portuguesa Evento', linkUrl: 'https://bileto.sympla.com.br/event/100549/d/327067' },
+  { id: 3, imageUrl: '/Sympla3.png', alt: 'Farol Santander São Paulo', linkUrl: 'https://bileto.sympla.com.br/event/100549/d/327067' },
+  { id: 4, imageUrl: '/Sympla4.png', alt: 'CORRIDA OUTUBRO ROSA', linkUrl: 'https://www.sympla.com.br/evento/corrida-outubro-rosa/2985318' },
+  { id: 5, imageUrl: '/Sympla5.png', alt: 'Clube dos 30 (Aniversário 10 Anos!)| 15.11 | Sábado | 14h às 23h | Varanda Estaiada', linkUrl: 'https://www.sympla.com.br/evento/clube-dos-30-aniversario-10-anos-15-11-sabado-14h-as-23h-varanda-estaiada/3107296' },
 ];
 
 export const BannerCarouselSympla = () => {

@@ -306,3 +306,47 @@
 .activeDot {
   background-color: #333;
 }
+
+@media (max-width: 767px) {
+  .imagemHero {
+    padding: 40px 30px;
+  }
+
+  .voltarIcon {
+    margin: 0;
+  }
+
+  .sesc24 {
+    font-size: 45px;
+    width: 100%;
+  }
+
+  .infoSescTtulo h3 {
+    font-size: 22px;
+  }
+
+  .infoSesc {
+    padding: 0;
+    height: 0;
+  }
+
+  .infos {
+    margin-top: 60px;
+  }
+
+  .infos p {
+    font-size: 15px;
+  }
+
+  .body {
+    padding-top: 0;
+  }
+
+  .galleryContainer {
+    margin: 20px 0 140px 0;
+  }
+
+  .accordionButton {
+    font-size: 16px;
+  }
+}

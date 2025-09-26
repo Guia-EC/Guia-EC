@@ -31,3 +31,18 @@
   border-radius: var(--br-10);
   object-fit: cover;
 }
+
+@media (min-width: 768px) {
+  .carrosselInfinito3HotelRectsIcon,
+  .hotelRectsIcon,
+  .hotelRectsIcon2,
+  .hotelRectsIcon3,
+  .hotelRectsIcon4 {
+    height: 350px;
+    width: 94.5vw;
+  }
+
+  .carrosselInfinito3 {
+    overflow: visible;
+  }
+}

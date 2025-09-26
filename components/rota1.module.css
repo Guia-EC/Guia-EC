@@ -33,3 +33,18 @@
 .rotaRotaChild {
   height: 3.063rem;
 }
+
+@media (max-width: 767px) {
+  .rotaItem {
+    height: 15.9rem;
+  }
+
+  .lineDiv {
+    height: 18.5rem;
+  }
+
+  .rotaRotaChild {
+    height: 3.1rem;
+
+  }
+}

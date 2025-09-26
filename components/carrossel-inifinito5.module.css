@@ -32,3 +32,21 @@
   border-radius: var(--br-10);
   object-fit: cover;
 }
+
+@media (min-width: 768px) {
+  
+  .carrosselInifinito1 {
+    height: 22rem;
+    overflow:visible;
+  }
+
+.imageRectFive,
+.imageRectFour,
+.imageRectIcon,
+.imageRectSix,
+.imageRectThree,
+.imageRectTwo {
+  height: 350px;
+  width: 94.5vw;
+}
+}

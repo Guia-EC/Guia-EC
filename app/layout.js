@@ -9,6 +9,12 @@ import { AuthProvider } from '../context/AuthContext'; // Ajuste o caminho se ne
 import "./global.css";
 import muiTheme from "../theme";
 
+export const metadata = {
+  title: 'Roteirize',
+  description: 'Sua descrição aqui',
+  manifest: '/manifest.json', // <-- ESSA LINHA É ESSENCIAL!
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">

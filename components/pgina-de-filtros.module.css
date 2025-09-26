@@ -1,437 +1,86 @@
+/* Cole este código em /components/pgina-de-filtros.module.css */
+
 .root {
-  height: 80rem;
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  flex-direction: column; /* Alterado para coluna para melhor empilhamento */
+  align-items: start;   /* Centraliza o conteúdo da página */
   justify-content: flex-start;
-  z-index: 0;
+  padding: 2rem 1rem;    /* Adiciona um respiro na página */
   text-align: left;
   font-size: var(--font-size-20);
   color: var(--color-gray-300);
   font-family: var(--font-poppins);
-}
-.root,
-.root[data-filtroAtivo="Natural"] .roteirosCulturais,
-.root[data-filtroAtivo="Raiz"] .roteirosCulturais {
   background-color: var(--color-gray-100);
 }
-.root[data-filtroAtivo="Natural"] .detalhe {
-  background-color: var(--color-forestgreen);
-}
-.root[data-filtroAtivo="Raiz"] .detalhe {
-  background-color: var(--color-orange);
-}
-.root[data-filtroAtivo="Natural"] .detalhe2 {
-  background-color: var(--color-forestgreen);
-}
-.root[data-filtroAtivo="Raiz"] .detalhe2 {
-  background-color: var(--color-orange);
-}
-.root[data-filtroAtivo="Natural"] .detalhe3 {
-  background-color: var(--color-forestgreen);
-}
-.root[data-filtroAtivo="Raiz"] .detalhe3 {
-  background-color: var(--color-orange);
-}
-.roteirosCulturais {
+
+.ttulo {
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--gap-24);
+  justify-content: center;
+  font-size: var(--font-size-20);
+  margin-bottom: 1.5rem; /* Adiciona espaço abaixo do título */
+  width: 100%;
+  max-width: 350px; /* Alinha com a largura dos cards */
 }
-.roteirosCulturais,
-.ttulo,
+
 .ttulo2 {
   display: flex;
-  justify-content: center;
-}
-.ttulo {
-  height: 1.563rem;
-  flex-direction: column;
-  align-items: flex-start;
-  font-size: var(--font-size-20);
-}
-.ttulo2 {
   flex-direction: row;
   align-items: center;
 }
+
 .conheaOutrosRoteiros {
   position: relative;
 }
-.detalhe4 {
-  width: 14.438rem;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
+
 .detalheChild {
-  align-self: stretch;
-  position: relative;
-  background-color: var(--color-gray-300);
-  height: 0.063rem;
+  width: 14.438rem;
+  background-color: #000;
+  height: 0.06rem;
+  margin-top: 0.25rem;
+
 }
+
 .filtro {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   gap: 0.812rem;
+  margin-bottom: 1.5rem; /* Adiciona espaço abaixo dos filtros */
 }
-.culturalFiltroPadro,
-.naturalFiltroPadro,
-.raizFiltroPadro {
-  height: 1.375rem;
-  width: 5.5rem;
-  padding: var(--padding-2) 1.312rem;
-  box-sizing: border-box;
-}
-.cardCultural3,
-.imagem {
+
+/* NOVO: Esta é a classe mais importante para o layout dos cards */
+.listaDeCards {
   display: flex;
   flex-direction: column;
-}
-.cardCultural3 {
-  height: 21.813rem;
-  border-radius: var(--br-10);
-  background-color: var(--color-white);
-  overflow: hidden;
-  flex-shrink: 0;
+  gap: 24px; /* Espaçamento entre os cards */
+  width: 100%;
   align-items: center;
-  justify-content: center;
 }
-.imagem {
-  width: 22.438rem;
-  height: 9rem;
-  align-items: flex-start;
-  justify-content: flex-start;
-  position: relative;
-  background-image: url(/Imagem1@3x.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
+
+/* Estas regras de cor para o '.detalhe' ficam aqui de propósito.
+  Elas dependem do `data-filtroAtivo` que está no elemento root da PÁGINA,
+  então elas controlam a cor do detalhe de dentro da página.
+*/
+.root[data-filtroAtivo="Natural"] .detalhe {
+  background-color: var(--color-forestgreen);
 }
-.detalhe {
-  width: 11.25rem;
-  position: absolute;
-  margin: 0 !important;
-  bottom: 0;
-  left: 0;
-  border-radius: 0 var(--br-5) 0 0;
-  background-color: var(--color-mediumpurple);
-  height: 1.125rem;
-  z-index: 0;
+
+.root[data-filtroAtivo="Raiz"] .detalhe {
+  background-color: var(--color-orange-100);
 }
-.body,
-.ttulo3,
-.ttuloETexto {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.body {
-  width: 22.438rem;
-  height: 12.813rem;
-  background-color: var(--color-whitesmoke-100);
-  overflow: hidden;
-  flex-shrink: 0;
-  padding: var(--padding-20);
-  box-sizing: border-box;
-  gap: var(--gap-12);
-}
-.ttulo3,
-.ttuloETexto {
-  align-self: stretch;
-}
-.ttulo3 {
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--font-size-18);
-}
-.maspCultural {
-  margin: 0;
-  flex: 1;
-  position: relative;
-}
-.texto {
-  width: 16.875rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  text-align: justify;
-  font-size: var(--font-size-14);
-}
-.doMuseu {
-  width: 16.875rem;
-  position: relative;
-  letter-spacing: 0.04em;
-  font-weight: 300;
-  display: inline-block;
-}
-.localizao {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: var(--gap-5);
-  text-align: center;
-  font-size: var(--font-size-10);
-}
-.locationSpaceIcon {
-  width: 1.013rem;
-  position: relative;
-  border-radius: 0 9px 0 0;
-  max-height: 100%;
-  object-fit: contain;
-}
-.ibirapuera {
-  position: relative;
-  letter-spacing: 0.03em;
-  opacity: 0.5;
-}
-.botoEFavorito {
-  align-self: stretch;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0;
-}
-.boto {
-  padding: var(--padding-11) 1.812rem;
-}
-.cardCultural1,
-.imagem2 {
-  display: flex;
-  flex-direction: column;
-}
-.cardCultural1 {
-  height: 21.813rem;
-  border-radius: var(--br-10);
-  background-color: var(--color-white);
-  overflow: hidden;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-}
-.imagem2 {
-  width: 22.438rem;
-  height: 9rem;
-  align-items: flex-start;
-  justify-content: flex-start;
-  position: relative;
-  background-image: url(/Imagem2@3x.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-}
-.detalhe2 {
-  width: 11.25rem;
-  position: absolute;
-  margin: 0 !important;
-  bottom: 0;
-  left: 0;
-  border-radius: 0 var(--br-5) 0 0;
-  background-color: var(--color-mediumpurple);
-  height: 1.125rem;
-  z-index: 0;
-}
-.body2,
-.ttulo4,
-.ttuloETexto2 {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.body2 {
-  width: 22.438rem;
-  height: 12.813rem;
-  background-color: var(--color-whitesmoke-100);
-  overflow: hidden;
-  flex-shrink: 0;
-  padding: var(--padding-20);
-  box-sizing: border-box;
-  gap: var(--gap-12);
-}
-.ttulo4,
-.ttuloETexto2 {
-  align-self: stretch;
-}
-.ttulo4 {
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--font-size-18);
-}
-.obeliscoCultural {
-  margin: 0;
-  flex: 1;
-  position: relative;
-}
-.texto2 {
-  width: 15.938rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  text-align: justify;
-  font-size: var(--font-size-14);
-}
-.memriaLutaE {
-  align-self: stretch;
-  position: relative;
-  letter-spacing: 0.04em;
-  font-weight: 300;
-}
-.localizao2 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: var(--gap-5);
-  text-align: center;
-  font-size: var(--font-size-10);
-}
-.icon {
-  width: 1.013rem;
-  position: relative;
-  border-radius: 0 9px 0 0;
-  max-height: 100%;
-  object-fit: contain;
-}
-.ibirapuera2 {
-  position: relative;
-  letter-spacing: 0.03em;
-  opacity: 0.5;
-}
-.botoEFavorito2 {
-  align-self: stretch;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0;
-}
-.boto2 {
-  padding: var(--padding-11) 1.812rem;
-}
-.cardCultural2,
-.imagem3 {
-  display: flex;
-  flex-direction: column;
-}
-.cardCultural2 {
-  height: 21.813rem;
-  border-radius: var(--br-10);
-  background-color: var(--color-white);
-  overflow: hidden;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-}
-.imagem3 {
-  width: 22.438rem;
-  height: 9rem;
-  align-items: flex-start;
-  justify-content: flex-start;
-  position: relative;
-  background-image: url(/Imagem21@3x.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-}
-.detalhe3 {
-  width: 11.25rem;
-  position: absolute;
-  margin: 0 !important;
-  bottom: 0;
-  left: 0;
-  border-radius: 0 var(--br-5) 0 0;
-  background-color: var(--color-mediumpurple);
-  height: 1.125rem;
-  z-index: 0;
-}
-.body3,
-.ttulo5,
-.ttuloETexto3 {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.body3 {
-  width: 22.438rem;
-  height: 12.813rem;
-  background-color: var(--color-whitesmoke-100);
-  overflow: hidden;
-  flex-shrink: 0;
-  padding: var(--padding-20);
-  box-sizing: border-box;
-  gap: var(--gap-12);
-}
-.ttulo5,
-.ttuloETexto3 {
-  align-self: stretch;
-}
-.ttulo5 {
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--font-size-18);
-}
-.museuDoIpiranga {
-  margin: 0;
-  flex: 1;
-  position: relative;
-}
-.texto3 {
-  width: 15.938rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  text-align: justify;
-  font-size: var(--font-size-14);
-}
-.histriaVivaNos {
-  align-self: stretch;
-  position: relative;
-  letter-spacing: 0.04em;
-  font-weight: 300;
-}
-.localizao3 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: var(--gap-5);
-  text-align: center;
-  font-size: var(--font-size-10);
-}
-.icon2 {
-  width: 1.013rem;
-  position: relative;
-  border-radius: 0 9px 0 0;
-  max-height: 100%;
-  object-fit: contain;
-}
-.ipiranga {
-  position: relative;
-  letter-spacing: 0.03em;
-  opacity: 0.5;
-}
-.botoEFavorito3 {
-  align-self: stretch;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0;
-}
-.boto3 {
-  padding: var(--padding-11) 1.812rem;
+
+/* Media Queries para a PÁGINA */
+@media (max-width: 767px) {
+  .ttulo2 b {
+    font-size: 18px;
+  }
+
+  .root {
+    padding: 70px 30px;
+    gap: 20px;
+    height: 112rem;
+  }
 }

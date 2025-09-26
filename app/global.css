@@ -5,6 +5,7 @@ body {
   margin: 0;
   line-height: normal;
   -webkit-tap-highlight-color: transparent;
+  background-color: var(--color-gray-100);
 }
 :root {
   /* Color */
@@ -92,4 +93,20 @@ body {
 
   /* Spacing */
   --Corner-Large: 16px;
+}
+
+/* Adicione este bloco no final do seu arquivo de CSS global */
+@media print {
+  /* Por padrão, esconde tudo durante a impressão */
+  body * {
+    visibility: hidden;
+  }
+
+  /*
+    Qualquer elemento com a classe "print-visible" (e seus filhos)
+    será exibido. Usamos uma classe global simples para isso.
+  */
+  .print-visible, .print-visible * {
+    visibility: visible !important;
+  }
 }

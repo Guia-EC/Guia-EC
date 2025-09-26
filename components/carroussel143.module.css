@@ -44,3 +44,19 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
+
+@media (min-width: 768px) {
+  
+  .ttulo{
+    font-size: 30px;
+    text-align: left; 
+  }
+
+  .ttuloELinhaDeEstilo{
+    width: 90%;
+  }
+
+  .conheaAMelhor{
+    height: 5.5rem;
+  }
+}

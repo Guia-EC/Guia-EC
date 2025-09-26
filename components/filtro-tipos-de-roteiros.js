@@ -1,27 +1,24 @@
-// components/FiltroDeRoteiros.js
+// components/filtro-tipos-de-roteiro.js
 
 "use client";
-import { Box, Button, Typography } from "@mui/material";
-import { useRouter } from "next/navigation";
+import { Box, Button } from "@mui/material";
 import PropTypes from "prop-types";
 
-// O componente recebe uma prop 'filtroAtivo' para saber qual botão destacar
-const FiltroTiposDeRoteiros = ({ filtroAtivo }) => {
-  const router = useRouter();
+// 1. O componente agora recebe 'onMudarFiltro' junto com 'filtroAtivo'
+const FiltroTiposDeRoteiros = ({ filtroAtivo, onMudarFiltro }) => {
 
-  // Função para aplicar estilos dinamicamente
+  // 2. O 'useRouter' não é mais necessário aqui para a lógica do filtro.
+  // const router = useRouter(); 
+
+  // Sua função de estilos está perfeita e será mantida exatamente como está!
   const getButtonStyles = (buttonName) => {
     const isActive = filtroAtivo === buttonName;
-
-    // Mapeamento das cores para cada tipo de filtro
     const activeColors = {
       Cultural: "#8662b4", 
       Natural: "#519328",
       Raiz: "#FF9F1C", 
     };
-
-    // Seleciona a cor com base no nome do botão
-    const activeColor = activeColors[buttonName] || "#9c9696ff"; // Usa uma cor padrão caso não encontre
+    const activeColor = activeColors[buttonName] || "#9c9696ff";
 
     return {
       textTransform: "none",
@@ -30,10 +27,10 @@ const FiltroTiposDeRoteiros = ({ filtroAtivo }) => {
       height: 22,
       borderRadius: "5px",
       color: isActive ? "#fff" : "#0f0f0f",
-      background: isActive ? activeColor : "transparent",
+      backgroundColor: isActive ? activeColor : "transparent", // Note: 'background' foi trocado por 'backgroundColor' para melhor compatibilidade com MUI
       borderColor: isActive ? activeColor : "#0f0f0f",
       "&:hover": {
-        background: isActive ? activeColor : "rgba(0,0,0,0.04)",
+        backgroundColor: isActive ? activeColor : "rgba(0,0,0,0.04)",
         borderColor: isActive ? activeColor : "#0f0f0f",
       },
     };
@@ -43,22 +40,25 @@ const FiltroTiposDeRoteiros = ({ filtroAtivo }) => {
     <Box>
       <Box sx={{ display: "flex", gap: 2 }}>
         <Button
-          variant={filtroAtivo === "Cultural" ? "contained" : "outlined"}
-          onClick={() => router.push("/roteiros-culturais204")} 
+          variant="outlined" // Usamos um variant base para o sx sobrescrever
+          // 3. A MÁGICA ACONTECE AQUI: trocamos router.push por onMudarFiltro
+          onClick={() => onMudarFiltro("Cultural")} 
           sx={getButtonStyles("Cultural")}
         >
           Cultural
         </Button>
         <Button
-          variant={filtroAtivo === "Natural" ? "contained" : "outlined"}
-          onClick={() => router.push("/roteiros-naturais204")} 
+          variant="outlined"
+          // 3. A MÁGICA ACONTECE AQUI: trocamos router.push por onMudarFiltro
+          onClick={() => onMudarFiltro("Natural")} 
           sx={getButtonStyles("Natural")}
         >
           Natural
         </Button>
         <Button
-          variant={filtroAtivo === "Raiz" ? "contained" : "outlined"}
-          onClick={() => router.push("/roteiros-raiz204")} 
+          variant="outlined"
+          // 3. A MÁGICA ACONTECE AQUI: trocamos router.push por onMudarFiltro
+          onClick={() => onMudarFiltro("Raiz")} 
           sx={getButtonStyles("Raiz")}
         >
           Raiz
@@ -68,8 +68,10 @@ const FiltroTiposDeRoteiros = ({ filtroAtivo }) => {
   );
 };
 
+// 4. Adicionamos a nova prop 'onMudarFiltro' aos PropTypes
 FiltroTiposDeRoteiros.propTypes = {
   filtroAtivo: PropTypes.oneOf(["Cultural", "Natural", "Raiz"]).isRequired,
+  onMudarFiltro: PropTypes.func.isRequired,
 };
 
 export default FiltroTiposDeRoteiros;
