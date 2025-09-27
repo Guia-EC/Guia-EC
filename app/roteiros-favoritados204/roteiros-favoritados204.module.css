@@ -350,7 +350,7 @@
 @media (max-width: 767px) {
     .roteirosFavoritados20 {
       padding:40px 30px;
-      height: auto;
+      height: calc(100vh + 70rem);
     }
 
     .roteirosFavoritados20 p {
