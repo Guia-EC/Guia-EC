@@ -8,6 +8,8 @@ import { AuthProvider } from '../context/AuthContext'; // Ajuste o caminho se ne
 
 import "./global.css";
 import muiTheme from "../theme";
+import { Toaster } from 'react-hot-toast';
+
 
 export const metadata = {
   title: 'Roteirize',
@@ -21,6 +23,7 @@ export default function RootLayout({ children }) {
       <body>
         {/* 2. Envolva todos os outros providers com o AuthProvider */}
         <AuthProvider>
+          <Toaster position="top-center" />
           <AppRouterCacheProvider options={{ enableCssLayer: true }}>
             <ThemeProvider theme={muiTheme}>
               <CssBaseline />

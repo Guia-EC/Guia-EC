@@ -2,9 +2,10 @@ import { Typography, Box, Button } from "@mui/material";
 import Image from "next/image";
 import Link from 'next/link';
 import Favoritar from "./favoritar";
+import FavoriteButton from "./FavoriteButton";
 import styles from "./cardRoteiro.module.css";
 
-const CardRoteiro = ({ titulo, descricao, localizacao, link, imagemSrc }) => {
+const CardRoteiro = ({roteiroId, titulo, descricao, localizacao, link, imagemSrc, variant = 'star' }) => {
   return (
     // ATUALIZADO: de .cardCultural3 para .card
     <Box className={styles.card}> 
@@ -63,7 +64,8 @@ const CardRoteiro = ({ titulo, descricao, localizacao, link, imagemSrc }) => {
                         Fazer Roteiro
                     </Button>
                 </Link>  
-                <Favoritar estado="Padrão" />
+                {/* NOVO BOTÃO DE FAVORITAR */}
+                <FavoriteButton roteiroId={roteiroId} variant={variant} />
             </Box>
         </Box>
     </Box>
