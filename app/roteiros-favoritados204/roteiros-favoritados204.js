@@ -107,7 +107,8 @@ const RoteirosFavoritadosPage = () => {
             descricao={roteiro.descricao}
             localizacao={roteiro.localizacao}
             imagemSrc={roteiro.url_imagem}
-            link={`/roteiros/${roteiro.id}`} // Exemplo de link, ajuste se necessário
+            categoria={roteiro.categoria}
+            link={roteiro.link_roteiro}
             variant="trash" // IMPORTANTE: Passa a variante para mostrar o ícone de lixeira
           />
         ))

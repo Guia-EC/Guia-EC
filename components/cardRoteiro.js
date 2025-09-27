@@ -5,7 +5,18 @@ import Favoritar from "./favoritar";
 import FavoriteButton from "./FavoriteButton";
 import styles from "./cardRoteiro.module.css";
 
-const CardRoteiro = ({roteiroId, titulo, descricao, localizacao, link, imagemSrc, variant = 'star' }) => {
+const CardRoteiro = ({roteiroId, titulo, descricao, localizacao, link, imagemSrc, variant = 'star', categoria }) => {
+
+   console.log(`Card '${titulo}' recebeu a categoria:`, categoria);
+
+   const coresPorCategoria = {
+    Cultural: "#8662b4",
+    Natural: "#519328",
+    Raiz: "#FF9F1C",
+  };
+
+  const corDoDetalhe = coresPorCategoria[categoria] || '#ccc'; // Usa cinza como fallback
+
   return (
     // ATUALIZADO: de .cardCultural3 para .card
     <Box className={styles.card}> 
@@ -16,7 +27,7 @@ const CardRoteiro = ({roteiroId, titulo, descricao, localizacao, link, imagemSrc
               layout="fill"
               objectFit="cover"
             />
-            <Box className={styles.detalhe} />
+            <Box className={styles.detalhe} style={{ backgroundColor: corDoDetalhe }} />
         </Box>
         <Box className={styles.body}>
             <Box className={styles.ttuloETexto}>
