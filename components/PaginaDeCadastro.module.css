@@ -1,0 +1,49 @@
+@media (max-width: 767px) {
+
+    .header {
+        align-self: stretch;
+        border-radius: 0 0 var(--br-20) var(--br-20);
+        background-color: var(--color-whitesmoke-100);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 30px;
+        gap: 0;
+    }
+
+    .body {
+        padding: 40px 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .titulo {
+        font-size: 32px;
+        font-weight: 700;
+    }
+
+    .descricao {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .formContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.937rem;
+    }
+
+    .submitButton {
+        width: 341px;
+        height: 53px;
+        border-radius: 10px;
+        background-color: #0f0f0f;
+        margin-top: 2rem;
+    }
+}

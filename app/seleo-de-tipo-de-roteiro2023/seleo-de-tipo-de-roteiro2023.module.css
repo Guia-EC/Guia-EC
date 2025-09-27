@@ -199,4 +199,12 @@
   .body {
     margin-top: 3rem;
   }
+
+  .ttulo b {
+    font-size: 18px;
+  }
+
+  .seleoDeTipoDeRoteiro20 h3 {
+    font-size: 16px;
+  }
 }

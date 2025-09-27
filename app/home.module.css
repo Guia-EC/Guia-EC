@@ -173,6 +173,7 @@
 @media (min-width: 768px){
   .home20 {
     gap: 4rem;
+    margin-bottom: 195px;
   }
 
   .navbar {
@@ -180,13 +181,13 @@
     height: 140px;
   }
 
-.navbarOptions{
-  gap: 3rem;
+  .navbarOptions{
+    gap: 3rem;
   }
 
-.navIcon{
-  width: 45px;
-  height: 45px;
+  .navIcon{
+    width: 45px;
+    height: 45px;
   }
 
   .routesButtom{
@@ -199,10 +200,12 @@
     height: 65px;
   }
 
-  .home20{
-    margin-bottom: 195px;
-  }
+}
 
+@media (max-width: 767px) {
+  .home20 {
+    padding-top: 30px;
+  }
 }
 
 

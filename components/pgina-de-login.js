@@ -1,23 +1,68 @@
-import {
-  Box,
-  Typography,
-  TextField,
-  InputAdornment,
-  Icon,
-  IconButton,
-  Button,
-} from "@mui/material";
-import Image from "next/image";
-import Cadastrar from "./cadastrar";
-import PropTypes from "prop-types";
-import styles from "./pgina-de-login.module.css";
+// /components/pgina-de-login.js
 
-const PginaDeLogin = ({ className = "", pGina = "Login" }) => {
+"use client";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useAuth } from "../context/AuthContext";
+import { Box, Typography, TextField, Button, InputAdornment, IconButton, FormControl, InputLabel, OutlinedInput } from "@mui/material";
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import Image from "next/image";
+import HeaderButton from "./HeaderButton"; // Seu componente de botão de navegação
+import styles from "./pgina-de-login.module.css";
+import { Link } from "lucide-react";
+
+const PginaDeLogin = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false); // NOVO ESTADO
+  const [error, setError] = useState(null);
+  const { signInWithProvider } = useAuth(); // Login com o Google
+  // --- NOVA FUNÇÃO PARA O BOTÃO DO GOOGLE ---
+  const handleGoogleLogin = async () => {
+    try {
+      const { error } = await signInWithProvider('google');
+      if (error) throw error;
+    } catch (error) {
+      console.error("Erro no login com Google:", error.message);
+    }
+  };
+
+  const { signIn } = useAuth();
+  const router = useRouter();
+
+
+  //Para lógica de mostrar ou esconder a senha!
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+  const handleMouseDownPassword = (event) => event.preventDefault();
+
+  const handlePasswordChange = (e) => {
+    const newPassword = e.target.value;
+    setPassword(newPassword);
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setError(null);
+
+    try {
+      const { error } = await signIn({email, password});
+      if (error) throw error;
+      router.push('/');
+    } catch (err) {
+      setError("E-mail ou senha inválidos.");
+      console.error("Erro no login:", err.message);
+    }
+  };
+
+    const handleGuest = async (e) => {
+      router.push('/');
+  };
+
   return (
-    <form
-      className={[styles.pginaDeLogin, className].join(" ")}
-      data-pGina={pGina}
-    >
+    // 1. O componente principal agora é uma <Box>, não o <form>.
+    <Box className={styles.pginaDeLoginContainer}>
+      {/* O cabeçalho com o botão de navegação fica AQUI FORA do form */}
       <Box className={styles.header}>
         <Image
           className={styles.logoEc1Icon}
@@ -25,147 +70,120 @@ const PginaDeLogin = ({ className = "", pGina = "Login" }) => {
           width={42.8}
           height={39}
           sizes="100vw"
-          alt=""
+          alt="Logo"
           src="/logo-ec-1@2x.png"
         />
-        <Cadastrar estado="Entrar" />
+        {/* Este botão tem sua própria lógica de navegação e não submete o form */}
+        <HeaderButton variant="cadastro" /> 
       </Box>
-      <section className={styles.body}>
-        <Box className={styles.descrio}>
-          <Typography
-            className={styles.login}
-            variantMapping={{ inherit: "h1" }}
-            sx={{
-              fontFamily: "var(--font-poppins)",
-              fontWeight: "700",
-              fontSize: "var(--font-size-32)",
-            }}
-          >
-            Login
-          </Typography>
-          <div className={styles.acesseSuaConta}>
-            Acesse sua conta para explorar roterios em São Paulo
-          </div>
-        </Box>
-        <Box className={styles.inputsEBotoDeEntrar}>
-          <Box className={styles.inputs}>
-            <Box className={styles.eMail}>
-              <Box className={styles.ttulo}>
-                <div className={styles.pginaDeLoginEMail}>E-mail</div>
-              </Box>
+
+      {/* 2. O <form> começa aqui, envolvendo apenas os campos de login. */}
+      <form className={styles.pginaDeLogin} onSubmit={handleLogin}>
+        <section className={styles.body}>
+          <Box className={styles.descrio}>
+            <Typography className={styles.login} variant="h1">
+              Login
+            </Typography>
+            <div className={styles.acesseSuaConta}>
+              Acesse sua conta para explorar roteiros em São Paulo
+            </div>
+          </Box>
+          <Box className={styles.inputsEBotoDeEntrar}>
+            <Box className={styles.inputs}>
               <TextField
-                className={styles.input}
-                placeholder="Digite seu e-mail..."
-                variant="outlined"
-                sx={{
-                  "& fieldset": { border: "none" },
-                  "& .MuiInputBase-root": {
-                    height: "54px",
-                    backgroundColor: "#f1f1f1",
-                    borderRadius: "10px",
-                    fontSize: "12px",
-                  },
-                  "& .MuiInputBase-input": { color: "#000" },
-                }}
+                label="E-mail"
+                type="email"
+                fullWidth
+                margin="normal"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
               />
+              <FormControl sx={{ mt: 1, mb: 1 }} variant="outlined" fullWidth required>
+              <InputLabel htmlFor="outlined-adornment-password">Senha</InputLabel>
+              <OutlinedInput
+                id="outlined-adornment-password"
+                type={showPassword ? 'text' : 'password'}
+                value={password}
+                onChange={handlePasswordChange}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                      edge="end"
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+                label="Senha"
+              />
+            </FormControl>
             </Box>
-            <Box className={styles.senha}>
-              <Box className={styles.pginaDeLoginTtulo}>
-                <div className={styles.pginaDeLoginSenha}>Senha</div>
-              </Box>
-              <TextField
-                className={styles.pginaDeLoginInput}
-                placeholder="Digite sua senha..."
-                variant="outlined"
-                sx={{
-                  "& fieldset": { border: "none" },
-                  "& .MuiInputBase-root": {
-                    height: "54px",
-                    backgroundColor: "#f1f1f1",
-                    borderRadius: "10px",
-                    fontSize: "12px",
-                  },
-                  "& .MuiInputBase-input": { color: "#000" },
-                }}
-              />
+            {error && <Typography color="error" sx={{ mt: 2 }}>{error}</Typography>}
+            
+            <Box className={styles.botoesDeLogin}>
+            {/* 3. Este é o único botão que envia o formulário */}
+              <Button
+                className={styles.botoDeEntrar}
+                variant="contained"
+                type="submit" // Este é o botão que efetivamente faz o login
+                fullWidth
+                sx={{ mt: 2, p: 1.5 }}
+              >
+                Entrar
+              </Button>
+
+              <Button
+                className={styles.botoDeConvidado}
+                onClick={handleGuest}
+                variant="contained"
+                type= "button"
+                fullWidth
+                sx={{ mt: 2, p: 1.5 }}
+              >
+                Entre como convidado
+              </Button>
+            </Box>
+
+            <Typography className={styles.footer} variant="h1">
+              Ou continue com
+            </Typography>
+
+            <Box className={styles.loginGoogleApple}>
+              <Button className={styles.botoGoogleApple}>
+                <Image
+                  className={styles.logoGoogle}
+                  onClick={handleGoogleLogin}
+                  loading="lazy"
+                  width={42.8}
+                  height={39}
+                  sizes="100vw"
+                  alt="Logo"
+                  src="/Google-Icon.svg"
+                />
+                Google
+              </Button>
+              <Button className={styles.botoGoogleApple}>
+                <Image
+                  className={styles.logoApple}
+                  loading="lazy"
+                  width={42.8}
+                  height={39}
+                  sizes="100vw"
+                  alt="Logo"
+                  src="/Apple-Icon.svg"
+                />
+                iCloud
+              </Button>
             </Box>
           </Box>
-          <Button
-            className={styles.botoDeEntrar}
-            disableElevation
-            variant="contained"
-            sx={{
-              textTransform: "none",
-              color: "#fafafa",
-              fontSize: "16",
-              background: "#0f0f0f",
-              borderRadius: "10px",
-              "&:hover": { background: "#0f0f0f" },
-              width: 341,
-              height: 54,
-            }}
-            type="submit"
-          >
-            Entrar
-          </Button>
-        </Box>
-      </section>
-      <Box className={styles.footer}>
-        <div className={styles.ouContinueCom}>Ou continue com</div>
-        <Box className={styles.googleEIcloud}>
-          <Button
-            className={styles.logoGoogle}
-            startIcon={
-              <img width="14.6px" height="14.6px" src="/pesquisa-1.png" />
-            }
-            disableElevation
-            variant="contained"
-            sx={{
-              textTransform: "none",
-              color: "#000",
-              fontSize: "12",
-              background: "#f1f1f1",
-              borderRadius: "10px",
-              "&:hover": { background: "#f1f1f1" },
-              width: 156,
-              height: 54,
-            }}
-            type="submit"
-          >
-            Google
-          </Button>
-          <Button
-            className={styles.logoIcloud}
-            startIcon={
-              <img width="16px" height="16px" src="/logotipo-da-apple-1.png" />
-            }
-            disableElevation
-            variant="contained"
-            sx={{
-              textTransform: "none",
-              color: "#000",
-              fontSize: "12",
-              background: "#f1f1f1",
-              borderRadius: "10px",
-              "&:hover": { background: "#f1f1f1" },
-              width: 156,
-              height: 54,
-            }}
-            type="submit"
-          >
-            iCloud
-          </Button>
-        </Box>
-      </Box>
-    </form>
+        </section>
+      </form>
+    </Box>
   );
-};
-
-PginaDeLogin.propTypes = {
-  className: PropTypes.string,
-
-  /** Variant props */
-  pGina: PropTypes.string,
 };
 
 export default PginaDeLogin;

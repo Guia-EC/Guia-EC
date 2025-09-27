@@ -82,8 +82,7 @@ const SeleoDeTipoDeRoteiro207 = () => {
                 </Typography>
                 <Box className={styles.seleoDeTipoDeRoteiro20Texto}>
                   <div className={styles.partindoDoMasp}>
-                    Conecte a arte do MASP a um roteiro de consciência,
-                    explorando a inovadora gastronomia plant-based da cidade.
+                     Equilibre o urbano e o natural, em um passeio único entre o verde do Parque Trianon e a culinária saudável.
                   </div>
                 </Box>
               </Box>
@@ -103,8 +102,7 @@ const SeleoDeTipoDeRoteiro207 = () => {
                 </Typography>
                 <Box className={styles.seleoDeTipoDeRoteiro20Texto}>
                   <div className={styles.partindoDoMasp}>
-                    Do MASP, explore a vibrante cena cultural em um roteiro que
-                    vai além do óbvio, por cinemas, teatros e galerias.
+                    Explore o imenso polo cultural da Paulista, unindo a grande arte do MASP, cinemas de rua e centros culturais.
                   </div>
                 </Box>
               </Box>

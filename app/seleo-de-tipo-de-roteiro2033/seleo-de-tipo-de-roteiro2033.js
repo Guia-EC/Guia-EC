@@ -13,17 +13,12 @@ const SeleoDeTipoDeRoteiro2033 = () => {
     router.back(); // Esta função navega para a página anterior no histórico
   }, [router]);
 
-  const onRaizContainerClick = useCallback(() => {
-    router.push("/roteiros-raiz204");
-  }, [router]);
+  // Função única para navegar, fica mais limpo!
+  const handleSelecionarRoteiro = (categoria) => {
+    // AQUI ESTÁ A MUDANÇA PRINCIPAL
+    router.push(`/roteiros?filtro=${categoria}`);
+  };
 
-  const onRaizContainerClick1 = useCallback(() => {
-    router.push("/roteiros-naturais204");
-  }, [router]);
-
-  const onRaizContainerClick2 = useCallback(() => {
-    router.push("/roteiros-culturais204");
-  }, [router]);
 
   return (
     <Box className={styles.seleoDeTipoDeRoteiro20}>
@@ -58,7 +53,7 @@ const SeleoDeTipoDeRoteiro2033 = () => {
           </Box>
         </Box>
         <Box className={styles.roteiros}>
-          <Box className={styles.raiz} onClick={onRaizContainerClick}>
+          <Box className={styles.raiz} onClick={() => handleSelecionarRoteiro("Raiz")}>
             <Box className={styles.imagem}>
               <Box className={styles.seleoDeTipoDeRoteiro20Detalhe} />
             </Box>
@@ -84,7 +79,7 @@ const SeleoDeTipoDeRoteiro2033 = () => {
               </Box>
             </Box>
           </Box>
-          <Box className={styles.raiz} onClick={onRaizContainerClick1}>
+          <Box className={styles.raiz} onClick={() => handleSelecionarRoteiro("Natural")}>
             <Box className={styles.seleoDeTipoDeRoteiro20Imagem}>
               <Box className={styles.detalhe2} />
             </Box>
@@ -110,7 +105,7 @@ const SeleoDeTipoDeRoteiro2033 = () => {
               </Box>
             </Box>
           </Box>
-          <Box className={styles.raiz} onClick={onRaizContainerClick2}>
+          <Box className={styles.raiz} onClick={() => handleSelecionarRoteiro("Cultural")}>
             <Box className={styles.imagem2}>
               <Box className={styles.detalhe3} />
             </Box>

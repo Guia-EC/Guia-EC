@@ -13,6 +13,9 @@ import Carroussel343 from "../components/carroussel343";
 import { useRouter } from "next/navigation";
 import styles from "./home.module.css";
 
+// Header dinâmico de usuário!
+import HeaderHome from '../components/HeaderHome';
+
 // Nossos novos componentes e o hook
 import { BannerCarousel } from '../components/BannerCarousel';
 import DesktopBannerGrid from '../components/DesktopBannerGrid';
@@ -44,6 +47,8 @@ const Home205 = () => {
 
   return (
     <Box className={styles.home20}>
+
+      <HeaderHome />
       
       {/* SEÇÃO DOS BANNERS EC COM LÓGICA RESPONSIVA */}
       <section>

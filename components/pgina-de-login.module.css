@@ -138,6 +138,15 @@
   padding: var(--padding-15) 146px;
   box-sizing: border-box;
 }
+
+.botoDeConvidado {
+  width: 341px;
+  height: 54px;
+  padding: var(--padding-15) 146px;
+  box-sizing: border-box;
+}
+
+
 .footer {
   align-self: stretch;
   background-color: var(--color-gray-100);
@@ -166,4 +175,104 @@
 .logoIcloud {
   height: 54px;
   width: 156px;
+}
+
+
+@media (max-width: 767px) {
+
+  .pginaDeLogin {
+    width: 100%;
+    padding: 40px 30px;
+    height: auto;
+  }
+
+  .header {
+    padding: 30px 30px;
+  }
+
+  .descrio {
+    display: flex;
+    gap: 15px;
+  }
+
+  .descrio h1 {
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  .body {
+    padding: 0;
+    margin: 0;
+  }
+
+  .inputs {
+    width: 100%;
+  }
+
+  .inputsEBotoDeEntrar {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .botoesDeLogin {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .botoDeEntrar{
+    background-color: #0f0f0f;
+    border-radius: 10px;
+  }
+
+  .botoDeConvidado{
+    background-color: #FFF;
+    border-radius: 10px;
+    color: #0f0f0f;
+    padding: 0;
+    
+  }
+
+  .footer {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .logoGoogle {
+    width: auto;
+    height:25px;
+  }
+
+  .logoApple {
+    width: auto;
+    height: 25px;
+  }
+
+  .botoGoogleApple {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center
+  }
+
+  .loginGoogleApple {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .botoGoogleApple {
+    width: 156px;
+    height: 54px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    font-size: 14px;
+    text-transform: capitalize;
+    gap: 5px;
+    color: black;
+  }
+
 }
