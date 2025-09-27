@@ -138,6 +138,15 @@
   padding: var(--padding-15) 146px;
   box-sizing: border-box;
 }
+
+.botoDeConvidado {
+  width: 341px;
+  height: 54px;
+  padding: var(--padding-15) 146px;
+  box-sizing: border-box;
+}
+
+
 .footer {
   align-self: stretch;
   background-color: var(--color-gray-100);
@@ -206,9 +215,22 @@
     justify-content: center;
   }
 
+  .botoesDeLogin {
+    display: flex;
+    flex-direction: column;
+  }
+
   .botoDeEntrar{
     background-color: #0f0f0f;
     border-radius: 10px;
+  }
+
+  .botoDeConvidado{
+    background-color: #FFF;
+    border-radius: 10px;
+    color: #0f0f0f;
+    padding: 0;
+    
   }
 
   .footer {

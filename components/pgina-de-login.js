@@ -10,6 +10,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Image from "next/image";
 import HeaderButton from "./HeaderButton"; // Seu componente de botão de navegação
 import styles from "./pgina-de-login.module.css";
+import { Link } from "lucide-react";
 
 const PginaDeLogin = () => {
   const [email, setEmail] = useState("");
@@ -53,6 +54,10 @@ const PginaDeLogin = () => {
       setError("E-mail ou senha inválidos.");
       console.error("Erro no login:", err.message);
     }
+  };
+
+    const handleGuest = async (e) => {
+      router.push('/');
   };
 
   return (
@@ -120,16 +125,29 @@ const PginaDeLogin = () => {
             </Box>
             {error && <Typography color="error" sx={{ mt: 2 }}>{error}</Typography>}
             
+            <Box className={styles.botoesDeLogin}>
             {/* 3. Este é o único botão que envia o formulário */}
-            <Button
-              className={styles.botoDeEntrar}
-              variant="contained"
-              type="submit" // Este é o botão que efetivamente faz o login
-              fullWidth
-              sx={{ mt: 2, p: 1.5 }}
-            >
-              Entrar
-            </Button>
+              <Button
+                className={styles.botoDeEntrar}
+                variant="contained"
+                type="submit" // Este é o botão que efetivamente faz o login
+                fullWidth
+                sx={{ mt: 2, p: 1.5 }}
+              >
+                Entrar
+              </Button>
+
+              <Button
+                className={styles.botoDeConvidado}
+                onClick={handleGuest}
+                variant="contained"
+                type= "button"
+                fullWidth
+                sx={{ mt: 2, p: 1.5 }}
+              >
+                Entre como convidado
+              </Button>
+            </Box>
 
             <Typography className={styles.footer} variant="h1">
               Ou continue com
