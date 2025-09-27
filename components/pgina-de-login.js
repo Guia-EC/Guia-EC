@@ -16,7 +16,17 @@ const PginaDeLogin = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false); // NOVO ESTADO
   const [error, setError] = useState(null);
-  
+  const { signInWithProvider } = useAuth(); // Login com o Google
+  // --- NOVA FUNÇÃO PARA O BOTÃO DO GOOGLE ---
+  const handleGoogleLogin = async () => {
+    try {
+      const { error } = await signInWithProvider('google');
+      if (error) throw error;
+    } catch (error) {
+      console.error("Erro no login com Google:", error.message);
+    }
+  };
+
   const { signIn } = useAuth();
   const router = useRouter();
 
@@ -129,6 +139,7 @@ const PginaDeLogin = () => {
               <Button className={styles.botoGoogleApple}>
                 <Image
                   className={styles.logoGoogle}
+                  onClick={handleGoogleLogin}
                   loading="lazy"
                   width={42.8}
                   height={39}

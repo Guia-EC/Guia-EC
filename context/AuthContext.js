@@ -61,7 +61,17 @@ export const AuthProvider = ({ children }) => {
         },
       });
     },
+        signInWithProvider: (provider) => {
+      return supabase.auth.signInWithOAuth({
+        provider, // 'google', 'apple', etc.
+        options: {
+          // Redireciona de volta para a home do seu site em produção
+          redirectTo: window.location.origin, 
+        },
+      });
+    },
     // ============================================================================
+
 
     signIn: (data) => supabase.auth.signInWithPassword(data),
     signOut: () => supabase.auth.signOut(),
