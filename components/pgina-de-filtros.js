@@ -44,7 +44,8 @@ const PginaDeFiltros = ({ filtroAtivo, roteiros, onMudarFiltro }) => { // Recebe
             descricao={roteiro.descricao}
             localizacao={roteiro.localizacao}
             imagemSrc={roteiro.imagemSrc}
-            link={roteiro.link}
+            link={roteiro.link_roteiro}
+            // link={roteiro.link}
           />
         ))}
       </Box>
