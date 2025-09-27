@@ -39,6 +39,7 @@ const PginaDeFiltros = ({ filtroAtivo, roteiros, onMudarFiltro }) => { // Recebe
         {roteiros.map((roteiro) => (
           <CardRoteiro
             key={roteiro.id}
+            roteiroId={roteiro.id}
             titulo={roteiro.titulo}
             descricao={roteiro.descricao}
             localizacao={roteiro.localizacao}

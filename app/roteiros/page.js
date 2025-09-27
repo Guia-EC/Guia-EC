@@ -11,7 +11,7 @@ import Navbar from "../../components/navbar";
 
 const todosOsRoteiros = [
   {
-    id: 'masp-cultural',
+    id: 1,
     titulo: 'MASP Cultural',
     descricao: 'Do museu à cena artística vibrante da cidade.',
     localizacao: 'Paulista',
@@ -20,7 +20,7 @@ const todosOsRoteiros = [
     categoria: 'Cultural'
   },
   {
-    id: 'masp-raiz',
+    id: 2,
     titulo: 'MASP Raiz',
     descricao: 'Da arte à tradição popular da Avenida Paulista.',
     localizacao: 'Paulista',
@@ -29,7 +29,7 @@ const todosOsRoteiros = [
     categoria: 'Raiz'
   },
   {
-    id: 'masp-natural',
+    id: 3,
     titulo: 'MASP Natural',
     descricao: 'Do Parque Trianon à gastronomia saudável da região.',
     localizacao: 'Paulista',
@@ -38,7 +38,7 @@ const todosOsRoteiros = [
     categoria: 'Natural'
   },
   {
-    id: 'ibirapuera-cultural',
+    id: 4,
     titulo: 'Ibirapuera Cultural',
     descricao: 'Dos museus do parque à efervescência cultural ao redor.',
     localizacao: 'Ibirapuera',
@@ -47,7 +47,7 @@ const todosOsRoteiros = [
     categoria: 'Cultural'
   },
   {
-    id: 'ibirapuera-natural',
+    id: 5,
     titulo: 'Ibirapuera Natural',
     descricao: 'Uma imersão completa no gastronomia verde, fauna e flora do parque.',
     localizacao: 'Ibirapuera',
@@ -56,7 +56,7 @@ const todosOsRoteiros = [
     categoria: 'Natural'
   },
   {
-    id: 'ibirapuera-raiz',
+    id: 6,
     titulo: 'Ibirapuera Raiz',
     descricao: 'Da história do parque aos sabores autênticos de rua.',
     localizacao: 'Ibirapuera',
@@ -65,7 +65,7 @@ const todosOsRoteiros = [
     categoria: 'Raiz'
   },
   {
-    id: 'sesc-natural',
+    id: 7,
     titulo: 'Sesc 24 Natural',
     descricao: 'Dos refúgios verdes do centro e sabores plant-based à linda avisa do mirante.',
     localizacao: 'Centro',
@@ -74,7 +74,7 @@ const todosOsRoteiros = [
     categoria: 'Natural'
   },
   {
-    id: 'sesc-raiz',
+    id: 8,
     titulo: 'Sesc 24 Raiz',
     descricao: 'Explore a alma e a tradição do coração de São Paulo.',
     localizacao: 'Centro',
@@ -83,7 +83,7 @@ const todosOsRoteiros = [
     categoria: 'Raiz'
   },
   {
-    id: 'sesc-cultural',
+    id: 9,
     titulo: 'Sesc 24 Cultural',
     descricao: 'Da arquitetura do Sesc à cena artística do centro.',
     localizacao: 'Centro',
@@ -92,7 +92,7 @@ const todosOsRoteiros = [
     categoria: 'Cultural'
   },
   {
-    id: 'copan-cultural',
+    id: 10,
     titulo: 'Copan Cultural',
     descricao: 'Do ícone modernista aos cinemas e teatros da República.',
     localizacao: 'Centro',
@@ -101,7 +101,7 @@ const todosOsRoteiros = [
     categoria: 'Cultural'
   },
   {
-    id: 'copan-natural',
+    id: 11,
     titulo: 'Copan Natural',
     descricao: 'O contraste do concreto com os achados veganos da região.',
     localizacao: 'Centro',
@@ -110,9 +110,9 @@ const todosOsRoteiros = [
     categoria: 'Natural'
   },
   {
-    id: 'copan-raiz',
+    id: 12,
     titulo: 'Copan Raiz',
-    descricao: ' A história e os sabores clássicos que vivem no edifício.',
+    descricao: 'A história e os sabores clássicos que vivem no edifício.',
     localizacao: 'Centro',
     imagemSrc: '/CopanRoteiro.png',
     link: '/',

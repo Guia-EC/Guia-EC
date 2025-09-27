@@ -39,7 +39,6 @@ const PginaDeLogin = () => {
   const handlePasswordChange = (e) => {
     const newPassword = e.target.value;
     setPassword(newPassword);
-    setPassword(validatePassword(newPassword));
   };
 
   const handleLogin = async (e) => {

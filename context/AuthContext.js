@@ -103,6 +103,19 @@ export const AuthProvider = ({ children }) => {
     user,
     favoriteIds,
     addFavorite: async (roteiroId) => {
+      console.log("Tentando adicionar aos favoritos com os seguintes IDs:");
+      console.log({ 
+        userId: user?.id, 
+        roteiroId: roteiroId 
+      });
+
+      // Uma verificação extra para nos dar um erro mais claro
+      if (!user?.id || !roteiroId) {
+        console.error("ERRO GRAVE: O ID do usuário ou do roteiro está faltando. A operação foi cancelada.");
+        // Isso vai parar a execução e evitar o erro genérico do Supabase
+        throw new Error("ID do usuário ou do roteiro está faltando!");
+      }
+      // --- Fim do Passo de Debug ---
       const { data, error } = await supabase
         .from('user_favorites')
         .insert({ user_id: user.id, roteiro_id: roteiroId })
