@@ -3,8 +3,8 @@
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { IconButton } from '@mui/material';
-import StarBorderIcon from '@mui/icons-material/StarBorder';
-import StarIcon from '@mui/icons-material/Star';
+import StarRoundedIcon from '@mui/icons-material/StarRounded';
+import StarBorderRoundedIcon from '@mui/icons-material/StarBorderRounded';
 import DeleteIcon from '@mui/icons-material/Delete';
 import toast from 'react-hot-toast';
 import LoginModal from './LoginModal';
@@ -41,7 +41,7 @@ const FavoriteButton = ({ roteiroId, variant = 'star' }) => {
         {variant === 'trash' ? (
           <DeleteIcon sx={{ color: 'red' }} />
         ) : (
-          isFavorited ? <StarIcon sx={{ color: 'orange' }} /> : <StarBorderIcon />
+          isFavorited ? <StarRoundedIcon sx={{ color: 'orange', width: '30px', height: 'auto' }} /> : <StarBorderRoundedIcon sx={{ width: '30px', height: 'auto'}} />
         )}
       </IconButton>
       <LoginModal open={modalOpen} onClose={() => setModalOpen(false)} />

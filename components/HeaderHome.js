@@ -46,7 +46,7 @@ const HeaderHome = () => {
       >
         <Avatar sx={{ bgcolor: '#333' }}>{initials}</Avatar>
         <Box>
-          <Typography variant="h6" sx={{ fontWeight: 'bold', lineHeight: 1.2 }}>
+          <Typography variant="h6" sx={{ fontWeight: 'bold', lineHeight: 1.2, fontSize: '18px' }}>
             Olá, {fullName}!
           </Typography>
           <Typography variant="body2" color="text.secondary">

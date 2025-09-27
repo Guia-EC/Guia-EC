@@ -345,3 +345,27 @@
   width: 1.981rem;
   cursor: pointer;
 }
+
+
+@media (max-width: 767px) {
+    .roteirosFavoritados20 {
+      padding:40px 30px;
+      height: auto;
+    }
+
+    .roteirosFavoritados20 p {
+      margin: 0;
+    }
+
+    .roteirosFavoritados20 h5 {
+      align-self: self-start;
+      font-size: 18px;
+      border-bottom: 1px solid black;
+      width: 65%;
+      padding-bottom: 5px;
+    }
+
+    .roteirosFavoritados20 a {
+      align-self: self-start;
+    }
+}

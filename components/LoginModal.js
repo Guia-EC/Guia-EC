@@ -2,6 +2,7 @@
 "use client";
 import { useRouter } from 'next/navigation';
 import { Modal, Box, Typography, Button } from '@mui/material';
+import WarningRoundedIcon from '@mui/icons-material/WarningRounded';
 
 const style = { // Estilos para o Modal
   position: 'absolute',
@@ -29,12 +30,12 @@ const LoginModal = ({ open, onClose }) => {
     <Modal open={open} onClose={onClose}>
       <Box sx={style}>
         <Typography variant="h6" component="h2">
-          Função para Usuários
+          <WarningRoundedIcon sx={{width: '70px', height: 'auto'}} />
         </Typography>
-        <Typography sx={{ mt: 2 }}>
+        <Typography sx={{ mt: 2, marginTop: 0 }}>
           Para favoritar roteiros e acessar outras funcionalidades, é necessário fazer o login.
         </Typography>
-        <Button onClick={handleLoginRedirect} variant="contained" sx={{ mt: 3 }}>
+        <Button onClick={handleLoginRedirect} variant="contained" sx={{ mt: 3, backgroundColor: 'white', border: 'solid 1px black', color: 'black'  }}>
           Fazer Login
         </Button>
       </Box>

@@ -89,7 +89,7 @@ const RoteirosFavoritadosPage = () => {
         <Typography
           className={styles.meusRoteirosFavoritos}
           variant="h2" // Ajustado para melhor semântica
-          sx={{ fontWeight: "600" }}
+          sx={{ fontWeight: "600", fontSize: '18px', paddingBottom: '5px', borderBottom: '1px solid black', width: '65%',  }}
         >
           Meus Roteiros Favoritos
         </Typography>
@@ -113,7 +113,7 @@ const RoteirosFavoritadosPage = () => {
         ))
       ) : (
         // Se estiver logado, mas sem favoritos
-        <Typography sx={{ textAlign: 'center', p: 3 }}>
+        <Typography sx={{ textAlign: 'start', paddingLeft: '5px' }}>
           Você ainda não favoritou nenhum roteiro. Explore o app e clique na estrela para salvar!
         </Typography>
       )}
