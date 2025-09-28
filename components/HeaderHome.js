@@ -50,7 +50,7 @@ const HeaderHome = () => {
             Olá, {fullName}!
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Bem-vindo de volta.
+            Bem-vindo!
           </Typography>
         </Box>
       </Box>
