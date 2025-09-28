@@ -7,24 +7,17 @@ import styles from "./slider-conhea-nossos-roteiros.module.css";
 
 const SliderConheaNossosRoteiros = ({ className = "" }) => {
   const router = useRouter();
-
-  const onRoteirosRaizContainerClick = useCallback(() => {
-    router.push("/roteiros-raiz204");
-  }, [router]);
-
-  const onRoteirosNaturaisContainerClick = useCallback(() => {
-    router.push("/roteiros-naturais204");
-  }, [router]);
-
-  const onRoteirosRaizContainerClick1 = useCallback(() => {
-    router.push("/roteiros-culturais204");
-  }, [router]);
+  
+  const handleSelecionarRoteiro = (categoria) => {
+    // AQUI ESTÁ A MUDANÇA PRINCIPAL
+    router.push(`/roteiros?filtro=${categoria}`);
+  };
 
   return (
     <Box className={[styles.sliderConheaNossosRoteiros, className].join(" ")}>
       <Box
         className={styles.roteirosRaiz}
-        onClick={onRoteirosRaizContainerClick}
+        onClick={() => handleSelecionarRoteiro("Raiz")}
       >
         <Box className={styles.tag}>
           <div className={styles.raiz}>Raiz</div>
@@ -32,7 +25,7 @@ const SliderConheaNossosRoteiros = ({ className = "" }) => {
       </Box>
       <Box
         className={styles.roteirosNaturais}
-        onClick={onRoteirosNaturaisContainerClick}
+        onClick={() => handleSelecionarRoteiro("Natural")}
       >
         <Box className={styles.sliderConheaNossosRoteirosTag}>
           <div className={styles.raiz}>Natural</div>
@@ -40,7 +33,7 @@ const SliderConheaNossosRoteiros = ({ className = "" }) => {
       </Box>
       <Box
         className={styles.sliderConheaNossosRoteirosRoteirosRaiz}
-        onClick={onRoteirosRaizContainerClick1}
+        onClick={() => handleSelecionarRoteiro("Cultural")}
       >
         <Box className={styles.tag2}>
           <div className={styles.raiz}>Cultural</div>
