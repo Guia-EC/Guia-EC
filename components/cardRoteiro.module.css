@@ -68,7 +68,7 @@ font-size: var(--font-size-18);
 
 .texto {
 align-self: stretch; /* Ocupa a largura do .body */
-text-align: justify;
+text-align: left;
 font-size: var(--font-size-14);
 letter-spacing: 0.04em;
 font-weight: 300;
