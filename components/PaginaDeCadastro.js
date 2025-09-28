@@ -4,7 +4,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "../context/AuthContext";
-import { Box, Typography, TextField, Button, CircularProgress, List, ListItem, ListItemIcon, ListItemText, InputAdornment, IconButton, FormControl, InputLabel, OutlinedInput  } from "@mui/material";
+import { Box, Typography, TextField, Button, CircularProgress, List, ListItem, ListItemIcon, ListItemText, InputAdornment, IconButton, FormControl, InputLabel, OutlinedInput, FormHelperText   } from "@mui/material";
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
@@ -52,8 +52,10 @@ const PaginaDeCadastro = () => {
   const [email, setEmail] = useState("");
   const [confirmEmail, setConfirmEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const [showPassword, setShowPassword] = useState(false); // NOVO ESTADO AQUI
+
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   
   const [passwordReqs, setPasswordReqs] = useState(validatePassword(""));
   const [error, setError] = useState(null);
@@ -76,6 +78,13 @@ const PaginaDeCadastro = () => {
     setPasswordReqs(validatePassword(newPassword));
   };
 
+  // --- 2. CRIAR NOVOS MANIPULADORES DE EVENTOS ---
+  const handleConfirmPasswordChange = (e) => {
+    setConfirmPassword(e.target.value);
+  };
+
+  const handleClickShowConfirmPassword = () => setShowConfirmPassword((show) => !show);
+
   const handleSignUp = async (e) => {
     e.preventDefault();
     setError(null);
@@ -86,13 +95,23 @@ const PaginaDeCadastro = () => {
       return;
     }
 
+    if (password !== confirmPassword) { // NOVO: Verificação de senha
+      setError("As senhas não correspondem!");
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
       const { error } = await signUp({ email, password, fullName });
       if (error) throw error;
       
+      //LEMBRAR DE TENTAR TRANSFORMAR ISSO EM UM MODAL!
+
       setSuccessMessage("Cadastro realizado! Verifique seu e-mail para ativar a conta. Em uns instantes você será redirecionado para a página de login!");
+      
+      //------------------------------------------------
+
       setTimeout(() => {
         router.push('/login');
       }, 5000);
@@ -163,6 +182,40 @@ const PaginaDeCadastro = () => {
                 }
                 label="Senha"
               />
+            </FormControl>
+
+            <FormControl 
+              sx={{ mt: 1, mb: 1 }} 
+              variant="outlined" 
+              fullWidth 
+              required 
+              error={password !== confirmPassword && confirmPassword !== ""}
+            >
+              <InputLabel htmlFor="outlined-adornment-confirm-password">Confirmação de Senha</InputLabel>
+              <OutlinedInput
+                id="outlined-adornment-confirm-password"
+                type={showConfirmPassword ? 'text' : 'password'}
+                value={confirmPassword}
+                onChange={handleConfirmPasswordChange}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle confirm password visibility"
+                      onClick={handleClickShowConfirmPassword}
+                      onMouseDown={handleMouseDownPassword}
+                      edge="end"
+                    >
+                      {showConfirmPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+                label="Confirmação de Senha"
+              />
+              {password !== confirmPassword && confirmPassword !== "" && (
+                <FormHelperText error>
+                  As senhas não correspondem
+                </FormHelperText>
+              )}
             </FormControl>
             
             <PasswordRequirements requirements={passwordReqs} />
