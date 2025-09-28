@@ -4,6 +4,7 @@ import { Typography, Box } from "@mui/material";
 import InfoSesc from "../../components/info-sesc";
 import { useRouter } from "next/navigation";
 import styles from "./info-sesc204.module.css";
+import ScrollToTopButton from "../../components/ScrollToTopButton";
 
 const InfoSesc204 = () => {
   const router = useRouter();
@@ -28,6 +29,7 @@ const InfoSesc204 = () => {
           Fazer um roteiro pelo Sesc
         </Typography>
       </section>
+      <ScrollToTopButton />
     </Box>
   );
 };

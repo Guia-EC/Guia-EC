@@ -4,6 +4,7 @@ import { Typography, Box } from "@mui/material";
 import InfoMasp from "../../components/info-masp";
 import { useRouter } from "next/navigation";
 import styles from "./info-masp204.module.css";
+import ScrollToTopButton from "../../components/ScrollToTopButton";
 
 const InfoMasp204 = () => {
   const router = useRouter();
@@ -26,8 +27,9 @@ const InfoMasp204 = () => {
           sx={{ fontWeight: "400" }}
         >
           Fazer um roteiro pelo MASP
-        </Typography>
+        </Typography> 
       </section>
+      <ScrollToTopButton />
     </Box>
   );
 };

@@ -4,6 +4,7 @@ import { Typography, Box } from "@mui/material";
 import InfoIbirapuera from "../../components/info-ibirapuera";
 import { useRouter } from "next/navigation";
 import styles from "./info-ibira202.module.css";
+import ScrollToTopButton from "../../components/ScrollToTopButton";
 
 const InfoIbira202 = () => {
   const router = useRouter();
@@ -28,6 +29,7 @@ const InfoIbira202 = () => {
           Fazer um roteiro pelo Ibira
         </Typography>
       </section>
+      <ScrollToTopButton />
     </Box>
   );
 };
