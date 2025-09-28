@@ -144,7 +144,7 @@ const PginaDeLogin = () => {
                 fullWidth
                 sx={{ mt: 2, p: 1.5 }}
               >
-                Entre como convidado
+                Entre sem fazer login
               </Button>
             </Box>
 
