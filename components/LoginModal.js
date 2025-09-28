@@ -15,7 +15,10 @@ const style = { // Estilos para o Modal
   boxShadow: 24,
   p: 4,
   textAlign: 'center',
-  borderRadius: '10px'
+  borderRadius: '10px',
+  '&:focus': {
+    outline: 'none',
+  }
 };
 
 const LoginModal = ({ open, onClose }) => {
@@ -33,7 +36,7 @@ const LoginModal = ({ open, onClose }) => {
           <WarningRoundedIcon sx={{width: '70px', height: 'auto'}} />
         </Typography>
         <Typography sx={{ mt: 2, marginTop: 0 }}>
-          Para favoritar roteiros e acessar outras funcionalidades, é necessário fazer o login.
+          Para acessar opções personalizadas, é necessário estar logado em sua conta
         </Typography>
         <Button onClick={handleLoginRedirect} variant="contained" sx={{ mt: 3, backgroundColor: 'white', border: 'solid 1px black', color: 'black'  }}>
           Fazer Login
