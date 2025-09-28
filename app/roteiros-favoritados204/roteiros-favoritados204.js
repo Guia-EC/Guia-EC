@@ -89,7 +89,7 @@ const RoteirosFavoritadosPage = () => {
         <Typography
           className={styles.meusRoteirosFavoritos}
           variant="h2" // Ajustado para melhor semântica
-          sx={{ fontWeight: "600", fontSize: '18px', paddingBottom: '5px', borderBottom: '1px solid black', width: '65%',  }}
+          sx={{ fontWeight: "700", fontSize: '18px', paddingBottom: '5px', borderBottom: '1px solid black', width: '65%',  }}
         >
           Meus Roteiros Favoritos
         </Typography>

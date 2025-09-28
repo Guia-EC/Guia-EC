@@ -39,7 +39,7 @@ const FavoriteButton = ({ roteiroId, variant = 'star' }) => {
     <>
       <IconButton onClick={handleClick} aria-label="favoritar">
         {variant === 'trash' ? (
-          <DeleteIcon sx={{ color: 'red' }} />
+          <DeleteIcon sx={{ color: "#d42222" }} />
         ) : (
           isFavorited ? <StarRoundedIcon sx={{ color: 'orange', width: '30px', height: 'auto' }} /> : <StarBorderRoundedIcon sx={{ width: '30px', height: 'auto'}} />
         )}
