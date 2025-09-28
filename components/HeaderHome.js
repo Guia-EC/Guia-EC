@@ -17,6 +17,24 @@ const getInitials = (name = "") => {
   return `${firstInitial}${lastInitial}`;
 };
 
+// --- NOVA FUNÇÃO AUXILIAR ---
+const getFirstNameAndLastName = (name = "") => {
+  // 1. Remove espaços extras e divide o nome em partes
+  const nameParts = name.trim().split(" ");
+
+  // 2. Se tiver apenas um nome (ou nenhum), retorna o nome original
+  if (nameParts.length <= 1) {
+    return name;
+  }
+
+  // 3. Pega o primeiro e o último nome
+  const firstName = nameParts[0];
+  const lastName = nameParts[nameParts.length - 1];
+
+  // 4. Retorna a combinação deles
+  return `${firstName} ${lastName}`;
+};
+
 const HeaderHome = () => {
   // Usamos o hook para pegar o estado de autenticação
   const { user, loading } = useAuth();
@@ -29,6 +47,8 @@ const HeaderHome = () => {
   // Se o usuário existir, pegamos as informações dele
   const fullName = user.fullName || "Usuário";
   const initials = getInitials(fullName);
+
+  const displayName = getFirstNameAndLastName(fullName);
 
   return (
     // Envolvemos tudo em um Link do Next.js para tornar clicável
@@ -47,7 +67,7 @@ const HeaderHome = () => {
         <Avatar sx={{ bgcolor: '#333' }}>{initials}</Avatar>
         <Box>
           <Typography variant="h6" sx={{ fontWeight: 'bold', lineHeight: 1.2, fontSize: '18px' }}>
-            Olá, {fullName}!
+            Olá, {displayName}!
           </Typography>
           <Typography variant="body2" color="text.secondary">
             Bem-vindo!
