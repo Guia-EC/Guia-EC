@@ -20,6 +20,14 @@ const SeleoDeTipoDeRoteiro207 = () => {
     router.push("/IniciarMasp");
   }, [router]);
 
+    const onContainerClick2 = useCallback(() => {
+    router.push("/IniciarMaspCultural");
+  }, [router]);
+
+      const onContainerClick3 = useCallback(() => {
+    router.push("/IniciarMaspNatural");
+  }, [router]);
+
   return (
     <Box className={styles.seleoDeTipoDeRoteiro20}>
       <Box className={styles.voltar} onClick={onVoltarContainerClick}>
@@ -69,7 +77,7 @@ const SeleoDeTipoDeRoteiro207 = () => {
             </Box>
           </Box>
           {/* Card Natural */}
-          <Box className={styles.raiz}>
+          <Box className={styles.raiz} onClick={onContainerClick3}>
             <Box
               className={`${styles.imagem} ${styles.imagemNatural}`} // CLASSE ADICIONADA
             >
@@ -89,7 +97,7 @@ const SeleoDeTipoDeRoteiro207 = () => {
             </Box>
           </Box>
           {/* Card Cultural */}
-          <Box className={styles.raiz}>
+          <Box className={styles.raiz} onClick={onContainerClick2}>
             <Box
               className={`${styles.imagem} ${styles.imagemCultural}`} // CLASSE ADICIONADA
             >
