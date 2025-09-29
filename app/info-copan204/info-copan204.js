@@ -10,7 +10,7 @@ const InfoCopan204 = () => {
   const router = useRouter();
 
   const onBotoFazerRoteiroClick = useCallback(() => {
-    router.push("/seleo-de-tipo-de-roteiro207");
+    router.push("/seleo-de-tipo-de-roteiroCopan");
   }, [router]);
 
   return (

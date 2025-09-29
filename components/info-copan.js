@@ -16,7 +16,6 @@ const InfoCopan = ({ className = "", estado = "Padrão" }) => {
     "/Copan1.png",
     "/Copan2.png",
     "/Copan3.png",
-    "/Copan4.png",
     "/Copan5.png",
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
