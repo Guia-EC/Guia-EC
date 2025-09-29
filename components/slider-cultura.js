@@ -20,6 +20,10 @@ const SliderCultura = ({ className = "" }) => {
     router.push("/info-sesc204");
   }, [router]);
 
+  const onCopanContainerClick = useCallback(() => {
+  router.push("/info-copan204");
+  }, [router]);
+
   return (
     <Box className={[styles.sliderCultura, className].join(" ")}>
       <Box className={styles.masp} onClick={onMASPContainerClick}>
@@ -43,7 +47,9 @@ const SliderCultura = ({ className = "" }) => {
           <div className={styles.sliderCulturaMasp}>{`Sesc 24 `}</div>
         </Box>
       </Box>
-      <Box className={styles.copan}>
+      <Box className={styles.copan}
+           onClick={onCopanContainerClick}
+      >
         <Box className={styles.tag}>
           <div className={styles.sliderCulturaMasp}>Copan</div>
         </Box>

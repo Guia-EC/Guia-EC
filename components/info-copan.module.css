@@ -1,0 +1,445 @@
+.infoCopan {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  font-family: var(--font-poppins);
+}
+
+.scrollvel {
+  width: 100%;
+  position: relative;
+}
+
+.imagemHero {
+  width: 100%;
+  height: 28.813rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(/Masp.png);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 2.5rem 1.7rem;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.voltarIcon {
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  width: 35px;
+  height: 35px;
+  align-self: flex-start;
+}
+
+.body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  gap: 25px;
+  padding: 0 30px 4rem; /* Adicionado padding inferior */
+  text-align: left;
+  font-size: 18px;
+  color: var(--color-black);
+  font-family: var(--font-poppins);
+}
+
+.ttulo {
+  position: absolute;
+  top: 22rem;
+  left: 1.8rem;
+  width: 90%;
+  max-width: 20.813rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 1; /* Garante que o título fique sobre a imagem */
+}
+
+.infoCopanTtulo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.copan,
+.museuDeArte,
+.descrio {
+  font-family: var(--font-poppins);
+  color: black;
+  text-shadow: none;
+  margin: 0;
+  text-align: left;
+}
+
+.copan {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.museuDeArte {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.descrio {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.linaBoBardi,
+.avenidaPaulista1578 {
+  line-height: 1.3;
+}
+
+.infos {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  box-sizing: border-box;
+  margin-top: 60px;
+}
+
+.informaes {
+  margin: 0;
+  height: auto;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.coneDaArquiteturaContainer {
+  width: 100%;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.accordionContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.accordionButton {
+  background-color: transparent;
+  color: black;
+  font-weight: 600;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid #000;
+  justify-content: space-between;
+  height: auto;
+  padding: 0.8rem 0.2rem;
+  font-family: var(--font-poppins);
+  font-size: 25px;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.accordionButton:hover {
+  background-color: transparent;
+}
+
+.arrowIcon {
+  transition: transform 0.3s ease-in-out;
+  filter: invert(1);
+}
+
+.arrowIconOpen {
+  transform: rotate(180deg);
+}
+
+.accordionContent {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s ease-out;
+}
+
+.accordionOpen {
+  grid-template-rows: 1fr;
+}
+
+.accordionText {
+  overflow: hidden;
+  text-align: justify;
+  font-size: 15px;
+  color: #000;
+}
+
+.letraCapitular {
+  font-weight: 600;
+  font-size: 1.4em;
+  padding-right: 2px;
+  line-height: 1;
+  float: left;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.galleryContainer {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  position: relative;
+  height: 650px;
+}
+
+.imageContainer {
+  position: absolute;
+  top: 50%; /* Centraliza verticalmente */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centraliza nos dois eixos */
+  width: 70%;
+  height: 90%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.galleryImage {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain; /* Mudei para contain para evitar cortes */
+  cursor: grab;
+}
+
+.galleryImage:active {
+  cursor: grabbing;
+}
+
+.chevron {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: black;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transition: background-color 0.2s;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+}
+
+.chevronLeft {
+  left: 10px;
+}
+
+.chevronRight {
+  right: 10px;
+}
+
+.dotsContainer {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(200, 200, 200, 0.7);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.activeDot {
+  background-color: #333;
+}
+
+/*Responsivo para mobile!*/
+
+@media (max-width: 767px) {
+  .accordionButton {
+    font-size: 16px;
+  }
+
+  .accordionButton img {
+    width: 30px;
+    height: 10px;
+  }
+  .dotsContainer {
+    bottom: 10px;
+  }
+
+  .body {
+    height: 78rem; /* Mexe no tamanho da tela! Verticalmente falando*/
+  }
+
+  .chevronLeft {
+    z-index: 0;
+  }
+
+  .chevronRight {
+    z-index: 0;  
+  }
+
+  .imagemHero {
+    padding: 40px 30px;
+  }
+
+  .galleryContainer {
+    margin: 20px 0 140px 0;
+  }
+
+  .coneDaArquiteturaContainer{
+    margin-bottom: 1.25rem;
+  }
+
+}
+
+
+/* --- ESTILOS RESPONSIVOS PARA TABLET/DESKTOP --- */
+
+@media (min-width: 768px) {
+  .imagemHero {
+    height: 40rem; /* Aumenta a altura da imagem principal */
+    background-image: url(/MASPRESPONSIVO.png);
+    padding: 60px 50px;
+  }
+
+  .ttulo {
+    top: 30rem; /* Reposiciona o título */
+    left: 58px;
+    max-width: 800px;
+  }
+
+  .voltarIcon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .arrowIcon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .copan {
+    font-size: 100px; /* Aumenta a fonte do título */
+  }
+
+  .museuDeArte {
+    font-size: 40px;
+  }
+
+  .descrio {
+    font-size: 22px;
+  }
+
+  .body {
+    padding: 0px 60px; /* Aumenta o espaçamento lateral */
+    margin-top: 100px;
+    align-items: flex-start;
+    min-height: fit-content;
+    margin-bottom: 10rem;
+
+  }
+
+  /* Estrutura principal de duas colunas */
+  .contentWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 5%; /* Espaço entre as colunas */
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .leftColumn {
+    flex: 1; /* Faz a coluna ter 50% da largura */
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .rightColumn {
+    flex: 1; /* Faz a coluna ter 50% da largura */
+    position: sticky; /* Efeito "grudento" ao rolar a página */
+    top: 6rem;
+    height: fit-content;
+  }
+
+  .infos {
+    margin-top: 0; /* Remove a margem extra do mobile */
+    gap: 25px;
+  }
+  
+  .informaes {
+    font-size: 26px; /* Aumenta o subtítulo */
+  }
+
+  .coneDaArquiteturaContainer, .accordionText {
+    font-size: 20px; /* Aumenta a fonte dos parágrafos */
+  }
+
+  .galleryContainer {
+    max-width: 100%;
+    height: 50vh; /* Altura da galeria relativa à tela */
+    margin-top: 1rem;
+  }
+
+  .imageContainer {
+    position: absolute;
+    top: 0; /* ALTERAÇÃO AQUI: Alinha a imagem no topo */
+    left: 50%;
+    transform: translateX(-50%); /* ALTERAÇÃO AQUI: Remove o translateY */
+    width: 70%;
+    height: 90%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .chevron {
+    top: 45%;
+    font-size: 20px;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+
+  }
+
+  .accordionButton img {
+    font-size: 80px;
+  }
+
+  .accordionButton span {
+    font-size: 20px;
+  }
+}
