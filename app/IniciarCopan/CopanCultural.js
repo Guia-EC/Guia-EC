@@ -2,8 +2,8 @@
 import { useCallback } from "react";
 import { Typography, Box, Button } from "@mui/material";
 import Image from "next/image";
-import Rota from "../../components/rota";
-import Paradas from "../../components/paradas";
+import RotaCopanCultural from "../../components/RotaCopanCultural";
+import ParadasCopanCultural from "../../components/ParadasCopanCultural";
 import styles from "./CopanCultural.module.css";
 import { useRouter } from "next/navigation";
 
@@ -44,8 +44,8 @@ const IniciarRoteiroCopanCultural = () => {
           </Typography>
         </Box>
         <Box className={styles.pontosEParadas}>
-          <Rota />
-          <Paradas />
+          <RotaCopanCultural />
+          <ParadasCopanCultural />
         </Box>
       </section>
       <Button

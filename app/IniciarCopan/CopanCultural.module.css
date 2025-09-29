@@ -18,7 +18,7 @@
   align-self: stretch;
   height: 28.813rem;
   padding-left: 1.7rem;
-  background-image: url(/CopanHero.png);
+  background-image: url(/CopanH.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -133,6 +133,7 @@
 
   .imagemHero { /*Imagem do Hero!*/
     padding: 40px 30px;
+    height: 31rem;
   }
 
   .imagemHero img { /*Imagem do Hero!*/
@@ -155,16 +156,27 @@
     height: 1960px;
   }
 
+  .iniciarRoteiro20Ttulo {
+    top: 22rem;
+  }
+
   .ttulo2 h3 {
     font-size: 22px;
   }
 
+  .ttulo2 h1 { 
+    font-size: 64px;
+    line-height: 1.4;
+  }
+
   .linaBoBardi {
     width: 281px;
+    font-size: 14px;
   }
 
   .avenidaPaulista1578 {
-    width: 214px;
+    width: 100%;
+    font-size: 14px;
   }
 
   .prqIbirapuera {
@@ -172,8 +184,6 @@
     width: 100%;
   }
 
-  .ttulo h3 {
-    font-size: 20px;
-  }
+
 
 }
