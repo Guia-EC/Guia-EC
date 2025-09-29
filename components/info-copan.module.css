@@ -21,7 +21,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(/Masp.png);
+  background-image: url(/CopanH.png);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -300,7 +300,8 @@
   }
 
   .body {
-    height: 78rem; /* Mexe no tamanho da tela! Verticalmente falando*/
+    height: 60rem; /* Mexe no tamanho da tela! Verticalmente falando*/
+    padding: 0 30px;
   }
 
   .chevronLeft {
@@ -322,6 +323,25 @@
   .coneDaArquiteturaContainer{
     margin-bottom: 1.25rem;
   }
+
+  .copan {
+    font-size: 64px;
+    line-height: 1.4;
+    align-self: flex-start;
+  }
+
+  .ttulo {
+    top: 20rem; /* Reposiciona o título */
+    left: 30px;
+    max-width: 800px;
+  }
+
+  .infos {
+    margin-top: 50px;
+  }
+
+
+
 
 }
 
