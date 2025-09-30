@@ -29,31 +29,28 @@ const IniciarRoteiroCopanCultural = () => {
 
     // <-- 4. ATUALIZAR A FUNÇÃO DO BOTÃO
   const handleIniciarRoteiro = async () => {
-    // Primeiro, checa se há um usuário logado
-    if (!user) {
-      alert("Faça login para salvar seu roteiro no histórico!");
-      router.push("/login"); // Opcional: redireciona para o login
-      return;
+// 1. Se o usuário ESTIVER logado, tentamos salvar no histórico
+    if (user) {
+      try {
+        const { error } = await supabase
+          .from('historico_roteiros')
+          .insert({
+            user_id: user.id,
+            roteiro_id: ROTEIRO_ID_COPAN, // Lembre-se que essa variável precisa estar definida no seu componente
+          });
+
+        if (error) throw error;
+
+      } catch (error) {
+        console.error("Erro ao salvar histórico:", error.message);
+        // Opcional: Avisa o usuário que o histórico falhou, mas o mapa vai abrir
+        alert("Não foi possível salvar em seu histórico, mas você ainda pode fazer o roteiro.");
+      }
     }
 
-    try {
-      // Tenta inserir o registro no banco
-      const { error } = await supabase
-        .from('historico_roteiros')
-        .insert({
-          user_id: user.id,
-          roteiro_id: ROTEIRO_ID_COPAN, // Usa a constante que definimos
-        });
-
-      if (error) throw error; // Se der erro, ele vai para o 'catch'
-
-      // Se deu tudo certo, abre o Google Maps
-      window.open(GOOGLE_MAPS_LINK, '_blank');
-
-    } catch (error) {
-      console.error("Erro ao salvar histórico:", error.message);
-      alert("Não foi possível salvar o roteiro. Tente novamente.");
-    }
+    // 2. Independentemente de estar logado ou não, ABRIMOS O MAPA
+    // Lembre-se que GOOGLE_MAPS_LINK precisa estar definido no seu componente
+    window.open(GOOGLE_MAPS_LINK, '_blank');
   };
 
   return (
