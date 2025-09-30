@@ -122,7 +122,7 @@ export default function Chatbot() {
   const suggestions = [
     {
       icon: <CircleHelp size={20} />,
-      text: "Descrição dos tipos de roteiros",
+      text: "Me fale sobre o Roteiro Raiz!",
       category: "Sobre o App",
     },
     {
