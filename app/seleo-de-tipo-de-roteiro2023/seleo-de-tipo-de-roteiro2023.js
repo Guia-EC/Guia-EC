@@ -20,6 +20,10 @@ const SeleoDeTipoDeRoteiro2023 = () => {
     router.push("/IniciarSescCultural");
   }, [router]);
 
+      const onContainerClick3 = useCallback(() => {
+    router.push("/IniciarSescRaiz");
+  }, [router]);
+
   return (
     <Box className={styles.seleoDeTipoDeRoteiro20}>
       <Box className={styles.voltar}>
@@ -49,7 +53,7 @@ const SeleoDeTipoDeRoteiro2023 = () => {
           </Box>
         </Box>
         <Box className={styles.roteiros}>
-          <Box className={styles.raiz}>
+          <Box className={styles.raiz}  onClick={onContainerClick3}>
             <Box className={styles.imagem}>
               <Box className={styles.seleoDeTipoDeRoteiro20Detalhe} />
             </Box>

@@ -1,0 +1,79 @@
+.paradas,
+.ponto1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.paradas {
+  align-items: flex-end;
+  gap: 3.125rem;
+  text-align: left;
+  margin-left: 0.8rem;
+  font-size: var(--font-size-16);
+  color: var(--color-gray-200);
+  font-family: var(--font-poppins);
+}
+.ponto1 {
+  width: 17.875rem;
+  gap: var(--gap-10);
+}
+.ttuloEBoto {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+.parqueAugusta {
+  width: 8.438rem;
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.imagemETtulo {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-5);
+  text-align: justify;
+  font-size: var(--font-size-12);
+}
+.augusta1Icon {
+  width: 17.875rem;
+  height: 6.5rem;
+  border-radius: var(--br-5) var(--br-5) 0 0;
+  object-fit: cover;
+}
+.augusta1Icon,
+.itsVegan {
+  position: relative;
+}
+.restauranteVeganoInaugurado {
+  align-self: stretch;
+  position: relative;
+}
+.ponto3 {
+  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+@media (max-width: 767px) {
+  .ttuloEBoto b {
+    font-size: 16px;
+    width: 100%;
+    color: #000;
+  }
+
+  .ponto3 b {
+    font-size: 16px;
+    width: 100%;
+    color: #000;
+  }
+
+  .imagemETtulo {
+    font-size: 14px;
+  }
+
+}

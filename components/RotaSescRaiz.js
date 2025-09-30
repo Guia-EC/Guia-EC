@@ -1,9 +1,9 @@
 import { Box } from "@mui/material";
 import Image from "next/image";
 import PropTypes from "prop-types";
-import styles from "./RotaSescCultural.module.css";
+import styles from "./RotaSescRaiz.module.css";
 
-const RotaSescCultural = ({ className = "" }) => {
+const RotaSescRaiz = ({ className = "" }) => {
   return (
     <Box className={[styles.rota, className].join(" ")}>
       <Box className={styles.rotaChild} />
@@ -17,8 +17,8 @@ const RotaSescCultural = ({ className = "" }) => {
   );
 };
 
-RotaSescCultural.propTypes = {
+RotaSescRaiz.propTypes = {
   className: PropTypes.string,
 };
 
-export default RotaSescCultural;
+export default RotaSescRaiz;

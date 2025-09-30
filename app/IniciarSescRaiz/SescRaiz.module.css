@@ -87,7 +87,7 @@
   z-index: 3;
   text-align: left;
   font-size: var(--font-size-40);
-  color: var(--color-mediumpurple);
+  color: var(--color-orange-100);
   font-family: var(--font-poppins);
 }
 .ttulo2 {
@@ -127,6 +127,11 @@
 }
 
 @media (max-width: 767px) {
+
+  .iniciarRoteiro20 {
+    height: 1670px !important;
+
+  }
 
   .botoIniciarRoteiro {
     position:fixed;

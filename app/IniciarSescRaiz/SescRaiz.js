@@ -2,12 +2,12 @@
 import { useCallback } from "react";
 import { Typography, Box, Button } from "@mui/material";
 import Image from "next/image";
-import Rota1 from "../../components/RotaSescCultural";
-import Paradas1 from "../../components/ParadasSescCultural";
+import Rota1 from "../../components/RotaSescRaiz";
+import Paradas1 from "../../components/ParadasSescRaiz";
 import { useRouter } from "next/navigation";
-import styles from "./SescCultural.module.css";
+import styles from "./SescRaiz.module.css";
 
-const SescCultural = () => {
+const SescRaiz = () => {
 
   const router = useRouter();
 
@@ -56,9 +56,9 @@ const SescCultural = () => {
           fontWeight: "600",
           color: "#fff",
           fontSize: "20px",
-          background: "#8662b4",
+          background: "#ff9f1c",
           borderRadius: "30px",
-          "&:hover": { background: "#8662b4" },
+          "&:hover": { background: "#ff9f1c" },
           width: 370,
           height: 100,
         }}
@@ -95,4 +95,4 @@ const SescCultural = () => {
   );
 };
 
-export default SescCultural;
+export default SescRaiz;
