@@ -17,6 +17,14 @@ const SeleoDeTipoDeRoteiro2014 = () => {
     const onContainerClick = useCallback(() => {
     router.push("/IniciarIbira");
   }, [router]);
+
+    const onContainerClick2 = useCallback(() => {
+    router.push("/IniciarIbiraRaiz");
+  }, [router]);
+
+      const onContainerClick3 = useCallback(() => {
+    router.push("/IniciarIbiraNatural");
+  }, [router]);
   
   return (
     <Box className={styles.seleoDeTipoDeRoteiro20}>
@@ -47,7 +55,7 @@ const SeleoDeTipoDeRoteiro2014 = () => {
           </Box>
         </Box>
         <Box className={styles.roteiros}>
-          <Box className={styles.raiz}>
+          <Box className={styles.raiz}  onClick={onContainerClick2}>
             <Box className={styles.imagem}>
               <Box className={styles.seleoDeTipoDeRoteiro20Detalhe} />
             </Box>
@@ -71,7 +79,7 @@ const SeleoDeTipoDeRoteiro2014 = () => {
               </Box>
             </Box>
           </Box>
-          <Box className={styles.raiz}>
+          <Box className={styles.raiz} onClick={onContainerClick3}>
             <Box className={styles.seleoDeTipoDeRoteiro20Imagem}>
               <Box className={styles.detalhe2} />
             </Box>
