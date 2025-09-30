@@ -40,12 +40,12 @@ const PginaDeFiltros = ({ filtroAtivo, roteiros, onMudarFiltro }) => { // Recebe
           <CardRoteiro
             key={roteiro.id}
             roteiroId={roteiro.id}
-            titulo={roteiro.titulo}
+            titulo={roteiro.nome}
             descricao={roteiro.descricao}
             localizacao={roteiro.localizacao}
-            imagemSrc={roteiro.imagemSrc}
+            imagemSrc={roteiro.url_imagem}
             categoria={roteiro.categoria}
-            link={roteiro.link}
+            link={roteiro.path_url}
           />
         ))}
       </Box>
