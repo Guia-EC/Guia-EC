@@ -1,0 +1,87 @@
+.paradas,
+.ponto1 {
+  display: flex;
+  flex-direction: column;
+}
+.paradas {
+  align-items: flex-end;
+  gap: 3.125rem;
+  text-align: left;
+  margin-left: 0.8rem;
+  font-size: var(--font-size-16);
+  color: var(--color-gray-200);
+  font-family: var(--font-poppins);
+}
+.ponto1 {
+  width: 17.875rem;
+  align-items: flex-start;
+  gap: var(--gap-10);
+}
+.ttuloEBoto {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  padding: 0 0 var(--padding-1);
+}
+.monumentoSBandeiras {
+  width: 13.313rem;
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.imagemETexto {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-5);
+  text-align: justify;
+  font-size: var(--font-size-12);
+}
+.bandeiras1Icon {
+  width: 17.875rem;
+  height: 6.5rem;
+  position: relative;
+  border-radius: var(--br-5) var(--br-5) 0 0;
+  object-fit: cover;
+}
+.esculturaDeGranito {
+  align-self: stretch;
+  position: relative;
+}
+.ponto2 {
+  width: 17.875rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.625rem;
+}
+.parqueIbirapuera {
+  position: relative;
+}
+.paradasTtuloEBoto {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+.macMuseu {
+  flex: 1;
+  position: relative;
+}
+.imagemETexto2 {
+  align-self: stretch;
+  border-radius: var(--br-5) var(--br-5) 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-5);
+  text-align: justify;
+  font-size: var(--font-size-12);
+}
+
+@media (max-width: 767px) {
+  .esculturaDeGranito {
+    font-size: 14px;
+  }
+}

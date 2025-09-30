@@ -20,6 +20,14 @@ const SeleoDeTipoDeRoteiroCopan = () => {
     router.push("/IniciarCopan");
   }, [router]);
 
+    const onContainerClick2 = useCallback(() => {
+    router.push("/IniciarCopanRaiz");
+  }, [router]);
+
+      const onContainerClick3 = useCallback(() => {
+    router.push("/IniciarCopanNatural");
+  }, [router]);
+
   return (
     <Box className={styles.seleoDeTipoDeRoteiro20}>
       <Box className={styles.voltar} onClick={onVoltarContainerClick}>
@@ -48,7 +56,7 @@ const SeleoDeTipoDeRoteiroCopan = () => {
         </Box>
         <Box className={styles.roteiros}>
           {/* Card Raiz */}
-          <Box className={styles.raiz}>
+          <Box className={styles.raiz} onClick={onContainerClick2}>
             <Box
               className={`${styles.imagem} ${styles.imagemRaiz}`} // CLASSE ADICIONADA
             >
@@ -68,7 +76,7 @@ const SeleoDeTipoDeRoteiroCopan = () => {
             </Box>
           </Box>
           {/* Card Natural */}
-          <Box className={styles.raiz}>
+          <Box className={styles.raiz} onClick={onContainerClick3}>
             <Box
               className={`${styles.imagem} ${styles.imagemNatural}`} // CLASSE ADICIONADA
             >
