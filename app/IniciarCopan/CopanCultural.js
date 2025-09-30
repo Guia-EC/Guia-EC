@@ -1,5 +1,5 @@
 "use client";
-import { useCallback } from "react";
+// import { useCallback } from "react";
 import { Typography, Box, Button } from "@mui/material";
 import Image from "next/image";
 import RotaCopanCultural from "../../components/RotaCopanCultural";
@@ -7,17 +7,54 @@ import ParadasCopanCultural from "../../components/ParadasCopanCultural";
 import styles from "./CopanCultural.module.css";
 import { useRouter } from "next/navigation";
 
+import { useAuth } from "../../context/AuthContext"; // <-- Verifique se o caminho está certo
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+
 const IniciarRoteiroCopanCultural = () => {
+
+  // <-- 2. PEGAR O USUÁRIO E INICIAR O SUPABASE
+  const { user } = useAuth();
+  const supabase = createClientComponentClient();
+
+  // <-- 3. DEFINIR O ID E O LINK DESTE ROTEIRO
+  //    Você precisa pegar o ID exato deste roteiro na sua tabela 'roteiros' do Supabase.
+  const ROTEIRO_ID_COPAN = 1; // <-- MUDE AQUI para o ID correto
+  const GOOGLE_MAPS_LINK = "https://www.google.com/maps/dir/?api=1&destination=Edificio+Copan,+Av.+Ipiranga,+200+-+República,+São+Paulo+-+SP"; // <-- Coloque o link correto aqui
+
+  const onVoltarIconClick = () => { // Removi o useCallback para simplificar
+    router.back();
+  };
 
   const router = useRouter();
 
-  const onVoltarIconClick = useCallback(() => {
-    router.back();
-  }, [router]);
+    // <-- 4. ATUALIZAR A FUNÇÃO DO BOTÃO
+  const handleIniciarRoteiro = async () => {
+    // Primeiro, checa se há um usuário logado
+    if (!user) {
+      alert("Faça login para salvar seu roteiro no histórico!");
+      router.push("/login"); // Opcional: redireciona para o login
+      return;
+    }
 
-  const onBotoIniciarRoteiroClick = useCallback(() => {
-    window.open("https://maps.app.goo.gl/p7bYMRDYXkdxYqAq6");
-  }, []);
+    try {
+      // Tenta inserir o registro no banco
+      const { error } = await supabase
+        .from('historico_roteiros')
+        .insert({
+          user_id: user.id,
+          roteiro_id: ROTEIRO_ID_COPAN, // Usa a constante que definimos
+        });
+
+      if (error) throw error; // Se der erro, ele vai para o 'catch'
+
+      // Se deu tudo certo, abre o Google Maps
+      window.open(GOOGLE_MAPS_LINK, '_blank');
+
+    } catch (error) {
+      console.error("Erro ao salvar histórico:", error.message);
+      alert("Não foi possível salvar o roteiro. Tente novamente.");
+    }
+  };
 
   return (
     <Box className={styles.iniciarRoteiro20}>
@@ -62,7 +99,7 @@ const IniciarRoteiroCopanCultural = () => {
           width: 369,
           height: 100,
         }}
-        onClick={onBotoIniciarRoteiroClick}
+        onClick={handleIniciarRoteiro}
       >
         Iniciar rota com Google
       </Button>
