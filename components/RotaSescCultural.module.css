@@ -1,0 +1,50 @@
+.rota {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.rotaChild {
+  width: 1.438rem;
+  position: relative;
+  border-radius: 50%;
+  background-color: var(--color-forestgreen);
+  height: 1.438rem;
+}
+.rotaItem {
+  width: 0.063rem;
+  position: relative;
+  border-right: 1px solid var(--color-forestgreen);
+  box-sizing: border-box;
+  height: 15.188rem;
+}
+.rotaInner {
+  width: 1.438rem;
+  position: relative;
+  height: 1.438rem;
+}
+.lineDiv,
+.rotaRotaChild {
+  width: 0.063rem;
+  position: relative;
+  border-right: 1px solid var(--color-forestgreen);
+  box-sizing: border-box;
+  height: 16.438rem;
+}
+.rotaRotaChild {
+  height: 3.063rem;
+}
+
+@media (max-width: 767px) {
+  .rotaItem {
+    height: 3.4rem;
+  }
+
+  .lineDiv {
+    height: 15.7rem;
+  }
+
+  .rotaRotaChild {
+    height: 18.4rem;
+
+  }
+}

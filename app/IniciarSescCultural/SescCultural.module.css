@@ -1,0 +1,173 @@
+.imagemHero,
+.iniciarRoteiro20 {
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+.iniciarRoteiro20 {
+  width: 100%;
+  height: 98.313rem;
+  position: relative;
+  background-color: var(--color-gray-100);
+  flex-direction: column;
+  padding: 0 0 7.125rem;
+  line-height: normal;
+  letter-spacing: normal;
+}
+.imagemHero {
+  align-self: stretch;
+  height: 28.813rem;
+  padding-left: 1.7rem;
+  background-image: url(/Imagem-Hero2@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  z-index: 0;
+}
+.voltarIcon {
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  width: 8%;
+  height: 40%; /*Tá mexendo na altura em onde está a seta!*/
+}
+
+.body {
+  width: 24.563rem;
+  height: 59.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-40) 0 0 var(--padding-30);
+  box-sizing: border-box;
+  gap: var(--gap-40);
+  z-index: 1;
+  text-align: left;
+  font-size: var(--font-size-18);
+  color: var(--color-black);
+  font-family: var(--font-poppins);
+}
+.ttulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.roteiroSugerido {
+  margin: 0;
+  position: relative;
+}
+.pontosECards {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-14);
+}
+.botoIniciarRoteiro {
+  width: calc(100% - 23px);
+  height: 6.25rem;
+  margin: 0 !important;
+  position: absolute;
+  top: 89.625rem;
+  right: 0.688rem;
+  left: 0.75rem;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  z-index: 2;
+}
+.iniciarRoteiro20Ttulo,
+.ttulo2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.iniciarRoteiro20Ttulo {
+  margin: 0 !important;
+  position: absolute;
+  top: 20.938rem;
+  left: 1.813rem;
+  z-index: 3;
+  text-align: left;
+  font-size: var(--font-size-40);
+  color: var(--color-forestgreen);
+  font-family: var(--font-poppins);
+}
+.ttulo2 {
+  justify-content: center;
+}
+.sesc24,
+.sesc24De {
+  margin: 0;
+  position: relative;
+  display: inline-block;
+}
+.sesc24 {
+  width: 19.625rem;
+  height: 3.75rem;
+}
+.sesc24De {
+  width: 18.5rem;
+}
+.descrio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: var(--font-size-12);
+  color: var(--color-black);
+}
+.pauloMendesDa,
+.rua24De {
+  position: relative;
+  display: inline-block;
+}
+.pauloMendesDa {
+  width: 16.563rem;
+  white-space: pre-wrap;
+}
+.rua24De {
+  width: 10.938rem;
+}
+
+@media (max-width: 767px) {
+
+  .botoIniciarRoteiro {
+    position:fixed;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 370px;
+    height: 100px;
+    font-size: 20px
+  }
+
+  .voltarIcon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .imagemHero {
+    padding: 40px 30px;
+  }
+
+  .sesc24 {
+    font-size: 45px;
+  }
+
+  .ttulo2 h3 {
+    font-size: 22px;
+  }
+
+  .body {
+    padding: 0 30px;
+    margin-top: 64px;
+    width: 100%;
+    height: 0;
+  }
+
+  .body h3 {
+    font-size: 20px;
+  }
+
+  .iniciarRoteiro20 {
+    padding: 0;
+    height: 103.5rem;
+  }
+}

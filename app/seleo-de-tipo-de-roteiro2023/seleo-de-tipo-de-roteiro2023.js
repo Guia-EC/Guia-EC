@@ -16,6 +16,10 @@ const SeleoDeTipoDeRoteiro2023 = () => {
     router.push("/IniciarSesc");
   }, [router]);
 
+    const onContainerClick2 = useCallback(() => {
+    router.push("/IniciarSescCultural");
+  }, [router]);
+
   return (
     <Box className={styles.seleoDeTipoDeRoteiro20}>
       <Box className={styles.voltar}>
@@ -69,11 +73,11 @@ const SeleoDeTipoDeRoteiro2023 = () => {
               </Box>
             </Box>
           </Box>
-          <Box className={styles.raiz}>
+          <Box className={styles.raiz} onClick={onContainerClick}>
             <Box className={styles.imagem}>
               <Box className={styles.detalhe2} />
             </Box>
-            <Box className={styles.seleoDeTipoDeRoteiro20Body} onClick={onContainerClick}>
+            <Box className={styles.seleoDeTipoDeRoteiro20Body}>
               <Box className={styles.ttuloETexto}>
                 <Box className={styles.seleoDeTipoDeRoteiro20Ttulo}>
                   <Typography
@@ -93,7 +97,7 @@ const SeleoDeTipoDeRoteiro2023 = () => {
               </Box>
             </Box>
           </Box>
-          <Box className={styles.raiz}>
+          <Box className={styles.raiz} onClick={onContainerClick2}>
             <Box className={styles.imagem}>
               <Box className={styles.detalhe3} />
             </Box>
