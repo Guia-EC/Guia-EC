@@ -1,5 +1,12 @@
 import RaizFinal from "./raizFinal"
+import FloatingChat from "../../components/FloatingChat"
 
 export default function Page() {
-  return <RaizFinal />;
+  const corTema = '#ff9f1c'
+  return (
+    <>
+      <RaizFinal />;
+      <FloatingChat cor={corTema} />
+    </>    
+  )  
 }

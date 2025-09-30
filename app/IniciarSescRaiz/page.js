@@ -1,5 +1,12 @@
 import SescRaiz from "./SescRaiz"
+import FloatingChat from "../../components/FloatingChat"
 
 export default function Page() {
-  return <SescRaiz />;
+  const corTema = '#ff9f1c'
+  return (
+    <>
+      <SescRaiz />
+      <FloatingChat cor={corTema} />
+    </>
+  );
 }

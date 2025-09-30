@@ -2,7 +2,7 @@
   position: fixed;
   bottom: 150px;
   right: 25px;
-  background-color: #ff9f1c; /* Cor do seu app */
+  background-color: var(--cor-tema, #cccccc); /* Cor do seu app */
   color: white;
   border: none;
   border-radius: 50%;

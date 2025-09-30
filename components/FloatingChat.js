@@ -5,17 +5,22 @@ import Chatbot from '../app/chatbot/chatbot'; // Verifique se o caminho para seu
 import styles from './FloatingChat.module.css';
 import { MessageCircle, X } from 'lucide-react';
 
-export default function FloatingChat() {
+export default function FloatingChat({ cor }) {
   const [isChatOpen, setIsChatOpen] = useState(false);
 
   const toggleChat = () => {
     setIsChatOpen(!isChatOpen);
   };
 
+  const estiloVariavel = {
+    '--cor-tema': cor 
+  };
+
   return (
     <>
       {/* O Botão Flutuante */}
       <button
+        style={estiloVariavel}
         className={styles.floatingButton}
         onClick={toggleChat}
         data-tooltip="Converse com a MaIA!"
