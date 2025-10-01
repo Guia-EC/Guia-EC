@@ -270,3 +270,13 @@
     color: white;
     margin: 0;
 }
+
+@media (max-width: 767px ) {
+  .chat-body {
+    width: 100%;
+  }
+  .chat-input {
+    width: 100vw;
+    padding: 20px;
+  }
+}
