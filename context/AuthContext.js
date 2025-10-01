@@ -2,15 +2,21 @@
 "use client";
 
 import { createContext, useState, useEffect, useContext } from 'react';
-import { supabase } from '../lib/supabaseClient';
+// MUDANÇA CRÍTICA: Usamos o cliente da biblioteca de helpers do Next.js
+// Isso é essencial para o gerenciamento correto da sessão e para corrigir o erro da RLS.
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+  // O cliente agora é instanciado aqui, dentro do componente de cliente.
+  const supabase = createClientComponentClient(); 
+
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [favoriteIds, setFavoriteIds] = useState(new Set()); // NOVO: Estado para IDs dos favoritos
+  const [favoriteIds, setFavoriteIds] = useState(new Set());
 
+  // Sua função de buscar favoritos foi mantida, sem alterações.
   const fetchFavorites = async (userId) => {
     const { data, error } = await supabase
       .from('user_favorites')
@@ -21,60 +27,52 @@ export const AuthProvider = ({ children }) => {
       console.error("Erro ao buscar favoritos:", error);
       return;
     }
-    // Usamos um Set para uma verificação rápida e eficiente (ex: .has())
     const ids = new Set(data.map(fav => fav.roteiro_id));
     setFavoriteIds(ids);
   };
 
   useEffect(() => {
-    const getSession = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      
-      // =================== LÓGICA DE PERFIL ENRIQUECIDO ===================
-      // Adicionamos o nome completo ao objeto do usuário
+    // LÓGICA REFINADA: Centralizamos a lógica de login/logout em uma função
+    // para evitar repetição de código e garantir consistência.
+    const handleSession = async (session) => {
       const currentUser = session?.user;
-
+      
       if (currentUser) {
-        await fetchFavorites(currentUser.id); // Busca favoritos se a sessão já existir
+        // Se há um usuário, buscamos seus favoritos
+        await fetchFavorites(currentUser.id);
+        // E enriquecemos o perfil com o nome completo
         const profile = { ...currentUser, fullName: currentUser.user_metadata?.full_name };
         setUser(profile);
+      } else {
+        // Se não há usuário (logout), limpamos o estado
+        setUser(null);
+        setFavoriteIds(new Set());
       }
-      
-      const profile = currentUser ? {
-        ...currentUser,
-        fullName: currentUser.user_metadata?.full_name
-      } : null;
-      setUser(profile);
-      // ====================================================================
-
       setLoading(false);
     };
 
-    getSession();
+    // Verificamos a sessão inicial ao carregar a página
+    const getInitialSession = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      handleSession(session);
+    };
+    
+    getInitialSession();
 
-    const { data: authListener } = supabase.auth.onAuthStateChange(
-      async (event, session) => {
-        const currentUser = session?.user;
-        if (currentUser) {
-          await fetchFavorites(currentUser.id); // Busca favoritos no login
-          const profile = { ...currentUser, fullName: currentUser.user_metadata?.full_name };
-          setUser(profile);
-        } else {
-          setUser(null);
-          setFavoriteIds(new Set()); // Limpa os favoritos no logout
-        }
-        setLoading(false);
+    // O listener que mantém a sessão sempre sincronizada
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        handleSession(session);
       }
     );
 
     return () => {
-      authListener.subscription.unsubscribe();
+      subscription?.unsubscribe();
     };
-  }, []);
+  }, [supabase.auth]); // Adicionado supabase.auth como dependência para boas práticas
 
   const value = {
-    // ========================= FUNÇÃO SIGNUP CORRIGIDA =========================
-    // Agora ela desestrutura o objeto e salva o fullName nos metadados
+    // Todas as suas funções e estados foram mantidos
     signUp: ({ email, password, fullName }) => {
       return supabase.auth.signUp({
         email,
@@ -86,36 +84,21 @@ export const AuthProvider = ({ children }) => {
         },
       });
     },
-        signInWithProvider: (provider) => {
+    signInWithProvider: (provider) => {
       return supabase.auth.signInWithOAuth({
-        provider, // 'google', 'apple', etc.
+        provider,
         options: {
-          // Redireciona de volta para a home do seu site em produção
           redirectTo: window.location.origin, 
         },
       });
     },
-    // ============================================================================
-
-
     signIn: (data) => supabase.auth.signInWithPassword(data),
     signOut: () => supabase.auth.signOut(),
-    user,
-    favoriteIds,
     addFavorite: async (roteiroId) => {
-      console.log("Tentando adicionar aos favoritos com os seguintes IDs:");
-      console.log({ 
-        userId: user?.id, 
-        roteiroId: roteiroId 
-      });
-
-      // Uma verificação extra para nos dar um erro mais claro
       if (!user?.id || !roteiroId) {
-        console.error("ERRO GRAVE: O ID do usuário ou do roteiro está faltando. A operação foi cancelada.");
-        // Isso vai parar a execução e evitar o erro genérico do Supabase
+        console.error("ERRO GRAVE: O ID do usuário ou do roteiro está faltando.");
         throw new Error("ID do usuário ou do roteiro está faltando!");
       }
-      // --- Fim do Passo de Debug ---
       const { data, error } = await supabase
         .from('user_favorites')
         .insert({ user_id: user.id, roteiro_id: roteiroId })
@@ -123,11 +106,9 @@ export const AuthProvider = ({ children }) => {
       
       if (error) throw error;
 
-      // Atualiza o estado local para refletir a mudança instantaneamente
       setFavoriteIds(prevIds => new Set([...prevIds, roteiroId]));
       return data;
     },
-
     removeFavorite: async (roteiroId) => {
       const { error } = await supabase
         .from('user_favorites')
@@ -137,7 +118,6 @@ export const AuthProvider = ({ children }) => {
       
       if (error) throw error;
 
-      // Atualiza o estado local
       setFavoriteIds(prevIds => {
         const newIds = new Set(prevIds);
         newIds.delete(roteiroId);
@@ -145,10 +125,14 @@ export const AuthProvider = ({ children }) => {
       });
     },
     user,
-    loading
+    loading,
+    favoriteIds,
   };
 
-  return <AuthContext.Provider value={value}>{!loading && children}</AuthContext.Provider>;
+  // MUDANÇA SUTIL: Renderizamos os children diretamente.
+  // O estado 'loading' ainda está disponível no contexto para quem precisar.
+  // Isso evita que a árvore de componentes seja removida e recriada, o que é mais robusto.
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
 export const useAuth = () => useContext(AuthContext);

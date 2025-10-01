@@ -477,3 +477,39 @@
 .boto2 {
   padding: var(--padding-11) 1.812rem;
 }
+
+@media (max-width: 767px) {
+
+  .histricoDeRoteiros {
+    width: 100vw;
+  }
+
+  .ttuloETexto h3 {
+    font-size: 16px;
+  }
+
+  .arteConscinciaE {
+    font-size: 14px;
+  }
+
+  .histricoDeRoteirosBody {
+    height: auto;
+    z-index: 3;
+  }
+
+  .cardCultural3 {
+    height: auto;
+  }
+
+  .hoje h1 {
+    font-size: 24px;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .header {
+    width: 100%;
+  }
+}
