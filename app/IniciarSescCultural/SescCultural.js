@@ -7,7 +7,18 @@ import Paradas1 from "../../components/ParadasSescCultural";
 import { useRouter } from "next/navigation";
 import styles from "./SescCultural.module.css";
 
+import { useAuth } from "../../context/AuthContext"; // <-- Verifique se o caminho está certo
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+
 const SescCultural = () => {
+
+  const { user } = useAuth();
+   const supabase = createClientComponentClient();
+  
+    // <-- 3. DEFINIR O ID E O LINK DESTE ROTEIRO
+    //    Você precisa pegar o ID exato deste roteiro na sua tabela 'roteiros' do Supabase.
+    const ROTEIRO_ID_SESC = 9; // <-- MUDE AQUI para o ID correto
+    const GOOGLE_MAPS_LINK = "https://www.google.com/maps/dir/?api=1&origin=My+Location&destination=Mirante+9+de+Julho&waypoints=Museu+de+Arte+de+São+Paulo|Charme+da+Paulista+Restaurante"; // <-- Coloque o link correto aqui
 
   const router = useRouter();
 
@@ -15,9 +26,31 @@ const SescCultural = () => {
     router.back();
   }, [router]);
 
-  const onBotoIniciarRoteiroClick = useCallback(() => {
-    window.open("https://maps.app.goo.gl/uChwBTxnkNbBg1nR9");
-  }, []);
+            // <-- 4. ATUALIZAR A FUNÇÃO DO BOTÃO
+  const handleIniciarRoteiro = async () => {
+// 1. Se o usuário ESTIVER logado, tentamos salvar no histórico
+    if (user) {
+      try {
+        const { error } = await supabase
+          .from('historico_roteiros')
+          .insert({
+            user_id: user.id,
+            roteiro_id: ROTEIRO_ID_SESC, // Lembre-se que essa variável precisa estar definida no seu componente
+          });
+
+        if (error) throw error;
+
+      } catch (error) {
+        console.error("Erro ao salvar histórico:", error.message);
+        // Opcional: Avisa o usuário que o histórico falhou, mas o mapa vai abrir
+        alert("Não foi possível salvar em seu histórico, mas você ainda pode fazer o roteiro.");
+      }
+    }
+
+    // 2. Independentemente de estar logado ou não, ABRIMOS O MAPA
+    // Lembre-se que GOOGLE_MAPS_LINK precisa estar definido no seu componente
+    window.open(GOOGLE_MAPS_LINK, '_blank');
+  };
 
   return (
     <Box className={styles.iniciarRoteiro20}>
@@ -62,7 +95,7 @@ const SescCultural = () => {
           width: 370,
           height: 100,
         }}
-        onClick={onBotoIniciarRoteiroClick}
+        onClick={handleIniciarRoteiro}
       >
         Iniciar rota com Google
       </Button>

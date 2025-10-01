@@ -6,7 +6,18 @@ import Body from "../../components/body2";
 import styles from "./MaspCultural.module.css"; // Certifique-se que este caminho está correto
 import { useRouter } from "next/navigation";
 
+import { useAuth } from "../../context/AuthContext"; // <-- Verifique se o caminho está certo
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+
 const MaspCultural = () => {
+
+  const { user } = useAuth();
+  const supabase = createClientComponentClient();
+  
+    // <-- 3. DEFINIR O ID E O LINK DESTE ROTEIRO
+    //    Você precisa pegar o ID exato deste roteiro na sua tabela 'roteiros' do Supabase.
+    const ROTEIRO_ID_MASP = 1; // <-- MUDE AQUI para o ID correto
+    const GOOGLE_MAPS_LINK = "https://www.google.com/maps/dir/?api=1&origin=My+Location&destination=Mirante+9+de+Julho&waypoints=Museu+de+Arte+de+São+Paulo|Charme+da+Paulista+Restaurante"; // <-- Coloque o link correto aqui
   const router = useRouter();
 
   const onVoltarIconClick = useCallback(() => {
@@ -17,6 +28,32 @@ const MaspCultural = () => {
   const handlePrint = useCallback(() => {
     window.print();
   }, []);
+
+          // <-- 4. ATUALIZAR A FUNÇÃO DO BOTÃO
+  const handleIniciarRoteiro = async () => {
+// 1. Se o usuário ESTIVER logado, tentamos salvar no histórico
+    if (user) {
+      try {
+        const { error } = await supabase
+          .from('historico_roteiros')
+          .insert({
+            user_id: user.id,
+            roteiro_id: ROTEIRO_ID_MASP, // Lembre-se que essa variável precisa estar definida no seu componente
+          });
+
+        if (error) throw error;
+
+      } catch (error) {
+        console.error("Erro ao salvar histórico:", error.message);
+        // Opcional: Avisa o usuário que o histórico falhou, mas o mapa vai abrir
+        alert("Não foi possível salvar em seu histórico, mas você ainda pode fazer o roteiro.");
+      }
+    }
+
+    // 2. Independentemente de estar logado ou não, ABRIMOS O MAPA
+    // Lembre-se que GOOGLE_MAPS_LINK precisa estar definido no seu componente
+    window.open(GOOGLE_MAPS_LINK, '_blank');
+  };
 
   return (
     // Usamos um fragmento <> para ter dois elementos no nível principal
@@ -76,27 +113,27 @@ const MaspCultural = () => {
             />
           </Box>
         </Box>
-        <a href={"https://www.google.com/maps/dir/?api=1&origin=My+Location&destination=Mirante+9+de+Julho&waypoints=Museu+de+Arte+de+São+Paulo|Charme+da+Paulista+Restaurante"} target="_blank" rel="noopener noreferrer" className={styles.slideLink}>
-          <Box // BOTÃO DE INICIAR ROTA!
-            className={styles.botoIniciarRoteiro}
-            sx={{
-              cursor: 'pointer',
-              '@media (max-width: 767px)': {
-                display: 'block !important',
-              },
-              '@media (min-width: 768px)': {
-                display: 'none !important',
-              },
-            }}
+        <Box // BOTÃO DE INICIAR ROTA!
+          className={styles.botoIniciarRoteiro}
+          sx={{
+            cursor: 'pointer',
+            '@media (max-width: 767px)': {
+              display: 'block !important',
+            },
+            '@media (min-width: 768px)': {
+              display: 'none !important',
+            },
+          }}
+          onClick={handleIniciarRoteiro}
+        >
+          <Typography
+            variantMapping={{ inherit: "Button" }}
+            sx={{ fontWeight: "600", fontSize: "30px", color: "white", textAlign: 'center' }}
           >
-            <Typography
-              variantMapping={{ inherit: "Button" }}
-              sx={{ fontWeight: "600", fontSize: "30px", color: "white", textAlign: 'center' }}
-            >
-              Iniciar Rota com Google
-            </Typography>
-          </Box>
-        </a>      
+            Iniciar Rota com Google
+          </Typography>
+        </Box>
+    
         {/*------------------------------------FIM DOS BOTÕES-------------------------------------------*/}
 
         <section className={styles.ttulo}>
