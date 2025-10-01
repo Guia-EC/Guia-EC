@@ -10,7 +10,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Image from "next/image";
 import HeaderButton from "./HeaderButton"; // Seu componente de botão de navegação
 import styles from "./pgina-de-login.module.css";
-import { Link } from "lucide-react";
+import Link from 'next/link';
 
 const PginaDeLogin = () => {
   const [email, setEmail] = useState("");
@@ -122,6 +122,23 @@ const PginaDeLogin = () => {
               />
             </FormControl>
             </Box>
+
+            {/* 2. ADICIONAR O LINK "ESQUECEU SUA SENHA?" AQUI */}
+            <Box sx={{ width: '100%', textAlign: 'right', mt: -1, mb: 2 }}>
+                <Typography 
+                    component={Link} 
+                    href="/esqueci-minha-senha"
+                    variant="body2"
+                    sx={{ 
+                        color: 'text.secondary',
+                        textDecoration: 'none',
+                        '&:hover': { textDecoration: 'underline' } 
+                    }}
+                >
+                    Esqueceu sua senha?
+                </Typography>
+            </Box>
+            
             {error && <Typography color="error" sx={{ mt: 2 }}>{error}</Typography>}
             
             <Box className={styles.botoesDeLogin}>

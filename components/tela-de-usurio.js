@@ -109,16 +109,15 @@ const TelaDeUsurio = ({ className = "", tela = "Home" }) => {
         >
           Histórico de Roteiros
         </Button>
-        <Button
+       {/* <Button
           className={styles.gerenciamentoDeSenha}
           startIcon={<img width="16px" height="16px" src="/padlock-1.png" />}
           disableElevation
           variant="outlined"
-          sx={{ /* ... (estilos inalterados) ... */ }}
-          onClick={onGerenciamentoClick}
-        >
+          sx={{}}
+          onClick={onGerenciamentoClick}>
           Gerenciamento de Senha
-        </Button>
+        </Button> */}
         <Button
           className={styles.faleConosco}
           startIcon={<img width="16px" height="16px" src="/message-1.png" />}
