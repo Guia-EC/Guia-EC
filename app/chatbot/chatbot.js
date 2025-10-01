@@ -11,7 +11,7 @@ import {
   Navigation,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
-import "./chatbot.module.css";
+import "./chatbot.css";
 
 export default function Chatbot() {
   const router = useRouter();
