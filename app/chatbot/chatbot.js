@@ -245,26 +245,24 @@ export default function Chatbot() {
         </div>
 
         {/* Input (Visual + Lógica) */}
-        <form className="chat-input-form" onSubmit={handleSubmit}>
-          <div className="chat-input">
-            <input
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="Pergunte alguma coisa"
-              disabled={isLoading}
-            />
-            <button type="button" className="icon-button">
-              <Mic size={20} />
-            </button>
-            <button
-              type="submit"
-              className="send-button"
-              disabled={!input.trim() || isLoading}
-            >
-              <Send size={16} />
-            </button>
-          </div>
+        <form className="chat-input" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="Pergunte alguma coisa"
+            disabled={isLoading}
+          />
+          <button type="button" className="icon-button">
+            <Mic size={20} />
+          </button>
+          <button
+            type="submit"
+            className="send-button"
+            disabled={!input.trim() || isLoading}
+          >
+            <Send size={16} />
+          </button>
         </form>
 
         <p className="disclaimer">
