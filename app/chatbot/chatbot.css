@@ -276,7 +276,8 @@
     width: 100%;
   }
   .chat-input {
-    width: 100vw;
-    padding: 20px;
+    width: 100%;             /* MUDANÇA 1: Use 100% que respeita o container pai. */
+    box-sizing: border-box;  /* MUDANÇA 2: Faz o padding ser incluído dentro do width, não somado. */
+    padding: 12px;    
   }
 }
