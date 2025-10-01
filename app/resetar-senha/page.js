@@ -68,8 +68,10 @@ export default function ResetPassword() {
       // Força o Supabase a ler a URL e verificar o estado de autenticação
       const { data: { session } } = await supabase.auth.getSession();
 
+      console.log("Sessão recebida na página de reset:", session);
+
       // Se a sessão existir e o método for 'recovery', liberamos a página
-      if (session?.user?.amr?.some(m => m.method === 'recovery')) {
+        if (session) {
         setIsReady(true);
       }
     };
