@@ -116,6 +116,7 @@ const CardHistorico = ({ roteiro }) => {
     );
 };
 
+
 // --- COMPONENTE PRINCIPAL DA PÁGINA ---
 const HistricoDeRoteiros = () => {
   const router = useRouter();
@@ -124,8 +125,10 @@ const HistricoDeRoteiros = () => {
   
   const [historicoAgrupado, setHistoricoAgrupado] = useState({});
   const [loading, setLoading] = useState(true);
-
   const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  // NOVO ESTADO: Para controlar a ordenação ('desc' = mais recente, 'asc' = mais antigo)
+  const [sortOrder, setSortOrder] = useState('desc');
 
   useEffect(() => {
     const fetchHistorico = async () => {
@@ -136,32 +139,16 @@ const HistricoDeRoteiros = () => {
 
       try {
         setLoading(true);
-        // Busca o histórico e os dados dos roteiros relacionados de uma só vez
         const { data, error } = await supabase
           .from('historico_roteiros')
-          .select(`
-            iniciado_em,
-            roteiros (
-              id,
-              nome,
-              descricao,
-              localizacao,
-              url_imagem,
-              path_url,
-              categoria 
-            )
-          `)
+          .select(`iniciado_em, roteiros (id, nome, descricao, localizacao, url_imagem, path_url, categoria)`)
           .eq('user_id', user.id)
           .order('iniciado_em', { ascending: false });
 
         if (error) throw error;
 
-        // Agrupa os roteiros por data
-    const agrupado = data.reduce((acc, item) => {
-          // Converte o timestamp para a data local do usuário antes de agrupar
+        const agrupado = data.reduce((acc, item) => {
           const dataLocal = new Date(item.iniciado_em);
-          
-          // Formata a data local para o formato YYYY-MM-DD para usar como chave
           const ano = dataLocal.getFullYear();
           const mes = String(dataLocal.getMonth() + 1).padStart(2, '0');
           const dia = String(dataLocal.getDate()).padStart(2, '0');
@@ -186,22 +173,15 @@ const HistricoDeRoteiros = () => {
     fetchHistorico();
   }, [user, supabase]);
 
-  // --- NOVA FUNÇÃO PARA LIMPAR O HISTÓRICO ---
-    // FUNÇÃO MODIFICADA: Agora ela só abre o modal
   const handleLimparHistorico = () => {
     setIsModalOpen(true);
   };
 
-   const handleConfirmClearHistory = async () => {
+  const handleConfirmClearHistory = async () => {
     try {
-      const { error } = await supabase
-        .from('historico_roteiros')
-        .delete()
-        .eq('user_id', user.id);
-
+      const { error } = await supabase.from('historico_roteiros').delete().eq('user_id', user.id);
       if (error) throw error;
       setHistoricoAgrupado({});
-      
     } catch (error) {
       console.error("Erro ao limpar o histórico:", error.message);
       alert("Ocorreu um erro ao tentar limpar o histórico.");
@@ -221,12 +201,20 @@ const HistricoDeRoteiros = () => {
       return <Typography sx={{ textAlign: 'center', my: 5 }}>Faça login para ver seu histórico.</Typography>;
     }
 
-    const datas = Object.keys(historicoAgrupado);
+    // LÓGICA DE ORDENAÇÃO: Ordenamos as datas aqui antes de renderizar
+    const datas = Object.keys(historicoAgrupado).sort((a, b) => {
+        const dataA = new Date(a);
+        const dataB = new Date(b);
+        if (sortOrder === 'asc') {
+            return dataA - dataB; // Mais antigo primeiro
+        }
+        return dataB - dataA; // Mais recente primeiro
+    });
+
     if (datas.length === 0) {
       return <Typography sx={{ textAlign: 'center', my: 5 }}>Você ainda não iniciou nenhum roteiro.</Typography>;
     }
 
-    // Renderiza os dados
     return datas.map((dataKey) => (
       <Box key={dataKey} className={styles.hoje}>
         <Typography className={styles.hojeQuartaFeira} variant="h1" sx={{ fontWeight: "600" }}>
@@ -238,7 +226,6 @@ const HistricoDeRoteiros = () => {
       </Box>
     ));
   };
-
 
   return (
     <main className={styles.histricoDeRoteiros}>
@@ -268,8 +255,8 @@ const HistricoDeRoteiros = () => {
               <Button 
                 onClick={handleLimparHistorico}
                 variant="outlined"
-                color="secondary"
-                size="small"
+                color="warning"
+                size="medium"
                 sx={{ ml: 'auto', mr: 2, textTransform: 'none', borderRadius: '20px' }}
               >
                 Limpar
@@ -278,10 +265,43 @@ const HistricoDeRoteiros = () => {
 
       </Box>
       <Box className={styles.body}>
-        <Box className={styles.filtros}>
-          <FiltroHistricoDeRoteiros estado="Padrão" />
-          <FiltroHistricoDeRoteiros9 propriedade1="Padrão" />
+        <Box className={styles.filtros} sx={{ display: 'flex', gap: '10px' }}>
+          <Button
+              variant={sortOrder === 'desc' ? 'contained' : 'outlined'}
+              onClick={() => setSortOrder('desc')}
+              size="small"
+              sx={{
+              borderRadius: '8px',
+              borderColor: 'black',
+              color: sortOrder === 'desc' ? 'white' : 'black',
+              backgroundColor: sortOrder === 'desc' ? 'black' : 'transparent',
+              '&:hover': {
+                borderColor: 'black',
+                backgroundColor: sortOrder === 'desc' ? '#333' : '#f0f0f0',
+              }
+            }}
+          >
+              Mais Recente - Mais Antigo
+          </Button>
+          <Button
+              variant={sortOrder === 'asc' ? 'contained' : 'outlined'}
+              onClick={() => setSortOrder('asc')}
+              size="small"
+              sx={{
+              borderRadius: '8px',
+              borderColor: 'black',
+              color: sortOrder === 'asc' ? 'white' : 'black',
+              backgroundColor: sortOrder === 'asc' ? 'black' : 'transparent',
+              '&:hover': {
+                borderColor: 'black',
+                backgroundColor: sortOrder === 'asc' ? '#333' : '#f0f0f0',
+              }
+            }}
+          >
+              Mais Antigo - Mais Recente
+          </Button>
         </Box>
+
         <section className={styles.dias}>
           {renderContent()}
         </section>
