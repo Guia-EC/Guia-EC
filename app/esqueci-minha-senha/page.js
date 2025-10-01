@@ -22,18 +22,14 @@ export default function ForgotPassword() {
     setMessage('');
     setError('');
 
-    // Esta é a URL para onde o usuário será redirecionado APÓS clicar no link do e-mail
-    const redirectTo = `${window.location.origin}/resetar-senha`;
-
-    const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo,
-    });
+    // A chamada ao Supabase continua a mesma! Não precisa do redirectTo.
+    const { error } = await supabase.auth.resetPasswordForEmail(email);
 
     if (error) {
-      setError('Não foi possível enviar o link de redefinição. Verifique o e-mail e tente novamente.');
-      console.error("Erro ao solicitar redefinição de senha:", error.message);
+      setError('Não foi possível enviar o código. Verifique o e-mail e tente novamente.');
     } else {
-      setMessage('Link de redefinição de senha enviado! Verifique sua caixa de entrada (e a pasta de spam).');
+      // SUCESSO! Redireciona para a página de verificação, passando o email na URL
+      router.push(`/verificar-codigo?email=${encodeURIComponent(email)}`);
     }
 
     setLoading(false);
