@@ -205,11 +205,15 @@
   padding: 12px;
   border-top: 1px solid #eee;
   background: #fafafa;
-  margin-bottom: 10px;
+  box-sizing: border-box;
+  width: 100%;        /* sempre ocupar 100% do container pai */
+  max-width: 100%;    /* nunca estourar */
 }
+
 
 .chat-input input {
   flex: 1;
+  min-width: 0;       /* ESSENCIAL p/ não empurrar ícones */
   border: none;
   background: transparent;
   padding: 8px;
@@ -271,7 +275,7 @@
     margin: 0;
 }
 
-@media (max-width: 767px ) {
+/* @media (max-width: 767px ) {
   .chat-body {
     width: 100%;
   }
@@ -279,11 +283,21 @@
     border: 1px solid #ccc;
     border-radius: 100px;
     align-self: center;
-    width: 90%;             /* MUDANÇA 1: Use 100% que respeita o container pai. */
-    box-sizing: border-box;  /* MUDANÇA 2: Faz o padding ser incluído dentro do width, não somado. */
+    width: 90%;            
+    box-sizing: border-box; 
     padding: 12px;    
   }
   .send-button {
     position: relative;
+  }
+} */
+
+@media (max-width: 767px) {
+  .chat-input {
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    margin: 8px auto;   /* centraliza no mobile */
+    width: 90%;         /* ocupa quase toda a tela */
+    padding: 10px;
   }
 }
