@@ -354,6 +354,7 @@
 
     .roteirosFavoritados20 p {
       margin: 0;
+      padding: 0;
     }
 
     .roteirosFavoritados20 h5 {
@@ -367,4 +368,5 @@
     .roteirosFavoritados20 a {
       align-self: self-start;
     }
+
 }
