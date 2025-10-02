@@ -7,6 +7,21 @@ body {
   -webkit-tap-highlight-color: transparent;
   background-color: var(--color-gray-100);
 }
+
+html,
+body,
+#__next {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   /* Color */
   --color-gainsboro: #e0e0e0;
