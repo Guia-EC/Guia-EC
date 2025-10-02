@@ -1,10 +1,7 @@
-/* Seu arquivo chatbot.css (versão final) */
-
 .chat-container {
   display: flex;
   flex-direction: column;
-  height: 100%; /* Ocupa 100% do pai (body > #__next) que agora tem 100% de altura */
-  width: 100%;
+  height: 100dvh;
   background: #fff;
 }
 
@@ -15,7 +12,6 @@
   gap: 12px;
   padding: 12px;
   border-bottom: 1px solid #eee;
-  flex-shrink: 0; /* Impede o header de encolher */
 }
 
 .icon-button {
@@ -48,13 +44,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
 }
 
 .chat-title {
   font-size: 16px;
   font-weight: bold;
-  margin: 0;
 }
 
 .status {
@@ -73,11 +67,21 @@
   animation: pulse 1.5s infinite;
 }
 
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
 /* Chat Body */
 .chat-body {
-  flex: 1; /* A mágica do Flexbox: ocupa todo o espaço vertical que sobrar */
+  flex: 1;
   padding: 16px;
-  overflow-y: auto; /* Apenas o corpo do chat terá rolagem */
+  overflow-y: auto;
 }
 
 .message {
@@ -92,17 +96,12 @@
   border-radius: 20px;
   border-top-left-radius: 4px;
   max-width: 80%;
-  word-wrap: break-word;
-}
-
-.message-bubble p {
-  margin: 0;
 }
 
 .welcome {
   font-weight: bold;
   margin-bottom: 6px;
-  font-size: 14px;
+  font-size: 14px; /* mantém referência do tamanho base */
 }
 
 /* Suggestions */
@@ -133,7 +132,6 @@
   cursor: pointer;
   transition: 0.2s;
   gap: 10px;
-  width: 100%;
 }
 
 .suggestion:hover {
@@ -164,18 +162,50 @@
   font-family: Poppins, sans-serif;
 }
 
-/* Footer (Input + Disclaimer) */
-.chat-footer {
-  padding: 12px;
-  border-top: 1px solid #eee;
-  background: #fafafa;
-  flex-shrink: 0; /* Impede o rodapé de encolher */
+/* Typing Indicator */
+.typing-indicator {
+  display: flex;
+  gap: 4px;
+  padding: 8px 12px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  border-top-left-radius: 4px;
+  align-items: center;
 }
 
+.dot {
+  width: 6px;
+  height: 6px;
+  background: gray;
+  border-radius: 50%;
+  animation: bounce 0.6s infinite alternate;
+}
+
+.dot.delay1 {
+  animation-delay: 0.1s;
+}
+.dot.delay2 {
+  animation-delay: 0.2s;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-4px);
+  }
+}
+
+/* Input */
 .chat-input {
   display: flex;
   align-items: center;
   gap: 8px;
+  padding: 12px;
+  border-top: 1px solid #eee;
+  background: #fafafa;
+  margin-bottom: 10px;
 }
 
 .chat-input input {
@@ -192,12 +222,12 @@
   background: #FF9F1C;
   border: none;
   border-radius: 50%;
-  padding: 10px;
+  padding: 10px; /* Aumenta área */
   color: white;
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; /* Centraliza ícone */
   transition: background 0.2s;
 }
 
@@ -212,23 +242,17 @@
 
 .send-button svg,
 .icon-button svg {
+  /* deixa ícone do microfone e send iguais */
   width: 22px;
   height: 22px;
-}
-
-.send-button svg {
-  color: white;
-}
-.icon-button svg {
   color: #555;
 }
-
 
 .disclaimer {
   font-size: 11px;
   color: gray;
   text-align: center;
-  margin: 8px 0 0 0; /* Espaçamento entre o input e o disclaimer */
+  margin: 6px 0;
 }
 
 .user-message {
@@ -237,39 +261,29 @@
 
 .user-message .message-bubble {
   background: #FF9F1C;
-  color: white;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 4px;
+  color: white; 
+  border-top-left-radius: 20px; 
+  border-top-right-radius: 4px;  
 }
 
 .user-message .message-bubble p {
-  color: white;
+    color: white;
+    margin: 0;
 }
 
-/* Animações */
-@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
-@keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-4px); } }
-.typing-indicator { display: flex; gap: 4px; padding: 8px 12px; background: #f9f9f9; border-radius: 12px; border-top-left-radius: 4px; align-items: center; }
-.dot { width: 6px; height: 6px; background: gray; border-radius: 50%; animation: bounce 0.6s infinite alternate; }
-.dot.delay1 { animation-delay: 0.1s; }
-.dot.delay2 { animation-delay: 0.2s; }
-
-/* ======================================================= */
-/* ESTILOS PARA MOBILE - ROBUSTO E CONSISTENTE             */
-/* ======================================================= */
-@media (max-width: 767px) {
-  .chat-footer {
-    padding: 8px;
-    background-color: white;
-    border-top: none;
+@media (max-width: 767px ) {
+  .chat-body {
+    width: 100%;
   }
   .chat-input {
     border: 1px solid #ccc;
     border-radius: 100px;
-    padding: 4px 4px 4px 12px;
-    background-color: white;
+    align-self: center;
+    width: 90%;             /* MUDANÇA 1: Use 100% que respeita o container pai. */
+    box-sizing: border-box;  /* MUDANÇA 2: Faz o padding ser incluído dentro do width, não somado. */
+    padding: 12px;    
   }
-  .disclaimer {
-    padding: 0 10px;
+  .send-button {
+    position: relative;
   }
 }

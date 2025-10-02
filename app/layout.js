@@ -14,6 +14,7 @@ export const metadata = {
   title: 'Roteirize',
   description: 'Sua descrição aqui',
   manifest: '/manifest.json', // <-- ESSA LINHA É ESSENCIAL!
+  viewport: 'width=device-width, initial-scale=1.0',
 };
 
 export default function RootLayout({ children }) {
