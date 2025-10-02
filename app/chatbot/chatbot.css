@@ -3,6 +3,7 @@
   flex-direction: column;
   height: 100dvh;
   background: #fff;
+  overflow: hidden;
 }
 
 /* Header */
@@ -151,7 +152,7 @@
 }
 
 .suggestion-text {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   font-family: Poppins, sans-serif;
 }
@@ -205,6 +206,7 @@
   padding: 12px;
   border-top: 1px solid #eee;
   background: #fafafa;
+  margin-bottom: 10px;
 }
 
 .chat-input input {
@@ -260,36 +262,28 @@
 
 .user-message .message-bubble {
   background: #FF9F1C;
-  color: white;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 4px;
+  color: white; 
+  border-top-left-radius: 20px; 
+  border-top-right-radius: 4px;  
 }
 
 .user-message .message-bubble p {
-  color: white;
-  margin: 0;
+    color: white;
+    margin: 0;
 }
 
-/* ======================================================= */
-/* ESTILOS PARA MOBILE COM AS CORREÇÕES APLICADAS          */
-/* ======================================================= */
-@media (max-width: 767px) {
-  /* Adiciona um "respiro" geral ao container principal para criar uma margem segura */
-  .chat-container {
-    padding: 0 12px 12px 12px;
-    box-sizing: border-box; /* Garante que o padding não aumente o tamanho total */
+@media (max-width: 767px ) {
+  .chat-body {
+    width: 100%;
   }
-
-  /* Simplifica o input para ele se adaptar ao container pai */
   .chat-input {
     border: 1px solid #ccc;
     border-radius: 100px;
-    width: 100%;             /* Ocupa 100% do espaço do pai (que agora tem padding) */
-    align-self: initial;     /* Remove a centralização desnecessária */
-    margin-bottom: 0;        /* Remove a margem que causava o overflow de altura */
-    box-sizing: border-box;
+    align-self: center;
+    width: 90%;             /* MUDANÇA 1: Use 100% que respeita o container pai. */
+    box-sizing: border-box;  /* MUDANÇA 2: Faz o padding ser incluído dentro do width, não somado. */
+    padding: 12px;    
   }
-
   .send-button {
     position: relative;
   }
