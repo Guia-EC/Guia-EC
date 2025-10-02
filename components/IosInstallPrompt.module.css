@@ -1,0 +1,66 @@
+/* Estilo para o banner de instrução */
+.promptBanner {
+  position: fixed;
+  bottom: 85px; /* Posição acima da sua barra de navegação */
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 24px);
+  max-width: 450px;
+  background-color: #ffffff;
+  color: #1c1c1e;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  z-index: 2000;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  animation: slideUp 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.promptContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.promptText {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.shareIcon {
+  display: inline-block;
+  vertical-align: middle;
+  margin: -2px 4px 0;
+  color: #007aff; /* Cor azul padrão da Apple */
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #8a8a8e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.closeButton:hover {
+  background-color: #f2f2f7;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translate(-50%, 60px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
