@@ -128,3 +128,8 @@
  overflow-y: auto;
  
 }
+
+.closeButton {
+  -webkit-appearance: none;
+  appearance: none;
+}
