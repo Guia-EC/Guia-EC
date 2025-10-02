@@ -115,3 +115,7 @@ body {
 .home-chat-overrides .chat-header {
   display: none;
 }
+
+.home-chat-overrides .chat-input {
+  margin: 50px auto;
+}
