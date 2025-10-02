@@ -1,7 +1,7 @@
 /* Estilo para o banner de instrução */
 .promptBanner {
   position: fixed;
-  bottom: 85px; /* Posição acima da sua barra de navegação */
+  bottom: 150px; /* Posição acima da sua barra de navegação */
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 24px);
