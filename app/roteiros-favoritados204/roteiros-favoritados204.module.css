@@ -350,12 +350,13 @@
 @media (max-width: 767px) {
     .roteirosFavoritados20 {
       padding: 40px 30px 170px 30px;
+      align-items: flex-start;
     }
 
     .roteirosFavoritados20 p {
       margin: 0;
-      padding-left: 5px;
       font-size: 14px;
+      padding: 0;
     }
 
     .roteirosFavoritados20 h5 {
