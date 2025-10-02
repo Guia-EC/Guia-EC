@@ -109,7 +109,7 @@ const CardHistorico = ({ roteiro }) => {
                     <Box className={styles.boto} onClick={handleFazerRoteiro}>
                         <div className={styles.fazerRoteiro}>Fazer Roteiro</div>
                     </Box>
-                    <Favoritar1 estado="Padrão" />
+                    {/* <Favoritar1 estado="Padrão" /> */}
                 </Box>
             </Box>
         </Box>
