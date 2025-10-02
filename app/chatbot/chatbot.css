@@ -277,6 +277,11 @@
   appearance: none;
 }
 
+.closeButton {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 .suggestion-text {
   /* Força a cor do texto a ser a que definimos. 
     O Safari às vezes ignora a cor herdada em botões.
