@@ -9,7 +9,7 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: { xs: '90%', sm: 400 }, // Responsivo para telas menores
+  width: { xs: '90%', sm: 370 }, // Responsivo para telas menores
   bgcolor: 'background.paper',
   border: '1px solid #ccc',
   boxShadow: 24,
