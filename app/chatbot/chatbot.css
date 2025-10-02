@@ -296,4 +296,8 @@
     width: 90%;         /* ocupa quase toda a tela */
     padding: 10px;
   }
+
+  .message-bubble {
+    white-space: pre-wrap; /* <-- ADICIONE ESTA LINHA */
+  }
 }

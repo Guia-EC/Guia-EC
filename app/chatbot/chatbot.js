@@ -14,8 +14,10 @@ import { useRouter } from "next/navigation";
 import "./chatbot.css";
 
 import ReactMarkdown from "react-markdown";
+import { useAuth } from "../../context/AuthContext";
 
 export default function Chatbot() {
+  const { user } = useAuth();
   const router = useRouter();
 
   // Função para o botão Voltar
@@ -86,7 +88,8 @@ export default function Chatbot() {
         body: JSON.stringify({
           message: messageText,
           sessionId: sessionId,
-          location: userLocation, // Envia o objeto de localização (ou null se não tiver)
+          location: userLocation,
+          userId: user ? user.id : null, // Envia o objeto de localização (ou null se não tiver)
         }),
       });
 
