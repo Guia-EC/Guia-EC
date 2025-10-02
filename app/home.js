@@ -38,12 +38,11 @@ const Home205 = () => {
 
   const [showInstallButton, setShowInstallButton] = useState(true);
 
-  useEffect(() => {
+   useEffect(() => {
     const handleBeforeInstallPrompt = (event) => {
       event.preventDefault();
       console.log("✅ Evento de instalação capturado! Habilitando o botão.");
       setInstallPromptEvent(event);
-      // --- NOVO: Habilita nosso botão assim que o evento for recebido ---
       setIsInstallable(true); 
     };
 
@@ -55,20 +54,25 @@ const Home205 = () => {
   }, []);
 
   const handleInstallClick = async () => {
-    // A verificação 'isInstallable' já previne o clique, mas é bom ter aqui também
     if (!installPromptEvent) return;
     
     installPromptEvent.prompt();
+
+    // --- MUDANÇA: Esconde o botão após 2 segundos do clique, independentemente da escolha. ---
+    setTimeout(() => {
+      setShowInstallButton(false);
+    }, 2000); // 2 segundos
+
     const { outcome } = await installPromptEvent.userChoice;
 
     if (outcome === 'accepted') {
-      console.log('Usuário aceitou a instalação!');
-      // --- NOVO: Esconde o botão após a instalação ser aceita ---
-      setIsInstallable(false);
+      console.log('Usuário aceitou a instalação! O botão já está programado para sumir.');
     } else {
-      console.log('Usuário recusou a instalação.');
+      console.log('Usuário recusou a instalação. O botão irá sumir mesmo assim.');
     }
+    // Limpa os estados após o uso
     setInstallPromptEvent(null);
+    setIsInstallable(false);
   };
 
   //FIM DA NOVA LÓGICA!!!!!!!!

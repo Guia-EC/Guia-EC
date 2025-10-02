@@ -20,8 +20,8 @@
 
 .installFabDisabled {
   position: fixed;
-  bottom: 100px;
-  right: 20px;
+  bottom: 150px;
+  right: 155px;
   background-color: #a0a0a0; /* Cor cinza para indicar que está desabilitado */
   color: #e0e0e0;
   border: none;
@@ -43,7 +43,7 @@
 .installFab {
   position: fixed;
   bottom: 100px;
-  right: 20px;
+  right: 100px;
   background-color: #FF7D00; /* Sua cor primária vibrante */
   color: white;
   border: none;
