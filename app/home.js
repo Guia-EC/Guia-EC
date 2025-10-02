@@ -33,41 +33,39 @@ const Home205 = () => {
   //TUDO QUE FOI IMPORTADO DE NOVO AQUI
 
   const [installPromptEvent, setInstallPromptEvent] = useState(null);
+  // --- NOVO: Estado para controlar se o botão deve estar ativo ---
+  const [isInstallable, setIsInstallable] = useState(false);
 
   useEffect(() => {
     const handleBeforeInstallPrompt = (event) => {
-      // Previne o comportamento padrão do navegador
       event.preventDefault();
-      console.log("✅ Evento beforeinstallprompt capturado na Home!");
-      // Guarda o evento para ser usado depois
+      console.log("✅ Evento de instalação capturado! Habilitando o botão.");
       setInstallPromptEvent(event);
+      // --- NOVO: Habilita nosso botão assim que o evento for recebido ---
+      setIsInstallable(true); 
     };
 
-    // Adiciona o listener para o evento
     window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
 
-    // Função de limpeza para remover o listener
     return () => {
       window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
     };
   }, []);
 
-    const handleInstallClick = async () => {
-    if (!installPromptEvent) {
-      console.log("O evento de instalação não está disponível.");
-      return;
-    }
+  const handleInstallClick = async () => {
+    // A verificação 'isInstallable' já previne o clique, mas é bom ter aqui também
+    if (!installPromptEvent) return;
     
-    // Mostra o prompt de instalação
     installPromptEvent.prompt();
     const { outcome } = await installPromptEvent.userChoice;
 
     if (outcome === 'accepted') {
       console.log('Usuário aceitou a instalação!');
+      // --- NOVO: Esconde o botão após a instalação ser aceita ---
+      setIsInstallable(false);
     } else {
       console.log('Usuário recusou a instalação.');
     }
-    // O evento só pode ser usado uma vez, então limpamos o estado
     setInstallPromptEvent(null);
   };
 
@@ -120,19 +118,18 @@ const Home205 = () => {
       {/* NAVBAR */}
       <Navbar activePage="home"/>
 
-      {/* --- NOVO: Botão de Instalação Flutuante --- */}
-      {/* Este botão só será renderizado se o evento de instalação for capturado */}
-      {installPromptEvent && (
-        <button
-          className={styles.installFab}
-          onClick={handleInstallClick}
-          title="Instalar App"
-        >
-          <Download size={24} />
-          <span>Instalar App</span>
-        </button>
-      )}
-
+      {/* --- BOTÃO DE INSTALAÇÃO (Modo Demo) --- */}
+      {/* Ele sempre será renderizado, mas o estilo e a função de clique dependem do estado 'isInstallable' */}
+      <button
+        className={isInstallable ? styles.installFab : styles.installFabDisabled}
+        onClick={handleInstallClick}
+        disabled={!isInstallable} // Desabilita o clique se não for instalável
+        title={isInstallable ? "Instalar App" : "Interaja com a página para habilitar a instalação"}
+      >
+        <Download size={24} />
+        {/* --- NOVO: Texto do botão muda dinamicamente --- */}
+        <span>{isInstallable ? 'Instalar App' : 'Instalar...'}</span>
+      </button>
     </Box>
   );
 };
