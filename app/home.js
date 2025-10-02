@@ -1,6 +1,7 @@
 // app/home205.js
 "use client";
-import { useCallback } from "react";
+import { useCallback, useState, useEffect } from "react";
+import { Download } from "lucide-react";
 import { Box } from "@mui/material";
 import Image from "next/image";
 import Navbar from "../components/navbar"
@@ -28,6 +29,49 @@ import { useMediaQuery } from '../hooks/useMediaQuery';
 const Home205 = () => {
   const router = useRouter();
   const isMobile = useMediaQuery('(max-width: 768px)'); // Ponto de quebra para mobile
+
+  //TUDO QUE FOI IMPORTADO DE NOVO AQUI
+
+  const [installPromptEvent, setInstallPromptEvent] = useState(null);
+
+  useEffect(() => {
+    const handleBeforeInstallPrompt = (event) => {
+      // Previne o comportamento padrão do navegador
+      event.preventDefault();
+      console.log("✅ Evento beforeinstallprompt capturado na Home!");
+      // Guarda o evento para ser usado depois
+      setInstallPromptEvent(event);
+    };
+
+    // Adiciona o listener para o evento
+    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+
+    // Função de limpeza para remover o listener
+    return () => {
+      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+    };
+  }, []);
+
+    const handleInstallClick = async () => {
+    if (!installPromptEvent) {
+      console.log("O evento de instalação não está disponível.");
+      return;
+    }
+    
+    // Mostra o prompt de instalação
+    installPromptEvent.prompt();
+    const { outcome } = await installPromptEvent.userChoice;
+
+    if (outcome === 'accepted') {
+      console.log('Usuário aceitou a instalação!');
+    } else {
+      console.log('Usuário recusou a instalação.');
+    }
+    // O evento só pode ser usado uma vez, então limpamos o estado
+    setInstallPromptEvent(null);
+  };
+
+  //FIM DA NOVA LÓGICA!!!!!!!!
 
   const onFavoritesButtomIconClick = useCallback(() => {
     router.push("/roteiros-favoritados204");
@@ -75,6 +119,20 @@ const Home205 = () => {
       
       {/* NAVBAR */}
       <Navbar activePage="home"/>
+
+      {/* --- NOVO: Botão de Instalação Flutuante --- */}
+      {/* Este botão só será renderizado se o evento de instalação for capturado */}
+      {installPromptEvent && (
+        <button
+          className={styles.installFab}
+          onClick={handleInstallClick}
+          title="Instalar App"
+        >
+          <Download size={24} />
+          <span>Instalar App</span>
+        </button>
+      )}
+
     </Box>
   );
 };
