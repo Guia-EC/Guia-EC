@@ -12,6 +12,13 @@ import { Toaster } from "react-hot-toast";
 export const metadata = {
   title: "Guia-EC",
   description: "Sua descrição aqui",
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+    viewportFit: 'cover', // <-- ESSA LINHA É A CHAVE!
+  },
   manifest: "/manifest.json", // <-- ESSA LINHA É ESSENCIAL!
 };
 

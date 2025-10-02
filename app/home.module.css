@@ -37,6 +37,7 @@
   background-color: var(--color-gray-500);
   justify-content: center;
   z-index: 1000;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 .navbarOptions {
   justify-content: flex-start;
