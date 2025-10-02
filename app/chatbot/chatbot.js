@@ -15,6 +15,8 @@ import {
 import { useRouter } from "next/navigation";
 import "./chatbot.css";
 
+import ReactMarkdown from "react-markdown";
+
 export default function Chatbot() {
   const router = useRouter();
 
@@ -170,7 +172,7 @@ export default function Chatbot() {
             <div key={index} className={`message ${msg.sender === "Você" ? "user-message" : "ai-message"}`}>
               {msg.sender === "Maia" && <div className="avatar">M</div>}
               <div className="message-bubble">
-                {msg.text && msg.text.split("\n").map((line, i) => <p key={i}>{line}</p>)}
+                {msg.text && <ReactMarkdown>{msg.text}</ReactMarkdown>}
                 {msg.mapUrl && (
                   <iframe
                     src={msg.mapUrl}
