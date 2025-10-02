@@ -102,6 +102,7 @@
  padding: 10px 20px;
  border-bottom: 1px solid #eee;
  flex-shrink: 0;
+ 
 }
 
 .chatPanelHeader h2 {
@@ -125,4 +126,5 @@
 .chatPanelBody {
  flex-grow: 1;
  overflow-y: auto;
+ 
 }

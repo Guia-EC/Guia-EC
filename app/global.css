@@ -111,3 +111,7 @@ body {
     visibility: visible !important;
   }
 }
+
+.home-chat-overrides .chat-header {
+  display: none;
+}
