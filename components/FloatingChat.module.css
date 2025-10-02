@@ -129,7 +129,7 @@
  
 }
 
-.closeButton {
+.closeButton svg {
   -webkit-appearance: none;
   appearance: none;
 }
