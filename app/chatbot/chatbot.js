@@ -14,6 +14,7 @@ import { useRouter } from "next/navigation";
 import "./chatbot.css";
 
 import ReactMarkdown from "react-markdown";
+import remarkGfm from 'remark-gfm';
 import { useAuth } from "../../context/AuthContext";
 
 export default function Chatbot() {
@@ -210,7 +211,7 @@ export default function Chatbot() {
             >
               {msg.sender === "Maia" && <div className="avatar">M</div>}
               <div className="message-bubble">
-                {msg.text && <ReactMarkdown>{msg.text}</ReactMarkdown>}
+                {msg.text && <ReactMarkdown remarkPlugins={[remarkGfm]}>{msg.text}</ReactMarkdown>}
                 {msg.mapUrl && (
                   <iframe
                     src={msg.mapUrl}
