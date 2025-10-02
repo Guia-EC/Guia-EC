@@ -42,7 +42,7 @@ const IosInstallPrompt = () => {
     <div className={styles.promptBanner}>
       <div className={styles.promptContent}>
         <p className={styles.promptText}>
-          Para instalar, toque em <Share size={16} className={styles.shareIcon} />, clique em "Mais" e depois em "Adicionar à Tela de Início".
+          Para instalar, toque em <Share size={16} className={styles.shareIcon} />, depois em "Mais" e depois em "Adicionar à Tela de Início"!.
         </p>
         <button onClick={handleClose} className={styles.closeButton} aria-label="Fechar">
           <X size={20} />
