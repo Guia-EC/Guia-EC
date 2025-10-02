@@ -252,7 +252,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center
+    justify-content: center;
   }
 
   .loginGoogleApple {
@@ -265,13 +265,13 @@
   }
 
   .botoGoogleApple {
-    width: 156px;
+    width: 170px;
     height: 54px;
     background-color: #f1f1f1;
     border-radius: 10px;
     font-size: 14px;
     text-transform: capitalize;
-    gap: 5px;
+    gap: 10px;
     color: black;
   }
 
