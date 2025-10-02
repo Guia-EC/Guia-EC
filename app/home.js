@@ -30,9 +30,6 @@ const Home205 = () => {
   const router = useRouter();
   const isMobile = useMediaQuery('(max-width: 768px)'); // Ponto de quebra para mobile
 
-  //TUDO QUE FOI IMPORTADO DE NOVO AQUI
-  //FIM DA NOVA LÓGICA!!!!!!!!
-
   const onFavoritesButtomIconClick = useCallback(() => {
     router.push("/roteiros-favoritados204");
   }, [router]);
