@@ -36,6 +36,8 @@ const Home205 = () => {
   // --- NOVO: Estado para controlar se o botão deve estar ativo ---
   const [isInstallable, setIsInstallable] = useState(false);
 
+  const [showInstallButton, setShowInstallButton] = useState(true);
+
   useEffect(() => {
     const handleBeforeInstallPrompt = (event) => {
       event.preventDefault();
@@ -118,18 +120,18 @@ const Home205 = () => {
       {/* NAVBAR */}
       <Navbar activePage="home"/>
 
-      {/* --- BOTÃO DE INSTALAÇÃO (Modo Demo) --- */}
-      {/* Ele sempre será renderizado, mas o estilo e a função de clique dependem do estado 'isInstallable' */}
-      <button
-        className={isInstallable ? styles.installFab : styles.installFabDisabled}
-        onClick={handleInstallClick}
-        disabled={!isInstallable} // Desabilita o clique se não for instalável
-        title={isInstallable ? "Instalar App" : "Interaja com a página para habilitar a instalação"}
-      >
-        <Download size={24} />
-        {/* --- NOVO: Texto do botão muda dinamicamente --- */}
-        <span>{isInstallable ? 'Instalar App' : 'Instalar...'}</span>
-      </button>
+      {/* --- MUDANÇA: O botão agora só é renderizado se 'showInstallButton' for true --- */}
+      {showInstallButton && (
+        <button
+          className={isInstallable ? styles.installFab : styles.installFabDisabled}
+          onClick={handleInstallClick}
+          disabled={!isInstallable}
+          title={isInstallable ? "Instalar App" : "Interaja com a página para habilitar a instalação"}
+        >
+          <Download size={24} />
+          <span>{isInstallable ? 'Instalar App' : 'Instalar...'}</span>
+        </button>
+      )}
     </Box>
   );
 };
