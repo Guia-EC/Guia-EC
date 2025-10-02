@@ -262,6 +262,7 @@
   
   .detalhe {
       width: 10rem;
+      display: none;
   }
 
   .roteiros {
