@@ -11,7 +11,7 @@ import { Toaster } from 'react-hot-toast';
 
 
 export const metadata = {
-  title: 'Roteirize',
+  title: 'Guia-EC',
   description: 'Sua descrição aqui',
   manifest: '/manifest.json', // <-- ESSA LINHA É ESSENCIAL!
   viewport: 'width=device-width, initial-scale=1.0',
