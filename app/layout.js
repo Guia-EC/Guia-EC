@@ -8,7 +8,6 @@ import { AuthProvider } from "../context/AuthContext";
 import "./global.css";
 import muiTheme from "../theme";
 import { Toaster } from "react-hot-toast";
-import PWAServiceWorker from '@/components/PWAServiceWorker';
 
 
 import DesktopBlocker from "../components/DesktopBlocker"; 
@@ -36,9 +35,6 @@ export default function RootLayout({ children }) {
           <AppRouterCacheProvider options={{ enableCssLayer: true }}>
             <ThemeProvider theme={muiTheme}>
               <CssBaseline />
-              <PWAServiceWorker />
-              {/* O {children} (seu app) fica no centro de tudo */}
-              {children}
             </ThemeProvider>
           </AppRouterCacheProvider>
         </AuthProvider>
