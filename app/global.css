@@ -8,6 +8,12 @@ body {
   background-color: var(--color-gray-100);
 }
 
+@media (min-width: 1024px) {
+  body {
+    overflow: hidden;
+  }
+}
+
 :root {
   /* Color */
   --color-gainsboro: #e0e0e0;
