@@ -6,7 +6,7 @@
   justify-content: flex-start;
 }
 .histricoDeRoteiros {
-  height: 112.5rem;
+  height: auto;
   background-color: var(--color-gray-100);
   flex-direction: column;
   z-index: 0;
