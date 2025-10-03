@@ -34,7 +34,7 @@ const SeleoDeTipoDeRoteiro2023 = () => {
           height={20}
           sizes="100vw"
           alt=""
-          src="/bot-o-de-voltar.svg"
+          src="/Bot-o-de-Voltar.svg"
           onClick={onVectorIconClick}
         />
       </Box>
