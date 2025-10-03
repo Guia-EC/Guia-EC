@@ -1,28 +1,19 @@
-// Importações existentes...
 import { ReactNode } from "react";
 import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
-import { AuthProvider } from "../context/AuthContext";
+import DesktopBlocker from "../components/DesktopBlocker";
 
+// 1. Importe o AuthProvider que criamos
+import { AuthProvider } from "../context/AuthContext"; // Ajuste o caminho se necessário
 import "./global.css";
 import muiTheme from "../theme";
 import { Toaster } from "react-hot-toast";
 
-
-import DesktopBlocker from "../components/DesktopBlocker"; 
-
 export const metadata = {
   title: "Guia-EC",
   description: "Sua descrição aqui",
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
-    viewportFit: 'cover', // <-- ESSA LINHA É A CHAVE!
-  },
-  manifest: "/manifest.json", // <-- ESSA LINHA É ESSENCIAL!
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({ children }) {
@@ -35,6 +26,7 @@ export default function RootLayout({ children }) {
           <AppRouterCacheProvider options={{ enableCssLayer: true }}>
             <ThemeProvider theme={muiTheme}>
               <CssBaseline />
+              {children}
             </ThemeProvider>
           </AppRouterCacheProvider>
         </AuthProvider>
