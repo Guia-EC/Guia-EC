@@ -18,7 +18,7 @@ const IbiraRaiz = () => {
     // <-- 3. DEFINIR O ID E O LINK DESTE ROTEIRO
     //    Você precisa pegar o ID exato deste roteiro na sua tabela 'roteiros' do Supabase.
     const ROTEIRO_ID_IBIRA = 6; // <-- MUDE AQUI para o ID correto
-    const GOOGLE_MAPS_LINK = "https://www.google.com/maps/dir/?api=1&destination=Edificio+Copan,+Av.+Ipiranga,+200+-+República,+São+Paulo+-+SP"; // <-- Coloque o link correto aqui
+    const GOOGLE_MAPS_LINK = "https://www.google.com/maps/dir/?api=1&origin=My+Location&destination=Hobby+Hamburguer&waypoints=Parque+Ibirapuera"; // <-- Coloque o link correto aqui
 
 
   const router = useRouter();

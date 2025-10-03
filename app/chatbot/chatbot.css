@@ -147,7 +147,7 @@
 }
 
 .suggestion-text {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   font-family: Poppins, sans-serif;
 }
@@ -269,6 +269,25 @@
 .user-message .message-bubble p {
     color: white;
     margin: 0;
+}
+
+.suggestion {
+  /* Remove a aparência nativa do botão no iOS, que causa o estilo indesejado */
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.suggestion-text {
+  /* Força a cor do texto a ser a que definimos. 
+    O Safari às vezes ignora a cor herdada em botões.
+    Você pode trocar #1c1c1e pela cor exata que desejar.
+  */
+  color: #1c1c1e; 
+}
+
+.suggestion-category {
+  /* Também é uma boa prática garantir a cor da categoria */
+  color: #6c757d; /* Cor cinza padrão, ajuste se necessário */
 }
 
 /* @media (max-width: 767px ) {

@@ -52,6 +52,8 @@
   justify-content: center;
   cursor: pointer;
   z-index: 2;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .iniciarRotaCom {

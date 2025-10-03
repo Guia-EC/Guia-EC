@@ -80,7 +80,7 @@ export default function FloatingChat({ cor }) {
          </div>
 
          {/* Renderiza seu componente de chatbot já existente aqui dentro */}
-         <div className={styles.chatPanelBody}>
+         <div className="home-chat-overrides"> 
           <Chatbot />
          </div>
       </div>

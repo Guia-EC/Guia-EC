@@ -1,9 +1,11 @@
 // app/home205.js
 "use client";
-import { useCallback } from "react";
+import { useCallback, useState, useEffect } from "react";
+import { Download } from "lucide-react";
 import { Box } from "@mui/material";
 import Image from "next/image";
 import Navbar from "../components/navbar"
+import IosInstallPrompt from "../components/IosInstallPrompt";
 // Seus componentes antigos
 import Carroussel143 from "../components/carroussel143";
 import Slider142 from "../components/slider142";
@@ -73,6 +75,8 @@ const Home205 = () => {
         {isMobile ? <BannerCarouselAirbnb /> : <DesktopAirbnbBannerGrid />}
       </section>
       
+
+      <IosInstallPrompt />
       {/* NAVBAR */}
       <Navbar activePage="home"/>
     </Box>

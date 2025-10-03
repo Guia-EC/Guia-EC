@@ -183,18 +183,6 @@ const PginaDeLogin = () => {
                 />
                 Google
               </Button>
-              <Button className={styles.botoGoogleApple}>
-                <Image
-                  className={styles.logoApple}
-                  loading="lazy"
-                  width={42.8}
-                  height={39}
-                  sizes="100vw"
-                  alt="Logo"
-                  src="/Apple-Icon.svg"
-                />
-                iCloud
-              </Button>
             </Box>
           </Box>
         </section>

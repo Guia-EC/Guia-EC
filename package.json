@@ -18,7 +18,8 @@
     "react-hot-toast": "^2.6.0",
     "react-markdown": "^10.1.0",
     "react-router-dom": "^7.5.0",
-    "react-zoom-pan-pinch": "^3.7.0"
+    "react-zoom-pan-pinch": "^3.7.0",
+    "remark-gfm": "^4.0.1"
   },
   "name": "douglas_rocha's_team's_project",
   "private": true,
