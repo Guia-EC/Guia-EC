@@ -481,7 +481,7 @@
 @media (max-width: 767px) {
 
   .histricoDeRoteiros {
-    width: 100vw;
+    width: 100%
   }
 
   .ttuloETexto h3 {
