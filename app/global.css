@@ -125,3 +125,7 @@ body {
 .home-chat-overrides .chat-input {
   margin: 50px auto;
 }
+
+.body-no-scroll {
+  overflow: hidden;
+}

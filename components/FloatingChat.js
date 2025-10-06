@@ -40,7 +40,23 @@ export default function FloatingChat({ cor }) {
       clearTimeout(hideTimeout);
       clearInterval(intervalId);
     };
-  }, []);  
+  }, []);
+
+   useEffect(() => {
+    if (isChatOpen) {
+      // Quando o chat abre, adiciona a classe para bloquear o scroll do fundo
+      document.body.classList.add('body-no-scroll');
+    } else {
+      // Quando o chat fecha, remove a classe para liberar o scroll
+      document.body.classList.remove('body-no-scroll');
+    }
+    
+    // Função de limpeza para garantir que a classe seja removida se o componente for destruído
+    return () => {
+      document.body.classList.remove('body-no-scroll');
+    };
+  }, [isChatOpen]); // Este efeito depende do estado 'isChatOpen'
+
  
   const toggleChat = () => {
     setIsChatOpen(!isChatOpen);
