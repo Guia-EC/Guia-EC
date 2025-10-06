@@ -223,7 +223,10 @@ const PaginaDeCadastro = () => {
             {error && <Typography color="error" sx={{ mt: 2, textAlign: 'center' }}>{error}</Typography>}
             {successMessage && <Typography color="primary" sx={{ mt: 2, textAlign: 'center', color: 'green' }}>{successMessage}</Typography>}
 
-            <Button type="submit" variant="contained" fullWidth className={styles.submitButton} sx={{ mt: 2, p: 1.5 }} disabled={isSubmitting}>
+            <Button type="submit" variant="contained" fullWidth className={styles.submitButton} sx={{ mt: 2, p: 1.5, '&:disabled': {
+      backgroundColor: '#0f0f0f', // Ex: '#0059b3' (um azul mais escuro)
+      color: '#ffffff' // Ex: '#cccccc' (um cinza claro para o texto/spinner)
+    }}} disabled={isSubmitting}>
               {isSubmitting ? <CircularProgress size={24} color="inherit" /> : "Cadastrar"}
             </Button>
           </Box>
