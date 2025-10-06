@@ -170,10 +170,9 @@ const PginaDeLogin = () => {
             </Typography>
 
             <Box className={styles.loginGoogleApple}>
-              <Button className={styles.botoGoogleApple}>
+              <Button className={styles.botoGoogleApple} onClick={handleGoogleLogin} type="button">
                 <Image
                   className={styles.logoGoogle}
-                  onClick={handleGoogleLogin}
                   loading="lazy"
                   width={42.8}
                   height={39}
