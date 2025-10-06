@@ -10,7 +10,7 @@
 .floatingButton {
   position: fixed;
   bottom: 120px;
-  right: 25px;
+  right: 20px;
   background-color: var(--cor-tema, #cccccc); /* Cor do seu app */
   color: white;
   border: none;
