@@ -37,7 +37,6 @@
 }
 .body {
   justify-content: flex-start;
-  padding: 0 1.062rem;
   gap: 3.125rem;
   text-align: left;
   font-size: var(--font-size-16);
