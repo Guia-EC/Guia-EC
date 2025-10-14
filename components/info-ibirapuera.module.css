@@ -290,6 +290,11 @@
   background-color: #333;
 }
 
+.infoSanfona {
+  display: flex;
+  flex-direction: column;
+}
+
 @media (max-width: 767px) {
   .infoIbirapuera {
     padding: 0;
@@ -345,5 +350,136 @@
 
   .galleryContainer { /*Conteiner Da Galeria!*/
     margin: 60px 0 140px 0;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .infoIbirapuera {
+    overflow-x: hidden;
+    height: auto;
+    padding: 0;
+  }
+
+  .imagemHero {
+    height: 40rem; /* Aumenta a altura da imagem principal */
+    background-image: url(/IBIRARESPONSIVO.png);
+    padding: 60px 50px;
+  }
+
+  .ttulo {
+    top: 26rem; /* Reposiciona o título */
+    left: 58px;
+    max-width: 800px;
+  }
+
+  .voltarIcon {
+    width: 60px;
+    height: 60px;
+    margin: 0;
+  }
+
+  .arrowIcon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .prqIbirapuera{
+    font-size: 75px; /* Aumenta a fonte do título */
+    width: 100vw;
+  }
+
+  .parqueIbirapuera {
+    font-size: 40px;
+    width: 100vw;
+  }
+
+  .oscarNyemeierZenon {
+    font-size: 22px;
+    width: 80vw;
+  }
+
+  .avenidaPedroLvares {
+    font-size: 22px;
+    width: 80vw;
+  }
+
+  .body {
+    padding: 0px 60px; /* Aumenta o espaçamento lateral */
+    margin-top: 100px;
+    align-items: flex-start;
+    min-height: fit-content;
+    margin-bottom: 10rem;
+    display: flex;
+    flex-direction: row;
+    gap: 5%; /* Espaço entre as colunas */
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  
+  .accordionContainer {
+    padding: 0;
+  }
+
+  .infoSanfona {
+    flex: 1; /* Faz a coluna ter 50% da largura */
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+
+  .galleryContainer {
+    flex: 1; /* Faz a coluna ter 50% da largura */
+    top: 6rem;
+    position: sticky;
+    height: fit-content;
+    max-width: 100%;
+    height: 50vh; /* Altura da galeria relativa à tela */
+    margin-top: 1rem;
+  }
+
+  .infos {
+    margin-top: 0; /* Remove a margem extra do mobile */
+    gap: 25px;
+    padding: 0;
+  }
+  
+  .informaes {
+    font-size: 26px; /* Aumenta o subtítulo */
+  }
+
+  .oIbirapueraFoiContainer, .accordionText {
+    font-size: 20px; /* Aumenta a fonte dos parágrafos */
+  }
+
+  .imageContainer {
+    position: absolute;
+    top: 0; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 90%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .chevron {
+    top: 45%;
+    font-size: 20px;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+
+  }
+
+  .accordionButton img {
+    font-size: 80px;
+  }
+
+  .accordionButton span {
+    font-size: 20px;
   }
 }
