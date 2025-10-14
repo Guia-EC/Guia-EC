@@ -356,7 +356,6 @@
 @media (min-width: 768px) {
 
   .infoIbirapuera {
-    overflow-x: hidden;
     height: auto;
     padding: 0;
   }
@@ -386,12 +385,13 @@
 
   .prqIbirapuera{
     font-size: 75px; /* Aumenta a fonte do título */
-    width: 100vw;
+    width: 80vw;
+    line-height: 40px;
   }
 
   .parqueIbirapuera {
     font-size: 40px;
-    width: 100vw;
+    width: 80vw;
   }
 
   .oscarNyemeierZenon {
@@ -431,13 +431,23 @@
 
 
   .galleryContainer {
-    flex: 1; /* Faz a coluna ter 50% da largura */
-    top: 6rem;
-    position: sticky;
-    height: fit-content;
     max-width: 100%;
     height: 50vh; /* Altura da galeria relativa à tela */
     margin-top: 1rem;
+  }
+
+  .leftColumn {
+    flex: 1; /* Faz a coluna ter 50% da largura */
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .rightColumn {
+    flex: 1; /* Faz a coluna ter 50% da largura */
+    position: sticky; /* Efeito "grudento" ao rolar a página */
+    top: 6rem;
+    height: fit-content;
   }
 
   .infos {
