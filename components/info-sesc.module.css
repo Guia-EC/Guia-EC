@@ -350,3 +350,149 @@
     font-size: 16px;
   }
 }
+
+@media (min-width: 768px) {
+
+  .infoSesc {
+    height: auto;
+    padding: 0;
+  }
+
+  .imagemHero {
+    height: 40rem; /* Aumenta a altura da imagem principal */
+    background-image: url(/SESCRESPONSIVO.png);
+    padding: 60px 50px;
+  }
+
+  .ttulo {
+    top: 26rem; /* Reposiciona o título */
+    left: 58px;
+    max-width: 800px;
+  }
+
+  .voltarIcon {
+    width: 60px;
+    height: 60px;
+    margin: 0;
+  }
+
+  .arrowIcon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .sesc24 {
+    font-size: 75px; /* Aumenta a fonte do título */
+    width: 80vw;
+    line-height: 40px;
+  }
+
+  .sesc24De {
+    font-size: 40px;
+    width: 80vw;
+  }
+
+  .pauloMendesDa {
+    font-size: 22px;
+    width: 80vw;
+  }
+
+  .rua24De {
+    font-size: 22px;
+    width: 80vw;
+  }
+
+  .scrollvel {
+    height: 92.625rem;
+  }
+
+  .body {
+    padding: 0px 60px; /* Aumenta o espaçamento lateral */
+    margin-top: 220px;
+    margin-bottom: 220px;
+    height: auto;
+    align-items: flex-start;
+    min-height: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 5%; /* Espaço entre as colunas */
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  
+  .accordionContainer {
+    padding: 0;
+  }
+
+  .infoSanfona {
+    flex: 1; /* Faz a coluna ter 50% da largura */
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+
+  .galleryContainer {
+    max-width: 100%;
+    height: 50vh; /* Altura da galeria relativa à tela */
+    margin-top: 1rem;
+  }
+
+  .leftColumn {
+    flex: 1; /* Faz a coluna ter 50% da largura */
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .rightColumn {
+    flex: 1; /* Faz a coluna ter 50% da largura */
+    position: sticky; /* Efeito "grudento" ao rolar a página */
+    top: 6rem;
+    height: fit-content;
+  }
+
+  .infos {
+    margin-top: 0; /* Remove a margem extra do mobile */
+    gap: 25px;
+    padding: 0;
+  }
+  
+  .informaes {
+    font-size: 26px; /* Aumenta o subtítulo */
+  }
+
+  .reformaEAmpliaoContainer, .accordionText {
+    font-size: 20px; /* Aumenta a fonte dos parágrafos */
+  }
+
+  .imageContainer {
+    position: absolute;
+    top: 0; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 90%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .chevron {
+    top: 45%;
+    font-size: 20px;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+
+  }
+
+  .accordionButton img {
+    font-size: 80px;
+  }
+
+  .accordionButton span {
+    font-size: 20px;
+  }
+}
