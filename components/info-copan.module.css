@@ -351,12 +351,12 @@
 @media (min-width: 768px) {
   .imagemHero {
     height: 40rem; /* Aumenta a altura da imagem principal */
-    background-image: url(/MASPRESPONSIVO.png);
+    background-image: url(/COPANRESPONSIVO.png);
     padding: 60px 50px;
   }
 
   .ttulo {
-    top: 30rem; /* Reposiciona o título */
+    top: 26rem; /* Reposiciona o título */
     left: 58px;
     max-width: 800px;
   }
@@ -373,6 +373,8 @@
 
   .copan {
     font-size: 100px; /* Aumenta a fonte do título */
+    line-height: 120px;
+    left: 1rem;
   }
 
   .museuDeArte {
@@ -385,7 +387,7 @@
 
   .body {
     padding: 0px 60px; /* Aumenta o espaçamento lateral */
-    margin-top: 100px;
+    margin-top: 70px;
     align-items: flex-start;
     min-height: fit-content;
     margin-bottom: 10rem;
@@ -431,7 +433,6 @@
   .galleryContainer {
     max-width: 100%;
     height: 50vh; /* Altura da galeria relativa à tela */
-    margin-top: 1rem;
   }
 
   .imageContainer {
