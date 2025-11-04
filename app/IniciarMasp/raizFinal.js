@@ -165,13 +165,17 @@ const IniciarRoteiro20 = () => {
 
       {/* 2. Aqui está a área de impressão. Ela fica fora da div "noPrint". */}
       {/* Ela é invisível na tela, mas será a única coisa visível na impressão. */}
-      <section className={`${styles.printableArea} print-visible`}>
-        <img
-          src="/roteiro-masp.jpg" // O caminho para a sua imagem
-          alt="Conteúdo do roteiro a ser impresso"
-          className={styles.printImage}
-        />
-      </section>
+      <section 
+  className={`${styles.printableArea} print-visible`} 
+  style={{ 
+    color: 'black', 
+    padding: '50px', 
+    border: '2px solid black' 
+  }}
+>
+  <h1>TESTE DE IMPRESSÃO</h1>
+  <p>Se isso aparecer no modal, a culpa é da imagem.</p>
+</section>
     </>
   );
 };
