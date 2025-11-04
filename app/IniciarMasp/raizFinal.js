@@ -5,77 +5,40 @@ import Image from "next/image";
 import Body from "../../components/body";
 import styles from "./raizFinal.module.css"; // Certifique-se que este caminho está correto
 import { useRouter } from "next/navigation";
-
 import { useAuth } from "../../context/AuthContext"; // <-- Verifique se o caminho está certo
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 
-const IniciarRoteiro20 = () => {
 
+const IniciarRoteiro20 = () => {
   const { user } = useAuth();
   const supabase = createClientComponentClient();
-  
+
     // <-- 3. DEFINIR O ID E O LINK DESTE ROTEIRO
-    //    Você precisa pegar o ID exato deste roteiro na sua tabela 'roteiros' do Supabase.
+
+    //    Você precisa pegar o ID exato deste roteiro na sua tabela 'roteiros' do Supabase
     const ROTEIRO_ID_MASP = 2; // <-- MUDE AQUI para o ID correto
     const GOOGLE_MAPS_LINK = "https://www.google.com/maps/dir/?api=1&origin=My+Location&destination=Mirante+9+de+Julho&waypoints=Museu+de+Arte+de+São+Paulo|Charme+da+Paulista+Restaurante"; // <-- Coloque o link correto aqui
 
 
   const router = useRouter();
-
   const onVoltarIconClick = useCallback(() => {
+
      router.back();
+
   }, [router]);
 
+
   // Função simplificada que apenas chama a impressão do navegador
-  // const handlePrint = useCallback(() => {
-  //   console.log("O CLIQUE DO BOTÃO FOI REGISTRADO!");
-  //   alert("O CLIQUE FUNCIONOU!");
-  //   window.print();
-  // }, []);
 
   const handlePrint = useCallback(() => {
-    // 1. Vamos pegar o CONTEÚDO que falhou no teste anterior
-    // (O HTML do seu <section className="print-visible">)
-    const conteudoParaImprimir = `
-      <section 
-        style="
-          color: black; 
-          padding: 50px; 
-          border: 2px solid black;
-          font-family: sans-serif;
-        "
-      >
-        <h1>TESTE DE IMPRESSÃO</h1>
-        <p>Se isso aparecer no modal, o iframe funcionou.</p>
-      </section>
-    `;
 
-    // 2. Criar um iframe invisível
-    const iframe = document.createElement('iframe');
-    iframe.style.display = 'none'; // Esconde ele da tela
-    document.body.appendChild(iframe); // Adiciona ele na página
+    window.print();
 
-    // 3. Escrever o conteúdo lá dentro
-    const iframeDoc = iframe.contentWindow.document;
-    iframeDoc.open();
-    iframeDoc.write('<html><head><title>Impressão Guia-ec</title></head><body>');
-    iframeDoc.write(conteudoParaImprimir);
-    iframeDoc.write('</body></html>');
-    iframeDoc.close();
-
-    // 4. O "pulo do gato": Chamar o print() DO IFRAME
-    iframe.contentWindow.focus(); // Foco é importante para alguns navegadores
-    iframe.contentWindow.print();
-
-    // 5. Limpar o lixo depois de um tempo
-    setTimeout(() => {
-      document.body.removeChild(iframe);
-    }, 1000); // 1 segundo depois
-
-  }, []); // O array de dependências continua vazio
+  }, []);
 
         // <-- 4. ATUALIZAR A FUNÇÃO DO BOTÃO
   const handleIniciarRoteiro = async () => {
+
 // 1. Se o usuário ESTIVER logado, tentamos salvar no histórico
     if (user) {
       try {
@@ -131,9 +94,7 @@ const IniciarRoteiro20 = () => {
               '@media (min-width: 768px)': {
                 display: 'block !important',
               },
-              
-            }}>
-    
+            }}>   
             <Typography
               variantMapping={{ inherit: "Button" }}
               sx={{ fontWeight: "600", fontSize: "30px", color: "white", textAlign: 'center' }}
@@ -148,9 +109,8 @@ const IniciarRoteiro20 = () => {
               },
               '@media (min-width: 768px)': {
                 display: 'block !important',
-              }, 
-            }}>
-              
+              },
+            }}>           
             <Image
               width={100}
               height={100}
@@ -177,7 +137,7 @@ const IniciarRoteiro20 = () => {
           >
             Iniciar Rota com Google
           </Typography>
-        </Box>   
+        </Box>  
         {/*------------------------------------FIM DOS BOTÕES-------------------------------------------*/}
 
         <section className={styles.ttulo}>
@@ -208,17 +168,13 @@ const IniciarRoteiro20 = () => {
 
       {/* 2. Aqui está a área de impressão. Ela fica fora da div "noPrint". */}
       {/* Ela é invisível na tela, mas será a única coisa visível na impressão. */}
-      <section 
-  className={`${styles.printableArea} print-visible`} 
-  style={{ 
-    color: 'black', 
-    padding: '50px', 
-    border: '2px solid black' 
-  }}
->
-  <h1>TESTE DE IMPRESSÃO</h1>
-  <p>Se isso aparecer no modal, a culpa é da imagem.</p>
-</section>
+      <section className={`${styles.printableArea} print-visible`}>
+        <img
+          src="/roteiro-masp.jpg" // O caminho para a sua imagem
+          alt="Conteúdo do roteiro a ser impresso"
+          className={styles.printImage}
+        />
+      </section>
     </>
   );
 };
