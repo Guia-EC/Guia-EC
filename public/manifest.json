@@ -1,24 +1,23 @@
 
 {
-  "short_name": "Guia-EC",
+  "short_name": "Roteirize",
   "start_url": "/",
   "display": "standalone",
   "description": "Seus roteiros incríveis em São Paulo.",
-  "background_color": "#FFFFFF",
-  "theme_color": "#FF7D00",
+  "background_color": "#ff9f1c",
   "icons": [
     {
-      "src": "/logo-ec-1@2x.png", 
+      "src": "/logo-192x192.png", 
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/logo-ec-1@2x.png",
+      "src": "/logo-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     },
         {
-      "src": "/logo-ec-1@2x.png",
+      "src": "logo-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
