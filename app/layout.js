@@ -10,6 +10,8 @@ import "./global.css";
 import muiTheme from "../theme";
 import { Toaster } from "react-hot-toast";
 
+import SWManager from "../components/SWManager";
+
 export const metadata = {
   title: "Guia-EC",
   description: "Sua descrição aqui",
@@ -21,6 +23,7 @@ export default function RootLayout({ children }) {
     <html lang="pt-br">
       <body>
         <DesktopBlocker />
+        <SWManager />
         <AuthProvider>
           <Toaster position="top-center" />
           <AppRouterCacheProvider options={{ enableCssLayer: true }}>
