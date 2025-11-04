@@ -20,11 +20,11 @@ import HeaderHome from '../components/HeaderHome';
 
 // Nossos novos componentes e o hook
 import { BannerCarousel } from '../components/BannerCarousel';
-import DesktopBannerGrid from '../components/DesktopBannerGrid';
+// import DesktopBannerGrid from '../components/DesktopBannerGrid';
 import { BannerCarouselSympla } from '../components/BannerCarouselSympla';
-import DesktopSymplaBannerGrid from '../components/DesktopSymplaBannerGrid';
+// import DesktopSymplaBannerGrid from '../components/DesktopSymplaBannerGrid';
 import { BannerCarouselAirbnb } from '../components/BannerCarouselAirbnb';
-import DesktopAirbnbBannerGrid from '../components/DesktopAirbnbBannerGrid';
+// import DesktopAirbnbBannerGrid from '../components/DesktopAirbnbBannerGrid';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 
 const Home205 = () => {
@@ -55,7 +55,8 @@ const Home205 = () => {
       {/* SEÇÃO DOS BANNERS EC COM LÓGICA RESPONSIVA */}
       <section>
         <h2 className={styles.tituloPrincipalMobile1}>Conheça a melhor faculdade de <br /> Arquitetura e Urbanismo 🖤</h2>
-        {isMobile ? <BannerCarousel /> : <DesktopBannerGrid />}
+        {/* {isMobile ? <BannerCarousel /> : <DesktopBannerGrid />} */}
+        <BannerCarousel /> 
       </section>
       
       
@@ -64,7 +65,8 @@ const Home205 = () => {
       {/* SEÇÃO DOS BANNERS SYMPLA COM LÓGICA RESPONSIVA */}
       <section>
         <h2 className={styles.tituloPrincipalMobile2}>Confira os destaques de São Paulo <br /> com a Sympla</h2>
-        {isMobile ? <BannerCarouselSympla /> : <DesktopSymplaBannerGrid />}
+        {/* {isMobile ? <BannerCarouselSympla /> : <DesktopSymplaBannerGrid />} */}
+        <BannerCarouselSympla />
       </section>
 
       <Slider343 />
@@ -72,7 +74,8 @@ const Home205 = () => {
       {/* SEÇÃO DOS BANNERS Airbnb COM LÓGICA RESPONSIVA */}
       <section>
         <h2 className={styles.tituloPrincipalMobile3}>Hospede-se e vivencie de perto pontos <br /> históricos e culturais com a Airbnb</h2>
-        {isMobile ? <BannerCarouselAirbnb /> : <DesktopAirbnbBannerGrid />}
+        {/* {isMobile ? <BannerCarouselAirbnb /> : <DesktopAirbnbBannerGrid />} */}
+        <BannerCarouselAirbnb />
       </section>
       
 

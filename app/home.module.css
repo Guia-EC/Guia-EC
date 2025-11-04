@@ -161,10 +161,9 @@
 }
 
 @media (min-width: 769px) and (max-width: 3000px) {
-  .tituloPrincipalMobile1, .tituloPrincipalMobile2, .tituloPrincipalMobile, .tituloPrincipalMobile3{
+  /* .tituloPrincipalMobile1, .tituloPrincipalMobile2, .tituloPrincipalMobile, .tituloPrincipalMobile3{
     display: none;
-  }
-
+  } */
   .home20 > *:not(.navbar) {
     width: 100%;
     margin-bottom: 1rem;
@@ -173,9 +172,14 @@
 }
 
 @media (min-width: 768px){
+
+  .tituloPrincipalMobile1, .tituloPrincipalMobile2, .tituloPrincipalMobile, .tituloPrincipalMobile3 {
+    font-size: 30px;
+  }
+
   .home20 {
     gap: 4rem;
-    margin-bottom: 195px;
+    margin-bottom: 100px;
   }
 
   .navbar {

@@ -34,7 +34,7 @@ export const BannerCarouselSympla = () => {
                 height={300}
                 style={{
                   width: '100%',
-                  height: '231.8px',
+                  height: '100%',
                   borderRadius: '16px',
                   display: 'block', // Garante que a imagem se comporte bem dentro do link
                 }}
