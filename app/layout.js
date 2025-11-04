@@ -1,8 +1,9 @@
-import { ReactNode } from "react";
+import { ReactNod } from "react";
 import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import DesktopBlocker from "../components/DesktopBlocker";
+  
 
 // 1. Importe o AuthProvider que criamos
 import { AuthProvider } from "../context/AuthContext"; // Ajuste o caminho se necessário
@@ -11,6 +12,8 @@ import muiTheme from "../theme";
 import { Toaster } from "react-hot-toast";
 
 import SWManager from "../components/SWManager";
+import PageHead from "../components/PageHead";
+
 
 export const metadata = {
   title: "Guia-EC",
@@ -22,6 +25,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
       <body>
+        <PageHead />
         <DesktopBlocker />
         <SWManager />
         <AuthProvider>

@@ -4,7 +4,7 @@
   "start_url": "/",
   "display": "standalone",
   "description": "Seus roteiros incríveis em São Paulo.",
-  "background_color": "#ff9f1c",
+  "background_color": "#fafafa",
   "icons": [
     {
       "src": "/logo-192x192.png", 
