@@ -27,11 +27,52 @@ const IniciarRoteiro20 = () => {
   }, [router]);
 
   // Função simplificada que apenas chama a impressão do navegador
+  // const handlePrint = useCallback(() => {
+  //   console.log("O CLIQUE DO BOTÃO FOI REGISTRADO!");
+  //   alert("O CLIQUE FUNCIONOU!");
+  //   window.print();
+  // }, []);
+
   const handlePrint = useCallback(() => {
-    console.log("O CLIQUE DO BOTÃO FOI REGISTRADO!");
-    alert("O CLIQUE FUNCIONOU!");
-    // window.print();
-  }, []);
+    // 1. Vamos pegar o CONTEÚDO que falhou no teste anterior
+    // (O HTML do seu <section className="print-visible">)
+    const conteudoParaImprimir = `
+      <section 
+        style="
+          color: black; 
+          padding: 50px; 
+          border: 2px solid black;
+          font-family: sans-serif;
+        "
+      >
+        <h1>TESTE DE IMPRESSÃO</h1>
+        <p>Se isso aparecer no modal, o iframe funcionou.</p>
+      </section>
+    `;
+
+    // 2. Criar um iframe invisível
+    const iframe = document.createElement('iframe');
+    iframe.style.display = 'none'; // Esconde ele da tela
+    document.body.appendChild(iframe); // Adiciona ele na página
+
+    // 3. Escrever o conteúdo lá dentro
+    const iframeDoc = iframe.contentWindow.document;
+    iframeDoc.open();
+    iframeDoc.write('<html><head><title>Impressão Guia-ec</title></head><body>');
+    iframeDoc.write(conteudoParaImprimir);
+    iframeDoc.write('</body></html>');
+    iframeDoc.close();
+
+    // 4. O "pulo do gato": Chamar o print() DO IFRAME
+    iframe.contentWindow.focus(); // Foco é importante para alguns navegadores
+    iframe.contentWindow.print();
+
+    // 5. Limpar o lixo depois de um tempo
+    setTimeout(() => {
+      document.body.removeChild(iframe);
+    }, 1000); // 1 segundo depois
+
+  }, []); // O array de dependências continua vazio
 
         // <-- 4. ATUALIZAR A FUNÇÃO DO BOTÃO
   const handleIniciarRoteiro = async () => {
