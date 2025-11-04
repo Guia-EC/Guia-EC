@@ -28,7 +28,9 @@ const IniciarRoteiro20 = () => {
 
   // Função simplificada que apenas chama a impressão do navegador
   const handlePrint = useCallback(() => {
-    window.print();
+    console.log("O CLIQUE DO BOTÃO FOI REGISTRADO!");
+    alert("O CLIQUE FUNCIONOU!");
+    // window.print();
   }, []);
 
         // <-- 4. ATUALIZAR A FUNÇÃO DO BOTÃO
