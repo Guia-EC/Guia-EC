@@ -296,6 +296,20 @@
 }
 
 @media (max-width: 767px) {
+  
+  .imageContainer {
+    position: relative;
+    top: 0; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 90%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .infoIbirapuera {
     padding: 0;
     height: 78rem;
