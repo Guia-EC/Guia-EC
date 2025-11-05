@@ -84,3 +84,15 @@
     height: 116rem;
   }
 }
+
+/* AJUSTES RESPONSIVO TABLET */
+
+@media (min-width: 768px){
+  .listaDeCards {
+    gap: 50px; 
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+    
+  }
+}

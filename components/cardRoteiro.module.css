@@ -127,3 +127,33 @@ padding: var(--padding-11) 1.812rem;
         border-top-right-radius: 12px;
     }
 }
+
+/* AJUSTES RESPONSIVO TABLET */
+
+@media (min-width: 768px){
+    .tituloWrapper h3{
+        font-size: 24px;
+    }
+
+    .texto{
+        font-size: 18px;
+    }
+
+    .locationSpaceIcon{
+        width: 20px
+    }
+    
+    .localizacaoTexto{
+        font-size: 18px;
+    }
+
+    .boto{
+        width: 200px;
+        font-size: 18px;
+    }
+
+    
+
+
+  
+}
