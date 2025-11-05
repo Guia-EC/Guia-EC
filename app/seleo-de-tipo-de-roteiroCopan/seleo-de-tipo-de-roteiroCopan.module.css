@@ -209,8 +209,8 @@
   .seleoDeTipoDeRoteiro20 {
     padding: 60px 50px;
     justify-content: center;
-    gap: 120px
-    ;
+    gap: 70px;
+    overflow-x: hidden;
   }
 
   .creditSummaryIcon {
@@ -229,7 +229,7 @@
     margin: 0 auto;
     align-items: flex-start;
     justify-content: center;
-    flex-grow: 1;
+    flex-grow: 1; 
   }
 
 
@@ -246,22 +246,19 @@
   }
 
   .ttulo {
-    width: 75%;
+    width: 90%;
     padding-bottom: 1rem;
     border-bottom: 1px solid black;
   }
 
-   .ttulo p {
-    width: 100%;
-    font-size: 25px; 
-  }
-
   .qualTipoDe {
-    font-size: 36px;
+    font-size: 30px;
+    width: 110%;
   }
   
   .detalhe {
       width: 10rem;
+      display: none;
   }
 
   .roteiros {
@@ -270,6 +267,7 @@
     align-items: center; /* Centraliza a pilha de cards */
     flex-wrap: wrap;
     gap: 3.5rem; /* Espaço entre os cards */
+    width: 100%;
   }
 
   .raiz {
@@ -281,7 +279,7 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.19);
   }
 
-  .imagem {
+  .imagem, .imagem2, .seleoDeTipoDeRoteiro20Imagem {
     display: block; /* Garante que a imagem apareça aqui também */
     width: 70rem; /* Largura da imagem no desktop */
     height: 100%;
@@ -289,11 +287,10 @@
   }
   
   .seleoDeTipoDeRoteiro20Body {
-    width: 100%;
     height: 100%;
     flex-grow: 1;
-    padding: 2rem; /* Padding interno */
-    align-items: flex-start; /* Alinha o texto à esquerda no desktop */
+    padding: 2rem; 
+    align-items: flex-start; 
   }
 
   /* Barras coloridas na vertical no desktop, dentro da imagem */
@@ -308,11 +305,7 @@
     border-radius: 0;
   }
 
-  .copanRaiz {
-    font-size: 40px;
-  }
-
-  .partindoDoCopan {
+  .partindoDoMasp {
     font-size: 18px;
     line-height: 1.5;
     text-align: justify;
@@ -322,5 +315,12 @@
     font-size: 24px;
   }
 
+  .ibirapueraRaiz{
+    font-size: 24px;
+  }
+
+  .partindoDoCopan{
+    font-size: 18px;
+  }
 }
 
