@@ -408,7 +408,7 @@
   .body {
     padding: 0px 60px; /* Aumenta o espaçamento lateral */
     margin-top: 50px;
-    margin-bottom: 180px;
+    margin-bottom: 13rem;
     height: auto;
     align-items: flex-start;
     min-height: fit-content;

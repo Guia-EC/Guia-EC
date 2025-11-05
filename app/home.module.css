@@ -183,8 +183,9 @@
   }
 
   .navbar {
-    width: 65%;
+    width: 560px;
     height: 140px;
+    border-radius: 100px;
   }
 
   .navbarOptions{
