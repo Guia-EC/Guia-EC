@@ -271,6 +271,7 @@
     padding: 60px 50px;
     justify-content: center;
     gap: 70px;
+    overflow-x: hidden;
   }
 
   .creditSummaryIcon {
@@ -289,7 +290,7 @@
     margin: 0 auto;
     align-items: flex-start;
     justify-content: center;
-    flex-grow: 1;
+    flex-grow: 1; 
   }
 
 
@@ -306,19 +307,14 @@
   }
 
   .ttulo {
-    width: 75%;
+    width: 90%;
     padding-bottom: 1rem;
     border-bottom: 1px solid black;
   }
 
-   .ttulo p {
-    width: 100%;
-    font-size: 25px; 
-  }
-
   .qualTipoDe {
-    font-size: 25px;
-    width: 100%;
+    font-size: 30px;
+    width: 110%;
   }
   
   .detalhe {
@@ -332,6 +328,7 @@
     align-items: center; /* Centraliza a pilha de cards */
     flex-wrap: wrap;
     gap: 3.5rem; /* Espaço entre os cards */
+    width: 100%;
   }
 
   .raiz {

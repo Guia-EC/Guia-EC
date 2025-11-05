@@ -245,14 +245,14 @@
   }
 
   .ttulo {
-    width: 75%;
+    width: 90%;
     padding-bottom: 1rem;
     border-bottom: 1px solid black;
   }
 
    .ttulo p {
-    width: 100%;
-    font-size: 25px; 
+    width: 110%;
+    font-size: 30px; 
   }
 
   .qualTipoDe {
@@ -315,7 +315,6 @@
   .partindoDoMasp {
     font-size: 18px;
     line-height: 1.5;
-    text-align: justify;
   }
 
   .ttuloETexto p {

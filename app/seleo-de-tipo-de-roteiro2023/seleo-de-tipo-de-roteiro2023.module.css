@@ -208,3 +208,126 @@
     font-size: 16px;
   }
 }
+
+/* --- ESTILOS RESPONSIVOS COM CARDS GRANDES E IMAGENS --- */
+
+@media (min-width: 768px) {
+  .seleoDeTipoDeRoteiro20 {
+    padding: 60px 50px;
+    justify-content: center;
+    gap: 70px;
+    overflow-x: hidden;
+  }
+
+  .creditSummaryIcon {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  object-fit: contain;
+  cursor: pointer;
+  margin: 3.5rem;
+}
+
+  .body {
+    gap: 5rem;
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    align-items: flex-start;
+    justify-content: center;
+    flex-grow: 1; 
+  }
+
+
+   .voltar {
+    padding: 0;
+    margin: 0;
+    align-self: flex-start;
+  }
+
+  .voltar img {
+    margin: 0;
+    height: 60px;
+    width: 60px;
+  }
+
+  .ttulo {
+    width: 90%;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid black;
+  }
+
+  .qualTipoDe {
+    font-size: 30px;
+    width: 110%;
+  }
+  
+  .detalhe {
+      width: 10rem;
+      display: none;
+  }
+
+  .roteiros {
+    flex-direction: column; /* Cards empilhados verticalmente */
+    justify-content: center;
+    align-items: center; /* Centraliza a pilha de cards */
+    flex-wrap: wrap;
+    gap: 3.5rem; /* Espaço entre os cards */
+    width: 100%;
+  }
+
+  .raiz {
+    flex-direction: row; /* IMAGEM E TEXTO LADO A LADO NO DESKTOP */
+    width: 100%;
+    max-width: 800px; /* Largura máxima do card */
+    height: 320px;    /* Altura do card */
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.19);
+  }
+
+  .imagem, .imagem2, .seleoDeTipoDeRoteiro20Imagem {
+    display: block; /* Garante que a imagem apareça aqui também */
+    width: 70rem; /* Largura da imagem no desktop */
+    height: 100%;
+    /* As background-images já estão definidas acima, então não precisamos repetir aqui */
+  }
+  
+  .seleoDeTipoDeRoteiro20Body {
+    height: 100%;
+    flex-grow: 1;
+    padding: 2rem; 
+    align-items: flex-start; 
+  }
+
+  /* Barras coloridas na vertical no desktop, dentro da imagem */
+  .seleoDeTipoDeRoteiro20Detalhe,
+  .detalhe2,
+  .detalhe3 {
+    width: 1rem; /* Espessura da barra */
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: auto; /* Remove bottom para garantir alinhamento no topo */
+    border-radius: 0;
+  }
+
+  .partindoDoMasp {
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .ttuloETexto p {
+    font-size: 24px;
+  }
+
+  .sesc24Raiz{
+    font-size: 24px;
+  }
+
+  .partindoDoMonumento, .comeceNoMonumento, .doMonumentoS{
+    font-size: 18px;
+  }
+
+
+}
