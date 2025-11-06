@@ -33,6 +33,13 @@ const FiltroTiposDeRoteiros = ({ filtroAtivo, onMudarFiltro }) => {
         backgroundColor: isActive ? activeColor : "rgba(0,0,0,0.04)",
         borderColor: isActive ? activeColor : "#0f0f0f",
       },
+
+      '@media (min-width: 786px)': {
+        fontSize: "17px",
+        width: 140,
+        height: 30,
+        margintop: 10,  
+      }
     };
   };
 
