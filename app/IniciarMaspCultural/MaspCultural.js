@@ -166,7 +166,7 @@ const MaspCultural = () => {
       {/* Ela é invisível na tela, mas será a única coisa visível na impressão. */}
       <section className={`${styles.printableArea} print-visible`}>
         <img
-          src="/Copan-Natural.png" // O caminho para a sua imagem
+          src="/Copan-Raiz.png" // O caminho para a sua imagem
           alt="Conteúdo do roteiro a ser impresso"
           className={styles.printImage}
         />
