@@ -39,10 +39,13 @@
   font-size: var(--font-size-12);
 }
 .bandeiras1Icon {
-  width: 17.875rem;
+  align-self: stretch;
   height: 6.5rem;
   position: relative;
   border-radius: var(--br-5) var(--br-5) 0 0;
+  max-width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
   object-fit: cover;
 }
 .esculturaDeGranito {
@@ -63,7 +66,9 @@
 .paradasTtuloEBoto {
   align-self: stretch;
   display: flex;
-  align-items: center;
+  align-items: left;
+  text-align: justify;
+  flex-direction: column;
 }
 .macMuseu {
   flex: 1;
@@ -78,6 +83,89 @@
   gap: var(--gap-5);
   text-align: justify;
   font-size: var(--font-size-12);
+}
+
+@media (min-width: 768px) {
+
+  .body {
+    padding: 0px 60px; /* Aumenta o espaçamento lateral */
+    margin-top: 100px;
+    min-height: fit-content;
+    margin-bottom: 16rem;
+  }
+  
+  .ttulo,
+  .detalhesECards {
+    width: 100%;
+    max-width: 1400px;
+  }
+
+  /* --- MUDANÇA 1: Alinhando o título principal --- */
+  .ttulo p{
+    font-size: 30px;
+  }
+
+
+  .paradas {
+    gap: 5rem;
+    width: 100%;
+    max-width: none;
+    margin-left: 2rem; 
+  } 
+
+  .ponto1 p, .ponto2 p, .ponto3 p {
+    font-size: 25px;
+  }
+
+  .ponto1, .ponto2 {
+    flex-direction: row;
+    width: 630px;
+    height: 293.5px;
+    gap: 25px;
+
+  }
+
+   .ponto1 img, .ponto2 img {
+    height: auto;
+    border-radius: 15px;
+  }
+  
+  .texto {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 8px;
+    
+  }
+
+  /* --- MUDANÇA 3: Aumentando a fonte dos subtítulos --- */
+
+  .lanchoneteBar24H,
+  .espaoRevitalizadoDesde {
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: justify;
+  }
+
+  .bodyRouteDetails {
+    width: 0.063rem;
+    height: 5.2rem
+  }
+
+  .routeDetails {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .routeDetails3 {
+    height: 19.6rem;
+  }
+  
+  .imagemETexto {
+    width: 350px;
+  }
+
 }
 
 @media (max-width: 767px) {
