@@ -6,7 +6,7 @@ import styles from "./ParadasIbiraRaiz.module.css";
 const ParadasIbiraRaiz = ({ className = "" }) => {
   return (
     <Box className={[styles.paradas, className].join(" ")}>  
-      <Box className={styles.ponto1}>
+      <Box className={styles.ponto0}>
         <Box className={styles.ttuloEBoto}>
           <Typography
             className={styles.monumentoSBandeiras}

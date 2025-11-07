@@ -86,8 +86,8 @@
 .iniciarRoteiro20Ttulo {
   margin: 0 !important;
   position: absolute;
-  top: 20.938rem;
-  left: 1.813rem;
+  top: 33rem;
+  left: 60px;
   z-index: 3;
   text-align: left;
   font-size: var(--font-size-40);
@@ -236,6 +236,12 @@
 }
 
 @media (min-width: 768px) {
+
+    .ttulo2 {
+    font-size: 22px;
+    gap: 3rem;
+  }
+
   .iniciarRoteiro20 {
     position: relative;
     height: auto;
@@ -259,8 +265,10 @@
   }
 
   .iniciarRoteiro20Ttulo h1 {
-    font-size: 100px;
+    font-size: 80px;
+    width: 100%;
   }
+
 
   .iniciarRoteiro20Ttulo h3 {
     font-size: 40px;
@@ -291,6 +299,7 @@
 
   .descrio {
     font-size: 22px; /* AUMENTADO (equivale a 18px) */
+    width: 80%;
   }
 
   .avenidaPaulista1578 {
@@ -299,6 +308,7 @@
 
   .voltarIcon {
     width: 60px; /*Botão de voltar página!*/
+    height: auto;
   }
 
   .body {
@@ -307,4 +317,9 @@
     min-height: fit-content;
     margin-bottom: 16rem;
   }
+
+  .ttulo h3 {
+    font-size: 30px;
+  }
+
 }
