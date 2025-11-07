@@ -179,17 +179,17 @@
 
   .home20 {
     gap: 4rem;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
   }
 
   .navbar {
-    width: 560px;
-    height: 140px;
+    width: 65%;
+    height: 120px;
     border-radius: 100px;
   }
 
   .navbarOptions{
-    gap: 3rem;
+    gap: 2rem;
   }
 
   .navIcon{
