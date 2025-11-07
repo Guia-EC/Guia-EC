@@ -89,7 +89,7 @@ const Navbar = ({ activePage }) => {
               width={44.6}
               height={44.6}
               alt="Criar Roteiro"
-              src="/icone-roteiro.svg"
+              src="/logo-iniciar-roteiro.png"
             />
           </Box>
 
