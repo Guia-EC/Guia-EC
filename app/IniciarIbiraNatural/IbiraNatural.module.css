@@ -116,7 +116,6 @@
   position: relative;
 }
 .avenidaPaulista1578 {
-  width: 8.625rem;
   position: relative;
   display: inline-block;
 }
@@ -174,6 +173,47 @@
 
   .ttulo h3 {
     font-size: 20px;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .imagemHero {
+    height: 1000px;
+    align-self: stretch;
+    padding: 60px 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .voltarIcon {
+    height: auto;
+    width: 60px;;
+  }
+
+  .ttulo2 {
+    font-size: 80px;
+    gap: 3rem;
+  }
+
+  .prqIbirapuera {
+    width: 100%;
+  }
+
+  .parqueIbirapuera {
+    font-size: 40px;
+    width: 100%;
+  }
+
+  .descrio {
+    font-size: 22px;
+    width: 80%;
+  }
+
+  .iniciarRoteiro20Ttulo {
+    top: 35.5rem;
+    left: 60px;
   }
 
 }
