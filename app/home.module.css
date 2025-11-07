@@ -174,11 +174,11 @@
 @media (min-width: 768px){
 
   .tituloPrincipalMobile1, .tituloPrincipalMobile2, .tituloPrincipalMobile, .tituloPrincipalMobile3 {
-    font-size: 30px;
+    font-size: 20px;
+    width: 80%;
   }
 
   .home20 {
-    gap: 4rem;
     margin-bottom: 50px;
   }
 
