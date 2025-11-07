@@ -177,6 +177,15 @@
   .ponto0 {
     font-size: 25px;
     align-self: self-start;
+    width: 100%;
+  }
+
+  .paradasTtuloEBoto {
+    width: 100%;
+  }
+
+  .monumentoSBandeiras {
+    width: auto;
   }
 }
 

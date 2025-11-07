@@ -4,8 +4,8 @@
   align-items: center;
 }
 .routePath {
-  width: 1.438rem;
-  height: 1.438rem;
+  width: 35.2px;
+  height: 35.2px;
   position: relative;
   border-radius: 50%;
   background-color: var(--color-orange-100);
