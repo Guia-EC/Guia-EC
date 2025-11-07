@@ -25,8 +25,8 @@
   align-items: center;
 }
 .navbar {
-  width: 90%;
-  height: 100px;
+  width: 85%;
+  height: 90px;
   position: fixed;
   bottom: 2rem;
   left: 50%;
@@ -41,7 +41,7 @@
 }
 .navbarOptions {
   justify-content: flex-start;
-  gap: 1.562rem;
+  gap: 20px;
 }
 .casa2Icon {
   width: 1.981rem;
