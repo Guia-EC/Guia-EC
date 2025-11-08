@@ -208,7 +208,6 @@
 @media (min-width: 768px) {
   .seleoDeTipoDeRoteiro20 {
     padding: 60px 50px;
-    justify-content: center;
     gap: 70px;
     overflow-x: hidden;
   }
