@@ -135,7 +135,14 @@
     transform: translateX(-50%);
     width: 370px;
     height: 100px;
-    font-size: 20px
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .botoIniciarRoteiro p {
+    font-size: 22px;
   }
 
   .voltarIcon {
@@ -168,7 +175,7 @@
 
   .iniciarRoteiro20 {
     padding: 0;
-    height: 103.5rem;
+    height: 1770px;
   }
 }
 
