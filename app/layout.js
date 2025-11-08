@@ -16,7 +16,7 @@ import PageHead from "../components/PageHead";
 
 
 export const metadata = {
-  title: "Guia-EC",
+  title: "Roteirize",
   description: "Sua descrição aqui",
   manifest: "/manifest.json",
 };
