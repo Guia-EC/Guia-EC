@@ -265,6 +265,11 @@
     margin: 33px; /*Por algum motivo, tá mexendo no alinahmento vertical!*/
   }
 
+   .botoIniciarRoteiro{
+    border-radius: 100px;
+    
+  }
+
   /* --- MUDANÇAS: Fontes do Título Aumentadas --- */
   .masp {
     font-size:120px; /* AUMENTADO */
