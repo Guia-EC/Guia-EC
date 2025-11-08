@@ -84,14 +84,14 @@ const IbiraNatural = () => {
                   display: 'none !important',
                 },
                 '@media (min-width: 768px)': {
-                  display: 'block !important',
+                  display: 'block',
                 },
                 
               }}>
       
               <Typography
                 variantMapping={{ inherit: "Button" }}
-                sx={{ fontWeight: "600", fontSize: "30px", color: "white", textAlign: 'center' }}
+                sx={{ fontWeight: "600", fontSize: "22px", color: "white", textAlign: 'center' }}
               >
                 Imprimir Roteiro
               </Typography>
@@ -102,15 +102,9 @@ const IbiraNatural = () => {
                   display: 'none !important',
                 },
                 '@media (min-width: 768px)': {
-                  display: 'block !important',
+                  display: 'block',
                 }, 
               }}>
-                
-              <Image
-                width={100}
-                height={100}
-                src="/QRCODE.svg"
-              />
             </Box>
           </Box>
           
@@ -128,7 +122,7 @@ const IbiraNatural = () => {
               height: 100,
               cursor: 'pointer',
               '@media (max-width: 767px)': {
-                display: 'block !important',
+                display: 'block',
               },
               '@media (min-width: 768px)': {
                 display: 'none !important',
@@ -138,7 +132,7 @@ const IbiraNatural = () => {
           >
             <Typography
               variantMapping={{ inherit: "Button" }}
-              sx={{ fontWeight: "600", fontSize: "24px", color: "white", textAlign: 'center'}}
+              sx={{ fontWeight: "600", fontSize: "22px", color: "white", textAlign: 'center'}}
             >
               Iniciar Rota com Google
             </Typography>

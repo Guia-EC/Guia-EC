@@ -83,7 +83,7 @@ const IbiraRaiz = () => {
                   display: 'none !important',
                 },
                 '@media (min-width: 768px)': {
-                  display: 'block !important',
+                  display: 'block',
                 },
                 
               }}>
@@ -104,12 +104,6 @@ const IbiraRaiz = () => {
                   display: 'block !important',
                 }, 
               }}>
-                
-              <Image
-                width={100}
-                height={100}
-                src="/QRCODE.svg"
-              />
             </Box>
           </Box>
           <Box // BOTÃO DE INICIAR ROTA!
@@ -117,7 +111,7 @@ const IbiraRaiz = () => {
             sx={{
               cursor: 'pointer',
               '@media (max-width: 767px)': {
-                display: 'block !important',
+                display: 'block',
               },
               '@media (min-width: 768px)': {
                 display: 'none !important',
@@ -127,7 +121,7 @@ const IbiraRaiz = () => {
           >
             <Typography
               variantMapping={{ inherit: "Button" }}
-              sx={{ fontWeight: "600", fontSize: "30px", color: "white", textAlign: 'center' }}
+              sx={{ fontWeight: "600", fontSize: "20px", color: "white", textAlign: 'center' }}
             >
               Iniciar Rota com Google
             </Typography>

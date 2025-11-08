@@ -193,4 +193,12 @@
   .esculturaDeGranito {
     font-size: 14px;
   }
+
+  .monumentoSBandeiras {
+    width: auto;
+  }
+
+  .ponto0 {
+    align-self: flex-start;
+  }
 }
