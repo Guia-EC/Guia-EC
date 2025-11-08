@@ -6,7 +6,7 @@ import styles from "./ParadasIbiraRaiz.module.css";
 const ParadasIbiraRaiz = ({ className = "" }) => {
   return (
     <Box className={[styles.paradas, className].join(" ")}>  
-      <Box className={styles.ponto1}>
+      <Box className={styles.ponto0}>
         <Box className={styles.ttuloEBoto}>
           <Typography
             className={styles.monumentoSBandeiras}
@@ -19,16 +19,6 @@ const ParadasIbiraRaiz = ({ className = "" }) => {
         </Box>
       </Box>
       <Box className={styles.ponto1}>
-        <Box className={styles.paradasTtuloEBoto}>
-          <Typography
-            className={styles.macMuseu}
-            variant="inherit"
-            variantMapping={{ inherit: "b" }}
-            sx={{ fontWeight: "700" }}
-          >
-            IbiraBike
-          </Typography>
-        </Box>
         <Box className={styles.imagemETexto}>
           <Image
             className={styles.bandeiras1Icon}
@@ -39,20 +29,22 @@ const ParadasIbiraRaiz = ({ className = "" }) => {
             alt=""
             src="/ibirabike.jpg"
           />
+        </Box>
+        <Box className={styles.paradasTtuloEBoto}>
+          <Typography
+            className={styles.macMuseu}
+            variant="inherit"
+            variantMapping={{ inherit: "b" }}
+            sx={{ fontWeight: "700" }}
+          >
+            IbiraBike
+          </Typography>
           <div className={styles.esculturaDeGranito}>
             Clássico serviço de aluguel de bicicletas dentro do Parque Ibirapuera, com modelos que vão desde o individual, até toda a família. Ideal para explorar o parque de um jeito divertido e diferente.
           </div>
         </Box>
       </Box>
       <Box className={styles.ponto2}>
-        <Typography
-          className={styles.parqueIbirapuera}
-          variant="inherit"
-          variantMapping={{ inherit: "b" }}
-          sx={{ fontWeight: "700" }}
-        >
-          Hobby Hamburguer
-        </Typography>
         <Box className={styles.imagemETexto}>
           <Image
             className={styles.bandeiras1Icon}
@@ -63,10 +55,20 @@ const ParadasIbiraRaiz = ({ className = "" }) => {
             alt=""
             src="/hobby.jpg"
           />
-          <div className={styles.esculturaDeGranito}>
-            Hamburgueria tradicional pertinho do Parque Ibirapuera, com lanches clássicos e um clima de lanchonete de bairro, ideal para matar a fome depois de um passeio no parque.
-          </div>
         </Box>
+        <Box className={styles.paradasTtuloEBoto}>
+          <Typography
+            className={styles.parqueIbirapuera}
+            variant="inherit"
+            variantMapping={{ inherit: "b" }}
+            sx={{ fontWeight: "700" }}
+          >
+            Hobby Hamburguer
+          </Typography>
+          <div className={styles.esculturaDeGranito}>
+              Hamburgueria tradicional pertinho do Parque Ibirapuera, com lanches clássicos e um clima de lanchonete de bairro, ideal para matar a fome depois de um passeio no parque.
+          </div>
+        </Box>  
       </Box>
     </Box>
   );

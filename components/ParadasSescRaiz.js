@@ -17,16 +17,6 @@ const ParadasSescRaiz = ({ className = "" }) => {
         </Typography>
       </Box>  
       <Box className={styles.ponto1}>
-        <Box className={styles.ttuloEBoto}>
-          <Typography
-            className={styles.parqueAugusta}
-            variant="inherit"
-            variantMapping={{ inherit: "b" }}
-            sx={{ fontWeight: "700" }}
-          >
-            Comedoria
-          </Typography>
-        </Box>
         <Box className={styles.imagemETtulo}>
           <Image
             className={styles.augusta1Icon}
@@ -37,22 +27,22 @@ const ParadasSescRaiz = ({ className = "" }) => {
             alt=""
             src="/comedoria.png"
           />
+        </Box>
+        <Box className={styles.ttuloEBoto}>
+          <Typography
+            className={styles.parqueAugusta}
+            variant="inherit"
+            variantMapping={{ inherit: "b" }}
+            sx={{ fontWeight: "700" }}
+          >
+            Comedoria
+          </Typography>
           <div className={styles.restauranteVeganoInaugurado}>
            Restaurante com comida caseira, preço justo e uma vista espetacular do Centro, ideal para um almoço de qualidade antes ou depois das exposições.
           </div>
         </Box>
       </Box>
       <Box className={styles.ponto1}>
-        <Box className={styles.ttuloEBoto}>
-          <Typography
-            className={styles.itsVegan}
-            variant="inherit"
-            variantMapping={{ inherit: "b" }}
-            sx={{ fontWeight: "700" }}
-          >
-            Feirinha da República
-          </Typography>
-        </Box>
         <Box className={styles.imagemETtulo}>
           <Image
             className={styles.augusta1Icon}
@@ -63,12 +53,7 @@ const ParadasSescRaiz = ({ className = "" }) => {
             alt=""
             src="/feira-da-republica.jpg"
           />
-          <div className={styles.restauranteVeganoInaugurado}>
-            Tradicional feira de rua na Praça da República, com barracas de artesanato, comidas típicas e um clima multicultural, ideal para um passeio de fim de semana e para garimpar achados únicos.
-          </div>
         </Box>
-      </Box>
-      <Box className={styles.ponto1}>
         <Box className={styles.ttuloEBoto}>
           <Typography
             className={styles.itsVegan}
@@ -76,9 +61,14 @@ const ParadasSescRaiz = ({ className = "" }) => {
             variantMapping={{ inherit: "b" }}
             sx={{ fontWeight: "700" }}
           >
-            Bar e Lanches Estadão
+            Feirinha da República
           </Typography>
+          <div className={styles.restauranteVeganoInaugurado}>
+            Tradicional feira de rua na Praça da República, com barracas de artesanato, comidas típicas e um clima multicultural, ideal para um passeio de fim de semana e para garimpar achados únicos.
+          </div>
         </Box>
+      </Box>
+      <Box className={styles.ponto1}>
         <Box className={styles.imagemETtulo}>
           <Image
             className={styles.augusta1Icon}
@@ -89,6 +79,16 @@ const ParadasSescRaiz = ({ className = "" }) => {
             alt=""
             src="/estadao.jpg"
           />
+        </Box>
+        <Box className={styles.ttuloEBoto}>
+          <Typography
+            className={styles.itsVegan}
+            variant="inherit"
+            variantMapping={{ inherit: "b" }}
+            sx={{ fontWeight: "700" }}
+          >
+            Bar e Lanches Estadão
+          </Typography>
           <div className={styles.restauranteVeganoInaugurado}>
             Lanchonete 24 horas no centro de São Paulo, famosa pelo seu sanduíche de pernil, a parada obrigatória para matar a fome em qualquer horário, especialmente na madrugada.
           </div>

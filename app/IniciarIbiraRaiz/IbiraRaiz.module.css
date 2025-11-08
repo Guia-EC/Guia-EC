@@ -32,8 +32,8 @@
   height: 40%; /*Tá mexendo na altura em onde está a seta!*/
 }
 .body {
-  width: 24.563rem;
-  height: 77rem;
+  width: 100vw;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -61,14 +61,19 @@
   gap: var(--gap-14);
 }
 .botoIniciarRoteiro {
-  width: calc(100% - 24px);
+  width: 23.188rem;
   height: 6.25rem;
   margin: 0 !important;
-  position: absolute;
-  top: 106.5rem;
-  right: 0.75rem;
-  left: 0.75rem;
+  /* position: fixed;
+  top: 50rem;
+  left: 2rem; */
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  background-color: var(--color-orange-100);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   z-index: 2;
 }
@@ -81,8 +86,8 @@
 .iniciarRoteiro20Ttulo {
   margin: 0 !important;
   position: absolute;
-  top: 20.938rem;
-  left: 1.813rem;
+  top: 33rem;
+  left: 60px;
   z-index: 3;
   text-align: left;
   font-size: var(--font-size-40);
@@ -121,6 +126,58 @@
   display: inline-block;
 }
 
+.printableArea {
+  display: none;
+}
+
+.botaoEQrcode {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 85%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  gap: 30px;
+}
+
+.qrCode {
+  display: block;
+  z-index: 99;
+}
+
+@media print {
+  /* REMOVEMOS AS REGRAS DE "body *" E "visibility" DAQUI */
+
+  /* Estas regras SÃO LOCAIS e formatam a área de impressão */
+  .printableArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    visibility: hidden;
+  }
+
+  .printImage {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    
+  }
+  
+  @page {
+    margin: 0mm;
+  }
+}
+
 @media (max-width: 767px) {
   .botoIniciarRoteiro {
     position:fixed;
@@ -128,7 +185,10 @@
     left: 50%;
     transform: translateX(-50%);
     width: 370px;
-    font-size: 20px
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .imagemHero { /*Imagem do Hero!*/
@@ -155,6 +215,11 @@
     height: 1380px;
   }
 
+  .iniciarRoteiro20Ttulo {
+    top: 21rem;
+    left: 30px;
+  }
+
   .ttulo2 h3 {
     font-size: 22px;
   }
@@ -174,6 +239,95 @@
 
   .ttulo h3 {
     font-size: 20px;
+  }
+
+}
+
+@media (min-width: 768px) {
+
+    .ttulo2 {
+    font-size: 22px;
+    gap: 3rem;
+  }
+
+  .iniciarRoteiro20 {
+    position: relative;
+    height: auto;
+    padding: 0;
+  }
+
+  .imagemHero {
+    height: 750px; /* AUMENTADO: Altura da imagem de fundo */
+    align-self: stretch;
+    padding: 60px 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; /* Centraliza melhor a imagem */
+    z-index: 0;
+  }
+
+  .ttulo {
+    top: 30rem; /* Reposiciona o título */
+    left: 58px;
+    max-width: 800px;
+  }
+
+  .iniciarRoteiro20Ttulo h1 {
+    font-size: 80px;
+    width: 100%;
+  }
+
+
+  .iniciarRoteiro20Ttulo h3 {
+    font-size: 40px;
+  }
+
+  .iniciarRotaCom {
+    font-size: 22px;
+  }
+
+  .avenidaPaulista1578 {
+    font-size: 22px;
+  }
+
+  .botoIniciarRoteiro p{
+    font-size: 22px;
+    margin: 33px; /*Por algum motivo, tá mexendo no alinahmento vertical!*/
+  }
+
+  /* --- MUDANÇAS: Fontes do Título Aumentadas --- */
+  .prqIbirapuera {
+    font-size:120px; /* AUMENTADO */
+  }
+
+  .parqueIbirapuera {
+    font-size: 49px; /* AUMENTADO */
+    width: auto; /* Largura automática para caber o texto */
+  }
+
+  .descrio {
+    font-size: 22px; /* AUMENTADO (equivale a 18px) */
+    width: 80%;
+  }
+
+  .avenidaPaulista1578 {
+    width: auto;
+  }
+
+  .voltarIcon {
+    width: 60px; /*Botão de voltar página!*/
+    height: auto;
+  }
+
+  .body {
+    padding: 0px 60px;
+    margin-top: 150px;
+    min-height: fit-content;
+    margin-bottom: 16rem;
+  }
+
+  .ttulo h3 {
+    font-size: 30px;
   }
 
 }
