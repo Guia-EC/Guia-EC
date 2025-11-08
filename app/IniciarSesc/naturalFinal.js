@@ -89,7 +89,7 @@ const IniciarRoteiro202 = () => {
       
               <Typography
                 variantMapping={{ inherit: "Button" }}
-                sx={{ fontWeight: "600", fontSize: "22px", color: "white", textAlign: 'center' }}
+                sx={{ fontWeight: "600", fontSize: "24px", color: "white", textAlign: 'center' }}
               >
                 Imprimir Roteiro
               </Typography>
