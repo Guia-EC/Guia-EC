@@ -63,13 +63,13 @@
 @media (min-width: 768px) {
 
   .botoFazerRoteiro h3 {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .botoFazerRoteiro {
     position: fixed;
-    width: 60%;
-    height: 90px;
+    width: 40%;
+    height: 70px;
     border-radius: 100px;
   }
 } 

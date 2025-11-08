@@ -26,7 +26,7 @@ const InfoSesc204 = () => {
           variantMapping={{ inherit: "h3" }}
           sx={{ fontWeight: "400" }}
         >
-          Fazer um roteiro pelo Sesc
+          Fazer Roteiro
         </Typography>
       </section>
       <ScrollToTopButton />

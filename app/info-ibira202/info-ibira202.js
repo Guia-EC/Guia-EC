@@ -26,7 +26,7 @@ const InfoIbira202 = () => {
           variantMapping={{ inherit: "h3" }}
           sx={{ fontWeight: "400" }}
         >
-          Fazer um roteiro pelo Ibira
+          Fazer Roteiro
         </Typography>
       </section>
       <ScrollToTopButton />

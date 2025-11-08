@@ -50,8 +50,8 @@ const Navbar = ({ activePage }) => {
           {/* Ícone Home */}
           <Image
             className={styles.navIcon}
-            width={32}
-            height={32}
+            width={30}
+            height={30}
             alt="Home"
             src={
               activePage === "home"
@@ -65,8 +65,8 @@ const Navbar = ({ activePage }) => {
           {/* Ícone Favoritos (com nova lógica) */}
           <Image
             className={styles.navIcon}
-            width={32}
-            height={32}
+            width={30}
+            height={30}
             alt="Favoritos"
             src={
               activePage === "favorites"
@@ -86,18 +86,18 @@ const Navbar = ({ activePage }) => {
             <Box className={styles.boto} />
             <Image
               className={styles.roteiro}
-              width={44.6}
-              height={44.6}
+              width={60}
+              height={60}
               alt="Criar Roteiro"
-              src="/icone-roteiro.svg"
+              src="/logo-iniciar-roteiro.png"
             />
           </Box>
 
           {/* Ícone IA */}
           <Image
             className={styles.navIcon}
-            width={34}
-            height={34}
+            width={30}
+            height={30}
             alt="Chatbot IA"
             src="/icone-ia.svg"
             onClick={onIaClick}
@@ -107,8 +107,8 @@ const Navbar = ({ activePage }) => {
           {/* Ícone Usuário (com nova lógica) */}
           <Image
             className={styles.navIcon}
-            width={31.7}
-            height={31.7}
+            width={30}
+            height={30}
             alt="Perfil do Usuário"
             src={
               activePage === "user"

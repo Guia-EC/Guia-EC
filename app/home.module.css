@@ -1,4 +1,4 @@
-.home20{
+.home20 {
   margin-bottom: 30px;
 }
 
@@ -10,7 +10,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: var(--padding-80) 0 8.75rem;
+  padding: var(--padding-80) 0 125px;
   box-sizing: border-box;
   gap: var(--gap-32);
   line-height: normal;
@@ -26,7 +26,7 @@
 }
 .navbar {
   width: 90%;
-  height: 100px;
+  height: 90px;
   position: fixed;
   bottom: 2rem;
   left: 50%;
@@ -41,7 +41,7 @@
 }
 .navbarOptions {
   justify-content: flex-start;
-  gap: 1.562rem;
+  gap: 25px;
 }
 .casa2Icon {
   width: 1.981rem;
@@ -63,24 +63,9 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: var(--padding-11) var(--padding-10) var(--padding-11)
-    var(--padding-11);
   box-sizing: border-box;
-  gap: var(--gap-10);
 }
-.boto {
-  width: 100%;
-  position: absolute;
-  margin: 0 !important;
-  height: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  border-radius: 50%;
-  background-color: var(--color-orange-100);
-  z-index: -999;
-}
+
 .iaButtomIcon,
 .imgDistnciaIcon {
   position: relative;
@@ -160,6 +145,15 @@
   background-color: #000000;
 }
 
+@media (min-width: 200px) and (max-width: 300px) {
+  .navbar {
+    width: 85%;
+  }
+  .navbarOptions {
+    gap: 20px;
+  }
+}
+
 @media (min-width: 769px) and (max-width: 3000px) {
   /* .tituloPrincipalMobile1, .tituloPrincipalMobile2, .tituloPrincipalMobile, .tituloPrincipalMobile3{
     display: none;
@@ -168,45 +162,46 @@
     width: 100%;
     margin-bottom: 1rem;
     max-width: 100%;
-  } 
+  }
 }
 
-@media (min-width: 768px){
-
-  .tituloPrincipalMobile1, .tituloPrincipalMobile2, .tituloPrincipalMobile, .tituloPrincipalMobile3 {
-    font-size: 30px;
+@media (min-width: 768px) {
+  .tituloPrincipalMobile1,
+  .tituloPrincipalMobile2,
+  .tituloPrincipalMobile,
+  .tituloPrincipalMobile3 {
+    font-size: 20px;
+    width: 80%;
   }
 
   .home20 {
-    gap: 4rem;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
   }
 
   .navbar {
-    width: 560px;
-    height: 140px;
+    width: 55%;
+    height: 105px;
     border-radius: 100px;
   }
 
-  .navbarOptions{
-    gap: 3rem;
+  .navbarOptions {
+    gap: 30px;
   }
 
-  .navIcon{
-    width: 45px;
-    height: 45px;
+  .navIcon {
+    width: 40px;
+    height: 40px;
   }
 
-  .routesButtom{
+  /* .routesButtom{
    width: 6rem;
    height: 6rem;
-  }
+  } */
 
-  .roteiro{
-    width: 65px;
-    height: 65px;
+  .roteiro {
+    width: 80px;
+    height: 80px;
   }
-
 }
 
 @media (max-width: 767px) {
@@ -214,5 +209,3 @@
     padding-top: 16px;
   }
 }
-
-
