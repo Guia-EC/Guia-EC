@@ -363,7 +363,7 @@
 
   .imagemHero {
     height: 40rem; /* Aumenta a altura da imagem principal */
-    background-image: url(/SESCRESPONSIVO.png);
+    background-image: url(/SESCRESPONSIVO.webp);
     padding: 60px 50px;
   }
 
@@ -374,8 +374,8 @@
   }
 
   .voltarIcon {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     margin: 0;
   }
 

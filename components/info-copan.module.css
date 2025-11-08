@@ -351,7 +351,7 @@
 @media (min-width: 768px) {
   .imagemHero {
     height: 40rem; /* Aumenta a altura da imagem principal */
-    background-image: url(/COPANRESPONSIVO.png);
+    background-image: url(/COPANRESPONSIVO.webp);
     padding: 60px 50px;
   }
 
@@ -362,8 +362,8 @@
   }
 
   .voltarIcon {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
   }
 
   .arrowIcon {

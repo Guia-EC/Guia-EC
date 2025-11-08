@@ -21,7 +21,7 @@
   position: relative;
   height: 28.813rem;
   padding-left: 1.7rem;
-  background-image: url(/MASPRESPONSIVO.png);
+  background-image: url(/MASPRESPONSIVO.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -284,6 +284,6 @@
   }
 
   .voltarIcon {
-    width: 60px; /*Botão de voltar página!*/
+    width: 45px; /*Botão de voltar página!*/
   }
 }
