@@ -62,11 +62,13 @@
 }
 .paradasTtuloEBoto {
   align-self: stretch;
+  flex-direction: column;
   display: flex;
-  align-items: center;
+  width: 100%;
+  align-items: start;
 }
 .macMuseu {
-  flex: 1;
+  /* flex: 1; */
   position: relative;
 }
 .imagemETexto2 {
@@ -80,8 +82,58 @@
   font-size: var(--font-size-12);
 }
 
+.esculturaDeGranito {
+  text-align: justify;
+}
+
 @media (max-width: 767px) {
   .esculturaDeGranito {
     font-size: 14px;
   }
+  .ponto1{
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 768px) {
+  .ponto1{
+    flex-direction: row;
+    width: 630px;
+    height: 269.5px;
+    gap: 25px;
+  }
+
+  .paradas {
+    width: 100%;
+    align-items: flex-start;
+    gap: 5rem;
+  }
+
+  .paradasTtuloEBoto {
+    font-size: 25px;
+  }
+
+  .ttuloEBoto {
+    font-size: 25px;
+    width: auto;
+  }
+
+  .ponto0 {
+    width: 100%;
+  }
+
+  .esculturaDeGranito {
+    font-size: 20px;
+  }
+
+  .bandeiras1Icon {
+    width: 315px;
+    height: 100%;
+    border-radius: 15px;
+  }
+
+  .monumentoSBandeiras {
+    width: auto;
+  }
+
 }

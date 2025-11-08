@@ -212,6 +212,11 @@
     height: 1380px;
   }
 
+  .iniciarRoteiro20Ttulo {
+    top: 21rem;
+    left: 30px;
+  }
+
   .ttulo2 h3 {
     font-size: 22px;
   }

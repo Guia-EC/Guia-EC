@@ -59,3 +59,28 @@
   }
 
 }
+
+@media (min-width: 768px) {
+
+  .rotaRoutePath {
+    height: 17.2rem;
+  }
+
+  .routePath2 {
+    height: 3.2rem;
+  }
+
+  .routePath3 {
+    height: 17.1rem;
+  }
+
+  .routePath6 {
+    height: 15.7rem;
+  }
+
+  .routePath {
+  width: 35.2px;
+  height: 35.2px;
+}
+
+}
