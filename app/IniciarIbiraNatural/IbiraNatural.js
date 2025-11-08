@@ -138,7 +138,7 @@ const IbiraNatural = () => {
           >
             <Typography
               variantMapping={{ inherit: "Button" }}
-              sx={{ fontWeight: "600", fontSize: "30px", color: "white", textAlign: 'center' }}
+              sx={{ fontWeight: "600", fontSize: "24px", color: "white", textAlign: 'center'}}
             >
               Iniciar Rota com Google
             </Typography>

@@ -93,6 +93,9 @@
   .ponto1{
     flex-direction: column;
   }
+  .ponto0 {
+    align-self: flex-start;
+  }
 }
 
 @media (min-width: 768px) {
@@ -107,6 +110,7 @@
     width: 100%;
     align-items: flex-start;
     gap: 5rem;
+    margin-left: 2rem;
   }
 
   .paradasTtuloEBoto {
