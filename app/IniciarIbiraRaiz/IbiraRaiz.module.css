@@ -283,7 +283,7 @@
   }
 
   .iniciarRotaCom {
-    font-size: 22px;
+    font-size: 24px;
   }
 
   .avenidaPaulista1578 {
@@ -291,8 +291,12 @@
   }
 
   .botoIniciarRoteiro p{
-    font-size: 22px;
+    font-size: 24px;
     margin: 33px; /*Por algum motivo, tá mexendo no alinahmento vertical!*/
+  }
+
+   .botoIniciarRoteiro{
+    border-radius: 100px;
   }
 
   /* --- MUDANÇAS: Fontes do Título Aumentadas --- */
@@ -315,7 +319,7 @@
   }
 
   .voltarIcon {
-    width: 60px; /*Botão de voltar página!*/
+    width: 45px; /*Botão de voltar página!*/
     height: auto;
   }
 
