@@ -48,6 +48,7 @@
 .esculturaDeGranito {
   align-self: stretch;
   position: relative;
+  text-align: justify;
 }
 .ponto2 {
   width: 17.875rem;
@@ -63,7 +64,9 @@
 .paradasTtuloEBoto {
   align-self: stretch;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  align-items: start;
 }
 .macMuseu {
   flex: 1;
@@ -84,6 +87,9 @@
   .esculturaDeGranito {
     font-size: 14px;
   }
+  .ponto0 {
+    align-self: flex-start;
+  }
 }
 
 @media (min-width: 768px) {
@@ -99,5 +105,24 @@
     width: 630px;
     height: 269.5px;
     gap: 25px;
+  }
+
+  .paradasTtuloEBoto {
+    font-size: 25px;
+  }
+  
+  .esculturaDeGranito {
+    font-size: 20px;
+  }
+
+  .bandeiras1Icon {
+    width: 315px;
+    height: 100%;
+    border-radius: 15px;
+  }
+
+  .ponto0 {
+    align-self: flex-start;
+    font-size: 25px;
   }
 }
