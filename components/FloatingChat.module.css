@@ -143,3 +143,14 @@
   -webkit-appearance: none;
   appearance: none;
 }
+
+@media (min-width: 768px){
+
+  .floatingButton{
+    /* bottom: 240px;
+    right: 15px; */
+    width: 60px;
+    height: 60px;
+
+  }
+}

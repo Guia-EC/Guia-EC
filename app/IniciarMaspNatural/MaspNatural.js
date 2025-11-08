@@ -109,11 +109,11 @@ const MaspNatural = () => {
               }, 
             }}>
               
-            <Image
+            {/* <Image
               width={100}
               height={100}
               src="/QRCODE.svg"
-            />
+            /> */}
           </Box>
         </Box>
         <Box // BOTÃO DE INICIAR ROTA!
