@@ -17,16 +17,6 @@ const ParadasSescCultural = ({ className = "" }) => {
         </Typography>
       </Box>  
       <Box className={styles.ponto1}>
-        <Box className={styles.ttuloEBoto}>
-          <Typography
-            className={styles.parqueAugusta}
-            variant="inherit"
-            variantMapping={{ inherit: "b" }}
-            sx={{ fontWeight: "700" }}
-          >
-            Exposição Hip Hop
-          </Typography>
-        </Box>
         <Box className={styles.imagemETtulo}>
           <Image
             className={styles.augusta1Icon}
@@ -37,22 +27,22 @@ const ParadasSescCultural = ({ className = "" }) => {
             alt=""
             src="/hip-hop.jpeg"
           />
+        </Box>
+        <Box className={styles.ttuloEBoto}>
+          <Typography
+            className={styles.parqueAugusta}
+            variant="inherit"
+            variantMapping={{ inherit: "b" }}
+            sx={{ fontWeight: "700" }}
+          >
+            Exposição Hip Hop
+          </Typography>
           <div className={styles.restauranteVeganoInaugurado}>
             Uma retrospectiva do hip-hop no SESC 24 de Maio, com arte, música e história, perfeita para entender a evolução e a força da cultura de rua.
           </div>
         </Box>
       </Box>
       <Box className={styles.ponto1}>
-        <Box className={styles.ttuloEBoto}>
-          <Typography
-            className={styles.itsVegan}
-            variant="inherit"
-            variantMapping={{ inherit: "b" }}
-            sx={{ fontWeight: "700" }}
-          >
-            Vale do Anhangabaú
-          </Typography>
-        </Box>
         <Box className={styles.imagemETtulo}>
           <Image
             className={styles.augusta1Icon}
@@ -63,12 +53,7 @@ const ParadasSescCultural = ({ className = "" }) => {
             alt=""
             src="/vale-do-anhangabau.jpg"
           />
-          <div className={styles.restauranteVeganoInaugurado}>
-            Grande praça reformada no coração do Centro Histórico, com fontes que brotam do chão e uma ampla esplanada, ideal para se refrescar no calor, andar de skate ou curtir os grandes eventos da cidade.
-          </div>
         </Box>
-      </Box>
-      <Box className={styles.ponto1}>
         <Box className={styles.ttuloEBoto}>
           <Typography
             className={styles.itsVegan}
@@ -76,9 +61,14 @@ const ParadasSescCultural = ({ className = "" }) => {
             variantMapping={{ inherit: "b" }}
             sx={{ fontWeight: "700" }}
           >
-            Sertó Bar
+            Vale do Anhangabaú
           </Typography>
+          <div className={styles.restauranteVeganoInaugurado}>
+            Grande praça reformada no coração do Centro Histórico, com fontes que brotam do chão e uma ampla esplanada, ideal para se refrescar no calor, andar de skate ou curtir os grandes eventos da cidade.
+          </div>
         </Box>
+      </Box>
+      <Box className={styles.ponto1}>
         <Box className={styles.imagemETtulo}>
           <Image
             className={styles.augusta1Icon}
@@ -89,6 +79,16 @@ const ParadasSescCultural = ({ className = "" }) => {
             alt=""
             src="/serto.jpg"
           />
+        </Box>
+        <Box className={styles.ttuloEBoto}>
+          <Typography
+            className={styles.itsVegan}
+            variant="inherit"
+            variantMapping={{ inherit: "b" }}
+            sx={{ fontWeight: "700" }}
+          >
+            Sertó Bar
+          </Typography>
           <div className={styles.restauranteVeganoInaugurado}>
             Boteco charmoso perto do Anhangabaú, com drinks, culinária do sertão e mesas na calçada, perfeito para um encontro animado.
           </div>

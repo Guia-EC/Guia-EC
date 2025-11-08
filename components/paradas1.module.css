@@ -21,6 +21,9 @@
   align-self: stretch;
   display: flex;
   align-items: center;
+  flex-direction: column;
+  width: 100%;
+  align-items: start;
 }
 .parqueAugusta {
   width: 8.438rem;
@@ -50,6 +53,7 @@
 .restauranteVeganoInaugurado {
   align-self: stretch;
   position: relative;
+  text-align: justify;
 }
 .ponto3 {
   width: 18rem;
@@ -74,6 +78,45 @@
 
   .imagemETtulo {
     font-size: 14px;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .paradas {
+    width: 100%;
+    align-items: flex-start;
+    gap: 5rem;
+    margin-left: 2rem;
+  }
+
+  .ponto1 {
+    flex-direction: row;
+    width: 630px;
+    height: 269.5px;
+    gap: 25px;
+  }
+
+  .ttuloEBoto {
+    font-size: 25px;
+  }
+
+  .restauranteVeganoInaugurado {
+    font-size: 20px;
+  }
+
+  .parqueAugusta {
+    width: 100%;
+  }
+
+  .augusta1Icon {
+    width: 315px;
+    height: 100%;
+    border-radius: 15px;
+  }
+
+  .ponto3 b {
+    font-size: 25px;
   }
 
 }

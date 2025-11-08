@@ -7,16 +7,6 @@ const Paradas1 = ({ className = "" }) => {
   return (
     <Box className={[styles.paradas, className].join(" ")}>
       <Box className={styles.ponto1}>
-        <Box className={styles.ttuloEBoto}>
-          <Typography
-            className={styles.parqueAugusta}
-            variant="inherit"
-            variantMapping={{ inherit: "b" }}
-            sx={{ fontWeight: "700" }}
-          >
-            Parque Augusta
-          </Typography>
-        </Box>
         <Box className={styles.imagemETtulo}>
           <Image
             className={styles.augusta1Icon}
@@ -27,7 +17,17 @@ const Paradas1 = ({ className = "" }) => {
             alt=""
             src="/augusta-1@2x.png"
           />
-          <div className={styles.restauranteVeganoInaugurado}>
+        </Box>
+        <Box className={styles.ttuloEBoto}>
+          <Typography
+            className={styles.parqueAugusta}
+            variant="inherit"
+            variantMapping={{ inherit: "b" }}
+            sx={{ fontWeight: "700" }}
+          >
+            Parque Augusta
+          </Typography>
+                    <div className={styles.restauranteVeganoInaugurado}>
             Inaugurado em 2021 no centro de São Paulo, reúne área verde de 23
             mil m² com trilhas, playground, cachorródromo e espaço cultural para
             eventos.
@@ -35,16 +35,6 @@ const Paradas1 = ({ className = "" }) => {
         </Box>
       </Box>
       <Box className={styles.ponto1}>
-        <Box className={styles.ttuloEBoto}>
-          <Typography
-            className={styles.itsVegan}
-            variant="inherit"
-            variantMapping={{ inherit: "b" }}
-            sx={{ fontWeight: "700" }}
-          >
-            It´s Vegan
-          </Typography>
-        </Box>
         <Box className={styles.imagemETtulo}>
           <Image
             className={styles.augusta1Icon}
@@ -55,6 +45,16 @@ const Paradas1 = ({ className = "" }) => {
             alt=""
             src="/vegan-1@2x.png"
           />
+        </Box>
+        <Box className={styles.ttuloEBoto}>
+          <Typography
+            className={styles.itsVegan}
+            variant="inherit"
+            variantMapping={{ inherit: "b" }}
+            sx={{ fontWeight: "700" }}
+          >
+            It´s Vegan
+          </Typography>
           <div className={styles.restauranteVeganoInaugurado}>
             Restaurante vegano inaugurado em novembro de 2021 na Consolação (Rua
             Fernando de Albuquerque, 89), com sanduíches e combos inspirados na
@@ -73,16 +73,6 @@ const Paradas1 = ({ className = "" }) => {
         </Typography>
       </Box>
       <Box className={styles.ponto1}>
-        <Box className={styles.ttuloEBoto}>
-          <Typography
-            className={styles.itsVegan}
-            variant="inherit"
-            variantMapping={{ inherit: "b" }}
-            sx={{ fontWeight: "700" }}
-          >
-            Mirante do Sesc
-          </Typography>
-        </Box>
         <Box className={styles.imagemETtulo}>
           <Image
             className={styles.augusta1Icon}
@@ -93,6 +83,16 @@ const Paradas1 = ({ className = "" }) => {
             alt=""
             src="/mirante-1@2x.png"
           />
+        </Box>
+        <Box className={styles.ttuloEBoto}>
+          <Typography
+            className={styles.itsVegan}
+            variant="inherit"
+            variantMapping={{ inherit: "b" }}
+            sx={{ fontWeight: "700" }}
+          >
+            Mirante do Sesc
+          </Typography>
           <div className={styles.restauranteVeganoInaugurado}>
             Espaço inaugurado em 2023 com café e área de observação, oferecendo
             vista da região central de São Paulo e programação cultural.
