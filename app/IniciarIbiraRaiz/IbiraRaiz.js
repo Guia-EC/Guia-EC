@@ -175,7 +175,7 @@ const IbiraRaiz = () => {
 
       <section className={`${styles.printableArea} print-visible`}>
         <img
-          src="/Sesc-Raiz.png" // O caminho para a sua imagem
+          src="/Ibirapuera-Raiz.png" // O caminho para a sua imagem
           alt="Conteúdo do roteiro a ser impresso"
           className={styles.printImage}
         />
