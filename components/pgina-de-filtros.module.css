@@ -85,6 +85,10 @@
   }
 }
 
+.tituloTexto{
+    font-size: 18px;
+  }
+
 /* AJUSTES RESPONSIVO TABLET */
 
 @media (min-width: 768px){
@@ -92,7 +96,23 @@
     gap: 50px; 
     width: 90%;
     margin: auto;
-    margin-top: 50px;
-    
+    margin-top: 50px;  
   }
+
+  .detalheChild {
+    width: 110%;
+}
+
+  .titulo{
+    margin-left: 45px;
+  }
+
+  .tituloTexto{
+    font-size: 30px;
+  }
+
+  .root{
+    margin-bottom: 140px;
+  }
+
 }

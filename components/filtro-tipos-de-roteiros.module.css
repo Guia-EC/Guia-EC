@@ -1,0 +1,79 @@
+
+/* filtro-tipos-de-roteiros.module.css */
+
+.filtroButton {
+  /* Estilos base (inativo) */
+  text-transform: none;
+  font-size: 12px;
+  width: 88px;
+  height: 22px;
+  border-radius: 5px;
+  
+  /* Estado inativo (imita o 'outlined' do sx) */
+  color: #0f0f0f;
+  background-color: transparent;
+  border: 1px solid #0f0f0f; /* Garante a borda do 'outlined' */
+
+  /* Transição suave, assim como o MUI faz */
+  transition: background-color 250ms, border-color 250ms, color 250ms;
+}
+
+/* Hover do botão inativo */
+.filtroButton:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  border-color: #0f0f0f;
+}
+
+/* --- Estados Ativos --- */
+
+/* Estilos ativos para 'Cultural' */
+.culturalActive {
+  color: #fff;
+  background-color: #8662b4;
+  border-color: #8662b4;
+}
+.culturalActive:hover {
+  background-color: #8662b4; /* Mantém a cor no hover */
+}
+
+/* Estilos ativos para 'Natural' */
+.naturalActive {
+  color: #fff;
+  background-color: #519328;
+  border-color: #519328;
+}
+.naturalActive:hover {
+  background-color: #519328;
+}
+
+/* Estilos ativos para 'Raiz' */
+.raizActive {
+  color: #fff;
+  background-color: #FF9F1C;
+  border-color: #FF9F1C;
+}
+.raizActive:hover {
+  background-color: #FF9F1C;
+}
+
+
+/* --- Media Query --- */
+/* Isto vai aplicar-se a todos os botões que têm a classe .filtroButton,
+  independentemente de estarem ativos ou não, pois todos
+  terão essa classe base.
+*/
+@media (min-width: 786px) {
+  .filtroButton {
+    font-size: 18px;
+    width: 140px;
+    height: 30px;
+    margin-top: 50px; 
+  }
+
+  .filtroButton:first-child {
+    margin-left: 45px; 
+  }
+
+  }
+
+

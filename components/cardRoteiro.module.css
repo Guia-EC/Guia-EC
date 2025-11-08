@@ -152,8 +152,8 @@ padding: var(--padding-11) 1.812rem;
         font-size: 18px;
     }
 
-    
-
-
-  
+    .imagem img {
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+    }
 }
