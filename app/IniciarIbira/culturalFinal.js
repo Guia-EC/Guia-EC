@@ -129,7 +129,7 @@ const IniciarRoteiro201 = () => {
           >
             <Typography
               variantMapping={{ inherit: "Button" }}
-              sx={{ fontWeight: "600", fontSize: "22px", color: "white", textAlign: 'center'}}
+              sx={{ fontWeight: "600", fontSize: "18px", color: "white", textAlign: 'center'}}
             >
               Iniciar Rota com Google
             </Typography>
