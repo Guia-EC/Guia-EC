@@ -48,3 +48,27 @@
 
   }
 }
+
+@media (min-width: 768px) {
+  .rotaChild {
+    width: 35.2px;
+    height: 35.2px;
+  }
+
+  .rotaInner {
+    width: 35.2px;
+    height: 35.2px;
+  }
+  .rotaItem {
+    height: 19.5rem;
+  }
+
+  .lineDiv {
+    height: 20rem;
+  }
+
+  .rotaRotaChild {
+    height: 4.7rem;
+
+  }
+}
