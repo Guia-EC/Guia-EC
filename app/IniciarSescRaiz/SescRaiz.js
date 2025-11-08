@@ -27,6 +27,11 @@ const SescRaiz = () => {
     router.back();
   }, [router]);
 
+        // Função simplificada que apenas chama a impressão do navegador
+  const handlePrint = useCallback(() => {
+    window.print();
+  }, []);
+
             // <-- 4. ATUALIZAR A FUNÇÃO DO BOTÃO
   const handleIniciarRoteiro = async () => {
 // 1. Se o usuário ESTIVER logado, tentamos salvar no histórico
@@ -54,78 +59,136 @@ const SescRaiz = () => {
   };
 
   return (
-    <Box className={styles.iniciarRoteiro20}>
-      <section className={styles.imagemHero}>
-        <Image
-          className={styles.voltarIcon}
-          width={24}
-          height={38}
-          sizes="100vw"
-          alt=""
-          src="/botao-voltar-branco.svg"
-          onClick={onVoltarIconClick}
+    <>
+      <Box className={styles.iniciarRoteiro20}>
+        <section className={styles.imagemHero}>
+          <Image
+            className={styles.voltarIcon}
+            width={24}
+            height={38}
+            sizes="100vw"
+            alt=""
+            src="/botao-voltar-branco.svg"
+            onClick={onVoltarIconClick}
+          />
+        </section>
+
+        <Box className={styles.botaoEQrcode}>
+            <Box // BOTÃO DE IMPRIMIR ROTEIRO!
+              className={styles.botoIniciarRoteiro}
+              onClick={handlePrint} // O onClick agora chama a função de impressão direta
+              sx={{
+                cursor: 'pointer',
+                '@media (max-width: 767px)': {
+                  display: 'none !important',
+                },
+                '@media (min-width: 768px)': {
+                  display: 'block',
+                },
+                
+              }}>
+      
+              <Typography
+                variantMapping={{ inherit: "Button" }}
+                sx={{ fontWeight: "600", fontSize: "22px", color: "white", textAlign: 'center' }}
+              >
+                Imprimir Roteiro
+              </Typography>
+            </Box>
+            <Box className={styles.qrCode} sx={{
+                cursor: 'pointer',
+                '@media (max-width: 767px)': {
+                  display: 'none !important',
+                },
+                '@media (min-width: 768px)': {
+                  display: 'block',
+                }, 
+              }}>
+            </Box>
+          </Box>
+          
+          <Box // BOTÃO DE INICIAR ROTA!
+            className={styles.botoIniciarRoteiro}
+            sx={{
+              textTransform: "none",
+              fontWeight: "600",
+              color: "#fff",
+              fontSize: "20px",
+              background: "#ff9f1c",
+              borderRadius: "30px",
+              "&:hover": { background: "#ff9f1c" },
+              width: 370,
+              height: 100,
+              cursor: 'pointer',
+              '@media (max-width: 767px)': {
+                display: 'block',
+              },
+              '@media (min-width: 768px)': {
+                display: 'none !important',
+              },
+            }}
+            onClick={handleIniciarRoteiro}
+          >
+            <Typography
+              variantMapping={{ inherit: "Button" }}
+              sx={{ fontWeight: "600", fontSize: "22px", color: "white", textAlign: 'center'}}
+            >
+              Iniciar Rota com Google
+            </Typography>
+        </Box>
+
+        <section className={styles.body}>
+          <Box className={styles.ttulo}>
+            <Typography
+              className={styles.roteiroSugerido}
+              variant="inherit"
+              variantMapping={{ inherit: "h3" }}
+              sx={{ fontWeight: "600" }}
+            >
+              Roteiro Sugerido
+            </Typography>
+          </Box>
+          <Box className={styles.pontosECards}>
+            <Rota1 />
+            <Paradas1 />
+          </Box>
+        </section>
+
+
+        <section className={styles.iniciarRoteiro20Ttulo}>
+          <Box className={styles.ttulo2}>
+            <Typography
+              className={styles.sesc24}
+              variant="inherit"
+              variantMapping={{ inherit: "h1" }}
+              sx={{ fontWeight: "700" }}
+            >{`Sesc 24 `}</Typography>
+            <Typography
+              className={styles.sesc24De}
+              variant="inherit"
+              variantMapping={{ inherit: "h3" }}
+              sx={{ fontWeight: "600", fontSize: "var(--font-size-20)" }}
+            >
+              Sesc 24 de Maio
+            </Typography>
+          </Box>
+          <Box className={styles.descrio}>
+            <div className={styles.pauloMendesDa}>
+              2000-2017: Paulo Mendes da Rocha, MMBB (Fernando de Mello Franco,
+              Marta Moreira, Milton Braga)
+            </div>
+            <div className={styles.rua24De}>Rua 24 de Maio, 109 - Centro</div>
+          </Box>
+        </section>
+      </Box>
+      <section className={`${styles.printableArea} print-visible`}>
+        <img
+          src="/Sesc-Raiz.png" // O caminho para a sua imagem
+          alt="Conteúdo do roteiro a ser impresso"
+          className={styles.printImage}
         />
       </section>
-      <section className={styles.body}>
-        <Box className={styles.ttulo}>
-          <Typography
-            className={styles.roteiroSugerido}
-            variant="inherit"
-            variantMapping={{ inherit: "h3" }}
-            sx={{ fontWeight: "600" }}
-          >
-            Roteiro Sugerido
-          </Typography>
-        </Box>
-        <Box className={styles.pontosECards}>
-          <Rota1 />
-          <Paradas1 />
-        </Box>
-      </section>
-      <Button
-        className={styles.botoIniciarRoteiro}
-        variant="contained"
-        sx={{
-          textTransform: "none",
-          fontWeight: "600",
-          color: "#fff",
-          fontSize: "20px",
-          background: "#ff9f1c",
-          borderRadius: "30px",
-          "&:hover": { background: "#ff9f1c" },
-          width: 370,
-          height: 100,
-        }}
-        onClick={handleIniciarRoteiro}
-      >
-        Iniciar rota com Google
-      </Button>
-      <section className={styles.iniciarRoteiro20Ttulo}>
-        <Box className={styles.ttulo2}>
-          <Typography
-            className={styles.sesc24}
-            variant="inherit"
-            variantMapping={{ inherit: "h1" }}
-            sx={{ fontWeight: "700" }}
-          >{`Sesc 24 `}</Typography>
-          <Typography
-            className={styles.sesc24De}
-            variant="inherit"
-            variantMapping={{ inherit: "h3" }}
-            sx={{ fontWeight: "600", fontSize: "var(--font-size-20)" }}
-          >
-            Sesc 24 de Maio
-          </Typography>
-        </Box>
-        <Box className={styles.descrio}>
-          <div className={styles.pauloMendesDa}>
-            2000-2017: Paulo Mendes da Rocha, MMBB (Fernando de Mello Franco,
-            Marta Moreira, Milton Braga)
-          </div>
-          <div className={styles.rua24De}>Rua 24 de Maio, 109 - Centro</div>
-        </Box>
-      </section>
-    </Box>
+    </>
   );
 };
 
