@@ -20,7 +20,9 @@
 .ttuloEBoto {
   align-self: stretch;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  align-items: start;
   padding: 0 0 var(--padding-1);
 }
 .monumentoSBandeiras {
@@ -48,6 +50,7 @@
 .esculturaDeGranito {
   align-self: stretch;
   position: relative;
+  text-align: justify;
 }
 .ponto2 {
   width: 17.875rem;
@@ -63,7 +66,9 @@
 .paradasTtuloEBoto {
   align-self: stretch;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  align-items: start;
 }
 .macMuseu {
   flex: 1;
@@ -83,5 +88,48 @@
 @media (max-width: 767px) {
   .esculturaDeGranito {
     font-size: 14px;
+  }
+  
+  .ponto0 {
+    display: flex;
+    align-self: flex-start;
+  }
+}
+
+@media (min-width: 768px) {
+  .paradas {
+    width: 100%;
+    align-items: flex-start;
+    gap: 5rem;
+    margin-left: 2rem;
+  }
+
+  .ponto1, .ponto2 {
+    flex-direction: row;
+    width: 630px;
+    height: 269.5px;
+    gap: 25px;
+  }
+
+  .ttuloEBoto {
+    font-size: 25px;
+  }
+
+  .paradasTtuloEBoto {
+    font-size: 25px;
+  }
+
+  .esculturaDeGranito {
+    font-size: 20px;
+  }
+
+  .macMuseu {
+    flex: 0;
+  }
+
+  .bandeiras1Icon {
+    width: 315px;
+    height: 100%;
+    border-radius: 15px;
   }
 }
