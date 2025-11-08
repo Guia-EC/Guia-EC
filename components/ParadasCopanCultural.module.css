@@ -85,3 +85,19 @@
     font-size: 14px;
   }
 }
+
+@media (min-width: 768px) {
+  .paradas {
+    width: 100%;
+    align-items: flex-start;
+    gap: 5rem;
+    margin-left: 2rem;
+  }
+
+  .ponto1, .ponto2 {
+    flex-direction: row;
+    width: 630px;
+    height: 269.5px;
+    gap: 25px;
+  }
+}

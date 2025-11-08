@@ -183,7 +183,86 @@
     font-size: 45px;
     width: 100%;
   }
+}
 
+@media (min-width: 768px) {
+  .imagemHero {
+    height: 750px;
+    align-self: stretch;
+    padding: 60px 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom; 
+  }
 
+  .iniciarRoteiro20 {
+    height: auto;
+    padding: 0;
+  }
 
+  .voltarIcon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .iniciarRoteiro20Ttulo {
+    top: 33rem;
+    left: 60px;
+  }
+
+  .ttulo2 {
+    font-size: 80px;
+  }
+
+  .ttulo2 h3 {
+    font-size: 40px;
+  }
+
+  .linaBoBardi {
+    font-size: 22px;
+    width: auto;
+  }
+
+  .avenidaPaulista1578 {
+    font-size: 22px;
+    width: auto;
+  }
+
+  .ttulo {
+    font-size: 30px;
+  }
+
+  .body {
+    width: 100vw;
+    height: auto;
+    padding: 0px 60px;
+    margin-bottom: 16rem;
+    margin-top: 150px;
+  }
+
+  .pontosECards {
+    width: 100%;
+  }
+
+  .botoIniciarRoteiro {
+    width: 23.188rem;
+    height: 6.25rem;
+    margin: 0 !important;
+    /* position: fixed;
+    top: 50rem;
+    left: 2rem; */
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 100px;
+    background-color: var(--color-orange-100);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  .pontosEParadas {
+    width: 100%;
+  }
 }
