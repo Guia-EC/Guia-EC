@@ -276,14 +276,14 @@
     flex-direction: row; /* IMAGEM E TEXTO LADO A LADO NO DESKTOP */
     width: 100%;
     max-width: 800px; /* Largura máxima do card */
-    height: 320px;    /* Altura do card */
+    height: 260px;    /* Altura do card */
     border-radius: 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.19);
   }
 
   .imagem {
     display: block; /* Garante que a imagem apareça aqui também */
-    width: 70rem; /* Largura da imagem no desktop */
+    width: 40rem; /* Largura da imagem no desktop */
     height: 100%;
     /* As background-images já estão definidas acima, então não precisamos repetir aqui */
   }

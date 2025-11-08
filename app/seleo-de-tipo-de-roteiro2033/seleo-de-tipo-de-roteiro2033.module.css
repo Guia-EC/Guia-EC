@@ -36,7 +36,6 @@
 }
 .body {
   justify-content: flex-start;
-  padding: 0 1.062rem;
   gap: 3.125rem;
   text-align: left;
   font-size: var(--font-size-16);
@@ -235,5 +234,122 @@
 
   .body {
     margin-top: 3rem;
+  }
+}
+
+/* --- ESTILOS RESPONSIVOS PARA TABLET (768px+) --- */
+
+@media (min-width: 768px) {
+  .seleoDeTipoDeRoteiro20 {
+    padding: 60px 50px;
+    justify-content: center;
+    gap: 70px;
+  }
+
+  .body {
+    gap: 5rem;
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    align-items: flex-start;
+    justify-content: center;
+    flex-grow: 1;
+  }
+
+  .voltar {
+    padding: 0;
+    margin: 0;
+    align-self: flex-start;
+  }
+
+  /* Ajusta o ícone de voltar */
+  .voltar img {
+    margin: 0;
+    height: 45px;
+    width: 45px;
+  }
+
+  .ttulo {
+    width: 90%;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid black;
+  }
+
+  /* Estilo do título principal */
+  .qualTipoDe {
+    font-size: 30px;
+    width: 100%;
+  }
+
+  /* Oculta o detalhe amarelo debaixo do título */
+  .detalhe {
+    display: none;
+  }
+
+  .roteiros {
+    flex-direction: column; /* Cards empilhados verticalmente */
+    justify-content: center;
+    align-items: center; /* Centraliza a pilha de cards */
+    flex-wrap: wrap;
+    gap: 3.5rem; /* Espaço entre os cards */
+    width: 100%;
+  }
+
+  /* Estilo de cada card (Raiz, Natural, Cultural) */
+  .raiz {
+    flex-direction: row; /* Imagem e texto lado a lado */
+    width: 100%;
+    max-width: 800px; /* Largura máxima do card */
+    height: 260px; /* Altura fixa do card */
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.19);
+    cursor: pointer; /* Adiciona feedback de clique */
+  }
+
+  /* --- ATENÇÃO AQUI --- */
+  /* Aplica o mesmo estilo para todas as 'caixas de imagem' */
+  .imagem,
+  .seleoDeTipoDeRoteiro20Imagem,
+  .imagem2 {
+    display: block;
+    width: 70rem; /* Largura da imagem */
+    height: 100%;
+    position: relative;
+    /* Você precisará adicionar os background-images 
+       aqui ou nas classes específicas */
+  }
+
+  .seleoDeTipoDeRoteiro20Body {
+    width: 60%;
+    height: 100%;
+    flex-grow: 1;
+    padding: 2rem;
+    align-items: flex-start; /* Alinha o texto à esquerda */
+  }
+
+  /* Barras coloridas na vertical */
+  .seleoDeTipoDeRoteiro20Detalhe,
+  .detalhe2,
+  .detalhe3 {
+    width: 1rem; /* Espessura da barra */
+    height: 100%;
+    position: absolute; /* Posição dentro da caixa de imagem */
+    top: 0;
+    left: 0;
+    bottom: auto;
+    border-radius: 0; /* Remove o radius da barra */
+  }
+
+  /* Título de cada card (Raiz, Natural, etc.) */
+  .seleoDeTipoDeRoteiro20Raiz {
+    font-size: 24px;
+  }
+
+  /* Texto de descrição de cada card */
+  .descubraAAlma {
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: left;
+    letter-spacing: 1.2px;
   }
 }
