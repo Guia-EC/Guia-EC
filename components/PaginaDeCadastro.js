@@ -142,7 +142,7 @@ const PaginaDeCadastro = () => {
           width={42.8}
           height={39}
           alt="Logo"
-          src="/logo-ec-1@2x.png"
+          src="/logo-preto.png"
         />
         <HeaderButton variant="login" />
       </Box>

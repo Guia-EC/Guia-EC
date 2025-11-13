@@ -71,7 +71,7 @@ const PginaDeLogin = () => {
           height={39}
           sizes="100vw"
           alt="Logo"
-          src="/logo-ec-1@2x.png"
+          src="/logo-preto.png"
         />
         {/* Este botão tem sua própria lógica de navegação e não submete o form */}
         <HeaderButton variant="cadastro" /> 
