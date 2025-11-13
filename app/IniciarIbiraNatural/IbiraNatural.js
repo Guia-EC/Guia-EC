@@ -132,7 +132,7 @@ const IbiraNatural = () => {
           >
             <Typography
               variantMapping={{ inherit: "Button" }}
-              sx={{ fontWeight: "600", fontSize: "22px", color: "white", textAlign: 'center'}}
+              sx={{ fontWeight: "600", fontSize: "18px", color: "white", textAlign: 'center'}}
             >
               Iniciar Rota com Google
             </Typography>
@@ -185,7 +185,7 @@ const IbiraNatural = () => {
       </Box>
       <section className={`${styles.printableArea} print-visible`}>
         <img
-          src="/Sesc-Raiz.png" // O caminho para a sua imagem
+          src="/Ibirapuera-Natural.png" // O caminho para a sua imagem
           alt="Conteúdo do roteiro a ser impresso"
           className={styles.printImage}
         />

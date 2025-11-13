@@ -42,19 +42,44 @@
 @media (max-width: 767px) {
 
   .rotaRoutePath {
-    height: 3.3rem;
+    height: 3rem;
   }
 
   .routePath2 {
-    height: 17.1rem;
+    height: 16.8rem;
   }
 
   .routePath4 {
-    height: 17.2rem;
+    height: 17rem;
   }
 
   .routePath6 {
-    height: 15.7rem;
+    height: 15.4rem;
+  }
+
+}
+
+@media (min-width: 768px) {
+
+  .routePath, .rotaChild {
+    width: 32.5px;
+    height: 32.5px;
+  }
+
+  .rotaRoutePath {
+    height: 5rem;
+  }
+
+  .routePath2 {
+    height: 20.1rem;
+  }
+
+  .routePath4 {
+    height: 19.8rem;
+  }
+
+  .routePath6 {
+    height: 19.7rem;
   }
 
 }
