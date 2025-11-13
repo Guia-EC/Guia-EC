@@ -52,12 +52,10 @@ const Home205 = () => {
 
       <HeaderHome />
       
-      {/* SEÇÃO DOS BANNERS EC COM LÓGICA RESPONSIVA */}
-      <section>
+      {/* <section>
         <h2 className={styles.tituloPrincipalMobile1}>Conheça a melhor faculdade de <br /> Arquitetura e Urbanismo 🖤</h2>
-        {/* {isMobile ? <BannerCarousel /> : <DesktopBannerGrid />} */}
         <BannerCarousel /> 
-      </section>
+      </section> */}
       
       
       <Slider142 />
